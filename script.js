@@ -1,7 +1,9 @@
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
 
-let characterNamePrefixes = [
+const characterNamePrefixes = [
+  "Al",
+  "Adal",
   "The",
   "Tor",
   "Tö",
@@ -40,6 +42,7 @@ let characterNamePrefixes = [
   "Aerg-",
   "Ag",
   "Schlef",
+  "Schle",
   "Bel",
   "Dom",
   "Vük",
@@ -87,9 +90,17 @@ let characterNamePrefixes = [
   "Folk",
   "Gerul",
   "Det",
+  "Le",
+  "Ra",
+  "An",
+  "Les",
+  "Josil",
+  "Sig"
+
 ];
-let characterNameSuffixes = [
+const characterNameSuffixes = [
   "ras",
+  "fa",
   "rg",
   "vul",
   "rn",
@@ -149,6 +160,7 @@ let characterNameSuffixes = [
   "kari",
   "l",
   "duk",
+  "uk",
   "ehl",
   "nach",
   "sten",
@@ -168,7 +180,40 @@ let characterNameSuffixes = [
   "karl",
   "lög",
   "biörn",
-  "phus"
+  "phus",
+  "don",
+  "dona",
+  "on",
+  "chela",
+  "dy",
+  "bert",
+  "berta",
+  "fúm"
+];
+
+const townNamePrefixes = [
+  "Alli",
+  "Galgen",
+  "Schles",
+  "Ker",
+  "On",
+  "Gro",
+  "Tor",
+  "Skar",
+  "Stur",
+  "Draken"
+];
+const townNameSuffixes = [
+  "ans",
+  "beck",
+  "wig",
+  "güs",
+  "da",
+  "vi",
+  "por",
+  "de",
+  "la",
+  "borg"
 ];
 
 function removeAllChildren(element) {
