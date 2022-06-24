@@ -1,3 +1,10 @@
+// to add:
+// corpse looting
+// bad habits
+// broken bodies
+// terrible traits
+// random encounters/ varied by regions
+
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
 const categoryPicker = document.getElementById("kategoria");
@@ -245,7 +252,7 @@ const MBTowns = {
     "Akra",
     "Sand",
     "Alb",
-    "Al.",
+    "Al",
     "Alt",
     "Amor",
     "Creuz",
@@ -506,7 +513,20 @@ const MBTowns = {
 
 const MBWeather = {
   type: "picker",
-  list: ["rain", "fog"],
+  list: [
+    "Martwa szarość",
+    "Walący deszcz",
+    "Przeszywający wiatr",
+    "Ogłuszająca burza",
+    "Ciemno jak w nocy",
+    "Martwa cisza",
+    "Urwanie chmury",
+    "Mgła gęsta jak zupa",
+    "Trzaskający mróz",
+    "Irytująca mżawka",
+    "Warczące grzmoty",
+    "Grobowe zimno",
+  ],
 };
 
 function removeAllChildren(element) {
