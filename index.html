@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mörk Borg character name generator</title>
+    <title>RPG generator</title>
     <link href='style.css' rel="'stylesheet">
     <meta charset="utf-8"/>
 </head>
-<button id='generate-button'>generate</button>
+<select name="kategoria" id="kategoria">
+    <option value="MBNames">Imiona - MB</option>
+    <option value="MBTowns">Miasta - MB</option>
+    <option value="MBWeather">Pogoda - MB</option>
+  </select>
+  <select name="liczba" id="liczba">
+    <option value="1">1</option>
+    <option value="20">20</option>
+  </select>
+<button id='generate-button'>Generuj</button>
 <div id='name-display'></div>
 
 <script src='script.js'></script>
