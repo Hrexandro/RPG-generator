@@ -1,237 +1,33 @@
-body {
-    background: #2C9FD1;
-    height: 100vh;
+/* body {
+    background: black;
+}
+
+p {
+    color: white;
+}
+
+#top-bar {
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin: auto;
+    justify-content: flex-start;
 }
 
-#side-panel{
-  position: absolute;
-  top: 1vh;
-  left:1vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.side-icon{
-height: 4em;
-width:5em;
-}
-
-.side-button:hover{
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  animation-iteration-count: infinite;
-  transform: translate3d(0, 0, 0);
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-.side-button{
-  /* background: #2c9fd1; */
-  background:white;
-  border: 1px solid white;
-  /* border-radius: 21px;
-  font-size: 85%; */
-  border-radius: 50%;
-  color: white;
-  outline: none;
-  margin-top: 1em;
-  height:8em;
-  width:8em;
-}
-
-.side-button:hover{
-  cursor: pointer;
-}
-
-#central-area {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 18vw));
-    /* grid-template-rows:repeat(auto-fit, minmax(100px, 33vh)); */
-    /* grid-template-rows: repeat(auto-fit, minmax(100px, 25vh)); */
-    row-gap: 1.5vh;
-    column-gap: 1.5vw;
-    /* height: calc(50vw - 5px); */
-}
-
-.card {
-    margin: 0;
-    position: relative;
-    border-radius: 10px;
-    text-align: center;
-    /* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-    /* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-    /* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-    /* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    
-    /* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-    /* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-    /* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-    /* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-}
-
-.removed-card{
-  visibility: hidden;
-}
-
-.card-container {
-    perspective: 600px;
-    margin: 10px;
-    max-width: 28vw;
-    max-height: 28vh;
-}
-
-.card-content {
-    max-height: 90%;
-    max-width: 90%;
-    backface-visibility: hidden;
-}
-
-.card-back {
-    transform: rotateY( 180deg);
-}
-
-.uncovered {
-    transform: rotateY(180deg);
-}
-
-.clicked {
-    /* background:#f8d14c;  */
-    transform: rotateY(180deg);
-}
-
-.logo {
-    max-width: 90%;
-    max-height: 90%;
+select {
+    background: black;
+    color: white;
+    border: 1px solid white;
 
 }
 
-.theme-button {
-    margin: 20px;
-    max-width: 28vw;
-    max-height: 28vh;
-    /* align-self: center; */
-    margin-top: 10px;
-    color: #2c9fd1;
-    background-color: white;
-    border: none;
-    border-radius: 7%;
-    margin: 1em;
+input {
+    background: black;
+    color: white;
+    border: 1px solid white;
 
 }
 
-
-/* AAAAAAAAAAAAAAAAAAAAAAAAAAAa ANIMATING CARD FLIPPING - ADD THE HTML FROM https://www.w3schools.com/howto/howto_css_flip_card.asp
-ADJUST AS NECESSARY - E.G. CHANGE HOVER TO CLICKED STATE FOR THE BACK SIDE*/
-
-
-/* 
-flip-card -card-container - to create probably
-flip-card-inner - card
-flip-card-front - find some transparent picture or white or just size it up?
-flip card-back - the picture
-AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-
-
-/* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-
-
-/* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-
-
-/* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-
-
-/* AAAAAAAAAAAAAAAAAAAAAAAAAAAa */
-
-
-/* .card-container {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-
-
-/* }  */
-
-
-/* This container is needed to position the front and back side */
-
-
-/* .card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-} */
-
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-
-
-/* .card-container:hover .card {
-  transform: rotateY(180deg);
-} */
-
-
-/* Position the front and back side */
-
-
-/* .card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-
-
-/* backface-visibility: hidden;
-} */
-
-
-/* Style the front side (fallback if image is missing) */
-
-
-/* .card-front {
-  background-color: #bbb;
-  color: black;
-} */
-
-
-/* Style the back side */
-
-
-/* .card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
+#generate-button {
+    background: black;
+    color: white;
+    border: 1px solid white;
 } */

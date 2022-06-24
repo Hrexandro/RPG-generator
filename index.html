@@ -3,20 +3,25 @@
 
 <head>
     <title>RPG generator</title>
-    <meta charset="utf-8" />
-    <link href="style.css" rel="'stylesheet" type="text/css"/>
+
+    <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+    <div id="top-bar">
 <select name="kategoria" id="kategoria">
     <option value="MBNames">Imiona - MB</option>
     <option value="wizardNames">Imiona czarodziejów - od leków</option>
     <option value="MBTowns">Miasta - MB</option>
     <option value="MBWeather">Pogoda - MB</option>
     <option value="MBCorpseLoot">Grabienie zwłok - MB</option>
+    <option value="MBTerribleTraits">Okropne cechy - MB</option>
+    <option value="MBBrokenBodies">Zniszczone ciała - MB</option>
+    <option value="MBBadHabits">Złe nawyki - MB</option>
 
 </select>
-<input type=number id="liczba" value="1">
+<input type=number id="liczba" value="5">
 <button id='generate-button'>Generuj</button>
+</div>
 
 <div id='name-display'></div>
 <script src='script.js'></script>

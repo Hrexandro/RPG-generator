@@ -18,7 +18,7 @@ numberPicker.addEventListener("change", (e) => {
   numberGenerated = numberPicker.value;
 });
 
-let numberGenerated = 1;
+let numberGenerated = 5;
 let category = "MBNames";
 
 const MBNames = {
@@ -454,7 +454,7 @@ const MBTowns = {
     "Belze",
     "Nodh",
     "Thinx",
-    "Aland"
+    "Aland",
   ],
   suffix: [
     "", //only prefix, short one syllable name
@@ -562,11 +562,113 @@ const MBWeather = {
     "Trzaskający mróz",
     "Irytująca mżawka",
     "Warczące grzmoty",
-    "Grobowe zimno",
+    "Grobowe zimno"
   ],
 };
 
-const MBCorpseLoot = {//przeszukiwanie zwłok, rabowanie zwłok
+const MBTerribleTraits = {
+  //okropne cechy
+  type: "picker",
+  list: [
+    "Nieustannie rozdrażniony",
+    "Kompleks niższości",
+    "Ma problemy z autorytetami",
+    "Pyskaty krzykacz",
+    "Okrutny",
+    "Egocentryczny",
+    "Nihilistyczny",
+    "Skłonność do nadużywania środków odurzających",
+    "Skonfliktowany",
+    "Podstępny",
+    "Mściwy",
+    "Tchórzliwy",
+    "Leniwy",
+    "Podejrzliwy",
+    "Bezlistosny",
+    "Zamartwia się",
+    "Zgorzkniały",
+    "Zdradliwy",
+    "Marnotrawny",
+    "Arogancki",
+    "Obżartus",//
+    "Chciwy",//
+    "Erotoman",//
+    "Wymądrzający się",//
+    "Paranoik",//
+    "Sarkastyczny",
+    "Złośliwy",
+    "Naiwny, uwierzy nawet w najmniej wiarygodne kłamstwo"
+  ],
+};
+
+const MBBrokenBodies = {
+  //broken bodies zniszczone ciała cechy
+  type: "picker",
+  list: [
+    "Wpatrujący się, maniakalny wzrok",
+    "Pokryty tatuażami uznawanymi przez niektórych za bluźniercze",
+    "Gnijąca twarz, nosi maskę",
+    "Brak trzech palców u stopy, kuleje",
+    "Wychudły i blady",
+    "Jedna dłoń zastąpiona zardzewiałym hakiem (k6 obrażeń)",
+    "Gnijące zęby",
+    "Niepokojąco piękny, nieznośnie czysty",
+    "Dłonie pokryte ropiejącymi wypryskami",
+    "Zaćma powoli, ale nieustępliwie pokrywa oboje oczu",
+    "Długie, skołtunione włosy, w których mieszka co najmniej jeden karaluch",
+    "Zmiażdżone uszy",
+    "Drgawki i jąkanie od uszkodzonego nerwu lub stresu",
+    "Korpulentny, wygłodniały, ślini się",
+    "Jednej ręce brakuje kciuka i palca wskazującego, łapie jak homar",
+    "Czerwony, spuchnięty nos alkoholika",
+    "Neutralny wyraz twarzy ma maniakalny, ciężko zdobyć przyjaciół",
+    "Przewlekła grzybica stóp. Śmierdzi.",
+    "Niedawno rozcięte i śmierdzące oko zakryte opaską",
+    "Popękane czarne paznokcie, mogą w każdej chwili odpaść",
+    "Zezowate spojrzenie",//
+    "Obcięty koniec języka, sepleni gdy mówi",//
+    "W chwilach dużego stresu, puszcza gazy",//
+    "Karzeł",//
+    "Ciągle jest mu gorąco, na co wiecznie narzeka"//
+    
+  ],
+};
+
+const MBBadHabits = {
+  //bad habits, złe nawyki cechy
+  type: "picker",
+  list: [
+    "Obsesyjnie zbiera małe, ostre kamienie",
+    "Nie użyje żadnego ostrza nie przetestowawszy go uprzednio na własnym ciele. Ręce poprzeszywane blizami.",
+    "Jak już zacznie pić, nie może przestać",
+    "Uzależniony od hazardu. Musi zakładać się choć raz dziennie. Jeśli przegra, podbija stawkę i zakłada się znów.",
+    "Nie toleruje krytyki. Rezultatem jest wściekłość i płacz.",
+    "Nie może przejśc do sedna. Nigdy nie opowiedział żadnej historii od początku do końca",
+    "Najlepszym przyjacielem jest czaszka. Nosi ją ze sobą, opowiada jej wszystko, nikomu innemu nie ufa bardziej.",
+    "Dłubie w nosie aż do krwi",
+    "Histerycznie śmieje się z własnych żartów, które potem szczegółowo objaśnia.",
+    "Nihilista, upiera się, żeby mówić wszystkim, że jest nihilistą i wyjaśniać dlaczego.",
+    "Notoryczny zjadacz robali",
+    "Na stres reaguje okazywaniem estetyki. Im gorzej sprawy się mają, tym szykowniej musi wyglądać.",
+    "Stale zalegająca w gardle flegma. Nieustannie kaszle, smarka, spluwa i przełyka.",
+    "Nałogowo kłamie, ciężko mu zdobyć zaufanie innych",//
+    "Zbieractwo - zbiera i targa ze sobą pełno niepotrzebnych przedmiotów",//
+    "Ma tendencję do katatonicznego wpatrywania się w jeden punkt przez kilka minut",//
+    "Skłonność do egzaltacji i przesadzonej gestykulacji",//
+    "Gada do siebie w najmniej odpowiednich momentach i głośno pomstuje na wszelkie niedogodności",//
+    "Czuje przymus pomodlenia się za dusze zabitych wrogów przez 1k6x10 minut",//
+    "Piroman",
+    "Stale gubi ważne przedmioty i zapomina ważne fakty",
+    "Plotkarz, obgaduje każdego, którego akurat nie ma w pobliżu",
+    "Jąka się, gdy kłamie",
+    "Chichocze szaleńczo w najgorszych momentach",
+    "Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5,7,9,11 lub 13 wyrzuconym na k20",
+    "Robi biżuterię z ludzkich zębów"
+  ],
+};
+
+const MBCorpseLoot = {
+  //przeszukiwanie zwłok, rabowanie zwłok
   type: "picker",
   list: [
     "k4 w srebrze",
@@ -665,11 +767,90 @@ const MBCorpseLoot = {//przeszukiwanie zwłok, rabowanie zwłok
     "Wachlarz w kształcie niedźwiedziego szponu.",
     "Kunsztowna jedwabna rękawiczka",
     "Suszone mięso nietoperza.",
-    "Puzderko z czaszkami wróżek, zmielone i wciągnięte pozwalają unosić się i opadać powoli przez k4 minuty"
+    "Puzderko z czaszkami wróżek, zmielone i wciągnięte pozwalają unosić się i opadać powoli przez k4 minuty",
+    "Miedziany kolczyk w nosie.",
+    "Dwoje oczu w słoiku.",
+    "k6 kości (kościanych).",
+    "k4 wielkich kłów.",
+    "Wiadro latrynowe.",
+    "Pęknięta harfa.",
+    "Rogaty hełm.",
+    "Utytłana gównem chochla.",
+    "Smutna kura w klatce.",
+    "Strzała, która utknęła w tarczy.",
+    "Garść ludzkich zębów.",
+    "Świeżo naostrzona kosa.",
+    "Pusta buteleczka na perfumy.",
+    "Pęczek kluczy bez zamku.",
+    "Skórzana ćwiekowana kamizelka.",
+    "Sakiewka z k10 srebra.",
+    "Zużyty pasek.",
+    "Worek martwych szczurów.",
+    "Ozłacana czaszka warta k20+10 srebra.",
+    "But (nie pasuje).",
+    "k10 strzał.",
+    'Książka "Królowa Nocy".',
+    "Wypchana sroka.",
+    "Rzeźnicki nóż (k4)",
+    "k20 srebra.",
+    "Słoik z fermentowanymi rybami.",
+    "Pułapka na myszy (1 punkt obrażeń).",
+    "Czarno-biała farba do twarzy.",
+    "Lniany wór z częściami ciała.",
+    "Pęknięte lusterko.",
+    "Długi żelazny łańcuch.",
+    'Książka "Walka Czarodziejów".',
+    "Zakrzywiony rytualny nóż (k4).",
+    "Kolczuga, tułów ciągle w niej jest.",
+    "Psia obroża z łańcuchem.",
+    "Woreczek z solą.",
+    "Okopcony srebrny pierścień.",
+    "Proporzec z zatopionego statku.",
+    "Zdarta ludzka skóra.",
+    "Koc, z pchłami.",
+    "Zniszczony skórzany pancerz.",
+    "k4 złotych zębów wartych 10s sztuka.",
+    "Kilof (k4).",
+    "Obroża z amuletem w kształcie pentagramu.",
+    "Zakrwawione wiertło.",
+    "Modlitewnik z psalmami.",
+    "Maska z ptasim dziobem.",
+    "Węglowy szkic przedstawiający demona.",
+    "Pół martwego psa.",
+    "Ładna opaska na oko.",
+    "Młotek i kilka gwoździ.",
+    "Kula i łańcuch (i stopa).",
+    "Ostry pogrzebacz (k4+1)",
+    "Para ciepłych skarpet (namoknięte).",
+    "Pudełko czarnych piór.",
+    "Uszkodzone futro z wilka.",
+    "Zgniłe mieso (na k2 dni)",
+    "Małe pudełko z białą szklaną kulką.",
+    "Kufel z igłą.",
+    "Drewniane zęby.",
+    "Szczęśliwy amulet.",
+    "k6 pustych zwojów.",
+    "Latarnia z daszkiem.",
+    "Para drewnianych kajdanek.",
+    "Słoik z 3 uciętymi kciukami.",
+    "Zwinięte kula ludzkich włosów.",
+    "Łopata (k4).",
+    "Zgniatacz kciuków.",
+    "Bardzo mała podkowa.",
+    "Naszyjnik ze szczurzych zębów.",
+    "Połowa mapy skarbów.",
+    "Butelka czerwonej trucizny.",
+    "Mały drewniany konik.",
+    "Ciężkie żelazne obcęgi.",
+    "Czarny worek z kocim sercem.",
+    "Spory kawałek węgla.",
+    "Dwie ucięte dłonie.",
+    "Dziecięcych rozmiarów żelazna dziewica.",
   ],
 };
 
 const wizardNames = {
+  //czarodzieje magowie leki nazwy leków
   type: "picker",
   list: [
     "Venalex",
@@ -704,6 +885,15 @@ const wizardNames = {
     "Gynalgin",
     "Acodin",
     "Borasol",
+    "Clatra",
+    "Clotrimazol",
+    "Pimafucort",
+    "Klacid",
+    "Triderm",
+    "Protopic",
+    "Fucidin",
+    "Herpex",
+    "Chrypex",
   ],
 };
 
@@ -723,15 +913,13 @@ function randomizeFromArray(array) {
 function displayArray(ar, parent) {
   for (j = 0; j < ar.length; j++) {
     let line = document.createElement("p");
-    line.innerText = ar[j];
+    line.innerText = `${j + 1}. ${ar[j]}`;
     parent.appendChild(line);
   }
 }
 
 generateButton.addEventListener("click", () => {
   let result = [];
-  console.log(category);
-  console.log(eval(category));
   let pickedCategory = eval(category);
   removeAllChildren(nameDisplay);
   for (let i = 0; i < numberGenerated; i++) {
