@@ -447,10 +447,19 @@ const MBTowns = {
     "Sigfúm",
     "Anthelia",
     "Fathmu",
-    "Aldon"
+    "Aldon",
+    "Seth",
+    "Bent",
+    "Wrat",
+    "Belze",
+    "Nodh",
+    "Thinx",
+    "Aland"
   ],
   suffix: [
+    "", //only prefix, short one syllable name
     "ans",
+    "nes",
     "beck",
     "wig",
     "güs",
@@ -535,7 +544,7 @@ const MBTowns = {
     "um",
     "glo",
     "blod",
-    "blud"
+    "blud",
   ],
 };
 
@@ -557,7 +566,7 @@ const MBWeather = {
   ],
 };
 
-const MBCorpseLoot = {
+const MBCorpseLoot = {//przeszukiwanie zwłok, rabowanie zwłok
   type: "picker",
   list: [
     "k4 w srebrze",
@@ -636,27 +645,27 @@ const MBCorpseLoot = {
     "Teleskopowa luneta",
     "Kawałek suszonej ludzkiej skóry z wytatuowanym tekstem (przeklęty zwój)",
     "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
-    'Kilka zgniłych jabłek.',
-'Czaszki.',
-'Dwie zakrwawione pochodnie.',
-'Grzebień z pojedyńczym siwym włosem.',
-'Flet (smakuje okropnie).',
-'Mała buteleczka wypełniona krwią.',
-'Ćwiekowany skórzany naramiennik.',
-'Połamana porcelanowa lalka.',
-'Kawałek spleśniałego chleba.',
-'Martwy czarny kot.',
-'Wędka z zardzewiałym haczykiem.',
-'Długi stryczek',
-'Czerwony kaptur i maska.',
-'Mały drewniany kuferek (pusty)',
-'k8 kolorowych szklanych kulek.',
-'Rakieta śnieżna (zamieszkana przez pająka).',
-'Olejny obraz zakapturzonego szkieleta.',
-'Wachlarz w kształcie niedźwiedziego szponu.',
-'Kunsztowna jedwabna rękawiczka',
-'Suszone mięso nietoperza.'
-
+    "Kilka zgniłych jabłek.",
+    "Czaszki.",
+    "Dwie zakrwawione pochodnie.",
+    "Grzebień z pojedyńczym siwym włosem.",
+    "Flet (smakuje okropnie).",
+    "Mała buteleczka wypełniona krwią.",
+    "Ćwiekowany skórzany naramiennik.",
+    "Połamana porcelanowa lalka.",
+    "Kawałek spleśniałego chleba.",
+    "Martwy czarny kot.",
+    "Wędka z zardzewiałym haczykiem.",
+    "Długi stryczek",
+    "Czerwony kaptur i maska.",
+    "Mały drewniany kuferek (pusty)",
+    "k8 kolorowych szklanych kulek.",
+    "Rakieta śnieżna (zamieszkana przez pająka).",
+    "Olejny obraz zakapturzonego szkieleta.",
+    "Wachlarz w kształcie niedźwiedziego szponu.",
+    "Kunsztowna jedwabna rękawiczka",
+    "Suszone mięso nietoperza.",
+    "Puzderko z czaszkami wróżek, zmielone i wciągnięte pozwalają unosić się i opadać powoli przez k4 minuty"
   ],
 };
 
@@ -694,10 +703,9 @@ const wizardNames = {
     "Codeina",
     "Gynalgin",
     "Acodin",
-    "Borasol"
-  ]
-
-}
+    "Borasol",
+  ],
+};
 
 function removeAllChildren(element) {
   let counter = element.children.length;
