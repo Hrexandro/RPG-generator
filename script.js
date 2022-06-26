@@ -548,6 +548,173 @@ const MBTowns = {
   ],
 };
 
+const VOTENobleNames = {
+  //VOTE Veins of the Earth Noble Names
+  type: "firstMiddleLastNameTripleMixer",
+  prefix: [
+    "Sötsbarkgrotten",
+    "Vatnajökull",
+    "Veshtoroc",
+    "Bodagrottorna",
+    "Chichicasapan",
+    "Dongryong-gul",
+    "Golondrinas",
+    "Kanchanaburi",
+    "Karangbolong",
+    "Kolkbläser",
+    "Konepruske",
+    "Pollaraftra",
+    "Pollnagollum",
+    "Rushmangat",
+    "Soldatskaya",
+    "Thabazimbi",
+    "Soifjorden",
+    "Chandang-gul",
+    "Caroajoapan",
+    "Majilis",
+    "Abisimo",
+    "Balangangan",
+    "Foglepole",
+    "Niigata",
+    "Resumidero",
+    "Santoanos",
+    "Sima",
+    "Sumidero",
+    "Torca",
+    "Tunel",
+    "Uanh",
+    "Gorgoroth",
+    "Gragareth",
+    "Isgrotten",
+    "Jashchick",
+    "Nidlenloch",
+    "Pinargozu",
+    "Pollnacrom",
+    "Zolushika",
+    "Zsamboly",
+    "Yolhafiri",
+    "Gharkniz",
+    "Skocjanske",
+    "Guptesway",
+    "Höolloch",
+    "Düdenuik",
+    "Ferenec",
+    "Alexander",
+    "Aggtelek",
+    "Maxwelton",
+    "Grotter",//
+    "Darius",//
+    "Marius"//
+  ],
+  middle: [
+    "Don",
+    "Doom",
+    "Et",
+    "Von",
+    "Te",
+    "Vin-Der",
+    "Of",
+    "Des",
+    "Bone",
+    "Da",
+    "Mock",
+    "Echt",
+    "Yr",
+    "Bok",
+    "El",
+    "De",
+    "Spel",
+    "Cut",
+    "Des",
+    "By",
+    "Org",
+    "Le",
+    "Al",
+    "Ken",
+    "Th'",
+    "Art",
+    "Fault",
+    "Is",
+    "Hect",
+    "Ig",
+    "Cry",
+    "Vry",
+    "Pseu",
+    "Ten",
+    "Eon",
+    "Op",
+    "Hy",
+    "Grot",
+    "Com",
+    "Ot",
+    "Gen",
+    "Cut",
+    "An",
+    "Der-Von",
+    "Done",
+    "Drone",
+    "Myco",
+    "Vero",
+    "Psy",
+    "Gul",
+    "Hurt",
+  ],
+  suffix: [
+    "Juvenal",
+    "Kaua",
+    "Tseb",
+    "Humbolt",
+    "Pahu",
+    "Linth",
+    "Laraboro",
+    "Tenebres",
+    "Norman",
+    "Diamante",
+    "Huagpo",
+    "Uchkupisjo",
+    "Ogof",
+    "Pipe",
+    "Goranan",
+    "Juxtlahuaca",
+    "Precipico",
+    "Aire",
+    "Pins",
+    "Frosen",
+    "Nita",
+    "Pot",
+    "Jinn",
+    "Karst",
+    "Toxin",
+    "Nogal",
+    "Milpo",
+    "Atikpak",
+    "Jornas",
+    "Sumidors",
+    "Claonite",
+    "Kananda",
+    "Discoschacht",
+    "Monsterhöle",
+    "Urrielto",
+    "Ahuihuitzrapa",
+    "Ambatoharanana",
+    "Kulogorskaya",
+    "Mangawhitikau",
+    "Antsatrabonko",
+    "Schwyzerschacht",
+    "Siebenhengste",
+    "Rouagrottorna",
+    "Angurtidorgius",
+    "Jordbrungrotten",
+    "Kappasjokkgrotten",
+    "Huehuentenango",
+    "Kel'Ketchkhen",
+    "Simmons-Mingo-Mg",
+    "Kamenitim",
+    "Harrington",//
+    "Julianes"
+  ],
+};
+
 const MBWeather = {
   type: "picker",
   list: [
@@ -562,7 +729,7 @@ const MBWeather = {
     "Trzaskający mróz",
     "Irytująca mżawka",
     "Warczące grzmoty",
-    "Grobowe zimno"
+    "Grobowe zimno",
   ],
 };
 
@@ -590,14 +757,14 @@ const MBTerribleTraits = {
     "Zdradliwy",
     "Marnotrawny",
     "Arogancki",
-    "Obżartus",//
-    "Chciwy",//
-    "Erotoman",//
-    "Wymądrzający się",//
-    "Paranoik",//
+    "Obżartus", //
+    "Chciwy", //
+    //"Erotoman", //nope
+    "Wymądrzający się", //
+    "Paranoik", //
     "Sarkastyczny",
     "Złośliwy",
-    "Naiwny, uwierzy nawet w najmniej wiarygodne kłamstwo"
+    "Naiwny, uwierzy nawet w najmniej wiarygodne kłamstwo",
   ],
 };
 
@@ -625,12 +792,11 @@ const MBBrokenBodies = {
     "Przewlekła grzybica stóp. Śmierdzi.",
     "Niedawno rozcięte i śmierdzące oko zakryte opaską",
     "Popękane czarne paznokcie, mogą w każdej chwili odpaść",
-    "Zezowate spojrzenie",//
-    "Obcięty koniec języka, sepleni gdy mówi",//
-    "W chwilach dużego stresu, puszcza gazy",//
-    "Karzeł",//
-    "Ciągle jest mu gorąco, na co wiecznie narzeka"//
-    
+    "Zezowate spojrzenie", //
+    "Obcięty koniec języka, sepleni gdy mówi", //
+    "W chwilach dużego stresu, puszcza gazy", //
+    "Karzeł", //
+    "Ciągle jest mu gorąco, na co wiecznie narzeka", //
   ],
 };
 
@@ -651,19 +817,19 @@ const MBBadHabits = {
     "Notoryczny zjadacz robali",
     "Na stres reaguje okazywaniem estetyki. Im gorzej sprawy się mają, tym szykowniej musi wyglądać.",
     "Stale zalegająca w gardle flegma. Nieustannie kaszle, smarka, spluwa i przełyka.",
-    "Nałogowo kłamie, ciężko mu zdobyć zaufanie innych",//
-    "Zbieractwo - zbiera i targa ze sobą pełno niepotrzebnych przedmiotów",//
-    "Ma tendencję do katatonicznego wpatrywania się w jeden punkt przez kilka minut",//
-    "Skłonność do egzaltacji i przesadzonej gestykulacji",//
-    "Gada do siebie w najmniej odpowiednich momentach i głośno pomstuje na wszelkie niedogodności",//
-    "Czuje przymus pomodlenia się za dusze zabitych wrogów przez 1k6x10 minut",//
+    "Nałogowo kłamie, ciężko mu zdobyć zaufanie innych", //
+    "Zbieractwo - zbiera i targa ze sobą pełno niepotrzebnych przedmiotów", //
+    "Ma tendencję do katatonicznego wpatrywania się w jeden punkt przez kilka minut", //
+    "Skłonność do egzaltacji i przesadzonej gestykulacji", //
+    "Gada do siebie w najmniej odpowiednich momentach i głośno pomstuje na wszelkie niedogodności", //
+    "Czuje przymus pomodlenia się za dusze zabitych wrogów przez 1k6x10 minut", //
     "Piroman",
     "Stale gubi ważne przedmioty i zapomina ważne fakty",
     "Plotkarz, obgaduje każdego, którego akurat nie ma w pobliżu",
     "Jąka się, gdy kłamie",
     "Chichocze szaleńczo w najgorszych momentach",
     "Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5,7,9,11 lub 13 wyrzuconym na k20",
-    "Robi biżuterię z ludzkich zębów"
+    "Robi biżuterię z ludzkich zębów",
   ],
 };
 
@@ -833,7 +999,7 @@ const MBCorpseLoot = {
     "Latarnia z daszkiem.",
     "Para drewnianych kajdanek.",
     "Słoik z 3 uciętymi kciukami.",
-    "Zwinięte kula ludzkich włosów.",
+    "Zwinięta kula ludzkich włosów.",
     "Łopata (k4).",
     "Zgniatacz kciuków.",
     "Bardzo mała podkowa.",
@@ -894,6 +1060,7 @@ const wizardNames = {
     "Fucidin",
     "Herpex",
     "Chrypex",
+    "Vesicare",
   ],
 };
 
@@ -923,13 +1090,19 @@ generateButton.addEventListener("click", () => {
   let pickedCategory = eval(category);
   removeAllChildren(nameDisplay);
   for (let i = 0; i < numberGenerated; i++) {
-    if (pickedCategory.type === "mixer")
+    if (pickedCategory.type === "mixer") {
       result.push(
         randomizeFromArray(pickedCategory.prefix) +
           randomizeFromArray(pickedCategory.suffix)
       );
-    else if (pickedCategory.type === "picker") {
+    } else if (pickedCategory.type === "picker") {
       result.push(randomizeFromArray(pickedCategory.list));
+    } else if (pickedCategory.type === "firstMiddleLastNameTripleMixer") {
+      result.push(
+        `${randomizeFromArray(pickedCategory.prefix)} ${randomizeFromArray(
+          pickedCategory.middle
+        )} ${randomizeFromArray(pickedCategory.suffix)}`
+      );
     }
   }
   displayArray(result, nameDisplay);
