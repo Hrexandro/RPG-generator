@@ -604,7 +604,8 @@ const VOTENobleNames = {
     "Maxwelton",
     "Grotter",//
     "Darius",//
-    "Marius"//
+    "Marius",//
+    "Malevanor"//
   ],
   middle: [
     "Don",
@@ -1083,6 +1084,10 @@ function displayArray(ar, parent) {
     line.innerText = `${j + 1}. ${ar[j]}`;
     parent.appendChild(line);
   }
+}
+
+function k(sides){//roll dice
+  return Math.floor(Math.random() * sides)+1;
 }
 
 generateButton.addEventListener("click", () => {
