@@ -3,7 +3,7 @@
 // bad habits
 // broken bodies
 // terrible traits
-// random encounters/ varied by regions
+// random encounters/ varied by regions - add some monsters to default, add defaults to nondefault as well
 
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
@@ -732,6 +732,8 @@ const VOTENobleNames = {
     "Kamenitim",
     "Harrington", //
     "Julianes",
+    "Hohenheim",
+    "Droktenbrot"
   ],
 };
 
@@ -790,6 +792,7 @@ const MBRandomEncounters = function () {
   return {
     type: "pickerRoller",
     list: [
+      //Overland Travel
       "Nie dzieje się nic konkretnego, świat jest szary/.",
       "Pogorszenie pogody.",
       "Zmiana pogody.",
@@ -804,6 +807,9 @@ const MBRandomEncounters = function () {
       `${k(6) + 1} łowców niewolników prowadzi ${k(11) + 1} niewolników, połowa pobita niemal na śmierć, połowa świeżo złapanych.`,
       `Grupa najemników i ich ${k(6)} strażników (wszyscy zainfekowani pasożytem mózgu).`,
       `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(8)} zombie ukrywa się w krypcie.`,
+      "Pochód pogrzebowy bezzębnych wieśniaków niosących bardzo wielką trumnę (olbrzym wewnątrz jest martwy, lecz śniący).",
+      `Dwoje zwłok u boku drogi, w kieszeni jednego z nich znajduje się: ${pickFromList(MBCorpseLoot)}`
+
     ],
   };
 };
@@ -852,11 +858,11 @@ const MBTerribleTraits = {
     "Zdradliwy",
     "Marnotrawny",
     "Arogancki",
-    "Obżartus", //
-    "Chciwy", //
+    "Obżartus", //ok
+    "Chciwy", //ok
     //"Erotoman", //nope
-    "Wymądrzający się", //
-    "Paranoik", //
+    "Wymądrzający się", //ok
+    "Paranoik", //ok
     "Sarkastyczny",
     "Złośliwy",
     "Naiwny, uwierzy nawet w najmniej wiarygodne kłamstwo",
@@ -885,13 +891,15 @@ const MBBrokenBodies = {
     "Czerwony, spuchnięty nos alkoholika",
     "Neutralny wyraz twarzy ma maniakalny, ciężko zdobyć przyjaciół",
     "Przewlekła grzybica stóp. Śmierdzi.",
-    "Niedawno rozcięte i śmierdzące oko zakryte opaską",
+    "Niedawno rozcięte i śmierdzące, ropiejące oko zakryte opaską",
     "Popękane czarne paznokcie, mogą w każdej chwili odpaść",
-    "Zezowate spojrzenie", //
-    "Obcięty koniec języka, sepleni gdy mówi", //
-    "W chwilach dużego stresu, puszcza gazy", //
-    "Karzeł", //
-    "Ciągle jest mu gorąco, na co wiecznie narzeka", //
+    "Zezowate spojrzenie", //ok
+    "Obcięty koniec języka, sepleni gdy mówi", //ok
+    "W chwilach dużego stresu, puszcza gazy", //ok
+    "Karzeł", //ok
+    "Ciągle jest mu gorąco, na co wiecznie narzeka", //ok
+    "Ciągle jest mu zimno, na co wiecznie narzeka", //ok
+    "Wysoki jak drzewo, ale chudy jak szczapa"//ok
   ],
 };
 
@@ -912,12 +920,12 @@ const MBBadHabits = {
     "Notoryczny zjadacz robali",
     "Na stres reaguje okazywaniem estetyki. Im gorzej sprawy się mają, tym szykowniej musi wyglądać.",
     "Stale zalegająca w gardle flegma. Nieustannie kaszle, smarka, spluwa i przełyka.",
-    "Nałogowo kłamie, ciężko mu zdobyć zaufanie innych", //
-    "Zbieractwo - zbiera i targa ze sobą pełno niepotrzebnych przedmiotów", //
-    "Ma tendencję do katatonicznego wpatrywania się w jeden punkt przez kilka minut", //
-    "Skłonność do egzaltacji i przesadzonej gestykulacji", //
-    "Gada do siebie w najmniej odpowiednich momentach i głośno pomstuje na wszelkie niedogodności", //
-    "Czuje przymus pomodlenia się za dusze zabitych wrogów przez 1k6x10 minut", //
+    "Nałogowo kłamie, ciężko mu zdobyć zaufanie innych", //ok
+    "Zbieractwo - zbiera i targa ze sobą pełno niepotrzebnych przedmiotów", //ok
+    "Ma tendencję do katatonicznego wpatrywania się w jeden punkt przez kilka minut", //ok
+    "Skłonność do egzaltacji i przesadzonej gestykulacji", //ok
+    "Gada do siebie w najmniej odpowiednich momentach i głośno pomstuje na wszelkie niedogodności", //ok
+    "Czuje przymus pomodlenia się za duszę każdego z zabitych wrogów", //ok
     "Piroman",
     "Stale gubi ważne przedmioty i zapomina ważne fakty",
     "Plotkarz, obgaduje każdego, którego akurat nie ma w pobliżu",
@@ -925,36 +933,15 @@ const MBBadHabits = {
     "Chichocze szaleńczo w najgorszych momentach",
     "Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5,7,9,11 lub 13 wyrzuconym na k20",
     "Robi biżuterię z ludzkich zębów",
+    "Przywłaszcza sobie wszelkie zasługi"//ok
   ],
 };
-
-// const MBRandomEncounters = function () {
-//   return {
-//     type: "pickerRoller",
-//     list: [
-//       "Nie dzieje się nic konkretnego, świat jest szary/.",
-//       "Pogorszenie pogody.",
-//       "Zmiana pogody.",
-//       "Droga się rozwidla, znaki są nieczytelne (przerzut).",
-//       "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
-//       "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
-//       "Religijna procesja biczowników i pustelników (Zmierzają do NIEGO, ale zgubili drogę).",
-//       "Brudni rolnicy w drodze na targ.",
-//       "Po drugiej stronie drogi trwa walka pomiędzy bandą obdartych ze skóry kultystów a watahą kundlaków.",
-//       "Troll Adnah atakuje z zaskoczenia.",
-//       `${k(6)} racji żywności/wody się psuje.`,
-//       `${k(6) + 1} łowców niewolników prowadzi ${k(11) + 1} niewolników, połowa pobita niemal na śmierć, połowa świeżo złapanych.`,
-//       `Grupa najemników i ich ${k(6)} strażników (wszyscy zainfekowani pasożytem mózgu).`,
-//       `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(8)} zombie ukrywa się w krypcie.`,
-//     ],
-//   };
-// };
 
 const MBCorpseLoot = function () {  //przeszukiwanie zwłok, rabowanie zwłok
   return {
     type: "pickerRoller",
     list: [
-      `${k(4)} szt. srebra`,
+      `${k(4, true)} szt. srebra`,
       `${k(6)} szt. srebra`,
       `${k(8)} szt. srebra`,
       `${k(10)} szt. srebra`,
@@ -969,166 +956,165 @@ const MBCorpseLoot = function () {  //przeszukiwanie zwłok, rabowanie zwłok
       `${k(66)} szt. srebra`,
       `${k(66)} szt. srebra`,
       `${k(100)} szt. srebra`,
-      //"k20 (eksplodujące) w srebrze",
-
-      // "Garnuszek z niesamowicie skuteczną maścią wywołującą swędzenie",
-      // "Naszyjnik z ludzkich zębów",
-      // "Worek wściekłych, jadowitych ciem, DR6 na Twardość albo śmierć",
-      // "Kieszeń pełna popękanego szkła, k2 obrażeń",
-      // "Szalony manifest, jeśli go przeczytasz, rzuć DR12 na Prezencję, w przypadku porażki jesteś tak zmieszany, że tracisz na stałe 1 pkt prezencji",
-      // "Klucz do pobliskich drzwi, kradziony",
-      // "Mapa domu zamożnej, choć słabej rodziny",
-      // "Zadziwiająca ilość pająków (martwych)",
-      // "Zadziwiająca ilość pająków (żywych)",
-      // "Zadziwiająca ilość szczurów (martwych)",
-      // "Zadziwiająca ilość szczurów (żywych)",
-      // "Metalowy cylinder wypełnionych prochem, z lontem. 1-2 tracisz rękę, 3-6 zadaje 3k10 obrażeń tam, gdzie wyląduje.",
-      // "Twarz znanego i znienawidzonego łowcy czarownic",
-      // "Twarz znanego i lubianego łowcy czarownic",
-      // "Kartka z listą imion Bohaterów Graczy, jedno z imion jest skreślone",
-      // "Umęczona wróżka z urwanymi skrzydełkami i wyłupionymi oczami",
-      // "Mapa do miejsca, które nie ma prawa istnieć",
-      // "Nieoznakowana butelka z cieczą, która mieni się raz czerwono, raz na zielono",
-      // "Papier dłużny, lokalny potentat jest winny posiadaczowi znaczną sumę pieniędzy.",
-      // '"Woda życia", leczy k8, test twardości DR10 albo ślepniesz. Wysoce alkoholowa.',
-      // "Maska pośmiertna jednego z BG",
-      // "Z tym coś było ewidentnie nie tak. Ręce ma pokryte czymś ciepławym, brązowym i mocno kwasowym. K2+1 obrażeń i okropnie śmierdzisz przez k4 dni.",
-      // "Czarny sztylet z Kergus, 2k4 obrażeń",
-      // "Podpisana buteleczka z trucizną, test DR12 na twardość, albo losowy atrybut spada o k4.",
-      // "Skalp z długimi czarnymi włosami",
-      // "Złota kula z niewidzialnym łączeniem, otwierana wykręcaniem",
-      // "Zakrwawiony kastet",
-      // "Dwie obciążone kości.",
-      // "Puchar z czaszki jakiegoś nieszczęśnika",
-      // "Wisiorek z ususzonej krowiej głowy wiszącej do góry nogami na rzemyku",
-      // "Zestaw kart tarota, dwóch brakuje.",
-      // "Woreczek z bladozielonymi ziołami (herbata, daje sen bez marzeń, ale redukuje prezencję o 1 następnego dnia 2k6 porcji)",
-      // "Żelazna obroża.",
-      // "Zakorkowana flaszka z bardzo silnym alkoholem",
-      // "Osełka",
-      // "Drewniana łyżka",
-      // "Medalion z lokiem rudych włosów.",
-      // "List gończy, poszukiwany winny rabunku i kradzieży, 50s żywy, 10s martwy",
-      // "Pierścionek z fałszywym klejnotem, skrywającym dawkę czarnej trucizny.",
-      // "Szmaciana lalka",
-      // "Puzderko z uschniętym, gnijącym palcem od stopy należącym do zwłok, ma wczesne stadium trądu.",
-      // "Słoik z usychającą ropuchą, niewypuszczona zginie w ciągu k4 dni",
-      // "Gwizdek",
-      // "Suszony penis trolla",
-      // "Małe lusterko",
-      // "Łuska wielkości dłoni",
-      // "Złoty ząb (ma go w ustach)",
-      // "Srebrny medalion z wizerunkiem bazyliszka",
-      // "Mała szklana fiolka z laudanum",
-      // "Zasuszone serce",
-      // "Mała figurka anioła, ułamane skrzydło",
-      // "Złota moneta z wybitą na niej czaszką",
-      // "Brzytwa",
-      // "Fiolka Elixiru Vitalis, jedna dawka",
-      // "Malutki klejnot, schowany w bucie, wart 10+2k6 s",
-      // "Naszyjnik ze srebrnym krzyżykiem",
-      // "Teleskopowa luneta",
-      // "Kawałek suszonej ludzkiej skóry z wytatuowanym tekstem (przeklęty zwój)",
-      // "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
-      // "Kilka zgniłych jabłek.",
-      // "Czaszki.",
-      // "Dwie zakrwawione pochodnie.",
-      // "Grzebień z pojedyńczym siwym włosem.",
-      // "Flet (smakuje okropnie).",
-      // "Mała buteleczka wypełniona krwią.",
-      // "Ćwiekowany skórzany naramiennik.",
-      // "Połamana porcelanowa lalka.",
-      // "Kawałek spleśniałego chleba.",
-      // "Martwy czarny kot.",
-      // "Wędka z zardzewiałym haczykiem.",
-      // "Długi stryczek",
-      // "Czerwony kaptur i maska.",
-      // "Mały drewniany kuferek (pusty)",
-      // "k8 kolorowych szklanych kulek.",
-      // "Rakieta śnieżna (zamieszkana przez pająka).",
-      // "Olejny obraz zakapturzonego szkieleta.",
-      // "Wachlarz w kształcie niedźwiedziego szponu.",
-      // "Kunsztowna jedwabna rękawiczka",
-      // "Suszone mięso nietoperza.",
-      // "Puzderko z czaszkami wróżek, zmielone i wciągnięte pozwalają unosić się i opadać powoli przez k4 minuty",
-      // "Miedziany kolczyk w nosie.",
-      // "Dwoje oczu w słoiku.",
-      // "k6 kości (kościanych).",
-      // "k4 wielkich kłów.",
-      // "Wiadro latrynowe.",
-      // "Pęknięta harfa.",
-      // "Rogaty hełm.",
-      // "Utytłana gównem chochla.",
-      // "Smutna kura w klatce.",
-      // "Strzała, która utknęła w tarczy.",
-      // "Garść ludzkich zębów.",
-      // "Świeżo naostrzona kosa.",
-      // "Pusta buteleczka na perfumy.",
-      // "Pęczek kluczy bez zamku.",
-      // "Skórzana ćwiekowana kamizelka.",
-      // "Sakiewka z k10 srebra.",
-      // "Zużyty pasek.",
-      // "Worek martwych szczurów.",
-      // "Ozłacana czaszka warta k20+10 srebra.",
-      // "But (nie pasuje).",
-      // "k10 strzał.",
-      // 'Książka "Królowa Nocy".',
-      // "Wypchana sroka.",
-      // "Rzeźnicki nóż (k4)",
-      // "k20 srebra.",
-      // "Słoik z fermentowanymi rybami.",
-      // "Pułapka na myszy (1 punkt obrażeń).",
-      // "Czarno-biała farba do twarzy.",
-      // "Lniany wór z częściami ciała.",
-      // "Pęknięte lusterko.",
-      // "Długi żelazny łańcuch.",
-      // 'Książka "Walka Czarodziejów".',
-      // "Zakrzywiony rytualny nóż (k4).",
-      // "Kolczuga, tułów ciągle w niej jest.",
-      // "Psia obroża z łańcuchem.",
-      // "Woreczek z solą.",
-      // "Okopcony srebrny pierścień.",
-      // "Proporzec z zatopionego statku.",
-      // "Zdarta ludzka skóra.",
-      // "Koc, z pchłami.",
-      // "Zniszczony skórzany pancerz.",
-      // "k4 złotych zębów wartych 10s sztuka.",
-      // "Kilof (k4).",
-      // "Obroża z amuletem w kształcie pentagramu.",
-      // "Zakrwawione wiertło.",
-      // "Modlitewnik z psalmami.",
-      // "Maska z ptasim dziobem.",
-      // "Węglowy szkic przedstawiający demona.",
-      // "Pół martwego psa.",
-      // "Ładna opaska na oko.",
-      // "Młotek i kilka gwoździ.",
-      // "Kula i łańcuch (i stopa).",
-      // "Ostry pogrzebacz (k4+1)",
-      // "Para ciepłych skarpet (namoknięte).",
-      // "Pudełko czarnych piór.",
-      // "Uszkodzone futro z wilka.",
-      // "Zgniłe mieso (na k2 dni)",
-      // "Małe pudełko z białą szklaną kulką.",
-      // "Kufel z igłą.",
-      // "Drewniane zęby.",
-      // "Szczęśliwy amulet.",
-      // "k6 pustych zwojów.",
-      // "Latarnia z daszkiem.",
-      // "Para drewnianych kajdanek.",
-      // "Słoik z 3 uciętymi kciukami.",
-      // "Zwinięta kula ludzkich włosów.",
-      // "Łopata (k4).",
-      // "Zgniatacz kciuków.",
-      // "Bardzo mała podkowa.",
-      // "Naszyjnik ze szczurzych zębów.",
-      // "Połowa mapy skarbów.",
-      // "Butelka czerwonej trucizny.",
-      // "Mały drewniany konik.",
-      // "Ciężkie żelazne obcęgi.",
-      // "Czarny worek z kocim sercem.",
-      // "Spory kawałek węgla.",
-      // "Dwie ucięte dłonie.",
-      // "Dziecięcych rozmiarów żelazna dziewica."
+      `${k(20, true)} szt. srebra`,
+      "Garnuszek z niesamowicie skuteczną maścią wywołującą swędzenie",
+      "Naszyjnik z ludzkich zębów",
+      "Worek wściekłych, jadowitych ciem, DR6 na Twardość albo śmierć",
+      `Kieszeń pełna popękanego szkła, ${k(2)} obrażeń`,
+      "Szalony manifest, jeśli go przeczytasz, rzuć DR12 na Prezencję, w przypadku porażki jesteś tak zmieszany, że tracisz na stałe 1 pkt prezencji",
+      "Klucz do pobliskich drzwi, kradziony",
+      "Mapa domu zamożnej, choć słabej rodziny",
+      "Zadziwiająca ilość pająków (martwych)",
+      "Zadziwiająca ilość pająków (żywych)",
+      "Zadziwiająca ilość szczurów (martwych)",
+      "Zadziwiająca ilość szczurów (żywych)",
+      "Metalowy cylinder wypełnionych prochem, z lontem. 1-2 tracisz rękę, 3-6 zadaje 3k10 obrażeń tam, gdzie wyląduje.",
+      "Twarz znanego i znienawidzonego łowcy czarownic",
+      "Twarz znanego i lubianego łowcy czarownic",
+      "Kartka z listą imion Bohaterów Graczy, jedno z imion jest skreślone",
+      "Umęczona wróżka z urwanymi skrzydełkami i wyłupionymi oczami",
+      "Mapa do miejsca, które nie ma prawa istnieć",
+      "Nieoznakowana butelka z cieczą, która mieni się raz czerwono, raz na zielono",
+      "Papier dłużny, lokalny potentat jest winny posiadaczowi znaczną sumę pieniędzy.",
+      '"Woda życia", leczy k8, test twardości DR10 albo ślepniesz. Wysoce alkoholowa.',
+      "Maska pośmiertna jednego z BG",
+      `Z tym coś było ewidentnie nie tak. Ręce ma pokryte czymś ciepławym, brązowym i mocno kwasowym. ${k(2)+1} obrażeń i okropnie śmierdzisz przez ${k(4)} dni.`,
+      "Czarny sztylet z Kergus, 2k4 obrażeń",
+      "Podpisana buteleczka z trucizną, test DR12 na twardość, albo losowy atrybut spada o k4.",
+      "Skalp z długimi czarnymi włosami",
+      "Złota kula z niewidzialnym łączeniem, otwierana wykręcaniem",
+      "Zakrwawiony kastet",
+      "Dwie obciążone kości.",
+      "Puchar z czaszki jakiegoś nieszczęśnika",
+      "Wisiorek z ususzonej krowiej głowy wiszącej do góry nogami na rzemyku",
+      "Zestaw kart tarota, dwóch brakuje.",
+      `Woreczek z bladozielonymi ziołami (herbata, daje sen bez marzeń, ale redukuje prezencję o 1 następnego dnia ${k(6)+k(6)} porcji)`,
+      "Żelazna obroża.",
+      "Zakorkowana flaszka z bardzo silnym alkoholem",
+      "Osełka",
+      "Drewniana łyżka",
+      "Medalion z lokiem rudych włosów.",
+      "List gończy, poszukiwany winny rabunku i kradzieży, 50s żywy, 10s martwy",
+      "Pierścionek z fałszywym klejnotem, skrywającym dawkę czarnej trucizny.",
+      "Szmaciana lalka",
+      "Puzderko z uschniętym, gnijącym palcem od stopy należącym do zwłok, ma wczesne stadium trądu.",
+      `Słoik z usychającą ropuchą, niewypuszczona zginie w ciągu ${k(4)} dni`,
+      "Gwizdek",
+      "Suszony penis trolla",
+      "Małe lusterko",
+      "Łuska wielkości dłoni",
+      "Złoty ząb (ma go w ustach)",
+      "Srebrny medalion z wizerunkiem bazyliszka",
+      "Mała szklana fiolka z laudanum",
+      "Zasuszone serce",
+      "Mała figurka anioła, ułamane skrzydło",
+      "Złota moneta z wybitą na niej czaszką",
+      "Brzytwa",
+      "Fiolka Elixiru Vitalis, jedna dawka",
+      "Malutki klejnot, schowany w bucie, wart 10+2k6 s",
+      "Naszyjnik ze srebrnym krzyżykiem",
+      "Teleskopowa luneta",
+      "Kawałek suszonej ludzkiej skóry z wytatuowanym tekstem (przeklęty zwój)",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Kilka zgniłych jabłek.",
+      "Czaszki.",
+      "Dwie zakrwawione pochodnie.",
+      "Grzebień z pojedyńczym siwym włosem.",
+      "Flet (smakuje okropnie).",
+      "Mała buteleczka wypełniona krwią.",
+      "Ćwiekowany skórzany naramiennik.",
+      "Połamana porcelanowa lalka.",
+      "Kawałek spleśniałego chleba.",
+      "Martwy czarny kot.",
+      "Wędka z zardzewiałym haczykiem.",
+      "Długi stryczek",
+      "Czerwony kaptur i maska.",
+      "Mały drewniany kuferek (pusty)",
+      "k8 kolorowych szklanych kulek.",
+      "Rakieta śnieżna (zamieszkana przez pająka).",
+      "Olejny obraz zakapturzonego szkieleta.",
+      "Wachlarz w kształcie niedźwiedziego szponu.",
+      "Kunsztowna jedwabna rękawiczka",
+      "Suszone mięso nietoperza.",
+      "Puzderko z czaszkami wróżek, zmielone i wciągnięte pozwalają unosić się i opadać powoli przez k4 minuty",
+      "Miedziany kolczyk w nosie.",
+      "Dwoje oczu w słoiku.",
+      "k6 kości (kościanych).",
+      "k4 wielkich kłów.",
+      "Wiadro latrynowe.",
+      "Pęknięta harfa.",
+      "Rogaty hełm.",
+      "Utytłana gównem chochla.",
+      "Smutna kura w klatce.",
+      "Strzała, która utknęła w tarczy.",
+      "Garść ludzkich zębów.",
+      "Świeżo naostrzona kosa.",
+      "Pusta buteleczka na perfumy.",
+      "Pęczek kluczy bez zamku.",
+      "Skórzana ćwiekowana kamizelka.",
+      `Sakiewka z ${k(10)} srebra.`,
+      "Zużyty pasek.",
+      "Worek martwych szczurów.",
+      `Ozłacana czaszka warta ${k(20)+10} srebra.`,
+      "But (nie pasuje).",
+      `${k(10)} strzał.`,
+      'Książka "Królowa Nocy".',
+      "Wypchana sroka.",
+      "Rzeźnicki nóż (k4)",
+      `${k(20)} szt. srebra`,,
+      "Słoik z fermentowanymi rybami.",
+      "Pułapka na myszy (1 punkt obrażeń).",
+      "Czarno-biała farba do twarzy.",
+      "Lniany wór z częściami ciała.",
+      "Pęknięte lusterko.",
+      "Długi żelazny łańcuch.",
+      'Książka "Walka Czarodziejów".',
+      "Zakrzywiony rytualny nóż (k4).",
+      "Kolczuga, tułów ciągle w niej jest.",
+      "Psia obroża z łańcuchem.",
+      "Woreczek z solą.",
+      "Okopcony srebrny pierścień.",
+      "Proporzec z zatopionego statku.",
+      "Zdarta ludzka skóra.",
+      "Koc, z pchłami.",
+      "Zniszczony skórzany pancerz.",
+      "k4 złotych zębów wartych 10s sztuka.",
+      "Kilof (k4).",
+      "Obroża z amuletem w kształcie pentagramu.",
+      "Zakrwawione wiertło.",
+      "Modlitewnik z psalmami.",
+      "Maska z ptasim dziobem.",
+      "Węglowy szkic przedstawiający demona.",
+      "Pół martwego psa.",
+      "Ładna opaska na oko.",
+      "Młotek i kilka gwoździ.",
+      "Kula i łańcuch (i stopa).",
+      "Ostry pogrzebacz (k4+1)",
+      "Para ciepłych skarpet (namoknięte).",
+      "Pudełko czarnych piór.",
+      "Uszkodzone futro z wilka.",
+      "Zgniłe mieso (na k2 dni)",
+      "Małe pudełko z białą szklaną kulką.",
+      "Kufel z igłą.",
+      "Drewniane zęby.",
+      "Szczęśliwy amulet.",
+      "k6 pustych zwojów.",
+      "Latarnia z daszkiem.",
+      "Para drewnianych kajdanek.",
+      "Słoik z 3 uciętymi kciukami.",
+      "Zwinięta kula ludzkich włosów.",
+      "Łopata (k4).",
+      "Zgniatacz kciuków.",
+      "Bardzo mała podkowa.",
+      "Naszyjnik ze szczurzych zębów.",
+      "Połowa mapy skarbów.",
+      "Butelka czerwonej trucizny.",
+      "Mały drewniany konik.",
+      "Ciężkie żelazne obcęgi.",
+      "Czarny worek z kocim sercem.",
+      "Spory kawałek węgla.",
+      "Dwie ucięte dłonie.",
+      "Dziecięcych rozmiarów żelazna dziewica."
     ],
 
   }
@@ -1155,30 +1141,53 @@ function displayArray(ar, parent) {
   }
 }
 
+function pickFromList(pickedList){
+  if (pickedList.type === "mixer") {
+    return (
+      randomizeFromArray(pickedList.prefix) +
+        randomizeFromArray(pickedList.suffix)
+    );
+  } else if (pickedList.type === "firstMiddleLastNameTripleMixer") {
+    return (
+      `${randomizeFromArray(pickedList.prefix)} ${randomizeFromArray(
+        pickedList.middle
+      )} ${randomizeFromArray(pickedList.suffix)}`
+    );
+  } else if (pickedList.type === "picker") {
+    return (randomizeFromArray(pickedList.list));
+  } else if (pickedList().type === "pickerRoller") {
+    //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
+    return (randomizeFromArray(pickedList().list));
+  }
+}
 
 generateButton.addEventListener("click", () => {
   let result = [];
   let pickedCategory = eval(category);
 
   removeAllChildren(nameDisplay);
+
   for (let i = 0; i < numberGenerated; i++) {
-    if (pickedCategory.type === "mixer") {
-      result.push(
-        randomizeFromArray(pickedCategory.prefix) +
-          randomizeFromArray(pickedCategory.suffix)
-      );
-    } else if (pickedCategory.type === "firstMiddleLastNameTripleMixer") {
-      result.push(
-        `${randomizeFromArray(pickedCategory.prefix)} ${randomizeFromArray(
-          pickedCategory.middle
-        )} ${randomizeFromArray(pickedCategory.suffix)}`
-      );
-    } else if (pickedCategory.type === "picker") {
-      result.push(randomizeFromArray(pickedCategory.list));
-    } else if (pickedCategory().type === "pickerRoller") {
-      //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
-      result.push(randomizeFromArray(pickedCategory().list));
-    }
+    result.push(pickFromList(pickedCategory))
+
+
+    // if (pickedCategory.type === "mixer") {
+    //   result.push(
+    //     randomizeFromArray(pickedCategory.prefix) +
+    //       randomizeFromArray(pickedCategory.suffix)
+    //   );
+    // } else if (pickedCategory.type === "firstMiddleLastNameTripleMixer") {
+    //   result.push(
+    //     `${randomizeFromArray(pickedCategory.prefix)} ${randomizeFromArray(
+    //       pickedCategory.middle
+    //     )} ${randomizeFromArray(pickedCategory.suffix)}`
+    //   );
+    // } else if (pickedCategory.type === "picker") {
+    //   result.push(randomizeFromArray(pickedCategory.list));
+    // } else if (pickedCategory().type === "pickerRoller") {
+    //   //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
+    //   result.push(randomizeFromArray(pickedCategory().list));
+    // }
   }
   displayArray(result, nameDisplay);
 });
