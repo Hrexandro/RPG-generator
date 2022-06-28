@@ -625,6 +625,89 @@ const VOTENobleNames = {
     "Darius", //
     "Marius", //
     "Malevanor", //
+    "Julian",//
+    "Julius",//
+    "Julianus",//
+    "Grotto",//
+    "Khan",//
+    "Noyan",//
+    "Orestes",//
+    "Romulus",//
+    "Remus",//
+    "Aetius",//
+    "Majoran",//
+    "Yarmouz",//
+    "Alphonse",//
+    "Jonathan",//
+    "Menaquinone",
+    "Septimus",
+    "Severus",
+    "Bey",
+    "Constantius",
+    "Valens",
+    "Gratian",
+    "Theodosius",
+    "Arcadius",
+    "Belisarius",
+    "Basiliscus",
+    "Anastasius",
+    "Tiberius",
+    "Justinian",
+    "Anastasios",
+    "Leon",
+    "Irene",
+    "Romanos",
+    "Theodoros",
+    "Isaac",
+    "Andronikos",
+    "Dragaš",
+    "Lanius",
+    "Ghorghor",
+    "Wismerhill",
+    "Salahudin",
+    "Allahudin",
+    "Ilamus",
+    "Kaisar",
+    "Ledroit",
+    "Froideval",
+    "Eleonora",
+    "Hammurabi",
+    "Sargon",
+    "Erishum",
+    "Ashur",
+    "Shamshi-Adad",
+    "Ishme-Dagan",
+    "Morgan",
+    "Mursilis",
+    "Yamhad",
+    "Marduk",
+    "Shupiluliuma",
+    "Ninurta",
+    "Pileser",
+    "Nabopolassar",
+    "Nabonidus",
+    "Abraham",
+    "David",
+    "Kanesh",
+    "Tudhaliya",
+    "Thaddeus",
+    "Shalmaneser",
+    "Yariri",
+    "Wasusarma",
+    "Mugallu",
+    "Telipinu",
+    "Gudea",
+    "Natufia",
+    "Shulgi",
+    "Meskalamdug",
+    "Akalamdug",
+    "Imant",
+    "Nathaniel",
+    "Zechariah",
+    "Yahaziel",
+    "Ephron",
+    "Nashon",
+    "Salomon"
   ],
   middle: [
     "Don",
@@ -678,6 +761,15 @@ const VOTENobleNames = {
     "Psy",
     "Gul",
     "Hurt",
+    "Ibn",//
+    "Abu",//
+    "Del",//
+    "Della",//
+    "Af",
+    "Ben",
+    "Wan",
+    "Bey",
+    "Ur"
   ],
   suffix: [
     "Juvenal",
@@ -731,9 +823,46 @@ const VOTENobleNames = {
     "Simmons-Mingo-Mg",
     "Kamenitim",
     "Harrington", //
-    "Julianes",
-    "Hohenheim",
-    "Droktenbrot"
+    "Julianes",//
+    "Hohenheim",//
+    "Droktenbrot",//
+    "Julianus",
+    "Grotto",
+    "Grotter",
+    "Singh",
+    "Augustulus",
+    "Manzikert",
+    "Briskortz",
+    "Borg",
+    "Gabana",
+    "Galbani",
+    "Versace",
+    "Gochugan",
+    "Yamnaya",
+    "Bey",
+    "Isauros",
+    "Makedon",
+    "Amorian",
+    "Laskaris",
+    "Dragaš",
+    "Kaisar",
+    "Ledroit",
+    "Froideval",
+    "Hammurabi",
+    "Sargon",
+    "Ur",
+    "Khan",
+    "Noyan",
+    "Morgan",
+    "Hattuša",
+    "Yamhad",
+    "Ginzburg",
+    "Carchemish",
+    "Har-Tira",
+    "Even-Vered",
+    "Amithai"
+
+
   ],
 };
 
@@ -793,9 +922,9 @@ const MBRandomEncounters = function () {
     type: "pickerRoller",
     list: [
       //Overland Travel
-      "Nie dzieje się nic konkretnego, świat jest szary/.",
+      "Nie dzieje się nic konkretnego, świat jest szary.",
       "Pogorszenie pogody.",
-      "Zmiana pogody.",
+      "Zmiana pogody.",// na??
       "Droga się rozwidla, znaki są nieczytelne (przerzut).",
       "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
       "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
