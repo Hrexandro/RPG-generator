@@ -22,10 +22,10 @@ let numberGenerated = 5;
 let category = "MBNames";
 
 function k(sides, exploding = false) {
-  let result = Math.floor(Math.random() * sides) + 1
-  if (exploding === true){
-    if (result === sides){
-      result = result + k(sides, true)
+  let result = Math.floor(Math.random() * sides) + 1;
+  if (exploding === true) {
+    if (result === sides) {
+      result = result + k(sides, true);
     }
   }
 
@@ -340,6 +340,7 @@ const MBTowns = {
     "Halden",
     "Haldens",
     "Held",
+    "Hel",
     "Helm",
     "Hirsch",
     "Hochen",
@@ -580,6 +581,7 @@ const VOTENobleNames = {
     "Golondrinas",
     "Kanchanaburi",
     "Karangbolong",
+    "Feidreiva",
     "Kolkbläser",
     "Konepruske",
     "Pollaraftra",
@@ -597,6 +599,9 @@ const VOTENobleNames = {
     "Niigata",
     "Resumidero",
     "Santoanos",
+    "Greldinard",
+    "Bepher",
+    "Nepher",
     "Sima",
     "Sumidero",
     "Torca",
@@ -625,20 +630,20 @@ const VOTENobleNames = {
     "Darius", //
     "Marius", //
     "Malevanor", //
-    "Julian",//
-    "Julius",//
-    "Julianus",//
-    "Grotto",//
-    "Khan",//
-    "Noyan",//
-    "Orestes",//
-    "Romulus",//
-    "Remus",//
-    "Aetius",//
-    "Majoran",//
-    "Yarmouz",//
-    "Alphonse",//
-    "Jonathan",//
+    "Julian", //
+    "Julius", //
+    "Julianus", //
+    "Grotto", //
+    "Khan", //
+    "Noyan", //
+    "Orestes", //
+    "Romulus", //
+    "Remus", //
+    "Aetius", //
+    "Majoran", //
+    "Yarmouz", //
+    "Alphonse", //
+    "Jonathan", //
     "Menaquinone",
     "Septimus",
     "Severus",
@@ -707,7 +712,12 @@ const VOTENobleNames = {
     "Yahaziel",
     "Ephron",
     "Nashon",
-    "Salomon"
+    "Salomon",
+    "Prospero",
+    "Aventus",
+    "Gideon",
+    "Helgen",
+    "Thurgen"
   ],
   middle: [
     "Don",
@@ -761,15 +771,15 @@ const VOTENobleNames = {
     "Psy",
     "Gul",
     "Hurt",
-    "Ibn",//
-    "Abu",//
-    "Del",//
-    "Della",//
+    "Ibn", //
+    "Abu", //
+    "Del", //
+    "Della", //
     "Af",
     "Ben",
     "Wan",
     "Bey",
-    "Ur"
+    "Ur",
   ],
   suffix: [
     "Juvenal",
@@ -823,9 +833,9 @@ const VOTENobleNames = {
     "Simmons-Mingo-Mg",
     "Kamenitim",
     "Harrington", //
-    "Julianes",//
-    "Hohenheim",//
-    "Droktenbrot",//
+    "Julianes", //
+    "Hohenheim", //
+    "Droktenbrot", //
     "Julianus",
     "Grotto",
     "Grotter",
@@ -860,9 +870,9 @@ const VOTENobleNames = {
     "Carchemish",
     "Har-Tira",
     "Even-Vered",
-    "Amithai"
-
-
+    "Amithai",
+    "Avenici",
+    "Avencici",
   ],
 };
 
@@ -924,7 +934,7 @@ const MBRandomEncounters = function () {
       //Overland Travel
       "Nie dzieje się nic konkretnego, świat jest szary.",
       "Pogorszenie pogody.",
-      "Zmiana pogody.",// na??
+      "Zmiana pogody.", // na??
       "Droga się rozwidla, znaki są nieczytelne (przerzut).",
       "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
       "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
@@ -933,12 +943,22 @@ const MBRandomEncounters = function () {
       "Po drugiej stronie drogi trwa walka pomiędzy bandą obdartych ze skóry kultystów a watahą kundlaków.",
       "Troll Adnah atakuje z zaskoczenia.",
       `${k(6)} racji żywności/wody się psuje.`,
-      `${k(6) + 1} łowców niewolników prowadzi ${k(11) + 1} niewolników, połowa pobita niemal na śmierć, połowa świeżo złapanych.`,
-      `Grupa najemników i ich ${k(6)} strażników (wszyscy zainfekowani pasożytem mózgu).`,
-      `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(8)} zombie ukrywa się w krypcie.`,
+      `${k(6) + 1} łowców niewolników prowadzi ${
+        k(11) + 1
+      } niewolników, połowa pobita niemal na śmierć, połowa świeżo złapanych.`,
+      `Grupa najemników i ich ${k(
+        6
+      )} strażników (wszyscy zainfekowani pasożytem mózgu).`,
+      `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(
+        8
+      )} zombie ukrywa się w krypcie.`,
       "Pochód pogrzebowy bezzębnych wieśniaków niosących bardzo wielką trumnę (olbrzym wewnątrz jest martwy, lecz śniący).",
-      `Dwoje zwłok u boku drogi, w kieszeni jednego z nich znajduje się: ${pickFromList(MBCorpseLoot)}`
+      `Dwoje zwłok u boku drogi, w kieszeni jednego z nich znajduje się: ${pickFromList(
+        MBCorpseLoot
+      )}`,
 
+      //new
+      `${pickFromList(MBMonsters)} - liczba: ${k(20)}`
     ],
   };
 };
@@ -1028,7 +1048,7 @@ const MBBrokenBodies = {
     "Karzeł", //ok
     "Ciągle jest mu gorąco, na co wiecznie narzeka", //ok
     "Ciągle jest mu zimno, na co wiecznie narzeka", //ok
-    "Wysoki jak drzewo, ale chudy jak szczapa"//ok
+    "Wysoki jak drzewo, ale chudy jak szczapa", //ok
   ],
 };
 
@@ -1060,13 +1080,14 @@ const MBBadHabits = {
     "Plotkarz, obgaduje każdego, którego akurat nie ma w pobliżu",
     "Jąka się, gdy kłamie",
     "Chichocze szaleńczo w najgorszych momentach",
-    "Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5,7,9,11 lub 13 wyrzuconym na k20",
+    "Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5, 7, 9, 11 lub 13 wyrzuconym na k20",
     "Robi biżuterię z ludzkich zębów",
-    "Przywłaszcza sobie wszelkie zasługi"//ok
+    "Przywłaszcza sobie wszelkie zasługi", //ok
   ],
 };
 
-const MBCorpseLoot = function () {  //przeszukiwanie zwłok, rabowanie zwłok
+const MBCorpseLoot = function () {
+  //przeszukiwanie zwłok, rabowanie zwłok
   return {
     type: "pickerRoller",
     list: [
@@ -1107,7 +1128,9 @@ const MBCorpseLoot = function () {  //przeszukiwanie zwłok, rabowanie zwłok
       "Papier dłużny, lokalny potentat jest winny posiadaczowi znaczną sumę pieniędzy.",
       '"Woda życia", leczy k8, test twardości DR10 albo ślepniesz. Wysoce alkoholowa.',
       "Maska pośmiertna jednego z BG",
-      `Z tym coś było ewidentnie nie tak. Ręce ma pokryte czymś ciepławym, brązowym i mocno kwasowym. ${k(2)+1} obrażeń i okropnie śmierdzisz przez ${k(4)} dni.`,
+      `Z tym coś było ewidentnie nie tak. Ręce ma pokryte czymś ciepławym, brązowym i mocno kwasowym. ${
+        k(2) + 1
+      } obrażeń i okropnie śmierdzisz przez ${k(4)} dni.`,
       "Czarny sztylet z Kergus, 2k4 obrażeń",
       "Podpisana buteleczka z trucizną, test DR12 na twardość, albo losowy atrybut spada o k4.",
       "Skalp z długimi czarnymi włosami",
@@ -1117,7 +1140,9 @@ const MBCorpseLoot = function () {  //przeszukiwanie zwłok, rabowanie zwłok
       "Puchar z czaszki jakiegoś nieszczęśnika",
       "Wisiorek z ususzonej krowiej głowy wiszącej do góry nogami na rzemyku",
       "Zestaw kart tarota, dwóch brakuje.",
-      `Woreczek z bladozielonymi ziołami (herbata, daje sen bez marzeń, ale redukuje prezencję o 1 następnego dnia ${k(6)+k(6)} porcji)`,
+      `Woreczek z bladozielonymi ziołami (herbata, daje sen bez marzeń, ale redukuje prezencję o 1 następnego dnia ${
+        k(6) + k(6)
+      } porcji)`,
       "Żelazna obroża.",
       "Zakorkowana flaszka z bardzo silnym alkoholem",
       "Osełka",
@@ -1184,13 +1209,14 @@ const MBCorpseLoot = function () {  //przeszukiwanie zwłok, rabowanie zwłok
       `Sakiewka z ${k(10)} srebra.`,
       "Zużyty pasek.",
       "Worek martwych szczurów.",
-      `Ozłacana czaszka warta ${k(20)+10} srebra.`,
+      `Ozłacana czaszka warta ${k(20) + 10} srebra.`,
       "But (nie pasuje).",
       `${k(10)} strzał.`,
       'Książka "Królowa Nocy".',
       "Wypchana sroka.",
       "Rzeźnicki nóż (k4)",
-      `${k(20)} szt. srebra`,,
+      `${k(20)} szt. srebra`,
+      ,
       "Słoik z fermentowanymi rybami.",
       "Pułapka na myszy (1 punkt obrażeń).",
       "Czarno-biała farba do twarzy.",
@@ -1243,11 +1269,38 @@ const MBCorpseLoot = function () {  //przeszukiwanie zwłok, rabowanie zwłok
       "Czarny worek z kocim sercem.",
       "Spory kawałek węgla.",
       "Dwie ucięte dłonie.",
-      "Dziecięcych rozmiarów żelazna dziewica."
+      "Dziecięcych rozmiarów żelazna dziewica.",
     ],
-
-  }
+  };
 };
+
+let MBMonsters = {//monster monsters potwory
+  type: "picker",
+  list: [],
+};
+
+class MBMonster {
+  constructor(nazwa, HP, morale, pancerz, broń, specjalneCechy) {
+    this.nazwa = nazwa;
+    this.HP = HP;
+    this.morale = morale;
+    this.pancerz = pancerz;
+    this.broń = broń;
+    this.specjalneCechy = specjalneCechy;
+  }
+}
+
+function createAndAddMonster ({keyName, nazwa = "", HP = "", morale = "-", pancerz = "", broń = "nieuzbrojony k2", specjalneCechy = ""}){
+  let newMonster = new MBMonster(nazwa, HP, morale, pancerz, broń, specjalneCechy);
+  MBMonsters = {...MBMonsters, ...{[keyName]: newMonster}}
+  MBMonsters.list.push(`${nazwa} - HP: ${HP}, Morale: ${morale}, pancerz: ${pancerz}, ${broń} ${specjalneCechy}`)
+}
+
+createAndAddMonster({keyName: "UnderpaidTiredGuard", nazwa : "Źle opłacany, zmęczony strażnik", HP : "5", morale : "7", pancerz : "Skóra -k2", broń : "Prosta broń k4 lub k6", specjalneCechy : ""})
+createAndAddMonster({keyName: "WeakMindlessUndead", nazwa : "Słaby, bezmyślny nieumarły", HP : "4", morale : "-", pancerz : "Bezużyteczne szmaty", broń : "Pięść k4 lub topór k6", specjalneCechy : ""})
+createAndAddMonster({keyName: "innocentBystander", nazwa : "Niewinny postronny", HP : "3", morale : "5", pancerz : "brak", broń : "desperackie machanie k2", specjalneCechy : ""})
+//{keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""}
+
 
 function removeAllChildren(element) {
   let counter = element.children.length;
@@ -1270,23 +1323,22 @@ function displayArray(ar, parent) {
   }
 }
 
-function pickFromList(pickedList){
+function pickFromList(pickedList) {
+  console.log(pickedList)
   if (pickedList.type === "mixer") {
     return (
       randomizeFromArray(pickedList.prefix) +
-        randomizeFromArray(pickedList.suffix)
+      randomizeFromArray(pickedList.suffix)
     );
   } else if (pickedList.type === "firstMiddleLastNameTripleMixer") {
-    return (
-      `${randomizeFromArray(pickedList.prefix)} ${randomizeFromArray(
-        pickedList.middle
-      )} ${randomizeFromArray(pickedList.suffix)}`
-    );
+    return `${randomizeFromArray(pickedList.prefix)} ${randomizeFromArray(
+      pickedList.middle
+    )} ${randomizeFromArray(pickedList.suffix)}`;
   } else if (pickedList.type === "picker") {
-    return (randomizeFromArray(pickedList.list));
+    return randomizeFromArray(pickedList.list);
   } else if (pickedList().type === "pickerRoller") {
     //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
-    return (randomizeFromArray(pickedList().list));
+    return randomizeFromArray(pickedList().list);
   }
 }
 
@@ -1297,26 +1349,7 @@ generateButton.addEventListener("click", () => {
   removeAllChildren(nameDisplay);
 
   for (let i = 0; i < numberGenerated; i++) {
-    result.push(pickFromList(pickedCategory))
-
-
-    // if (pickedCategory.type === "mixer") {
-    //   result.push(
-    //     randomizeFromArray(pickedCategory.prefix) +
-    //       randomizeFromArray(pickedCategory.suffix)
-    //   );
-    // } else if (pickedCategory.type === "firstMiddleLastNameTripleMixer") {
-    //   result.push(
-    //     `${randomizeFromArray(pickedCategory.prefix)} ${randomizeFromArray(
-    //       pickedCategory.middle
-    //     )} ${randomizeFromArray(pickedCategory.suffix)}`
-    //   );
-    // } else if (pickedCategory.type === "picker") {
-    //   result.push(randomizeFromArray(pickedCategory.list));
-    // } else if (pickedCategory().type === "pickerRoller") {
-    //   //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
-    //   result.push(randomizeFromArray(pickedCategory().list));
-    // }
+    result.push(pickFromList(pickedCategory));
   }
   displayArray(result, nameDisplay);
 });
