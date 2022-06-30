@@ -958,7 +958,11 @@ const MBRandomEncounters = function () {
       )}`,
 
       //new
-      `${pickFromList(MBMonsters)} - liczba: ${k(20)}`
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`
     ],
   };
 };
@@ -1296,12 +1300,17 @@ function createAndAddMonster ({keyName, nazwa = "", HP = "", morale = "-", pance
   MBMonsters.list.push(`${nazwa} - HP: ${HP}, Morale: ${morale}, pancerz: ${pancerz}, ${broń} ${specjalneCechy}`)
 }
 
-createAndAddMonster({keyName: "UnderpaidTiredGuard", nazwa : "Źle opłacany, zmęczony strażnik", HP : "5", morale : "7", pancerz : "Skóra -k2", broń : "Prosta broń k4 lub k6", specjalneCechy : ""})
-createAndAddMonster({keyName: "WeakMindlessUndead", nazwa : "Słaby, bezmyślny nieumarły", HP : "4", morale : "-", pancerz : "Bezużyteczne szmaty", broń : "Pięść k4 lub topór k6", specjalneCechy : ""})
-createAndAddMonster({keyName: "innocentBystander", nazwa : "Niewinny postronny", HP : "3", morale : "5", pancerz : "brak", broń : "Desperackie machanie k2", specjalneCechy : ""})
-createAndAddMonster({keyName: "kobolth", nazwa : "Kôbôlth", HP : "2", morale : "-", pancerz : "brak", broń : "Prowizoryczny nóż k4 test DR12 na odporność albo infekcja", specjalneCechy : ""})
-
-//createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""})
+createAndAddMonster({keyName: "underpaidTiredGuard", nazwa : "Źle opłacany, zmęczony strażnik", HP : "5", morale : "7", pancerz : "Skóra -k2", broń : "Prosta broń k4 lub k6", specjalneCechy : ""});
+createAndAddMonster({keyName: "weakMindlessUndead", nazwa : "Słaby, bezmyślny nieumarły", HP : "4", morale : "-", pancerz : "Bezużyteczne szmaty", broń : "Pięść k4 lub topór k6", specjalneCechy : ""});
+createAndAddMonster({keyName: "innocentBystander", nazwa : "Niewinny postronny", HP : "3", morale : "5", pancerz : "brak", broń : "Desperackie machanie k2", specjalneCechy : ""});
+createAndAddMonster({keyName: "kobolth", nazwa : "Kôbôlth", HP : "2", morale : "-", pancerz : "brak", broń : "Prowizoryczny nóż k4, test DR12 na odporność albo infekcja", specjalneCechy : ""});
+createAndAddMonster({keyName: "duskGnoum", nazwa : "Mroczny Gnoum", HP : "4", morale : "7", pancerz : "brak", broń : "Nóż k4", specjalneCechy : ""});
+createAndAddMonster({keyName: "mongrel", nazwa : "Masywny czarny pies ze skołtunionym futrem", HP : "8", morale : "9", pancerz : "brak", broń : "Ugryzienie k4+1, test DR12 na odporność albo infekcja", specjalneCechy : ""});
+createAndAddMonster({keyName: "nestingDeath", nazwa : "Pająk wielkości dużego psa", HP : "12", morale : "-", pancerz : "Gruby karapaks -k2", broń : "Ugryzienie k4, test DR12 na odporność albo zesztywnienie (testy mają +2 DR przez godzinę)", specjalneCechy : ""});
+createAndAddMonster({keyName: "fleshEatingMonster", nazwa : "Mięsożerny potwór", HP : "8", morale : "8", pancerz : "Gruba skóra -k2", broń : "Ugryzienie k4 + infekcja (2/6)", specjalneCechy : ""});
+createAndAddMonster({keyName: "clawsEyesSpideryLegs", nazwa : "Szpony, oczy, pajęcze nogi", HP : "12", morale : "-", pancerz : "chityna -k4", broń : "Szpony k6 (obrona DR14)", specjalneCechy : ""});
+createAndAddMonster({keyName: "mutatedTombRobber", nazwa : "Zmutowana rabuś grobowców", HP : "13", morale : "9", pancerz : "Dziwne ciało -k4", broń : "Długi ostry nóż k6", specjalneCechy : ""});//daj do graven-tosk
+//createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
 
 function removeAllChildren(element) {
