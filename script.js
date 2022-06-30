@@ -1298,8 +1298,10 @@ function createAndAddMonster ({keyName, nazwa = "", HP = "", morale = "-", pance
 
 createAndAddMonster({keyName: "UnderpaidTiredGuard", nazwa : "Źle opłacany, zmęczony strażnik", HP : "5", morale : "7", pancerz : "Skóra -k2", broń : "Prosta broń k4 lub k6", specjalneCechy : ""})
 createAndAddMonster({keyName: "WeakMindlessUndead", nazwa : "Słaby, bezmyślny nieumarły", HP : "4", morale : "-", pancerz : "Bezużyteczne szmaty", broń : "Pięść k4 lub topór k6", specjalneCechy : ""})
-createAndAddMonster({keyName: "innocentBystander", nazwa : "Niewinny postronny", HP : "3", morale : "5", pancerz : "brak", broń : "desperackie machanie k2", specjalneCechy : ""})
-//{keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""}
+createAndAddMonster({keyName: "innocentBystander", nazwa : "Niewinny postronny", HP : "3", morale : "5", pancerz : "brak", broń : "Desperackie machanie k2", specjalneCechy : ""})
+createAndAddMonster({keyName: "kobolth", nazwa : "Kôbôlth", HP : "2", morale : "-", pancerz : "brak", broń : "Prowizoryczny nóż k4 test DR12 na odporność albo infekcja", specjalneCechy : ""})
+
+//createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""})
 
 
 function removeAllChildren(element) {

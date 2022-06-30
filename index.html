@@ -3,12 +3,12 @@
 
 <head>
     <title>RPG generator</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <div id="top-bar">
-<select name="kategoria" id="kategoria">
+<select name="kategoria" id="kategoria" class="input">
     <option value="MBNames">Imiona - MB</option>
     <option value="VOTENobleNames">Imiona arystokratyczne - VotE</option>
     <option value="wizardNames">Imiona czarodziejów - PK</option>
@@ -28,8 +28,8 @@
     <option value="MBBadHabits">Złe nawyki - MB</option>
 
 </select>
-<input type=number id="liczba" value="5">
-<button id='generate-button'>Generuj</button>
+<input type=number id="liczba" value="5" class="input">
+<button id='generate-button' class="input">Generuj</button>
 </div>
 
 <div id='name-display'></div>

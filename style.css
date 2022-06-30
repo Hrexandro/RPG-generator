@@ -31,3 +31,15 @@ input {
     color: white;
     border: 1px solid white;
 } */
+
+#top-bar {
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: stretch;
+}
+
+.input {
+    flex-grow: 1;
+}
