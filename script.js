@@ -4,6 +4,10 @@
 // broken bodies
 // terrible traits
 // random encounters/ varied by regions - add some monsters to default, add defaults to nondefault as well
+//monster generator
+//cult generator?
+//change to not cover whole screen on monitor (on mobile it looks good)
+//wymyśl staty kundlaka
 
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
@@ -44,6 +48,8 @@ const MBNames = {
   type: "mixer",
   prefix: [
     "Al",
+    "Rang",
+    "Hrang",
     "Adal",
     "The",
     "Tor",
@@ -56,6 +62,7 @@ const MBNames = {
     "Vra",
     "Vre",
     "We",
+    "Pas",
     "Ske",
     "Bur",
     "Burd",
@@ -144,6 +151,8 @@ const MBNames = {
   ],
   suffix: [
     "ras",
+    "vold",
+    "vord",
     "fa",
     "rg",
     "vul",
@@ -1310,6 +1319,10 @@ createAndAddMonster({keyName: "nestingDeath", nazwa : "Pająk wielkości dużego
 createAndAddMonster({keyName: "fleshEatingMonster", nazwa : "Mięsożerny potwór", HP : "8", morale : "8", pancerz : "Gruba skóra -k2", broń : "Ugryzienie k4 + infekcja (2/6)", specjalneCechy : ""});
 createAndAddMonster({keyName: "clawsEyesSpideryLegs", nazwa : "Szpony, oczy, pajęcze nogi", HP : "12", morale : "-", pancerz : "chityna -k4", broń : "Szpony k6 (obrona DR14)", specjalneCechy : ""});
 createAndAddMonster({keyName: "mutatedTombRobber", nazwa : "Zmutowana rabuś grobowców", HP : "13", morale : "9", pancerz : "Dziwne ciało -k4", broń : "Długi ostry nóż k6", specjalneCechy : ""});//daj do graven-tosk
+createAndAddMonster({keyName: "antiArcaneLichQueen", nazwa : "Antymagiczna królowa liczy", HP : "24", morale : "-", pancerz : "Nekro-pole -k4", broń : "Okkültystyczny cios k8", specjalneCechy : "Pożera moce"});//daj do graven-tosk
+createAndAddMonster({keyName: "corruptedWarlord", nazwa : "Spaczony wódz", HP : "20", morale : "11", pancerz : "Czarny metal -k6", broń : "Kolczasty zweihänder k10", specjalneCechy : ""});
+createAndAddMonster({keyName: "daemon", nazwa : "Dæmon", HP : "24", morale : "-", pancerz : "Niczym powietrze -k8", broń : "Dotyk entropii k6", specjalneCechy : "-2 siły/cios"});
+createAndAddMonster({keyName: "goblin", nazwa : "Goblin", HP : "6", morale : "7", pancerz : "Twarda skóra -k2", broń : "Nóż/krótki łuk k4", specjalneCechy : "Szybki, atak i obrona DR14, jeśli nie zostanie zabity, ten kogo atakował po k6 dniach sam zmieni się w goblina"});
 //createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
 
@@ -1337,6 +1350,10 @@ function displayArray(ar, parent) {
 function pickFromList(pickedList) {
   console.log(pickedList)
   if (pickedList.type === "mixer") {
+
+
+
+
     return (
       randomizeFromArray(pickedList.prefix) +
       randomizeFromArray(pickedList.suffix)
