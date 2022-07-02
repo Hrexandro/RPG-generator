@@ -1287,6 +1287,16 @@ const MBCorpseLoot = function () {
   };
 };
 
+let MBCults = {//cults kulty
+  type: "multipleMixer",
+  1: [],
+  2: [],
+  3: [],
+  4: [],
+  5: [],
+  6: []
+};
+
 let MBMonsters = {//monster monsters potwory
   type: "picker",
   list: [],
@@ -1318,11 +1328,13 @@ createAndAddMonster({keyName: "mongrel", nazwa : "Masywny czarny pies ze skołtu
 createAndAddMonster({keyName: "nestingDeath", nazwa : "Pająk wielkości dużego psa", HP : "12", morale : "-", pancerz : "Gruby karapaks -k2", broń : "Ugryzienie k4, test DR12 na odporność albo zesztywnienie (testy mają +2 DR przez godzinę)", specjalneCechy : ""});
 createAndAddMonster({keyName: "fleshEatingMonster", nazwa : "Mięsożerny potwór", HP : "8", morale : "8", pancerz : "Gruba skóra -k2", broń : "Ugryzienie k4 + infekcja (2/6)", specjalneCechy : ""});
 createAndAddMonster({keyName: "clawsEyesSpideryLegs", nazwa : "Szpony, oczy, pajęcze nogi", HP : "12", morale : "-", pancerz : "chityna -k4", broń : "Szpony k6 (obrona DR14)", specjalneCechy : ""});
-createAndAddMonster({keyName: "mutatedTombRobber", nazwa : "Zmutowana rabuś grobowców", HP : "13", morale : "9", pancerz : "Dziwne ciało -k4", broń : "Długi ostry nóż k6", specjalneCechy : ""});//daj do graven-tosk
+createAndAddMonster({keyName: "mutatedTombRobber", nazwa : "Zmutowany rabuś grobowców", HP : "13", morale : "9", pancerz : "Dziwne ciało -k4", broń : "Długi ostry nóż k6", specjalneCechy : ""});//daj do graven-tosk
 createAndAddMonster({keyName: "antiArcaneLichQueen", nazwa : "Antymagiczna królowa liczy", HP : "24", morale : "-", pancerz : "Nekro-pole -k4", broń : "Okkültystyczny cios k8", specjalneCechy : "Pożera moce"});//daj do graven-tosk
 createAndAddMonster({keyName: "corruptedWarlord", nazwa : "Spaczony wódz", HP : "20", morale : "11", pancerz : "Czarny metal -k6", broń : "Kolczasty zweihänder k10", specjalneCechy : ""});
 createAndAddMonster({keyName: "daemon", nazwa : "Dæmon", HP : "24", morale : "-", pancerz : "Niczym powietrze -k8", broń : "Dotyk entropii k6", specjalneCechy : "-2 siły/cios"});
-createAndAddMonster({keyName: "goblin", nazwa : "Goblin", HP : "6", morale : "7", pancerz : "Twarda skóra -k2", broń : "Nóż/krótki łuk k4", specjalneCechy : "Szybki, atak i obrona DR14, jeśli nie zostanie zabity, ten kogo atakował po k6 dniach sam zmieni się w goblina"});
+createAndAddMonster({keyName: "goblin", nazwa : "Goblin", HP : "6", morale : "7", pancerz : "Twarda skóra -k2", broń : "Nóż/krótki łuk k4", specjalneCechy : "Szybki, atak i obrona DR14, jeśli nie zostanie zabity, ten kogo atakował po k6 dniach sam zmieni się w goblina. Warość: głowa 7s, złapany 150s, martwy 20s"});
+createAndAddMonster({keyName: "scum", nazwa : "Szumowina", HP : "7", morale : "8", pancerz : "brak", broń : "Zatruty nóż k4 + infekcja (DR10 Odporność)", specjalneCechy : "BG z najwyższą prezencją robi test DR14 na początku walki, porażka oznacza, że losowy członek drużyny został trafiony podstępnym ciosem w plecy +3 do obrażeń. Wartość: złapany (winny poważnej) zbrodni 50-120s, martwy (winny poważnej zbrodni) 20-70s."});
+
 //createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
 
@@ -1350,10 +1362,6 @@ function displayArray(ar, parent) {
 function pickFromList(pickedList) {
   console.log(pickedList)
   if (pickedList.type === "mixer") {
-
-
-
-
     return (
       randomizeFromArray(pickedList.prefix) +
       randomizeFromArray(pickedList.suffix)
@@ -1364,10 +1372,13 @@ function pickFromList(pickedList) {
     )} ${randomizeFromArray(pickedList.suffix)}`;
   } else if (pickedList.type === "picker") {
     return randomizeFromArray(pickedList.list);
+  } else if (pickedList.type === "multipleMixer"){// use this for unlimited number of tables to pick from (like x. cults)
+
+
   } else if (pickedList().type === "pickerRoller") {
     //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
     return randomizeFromArray(pickedList().list);
-  }
+  } 
 }
 
 generateButton.addEventListener("click", () => {
