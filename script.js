@@ -44,7 +44,7 @@ class Roll {
 
 //Category: names
 
-const MBNames = {
+const MBNames = {// name
   type: "mixer",
   prefix: [
     "Al",
@@ -61,6 +61,7 @@ const MBNames = {
     "Vo",
     "Vra",
     "Vre",
+    "Mara",
     "We",
     "Pas",
     "Ske",
@@ -147,6 +148,7 @@ const MBNames = {
     "Sig",
     "Sagso",
     "Hon",
+    "Vogel",
     "Bon",
   ],
   suffix: [
@@ -157,6 +159,7 @@ const MBNames = {
     "rg",
     "vul",
     "rn",
+    "thuk",
     "m",
     "gel",
     "gal",
@@ -246,17 +249,20 @@ const MBNames = {
     "berta",
     "fúm",
     "ker",
+    "sang"
   ],
 };
 
-const MBTowns = {
+const MBTowns = { //town
   type: "mixer",
   prefix: [
     "Alli",
+    "Tün",
     "Galgen",
     "Schles",
     "Ker",
     "On",
+    "Olun",
     "Gro",
     "Tor",
     "Skar",
@@ -484,6 +490,7 @@ const MBTowns = {
     "Nodh",
     "Thinx",
     "Aland",
+    "Vogel",
   ],
   suffix: [
     "", //only prefix, short one syllable name
@@ -491,12 +498,15 @@ const MBTowns = {
     "nes",
     "beck",
     "wig",
+    "sang",
+    "dan",
     "güs",
     "da",
     "vi",
     "por",
     "de",
     "la",
+    "stal",
     "toft",
     "brek",
     "dal",
@@ -797,6 +807,7 @@ const VOTENobleNames = {
     "Humbolt",
     "Pahu",
     "Linth",
+    "Vogelsang",
     "Laraboro",
     "Tenebres",
     "Norman",
