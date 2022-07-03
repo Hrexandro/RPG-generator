@@ -22,7 +22,7 @@ numberPicker.addEventListener("change", (e) => {
   numberGenerated = numberPicker.value;
 });
 
-let numberGenerated = 5;
+let numberGenerated = 20;
 let category = "MBNames";
 
 function k(sides, exploding = false) {
@@ -1298,84 +1298,6 @@ const MBCorpseLoot = function () {
   };
 };
 
-let MBCults = {//cults kulty
-  type: "multipleMixer",
-  1: ['Wieczny ',
-  'Dzieci ',
-  'Ramię ',
-  'Fujarki ',
-  'Posiadacze ',
-  'Przeklęty',
-  'Ruiny ',
-  'Objęcia ',
-  'Noc ',
-  'Opuszczeni ',
-  'Nienawistny/a/i',
-  'Świątynia '
-  ],
-  2: ['Świt/u',
-  'Nożowa krew',
-  'Śmiertelny Cios',
-  'Dewastacja',
-  'Spalone Kości',
-  'Przeklęte znaki',
-  'Nechrubel',
-  'Zardzewiałe Ostrza',
-  'Sarkantha',
-  'Czarne Wrota',
-  'Zagubione Pieśni',
-  'Mroczne Trony',
-  ],
-  3: ['Kluczowy członek (przywódca?): Obłąkańczy ',
-  'Kluczowy członek (przywódca?): Narcystyczny ',
-  'Kluczowy członek (przywódca?): Urzekający',
-  'Kluczowy członek (przywódca?): Niewidziany',
-  'Kluczowy członek (przywódca?): Kamienno-twarzy',
-  'Kluczowy członek (przywódca?): Zaszytowargi',
-  'Kluczowy członek (przywódca?): Kanibal',
-  'Kluczowy członek (przywódca?): Czarnodyski',
-  'Kluczowy członek (przywódca?): Kpiący',
-  'Kluczowy członek (przywódca?): "Nikt", nienawidzący kultów ',
-  ],
-  4: ['Starszy ',
-  'Pastor ',
-  'Poeta ',
-  'Ponury dziwak ',
-  'Kat ',
-  'Szeptacz myśli ',
-  'Opiekun ',
-  'Dziecko ',
-  'Więzień ',
-  'Cieśla ',
-  ],
-  5: ['pełen kluczy.',
-  'pokryty pierścieniami.',
-  'zamaskowany i stoicki.',
-  ', z którym stale podążają czarne koty.',
-  'złamany i schorowany.',
-  'uwielbiany przez wszystkich.',
-  ', który powrócił z grobu.',
-  ', którego nie może dotknąć woda.',
-  'lękający się światła.',
-  'pozbawiony rąk i nóg.',
-  
-  ],
-  6: ['Kwatera główna to: Ciemne kanały Schleswigu',
-  'Kwatera główna to: Jedna z najstarszych i nieznanych świątyń Griftu',
-  'Kwatera główna to: Łąki Dziwnej Mgły w Sarkash',
-  'Kwatera główna to: Pod podziemiami Galgenbeck',
-  'Kwatera główna to: Oświetlane ogniskami obozy w najciemniejszych dziurach Kergüs',
-  'Kwatera główna to: W antymagicznym centrum Doliny Niefortunnych Nieumarłych',
-  'Kwatera główna to: Morderczy labirynt-mauzoleum  w Graven-Tosk',
-  'Kwatera główna to: Na ciemnym bagnie, łączącym jezioro Onda z Targ-Dungel',
-  'Kwatera główna to: Granitowy szczyt Bergen Chrypty przebijający umierające niebiosa',
-  'Kwatera główna to: Najciemniejsza z katedr Alliánsu',
-  ],
-  7: [],
-  8: []
-
-};
-
 let MBMonsters = {//monster monsters potwory
   type: "picker",
   list: [],
@@ -1413,7 +1335,7 @@ createAndAddMonster({keyName: "corruptedWarlord", nazwa : "Spaczony wódz", HP :
 createAndAddMonster({keyName: "daemon", nazwa : "Dæmon", HP : "24", morale : "-", pancerz : "Niczym powietrze -k8", broń : "Dotyk entropii k6", specjalneCechy : "-2 siły/cios"});
 createAndAddMonster({keyName: "goblin", nazwa : "Goblin", HP : "6", morale : "7", pancerz : "Twarda skóra -k2", broń : "Nóż/krótki łuk k4", specjalneCechy : "Szybki, atak i obrona DR14, jeśli nie zostanie zabity, ten kogo atakował po k6 dniach sam zmieni się w goblina. Warość: głowa 7s, złapany 150s, martwy 20s"});
 createAndAddMonster({keyName: "scum", nazwa : "Szumowina", HP : "7", morale : "8", pancerz : "brak", broń : "Zatruty nóż k4 + infekcja (DR10 Odporność)", specjalneCechy : "BG z najwyższą prezencją robi test DR14 na początku walki, porażka oznacza, że losowy członek drużyny został trafiony podstępnym ciosem w plecy +3 do obrażeń. Wartość: złapany (winny poważnej) zbrodni 50-120s, martwy (winny poważnej zbrodni) 20-70s."});
-
+createAndAddMonster({keyName: "berserker", nazwa : "Berserker", HP : "13", morale : "9", pancerz : "Stwardniała skóra -k2", broń : "k4: 1. Długi korbacz k8, ciężka buława k6, miecz na łańcuchu k6, ogromny młot bojowy k10", specjalneCechy : "Atakuje dwukrotnie na rundę, ale nie trudzi się obroną (DR10 na trafienie). Wartość: złapany 55s, martwy 20s, krew (1l) 3s."})
 //createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
 

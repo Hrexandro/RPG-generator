@@ -39,7 +39,8 @@ input {
     justify-content: flex-start;
     align-content: stretch;
 }
-
-.input {
-    flex-grow: 1;
-}
+@media only screen and (max-width: 1024px) {
+    .input {
+        flex-grow: 1;
+    }
+  }
