@@ -3,7 +3,6 @@
 //monster generator
 //cult generator?
 //wymyśl staty kundlaka
-
 //move different categories to separate modules: names, monsters, encounters (including loot)
 
 const generateButton = document.getElementById("generate-button");
@@ -938,6 +937,7 @@ const wizardNames = {
     "Fucidin",
     "Herpex",
     "Chrypex",
+    "Opokan",
     "Vesicare",
   ],
 };
@@ -979,7 +979,13 @@ const MBRandomEncounters = function () {
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+
+
+      'Zbliża się osiodłany koń bez jeźdźca. W torbach ma 4k10 racji zakonserwowanego ludzkiego mięsa. Jeśli drużyna zabierze mięso, koń opuści głowę i pogalopuje w dal.',
+      'Zbliża się stary mężczyzna pchający wózek, na którym znajduje się ogromna książka i pyta bohaterów o ich imiona. Jeśli mu je podadzą, zapisuje je w księdze. Zimny dreszcz przebiega po ich kręgosłupach.',
+      'Spotykacie dwójkę upiornych dzieci grających w kości doliny śmierci. Robią zakłady z omenów i chętnie zaproszą nowych graczy do rozgrywki.'
+
     ],
   };
 };
@@ -1332,7 +1338,10 @@ const MBArcaneCatastrophes = {// arcane catastrophes magiczne katastrofy
     'Zamiast zamierzonego zaklęcia rzucasz Śmierć.',
     'Jesteś dręczony i śledzony przez szkodniki. Każde łóżko roi się od pcheł i pluskiew, szczury podążają za każdym twoim krokiem, gryzące muchy przesłaniają ci oczy.',
     'Twoja skóra powoli przekształca się w korę i wyrastają z niej małe, chorowite pędy. Twoja nowa drzewiasta fizjologia sprawia, że masz dodatkowe k2 pancerza (oprócz już noszonego), jednak wszelka niemagiczna regeneracja HP zostaje zmniejszona o połowę. Jesteś też wrażliwy na ogień.',
-    
+    'Zwój rozsypuje się w proch, tak jak k6 twoich palców.',
+    'Cel twojego zaklęcia zostaje obleczony w ciemność i przekształca się w głodnego śmierci licza z innego wymiaru. Jeśli rzucałeś zaklęcie na siebie lub sprzymierzeńca - przenosisz się do krainy śmierci i bezkresnego cierpienia; otaczają cię kolosalne ociekające krwią czerwie oraz wilgotne mięsiste szkielety, twoim towarzyszom pozostaje zająć się liczem. Nie próbuj dyskutować z mieszkańcami obcego świata, ich zastępy są nieskończone i jedyne co ich obchodzi, to zaspokojenie nieustannego głodu.',
+    'Twoje zęby zostają zastąpione przez łapczywe kościste ręce. Stale szczypią one i dźgają twój język o policzki. Głośno pstrykają, gdy są zadowolone z jedzenia, które spożywasz. Bardzo trudno ci się wysławiać, testy na prezencję związane z mówieniem są trudniejsze o 4.',
+
 
   ]
 }
