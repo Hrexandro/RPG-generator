@@ -3,7 +3,9 @@
 //monster generator
 //cult generator?
 //wymyśl staty kundlaka
-//move different categories to separate modules: names, monsters, encounters (including loot)
+//move different categories to separate modules: names, monsters, encounters (including loot) - only names for now
+//make sure half the encounters are creatures
+//kreatura":Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała.
 
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
@@ -51,6 +53,8 @@ const MBNames = {// name
     "Tor",
     "Tö",
     "Ur",
+    "Wolf",
+    "Wulf",
     "Dru",
     "Vik",
     "Va",
@@ -141,6 +145,7 @@ const MBNames = {// name
     "An",
     "Les",
     "Josil",
+    "Jur",
     "Sig",
     "Sagso",
     "Hon",
@@ -148,6 +153,7 @@ const MBNames = {// name
     "Bon",
   ],
   suffix: [
+    "",
     "ras",
     "vold",
     "vord",
@@ -160,6 +166,8 @@ const MBNames = {// name
     "gel",
     "gal",
     "tan",
+    "ric",
+    "berht",
     "n",
     "kh",
     "si",
@@ -225,6 +233,8 @@ const MBNames = {// name
     "biorn",
     "u",
     "her",
+    "grad",
+    "gen",
     "gärdh",
     "dus",
     "ger",
@@ -338,6 +348,7 @@ const MBTowns = { //town
     "Gail",
     "Geisel",
     "Gel",
+    "Gar",
     "Geld",
     "Glau",
     "Gerolz",
@@ -505,6 +516,7 @@ const MBTowns = { //town
     "stal",
     "toft",
     "brek",
+    "gamel",
     "dal",
     "by",
     "gard",
@@ -567,6 +579,7 @@ const MBTowns = { //town
     "schau",
     "ster",
     "sulm",
+    "grad",
     "rade",
     "mark",
     "kloster",
@@ -984,7 +997,23 @@ const MBRandomEncounters = function () {
 
       'Zbliża się osiodłany koń bez jeźdźca. W torbach ma 4k10 racji zakonserwowanego ludzkiego mięsa. Jeśli drużyna zabierze mięso, koń opuści głowę i pogalopuje w dal.',
       'Zbliża się stary mężczyzna pchający wózek, na którym znajduje się ogromna książka i pyta bohaterów o ich imiona. Jeśli mu je podadzą, zapisuje je w księdze. Zimny dreszcz przebiega po ich kręgosłupach.',
-      'Spotykacie dwójkę upiornych dzieci grających w kości doliny śmierci. Robią zakłady z omenów i chętnie zaproszą nowych graczy do rozgrywki.'
+      'Spotykacie dwójkę upiornych dzieci grających w kości doliny śmierci. Robią zakłady z omenów i chętnie zaproszą nowych graczy do rozgrywki.',
+      "Staje przed wami fraktalna forma Y'cthonlla, tego, który zamieszkuje Pomiędzy. Członkowie drużyny muszą przejść test DR16 na Prezencję, aby nie uciec z wrzaskiem od jego przeraźliwego widoku. Ci, którzy pozostali otrzymują mały mosiężny kluczyk.",
+      'Waszą drogę przecina wir pyłowy, z jego wnętrza słychać odgłosy orkiestry dętej. Jeśli wrzucisz do środka trochę srebra, nie zbliży się do ciebie. Wrzuć więcej, a może przystanie na twoją prośbę.',
+      'Na uboczu drogi siedzi stary mężczyzna ze złotym instrumentem strunowym. Obiecuje, że pozwoli wam przejść, jeśli pokonacie go w grze. A jeśli przegracie… ?',
+      'Kobieta w bieli stoi przy drodze trzymając płaczące niemowlę, prosi rozpaczliwie by ktoś je potrzymał. Jeśli się zgodzisz, dziecko staje się cięższe z każdą sekundą. Test DR16 na siłę, porażka to upuszczenie dziecka, kobieta wysysa 1 omen, sukces - kobieta odbiera uspokojone dziecko i otrzymujesz 1 omen. Jeśli odmówią potrzymania, kobieta zmienia się w zjawę i atakuje.',
+      'Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.',
+      'Małe dziecko podbiega do was i krzyczy "jesteście wybrańcami!".',
+      'Dwoje zwłok leży w rowie. Drwal, zmiażdżony i z połamanymi kośćmi i kupiec z głęboką raną od siekiery z tyłu głowy. Obok nich leży (przeklęty) mieszek z k10*6 srebra. Po wzięciu srebra kupiec powstaje: HP 12, nieumarły (powstaje ponownie po k3 rundach), k10 obrażeń (miażdżąca kości siła).',
+      'Ni stąd, ni zowąd pojawia się berserker. Nie atakuje jednak drużyny, chce im tylko opowiedzieć swoją hipotezę o Wymiarze Krwi jako części metafizycznego i dosłownego "ciała" obejmującego rzeczywistość. Pyta: Jaką część tego "ciała" zamieszkujecie?',
+      'W oddali tanecznymi ruchami porusza się latarnia. Nie widzicie żadnej postaci trzymającej latarnię. Zauważa was. O BOŻE LECI PROSTO NA WAS!!!',
+      'Mija was procesja zakapturzonych mnichów, którzy powtarzają w kółko "koniunkcja nadeszła koniunkcja nadeszła!". Czujesz drżenie podłoża w miarę zbliżania się do nich.',
+      'W środku nocy ogień w waszym ognisku ożywa. Domaga się więcej drewna.',
+      'Z nieba spada mężczyzna, rozpryskując krew na wszystkie strony. Ma przy sobie Zwój Lewitacji, który powoduje unoszenie się w powietrzu. Po k20 minutach unoszenia się, zaklęcie przestaje działać.',
+      'Napotykasz kryształowo czystą rzekę. Przyjrzyj się z bliska: twoje odbicie wygląda na zadowolone z tego, że cię widzi.',
+      'Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała.',
+      'Nagle czujesz bulgotanie w trzewiach i musisz natychmiast ściągnąć spodnie, bo inaczej w nie narobisz. Jeśli przyjrzysz się odchodom, zobaczysz malutkie różowe robaki, które z każdą chwilą rosną. Jeśli nie zdjąłeś spodni, śmierdzisz okropnie, a robaki wpełzają z powrotem do środka, wywołując kolejną defekację po 2k6 minutach.',
+
 
     ],
   };
