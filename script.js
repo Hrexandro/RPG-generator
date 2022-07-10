@@ -14,11 +14,6 @@ import {MBTowns} from './names.js';
 import {VOTENobleNames} from './names.js';
 import {wizardNames} from './names.js';
 
-// window.MBNames = MBNames;
-// window.MBTowns = MBTowns;
-// window.VOTENobleNames = VOTENobleNames;
-// window.wizardNames = wizardNames;
-
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
 const categoryPicker = document.getElementById("kategoria");
@@ -541,7 +536,7 @@ function randomizeFromArray(array) {
 }
 
 function displayArray(ar, parent) {
-  for (j = 0; j < ar.length; j++) {
+  for (let j = 0; j < ar.length; j++) {
     let line = document.createElement("p");
     line.innerText = `${j + 1}. ${ar[j]}`;
     parent.appendChild(line);
