@@ -14,6 +14,11 @@ import {MBTowns} from './names.js';
 import {VOTENobleNames} from './names.js';
 import {wizardNames} from './names.js';
 
+// window.MBNames = MBNames;
+// window.MBTowns = MBTowns;
+// window.VOTENobleNames = VOTENobleNames;
+// window.wizardNames = wizardNames;
+
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
 const categoryPicker = document.getElementById("kategoria");
