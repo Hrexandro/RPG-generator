@@ -1,18 +1,18 @@
 // to add:
 // random encounters/ varied by regions - add some monsters to default, add defaults to nondefault as well
-//monster generator
-//cult generator?
+//cult generator
 //wymyśl staty kundlaka
-//move different categories to separate modules: names, monsters, encounters (including loot) - only names for now
 //make sure half the encounters are creatures
 //kreatura":Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała.
 //ghoul
+//arcane catastrophes - add random mutation (add mutations roll)
+//add arcane catastrophes from: fatal, GURPS magic and thaumatology, Dark Heresy, WFRP
+//add rest of monsters from core book
 
-
-import {MBNames} from './names.js';
-import {MBTowns} from './names.js';
-import {VOTENobleNames} from './names.js';
-import {wizardNames} from './names.js';
+import { MBNames } from './names.js';
+import { MBTowns } from './names.js';
+import { VOTENobleNames } from './names.js';
+import { wizardNames } from './names.js';
 
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
@@ -143,6 +143,20 @@ const MBWeather = {
     "Warczące grzmoty",
     "Grobowe zimno",
   ],
+};
+
+const mutations = function () {
+  //przeszukiwanie zwłok, rabowanie zwłok
+  return {
+  type: "pickerRoller",
+  list: [
+    'Groteska - Zostajesz straszliwie zdeformowany, poznaczony bliznami, poszarpany -3 do charyzmy i rzucasz jeszcze raz.',
+    'Spaczone organy - Twoje flaki zwijają się. Za każdym razem kiedy dostaniesz silne obrażenia, wszyscy w zasięgu 10 metrów rzucają na strach.',
+    'Nietoperze skrzydła - poruszasz się na nich ze standardową prędkością.',
+    `Dodatkowe usta - ${k(6)+k(6)} ust wyrasta na twojej głowie i szyi`,
+    `Beczkowaty tułów - masywny, szeroki, cylindryczny. +${k(6)} Budowy, +${k(6)} HP.`,
+  ],
+  }
 };
 
 const MBTerribleTraits = {
@@ -436,49 +450,91 @@ const MBCorpseLoot = function () {
   };
 };
 
-const MBArcaneCatastrophes = {// arcane catastrophes magiczne katastrofy
-  type: "picker",
-  list: [
-    "Twoje zęby wypadają jeden po drugim. W ich miejsce wyrastają długie, łamliwe paznokcie. (Twój uśmiech jest przerażający, jedzenie jest problematyczne.)",
-    "Czujesz się dobrze. Jest dobrze. (Twój narząd pokrywają krosty magicznej choroby wenerycznej. Ci, z którymi dokonasz zbliżenia giną w ciągy k4 dni, by powstać jako p-łaczące zombie, które dopadają cię w snach, zanim odnajdą cię w rzeczywistości.)",
-    "Twój szkielet opanowuje nieziemska siła, która zrobi wszystko, by zabić cię i uciec. Preferuje utopienie lub ataki kłute, aby kości nie uległy uszkodzeniu. Test DR10 na siłę w sytuacjach stresujących, by uniknąć k4 obrażeń. (Gdy umrzesz, powstajesz jako zombie.)",
-    "Iluzja firmamentu zostaje zdjęta, od teraz widzisz, co jest poza nią. Patrzenie w czyste, nocne niebo doprowadza cię do paraliżującego strachu",
-    "Dookoła ciebie spadają płatki czarnej sadzy, którą widzisz tylko ty i szaleńcy. (Woda obrzydza cię od tej chwili. Tylko popiół, sadza lub spalone zwłoki zaspokajają twoje pragnienie).",
-    "Ziemia wokół twoich nóg gnije jak mokre mięso. Zapadasz się na metr głębokości i nie jesteś w stanie wyjść bez pomocy. Do twojego ciała przywiera k4 wrzeszczących i gryzących przezroczystych dzieci o ciałach raków oraz twojej twarzy. HP 3, Morale -, Ugryzienie/szczypanie k4.",
-    "Twoja skóra łuszczy się jak papier, twoje mięśnie topią się jak wosk, twoje jelita nadymają się jak balony, pękają i wylewają się z ciebie, aż wszystko co po tobie zostało to chodzący, gadający szkielet.",
-    "Twoje gardło rozszczepia się, ukazując zgrzytającą zębami paszczę, która wypluwa twoje sekrety i myśli (usypia ją jedynie krew).",
-    "Niebo wypacza się, a gwiazdy wirują niczym koła. Zostajesz wyrzucony jeden dzień w przyszłość, gdzie docierasz rzygając płynnym czasem, który wygląda jak parująca srebrna żółc (Nieszczęście zostaje wypełnione).",
-    "Światło cię nienawidzi. Twój wzrok gasi płomienie świec, lamp, czy pochodni.",
-    "(W ciągu k4 dni wstrętny kokon wyłoni się z ziemi, zrodzony zostanie z niego twój identyczny klon. Bezmyślnie czyni on krzywdę wszystkiemu, co go otacza. Dzieje się tak co kilka dni, dopóki ten skrawek ziemi nie zostanie oczyszczony wodą święconą lub ogniem.",
-    "Twoje oczy płoną potwornym bólem, ciężko krwawiąc, by potem poluzować się i wypaść, pozostawiając po sobie krwawe oczodoły. Dalej przez nie widzisz, gdziekolwiek są.",
-    "Ty i losowa istota w twoim otoczeniu tracicie przytomność. (Wasze dusze zostały zamienione miejscami, witaj w swoim nowym ciele).",
-    "Pięć powykręcanych, kościanych ramion wyrasta z twoich pleców. Ręce są psotne, brutalne i niesamowicie okrutne.",
-    "Twoja skóra blednie i zaczyna emitować chorobliwe zielonkawe światło. (Żywe istoty, które pozostają blisko ciebie powoli marnieją. Słabną, ich kości stają się łamliwe, ich zęby i włosy wypadają.)",
-    "Zwój rozsypuje się w macki zbudowane z drobnego czarnego pyłu, sięgające do twoich ust i nozdrzy. Test DR14 na Odporność by uniknąć k10 obrażeń.",
-    "Moc działa, ale przeznaczenie lub demoniczna siła sprawiają, że jej efekty zostają wypaczone na twoją niekorzyść.",
-    "Moc przebija cię jak nóż, pożywiając się twoją duszą. Stajesz się wychudły i stale głodny. (Gdy odpoczywasz, regenerujesz tylko połowę wyrzuconych HP.",
-    "Wpadasz przez Refvę do ezoterycznego wymiaru Sześciennego Fioletu, miejsca mitycznego mroku. Ściany są gładkie, opalizujące i zimne. Nad tobą szaleje nieskończone morze ognia. Aby odejść (k4): 1. Pokonaj zagadkowego Kulvana (silny goblin), który dzierży trzy bezbarwne perły. 2. Zatruj bliskiego przyjaciela kruszonym sykt-grzybem (Odporność DR16 lub -k6 HP i halucynacje). Grzyby te rosną tylko w sześcianie. 3. Sięgnij w ogień nad tobą, aby zdobyć złoty klucz. k4 z twoich palców zostaje spopielone. 4. Sześcian jest perfekcyjny i pusty. Możesz tylko czekać w doprowadzającej do szaleństwa bezkresnej ciszy, aż pojawi się następny głupiec.",
-    "Być może tak właśnie będzie najlepiej. ON wynurza się z cieni. Twoje cierpienie przynajmniej będzie krótkie, gdy pożarty zostaniesz przez dwugłowego bazyliszka.",
-    'Twoje stopy stają się dłońmi. Twoja czaszka znika, sprawiając, że twoja głowa jest malutka, miękka, i poruszająca się bezwładnie przy każdym ruchu. Jedzenie sprawia ci problem. Wyglądasz tak dziwnie, że wszystkie interakcje społeczne mają +6 do trudności.',
-    'Uzależniasz się od zapachu magicznego pyłu, który unosi się w powietrzu po każdym użyciu zaklęcia.Czujesz przymus rzucania zaklęć (dowolnych) na początku każdej walki oraz k10 godzin po ostatnim razie. Możesz powstrzymać się zdając test DR14 na Odporność, ale ten głód nigdy cię nie opuści.',
-    'Twoja skóra pęka, łuszczy się i zostaje pochłonięta prez szalejące płomienie. Twoja zbroja spala się na żużel i spada u twoich stóp. Twoja skóra nigdy się nie zregeneruje i stale pachniesz jak pieczona kiełbasa.',
-    'Twoja szyja znika jakby nigdy nie istniała. Żyjesz, ale musisz nosić głowę ze sobą. Nadal musisz jeść i pić.',
-    'Twoje dłonie stale wydzielają śliski, śmierdzący, półstały tłuszcz z porów. Zostawia on tłuste ślady na wszystkim, czego dotykasz i bardzo trudno go zmyć. Za każdym razem, kiedy musisz ostrożnie posłużyć się jakimś przedmiotem, masz 1/6 szansy, że go upuścisz.',
-    'Za każdym razem kiedy jesz, coś dziwnego wydobywa się z twojego brzucha: 1. Podmuch wiatru. 2. Śmierdząca chmura. 3. Błyskawica. 4. Chmara motyli. 5. Jaśniejące światło. 6. Jakaś istota (wybór MG).',
-    'Wnika w ciebie magiczna moc. Czujesz jak dreszcz przebiega wdłuż kręgosłupa i przez wszystkie twoje żyły. Czujesz się nieswojo i zimno i wydaje ci się, że coś wędruje pod twoją skórą. Kiedy regenerujesz HP poprzez odpoczynek, zmniejsz wynik o k2. Gdy umrzesz, twoi "goście" zaczną wylewać się z każdego z otworów twojego ciała.',
-    'Słowa zwoju wnikają w twoją duszę, dając ci dostęp do jego mocy dodatkowe k4 razy dziennie, jednak czyniąc to, moc cię oślepia. Nigdy więcej nie przeczytasz żadnego zwoju, a twoja Zręczność (o ile wynosi więcej niż 0), zostaje zredukowana na stałe do 0.',
-    'W miejsce twojej własnej głowy pojawia się owrzodzona głowa demona. Twoja mowa składa się od teraz wyłącznie z niezrozumiałych ryków.',
-    'Zamiast docelowego zaklęcia, zwój przywołuje chmarę latających mięsożernych ryb (1hp ilość 2k6). Oblepiają one cel zaklęcia zadając 2kX obrażeń (X to liczba ryb, zaokrąglona w górę do liczby parzystej), zbroja tej istoty zostaje kompletnie zniszczona, po pożarciu jej, ryby zwracają się przeciwko tobie.',
-    'Słyszysz dziwne dudnienie ze swoich trzewi, które po chwili przemija. Gdy następny raz się wypróżniasz (nocowanie w drodze, odwiedzanie karczmy), rzuć DR20 na porażka to 20 - twój wynik * k4 obrażeń',
-    'Zamiast zamierzonego zaklęcia rzucasz Śmierć.',
-    'Jesteś dręczony i śledzony przez szkodniki. Każde łóżko roi się od pcheł i pluskiew, szczury podążają za każdym twoim krokiem, gryzące muchy przesłaniają ci oczy.',
-    'Twoja skóra powoli przekształca się w korę i wyrastają z niej małe, chorowite pędy. Twoja nowa drzewiasta fizjologia sprawia, że masz dodatkowe k2 pancerza (oprócz już noszonego), jednak wszelka niemagiczna regeneracja HP zostaje zmniejszona o połowę. Jesteś też wrażliwy na ogień.',
-    'Zwój rozsypuje się w proch, tak jak k6 twoich palców.',
-    'Cel twojego zaklęcia zostaje obleczony w ciemność i przekształca się w głodnego śmierci licza z innego wymiaru. Jeśli rzucałeś zaklęcie na siebie lub sprzymierzeńca - przenosisz się do krainy śmierci i bezkresnego cierpienia; otaczają cię kolosalne ociekające krwią czerwie oraz wilgotne mięsiste szkielety, twoim towarzyszom pozostaje zająć się liczem. Nie próbuj dyskutować z mieszkańcami obcego świata, ich zastępy są nieskończone i jedyne co ich obchodzi, to zaspokojenie nieustannego głodu.',
-    'Twoje zęby zostają zastąpione przez łapczywe kościste ręce. Stale szczypią one i dźgają twój język o policzki. Głośno pstrykają, gdy są zadowolone z jedzenia, które spożywasz. Bardzo trudno ci się wysławiać, testy na prezencję związane z mówieniem są trudniejsze o 4.',
+const MBArcaneCatastrophes = function () {// arcane catastrophes magiczne katastrofy
+  return {
+    type: "pickerRoller",
+    list: [
+      "Twoje zęby wypadają jeden po drugim. W ich miejsce wyrastają długie, łamliwe paznokcie. (Twój uśmiech jest przerażający, jedzenie jest problematyczne.)",
+      "Czujesz się dobrze. Jest dobrze. (Twój narząd pokrywają krosty magicznej choroby wenerycznej. Ci, z którymi dokonasz zbliżenia giną w ciągy k4 dni, by powstać jako p-łaczące zombie, które dopadają cię w snach, zanim odnajdą cię w rzeczywistości.)",
+      "Twój szkielet opanowuje nieziemska siła, która zrobi wszystko, by zabić cię i uciec. Preferuje utopienie lub ataki kłute, aby kości nie uległy uszkodzeniu. Test DR10 na siłę w sytuacjach stresujących, by uniknąć k4 obrażeń. (Gdy umrzesz, powstajesz jako zombie.)",
+      "Iluzja firmamentu zostaje zdjęta, od teraz widzisz, co jest poza nią. Patrzenie w czyste, nocne niebo doprowadza cię do paraliżującego strachu",
+      "Dookoła ciebie spadają płatki czarnej sadzy, którą widzisz tylko ty i szaleńcy. (Woda obrzydza cię od tej chwili. Tylko popiół, sadza lub spalone zwłoki zaspokajają twoje pragnienie).",
+      "Ziemia wokół twoich nóg gnije jak mokre mięso. Zapadasz się na metr głębokości i nie jesteś w stanie wyjść bez pomocy. Do twojego ciała przywiera k4 wrzeszczących i gryzących przezroczystych dzieci o ciałach raków oraz twojej twarzy. HP 3, Morale -, Ugryzienie/szczypanie k4.",
+      "Twoja skóra łuszczy się jak papier, twoje mięśnie topią się jak wosk, twoje jelita nadymają się jak balony, pękają i wylewają się z ciebie, aż wszystko co po tobie zostało to chodzący, gadający szkielet.",
+      "Twoje gardło rozszczepia się, ukazując zgrzytającą zębami paszczę, która wypluwa twoje sekrety i myśli (usypia ją jedynie krew).",
+      "Niebo wypacza się, a gwiazdy wirują niczym koła. Zostajesz wyrzucony jeden dzień w przyszłość, gdzie docierasz rzygając płynnym czasem, który wygląda jak parująca srebrna żółc (Nieszczęście zostaje wypełnione).",
+      "Światło cię nienawidzi. Twój wzrok gasi płomienie świec, lamp, czy pochodni.",
+      "(W ciągu k4 dni wstrętny kokon wyłoni się z ziemi, zrodzony zostanie z niego twój identyczny klon. Bezmyślnie czyni on krzywdę wszystkiemu, co go otacza. Dzieje się tak co kilka dni, dopóki ten skrawek ziemi nie zostanie oczyszczony wodą święconą lub ogniem.",
+      "Twoje oczy płoną potwornym bólem, ciężko krwawiąc, by potem poluzować się i wypaść, pozostawiając po sobie krwawe oczodoły. Dalej przez nie widzisz, gdziekolwiek są.",
+      "Ty i losowa istota w twoim otoczeniu tracicie przytomność. (Wasze dusze zostały zamienione miejscami, witaj w swoim nowym ciele).",
+      "Pięć powykręcanych, kościanych ramion wyrasta z twoich pleców. Ręce są psotne, brutalne i niesamowicie okrutne.",
+      "Twoja skóra blednie i zaczyna emitować chorobliwe zielonkawe światło. (Żywe istoty, które pozostają blisko ciebie powoli marnieją. Słabną, ich kości stają się łamliwe, ich zęby i włosy wypadają.)",
+      "Zwój rozsypuje się w macki zbudowane z drobnego czarnego pyłu, sięgające do twoich ust i nozdrzy. Test DR14 na Odporność by uniknąć k10 obrażeń.",
+      "Moc działa, ale przeznaczenie lub demoniczna siła sprawiają, że jej efekty zostają wypaczone na twoją niekorzyść.",
+      "Moc przebija cię jak nóż, pożywiając się twoją duszą. Stajesz się wychudły i stale głodny. (Gdy odpoczywasz, regenerujesz tylko połowę wyrzuconych HP.",
+      "Wpadasz przez Refvę do ezoterycznego wymiaru Sześciennego Fioletu, miejsca mitycznego mroku. Ściany są gładkie, opalizujące i zimne. Nad tobą szaleje nieskończone morze ognia. Aby odejść (k4): 1. Pokonaj zagadkowego Kulvana (silny goblin), który dzierży trzy bezbarwne perły. 2. Zatruj bliskiego przyjaciela kruszonym sykt-grzybem (Odporność DR16 lub -k6 HP i halucynacje). Grzyby te rosną tylko w sześcianie. 3. Sięgnij w ogień nad tobą, aby zdobyć złoty klucz. k4 z twoich palców zostaje spopielone. 4. Sześcian jest perfekcyjny i pusty. Możesz tylko czekać w doprowadzającej do szaleństwa bezkresnej ciszy, aż pojawi się następny głupiec.",
+      "Być może tak właśnie będzie najlepiej. ON wynurza się z cieni. Twoje cierpienie przynajmniej będzie krótkie, gdy pożarty zostaniesz przez dwugłowego bazyliszka.",
+      'Twoje stopy stają się dłońmi. Twoja czaszka znika, sprawiając, że twoja głowa jest malutka, miękka, i poruszająca się bezwładnie przy każdym ruchu. Jedzenie sprawia ci problem. Wyglądasz tak dziwnie, że wszystkie interakcje społeczne mają +6 do trudności.',
+      'Uzależniasz się od zapachu magicznego pyłu, który unosi się w powietrzu po każdym użyciu zaklęcia.Czujesz przymus rzucania zaklęć (dowolnych) na początku każdej walki oraz k10 godzin po ostatnim razie. Możesz powstrzymać się zdając test DR14 na Odporność, ale ten głód nigdy cię nie opuści.',
+      'Twoja skóra pęka, łuszczy się i zostaje pochłonięta prez szalejące płomienie. Twoja zbroja spala się na żużel i spada u twoich stóp. Twoja skóra nigdy się nie zregeneruje i stale pachniesz jak pieczona kiełbasa.',
+      'Twoja szyja znika jakby nigdy nie istniała. Żyjesz, ale musisz nosić głowę ze sobą. Nadal musisz jeść i pić.',
+      'Twoje dłonie stale wydzielają śliski, śmierdzący, półstały tłuszcz z porów. Zostawia on tłuste ślady na wszystkim, czego dotykasz i bardzo trudno go zmyć. Za każdym razem, kiedy musisz ostrożnie posłużyć się jakimś przedmiotem, masz 1/6 szansy, że go upuścisz.',
+      'Za każdym razem kiedy jesz, coś dziwnego wydobywa się z twojego brzucha: 1. Podmuch wiatru. 2. Śmierdząca chmura. 3. Błyskawica. 4. Chmara motyli. 5. Jaśniejące światło. 6. Jakaś istota (wybór MG).',
+      'Wnika w ciebie magiczna moc. Czujesz jak dreszcz przebiega wdłuż kręgosłupa i przez wszystkie twoje żyły. Czujesz się nieswojo i zimno i wydaje ci się, że coś wędruje pod twoją skórą. Kiedy regenerujesz HP poprzez odpoczynek, zmniejsz wynik o k2. Gdy umrzesz, twoi "goście" zaczną wylewać się z każdego z otworów twojego ciała.',
+      'Słowa zwoju wnikają w twoją duszę, dając ci dostęp do jego mocy dodatkowe k4 razy dziennie, jednak czyniąc to, moc cię oślepia. Nigdy więcej nie przeczytasz żadnego zwoju, a twoja Zręczność (o ile wynosi więcej niż 0), zostaje zredukowana na stałe do 0.',
+      'W miejsce twojej własnej głowy pojawia się owrzodzona głowa demona. Twoja mowa składa się od teraz wyłącznie z niezrozumiałych ryków.',
+      'Zamiast docelowego zaklęcia, zwój przywołuje chmarę latających mięsożernych ryb (1hp ilość 2k6). Oblepiają one cel zaklęcia zadając 2kX obrażeń (X to liczba ryb, zaokrąglona w górę do liczby parzystej), zbroja tej istoty zostaje kompletnie zniszczona, po pożarciu jej, ryby zwracają się przeciwko tobie.',
+      'Słyszysz dziwne dudnienie ze swoich trzewi, które po chwili przemija. Gdy następny raz się wypróżniasz (nocowanie w drodze, odwiedzanie karczmy), rzuć DR20 na porażka to 20 - twój wynik * k4 obrażeń',
+      'Zamiast zamierzonego zaklęcia rzucasz Śmierć.',
+      'Jesteś dręczony i śledzony przez szkodniki. Każde łóżko roi się od pcheł i pluskiew, szczury podążają za każdym twoim krokiem, gryzące muchy przesłaniają ci oczy.',
+      'Twoja skóra powoli przekształca się w korę i wyrastają z niej małe, chorowite pędy. Twoja nowa drzewiasta fizjologia sprawia, że masz dodatkowe k2 pancerza (oprócz już noszonego), jednak wszelka niemagiczna regeneracja HP zostaje zmniejszona o połowę. Jesteś też wrażliwy na ogień.',
+      'Zwój rozsypuje się w proch, tak jak k6 twoich palców.',
+      'Cel twojego zaklęcia zostaje obleczony w ciemność i przekształca się w głodnego śmierci licza z innego wymiaru. Jeśli rzucałeś zaklęcie na siebie lub sprzymierzeńca - przenosisz się do krainy śmierci i bezkresnego cierpienia; otaczają cię kolosalne ociekające krwią czerwie oraz wilgotne mięsiste szkielety, twoim towarzyszom pozostaje zająć się liczem. Nie próbuj dyskutować z mieszkańcami obcego świata, ich zastępy są nieskończone i jedyne co ich obchodzi, to zaspokojenie nieustannego głodu.',
+      'Twoje zęby zostają zastąpione przez łapczywe kościste ręce. Stale szczypią one i dźgają twój język o policzki. Głośno pstrykają, gdy są zadowolone z jedzenia, które spożywasz. Bardzo trudno ci się wysławiać, testy na prezencję związane z mówieniem są trudniejsze o 4.',
+      `Cel zaklęcia zyskuje mutację: ${pickFromList(mutations)}`,
+      `Rzucający zaklęcie zyskuje mutację: ${pickFromList(mutations)}`,
+      `Losowa istota w promieniu 10 metrów zyskuje mutację: ${pickFromList(mutations)}`,
+      `Wszyscy w promieniu 10 metrów robią rzut obronny, ci, którym się nie powiedzie, zyskują mutację: ${pickFromList(mutations)}`,
+      'Zaklęcie zmienia cel na losową istotę w najbliższym otoczeniu',
+      'Oczy rzucającego stają się czarne jak gagat i jaśnieją w nich elektryczne rozbłyski - rzucający zyskuje odporność na błyskawice.',
+      'Rzucającemu wyrasta funkcjonalne oko na losowej części ciała',
+      'Kości rzucającego stają się kruche, od tej chwili otrzymuje +50% obrażeń od broni obuchowej.',
+      'Rzucający traci jeden poziom pod względem zdolności magicznych',
+      'Od tej chwili za każdym razem, kiedy rzucający rzuci zaklęcie, z jego odbytu wypływają rzadkie fekalia',
+      'Z dłoni rzucającego wyrastają 30cm rogi, działające jak sztylety',
+      `Następny cios w walce, który otrzyma rzucający, zada ${k(100)+k(100)} punktów obrażeń`,
+      'Ciało rzucającego wydziela oślepiający blask za każdym razem, kiedy jakiś wróg ma zaatakować z zaskoczenia',
+      'Rzucający i cel zamieniają się bronią',
+      `Ręka rzucającego odczepia się i atakuje losową istotę przez ${k(4)} rundy.`,
+      'Zaklęcie odbija się od celu i trafia losowego członka drużyny',
+      `Rzucający zostaje oślepiony na ${k(6)} r.`,
+      `Rzucający staje się głuchy na ${k(6)} r.`,
+      'Cel trafia rzucającego (jeśli szkodliwy), wroga (jeśli pomocny), lub nie działa (jeśli neutralny).',
+      'Rzucający przekształca się w losowego potwora, od teraz jest niebiezpiecznym BNem.',
+      `Agonia przez ${k(6)} r.`,
+      'Desperacki głód, nie może działać, dopóki nie zje 1 racji.',
+      `Skóra wydziela śluz, jego zdjęcie trwa ${k(6)} r.`,
+      'Od teraz: rzut obronny na początek każdego dnia, porażka oznacza, że zyskujesz losową mutację, rzut obronny na koniec dnia - porażka oznacza, że mutacja jest permanentna.',
+      'Zmieniasz się w wygłodniałą chaotyczną psychoplazmę.',
+      'Od teraz rzucający nie może wchodzić do miejsc uświęconych. Dotykanie srebra zadaje 1 pkt. obrażeń na rundę. Srebrna broń zadaje podwójne obrażenia.',
+      'Rzucający zostaje zredukowany do 0 HP',
+      'Rzucający traci zdolność do rzucania zaklęć przez 1 dzień.',
+      'Rzucający traci zdolność do rzucania zaklęć przez 3 dzień.',
+      'Rzucający traci zdolność do rzucania zaklęć permanentnie, potrafi walczyć tylko gołymi rękami i zębami, mówi tylko monosylabami.',
+      'Pojawia się 2 metrowe lustro, do którego rzucający czuje przymus wejścia, wraca następnego dnia utraciwszy jeden przedmiot, zyskawszy jeden przedmiot o podobnej wartości i z 1hp, drżący i wystraszony.',
+      `${k(6)} z pobliskich zwłok ożywa i atakuje cię przez ${k(6)} r.`,
+      'Twoja dusza opuszcza ciało, rzucaj na inteligencję co godzinę, żeby znaleźć drogę z powrotem.',
+      `Umierasz i spędzasz ${k(6)} z następnych dni jako bezsilny duch. Twoje ciało zacznie gnić po 2 dniach, o ile nie zostanie zakonserwowane. Jeśli zamieszkasz zgniłe ciało, staniesz się nieumarły`,
+      `Stajesz się nieumarły`,
+      'Wszystkie zwłoki w zasięgu 20 mil powstają jako szkielety i zombie i próbują cię zabić',
+      'Zmieniasz się w pająka na 1 dzień',
+      'Zmieniasz się w pająka na 3 dni, żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
+      'Zmieniasz się w pająka na stałe. Co tydzień robisz rzut obronny, porażka oznaza, że zapominasz 1 rok swojego dawnego życia. Żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
+      'Znikasz na 1 dzień, zostaje po tobie tylko cień.',
+      `Znikasz na zawsze, zostawiając po sobie jedynie wygłodniały cień: ${MBMonsters.shadowCreature}`,
+    ]
 
-
-  ]
+  }
 }
 
 let MBMonsters = {//monster monsters potwory
@@ -519,9 +575,10 @@ createAndAddMonster({keyName: "daemon", nazwa : "Dæmon", HP : "24", morale : "-
 createAndAddMonster({keyName: "goblin", nazwa : "Goblin", HP : "6", morale : "7", pancerz : "Twarda skóra -k2", broń : "Nóż/krótki łuk k4", specjalneCechy : "Szybki, atak i obrona DR14, jeśli nie zostanie zabity, ten kogo atakował po k6 dniach sam zmieni się w goblina. Warość: głowa 7s, złapany 150s, martwy 20s"});
 createAndAddMonster({keyName: "scum", nazwa : "Szumowina", HP : "7", morale : "8", pancerz : "brak", broń : "Zatruty nóż k4 + infekcja (DR10 Odporność)", specjalneCechy : "BG z najwyższą prezencją robi test DR14 na początku walki, porażka oznacza, że losowy członek drużyny został trafiony podstępnym ciosem w plecy +3 do obrażeń. Wartość: złapany (winny poważnej) zbrodni 50-120s, martwy (winny poważnej zbrodni) 20-70s."});
 createAndAddMonster({keyName: "berserker", nazwa : "Berserker", HP : "13", morale : "9", pancerz : "Stwardniała skóra -k2", broń : "k4: 1. Długi korbacz k8, ciężka buława k6, miecz na łańcuchu k6, ogromny młot bojowy k10", specjalneCechy : "Atakuje dwukrotnie na rundę, ale nie trudzi się obroną (DR10 na trafienie). Wartość: złapany 55s, martwy 20s, krew (1l) 3s."})
+createAndAddMonster({keyName: "shadowCreature", nazwa : "Istota cienia", HP : "18", morale : "10", pancerz : "Bezcielesność -k4", broń : "Dotyk entropii k6", specjalneCechy : ""});
 //createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
-
+//kreatura":Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała.
 function removeAllChildren(element) {
   let counter = element.children.length;
   for (let m = 0; m <= counter; m++) {
@@ -544,7 +601,6 @@ function displayArray(ar, parent) {
 }
 
 function pickFromList(pickedList) {
-  console.log(pickedList)
   if (pickedList.type === "mixer") {
     return (
       randomizeFromArray(pickedList.prefix) +
@@ -557,7 +613,7 @@ function pickFromList(pickedList) {
   } else if (pickedList.type === "picker") {
     return randomizeFromArray(pickedList.list);
   } else if (pickedList.type === "multipleMixer"){// use this for unlimited number of tables to pick from (like x. cults)
-
+//not introduced YET
 
   } else if (pickedList().type === "pickerRoller") {
     //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
