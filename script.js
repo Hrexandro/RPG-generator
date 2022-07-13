@@ -155,6 +155,11 @@ const mutations = function () {
     'Nietoperze skrzydła - poruszasz się na nich ze standardową prędkością.',
     `Dodatkowe usta - ${k(6)+k(6)} ust wyrasta na twojej głowie i szyi`,
     `Beczkowaty tułów - masywny, szeroki, cylindryczny. +${k(6)} Budowy, +${k(6)} HP.`,
+    'Jedna ręka przemienia się w zwykłe narzędzie.',
+    'Kopytny - na końcach twoich nóg wyrastają kopyta. Nie możesz nosić butów, potrzebujesz podków.',
+    'Niestabilne mięso - w momencie twojej śmierci, twoje pasożytnicze kończyny próbują zaatakować w zwarciu pobliskie istoty i zrosnąć się z nimi.',
+    'Szczypce kraba - jedna z twoich rąk zmienia się w szczypce. K8 obrażeń miażdżących, zawsze atakujesz ostatni.'
+
   ],
   }
 };
@@ -267,6 +272,21 @@ const MBCorpseLoot = function () {
   return {
     type: "pickerRoller",
     list: [
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      "Resztki czegoś bezwartościowego rozsypują się w twoich rękach",
+      `${k(2, true)} szt. srebra`,
       `${k(4, true)} szt. srebra`,
       `${k(6)} szt. srebra`,
       `${k(8)} szt. srebra`,
@@ -360,7 +380,7 @@ const MBCorpseLoot = function () {
       "Długi stryczek",
       "Czerwony kaptur i maska.",
       "Mały drewniany kuferek (pusty)",
-      "k8 kolorowych szklanych kulek.",
+      `${k(8)} kolorowych szklanych kulek.`,
       "Rakieta śnieżna (zamieszkana przez pająka).",
       "Olejny obraz zakapturzonego szkieleta.",
       "Wachlarz w kształcie niedźwiedziego szponu.",
@@ -369,8 +389,8 @@ const MBCorpseLoot = function () {
       "Puzderko z czaszkami wróżek, zmielone i wciągnięte pozwalają unosić się i opadać powoli przez k4 minuty",
       "Miedziany kolczyk w nosie.",
       "Dwoje oczu w słoiku.",
-      "k6 kości (kościanych).",
-      "k4 wielkich kłów.",
+      `${k(6)} kości (kościanych).`,
+      `${k(4)} wielkich kłów.`,
       "Wiadro latrynowe.",
       "Pęknięta harfa.",
       "Rogaty hełm.",
@@ -532,6 +552,9 @@ const MBArcaneCatastrophes = function () {// arcane catastrophes magiczne katast
       'Zmieniasz się w pająka na stałe. Co tydzień robisz rzut obronny, porażka oznaza, że zapominasz 1 rok swojego dawnego życia. Żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
       'Znikasz na 1 dzień, zostaje po tobie tylko cień.',
       `Znikasz na zawsze, zostawiając po sobie jedynie wygłodniały cień: ${MBMonsters.shadowCreature}`,
+      `Znikasz na ${k(6)} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd.`,
+      `Znikasz na ${k(6)+k(6)+k(6)} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd. Wracasz z 1 HP.`,
+      'Znikasz na zawsze.',
     ]
 
   }
@@ -577,14 +600,18 @@ createAndAddMonster({keyName: "scum", nazwa : "Szumowina", HP : "7", morale : "8
 createAndAddMonster({keyName: "berserker", nazwa : "Berserker", HP : "13", morale : "9", pancerz : "Stwardniała skóra -k2", broń : "k4: 1. Długi korbacz k8, ciężka buława k6, miecz na łańcuchu k6, ogromny młot bojowy k10", specjalneCechy : "Atakuje dwukrotnie na rundę, ale nie trudzi się obroną (DR10 na trafienie). Wartość: złapany 55s, martwy 20s, krew (1l) 3s."})
 createAndAddMonster({keyName: "shadowCreature", nazwa : "Istota cienia", HP : "18", morale : "10", pancerz : "Bezcielesność -k4", broń : "Dotyk entropii k6", specjalneCechy : ""});
 createAndAddMonster({keyName: "wraith", nazwa : "Upiór", HP : "15", morale : "-", pancerz : "brak", broń : "Dotyk k4 + wysysanie sił", specjalneCechy : "Szybkie, ulotne i trudne do trafienia (DR14). Te bezcielesne zjawy zawsze wygrywają inicjatywę. Ich dotyk wysysa Siłę, Prezencję i Inicjatywę, zmniejszając je o 1 do końca walki. Wartość: złapany 120s, czaszka 70s, ektoplazma 25s."});
-createAndAddMonster({keyName: "bloodDrenchedSkeleton", nazwa : "Krwawy Szkielet", HP : "7", morale : "8", pancerz : "brak", broń : "Krótki miecz lub nóż k4, kościste palce k2", specjalneCechy : "Porusza się bezgłośnie, potrafi naśladować głosy, ale tylko słowa, które słyszał. Ataki bronią kłutą mają DR14. Atak zadający 5 lub więcej obrażeń niszczy szkielet kompletnie. Wartość: złapany 35s, zniszczony 7s."});
+createAndAddMonster({keyName: "bloodDrenchedSkeleton", nazwa : "Krwawy szkielet", HP : "7", morale : "8", pancerz : "brak", broń : "Krótki miecz lub nóż k4, kościste palce k2", specjalneCechy : "Porusza się bezgłośnie, potrafi naśladować głosy, ale tylko słowa, które słyszał. Ataki bronią kłutą mają DR14. Atak zadający 5 lub więcej obrażeń niszczy szkielet kompletnie. Wartość: złapany 35s, zniszczony 7s."});
 createAndAddMonster({keyName: "undeadNecromancer", nazwa : "Nieumarły Nekromanta", HP : "15", morale : "-", pancerz : "Nekrobariera -k4", broń : "Cios k6", specjalneCechy : "Paraliżujący dotyk DR14 na Prezencję, żeby się ocknąć. Co runę może wykraść zawartość pobliskiego zwoju i użyć jego zawartość przeciwko właścicielowi. Wartość: złapany 200s, zwłoki 130s, czaszka 100s."});
 createAndAddMonster({keyName: "troll", nazwa : "Troll", HP : "32", morale : "specjalne", pancerz : "Gruba skóra -k2", broń : "Pięść 2k6", specjalneCechy : "Tchórz pomimo rozmiaru, mocno zraniony ucieka.Nigdy nie zapomina, kto go skrzywdził. Podczas leczenia rośnie i powraca silniejszy niż wcześniej. Wyleczone HP dodawane jest do maksymalnego. Z każdym powrotem zyskuje też k6 do obrażeń. Wartość: złapany 200s, martwy 70s, róg 25s."});
 createAndAddMonster({keyName: "zombie", nazwa : "Zombie", HP : "7", morale : "-", pancerz : "Skórzane pozostałości -k2", broń : "Drapnięcie/Ugryzienie k2", specjalneCechy : "Każdy kto zostanie ugryziony robi test DR8 na Odporność, porażka oznacza, że po dwóch dniach ginie i powstaje jako zombie. Wartość: złapany 30s, krew/l 5s"});
 createAndAddMonster({keyName: "undeadDoll", nazwa : "Nieumarła Lalka", HP : "11", morale : "-", pancerz : "Porcelana -k2", broń : "Szpony/przeszywające ugryzienie k4", specjalneCechy : "Przerażające spojrzenie: test na Prezencję DR12 na początku walki, porażka oznacza paraliżujący strach przez k4 rundy. Wartość: złapana 80s, głowa 20s."});
 createAndAddMonster({keyName: "grotesque", nazwa : "Gargulec", HP : "18", morale : "-", pancerz : "Glina/kamień -k6", broń : "Szpony k6, promień z oczu k8", specjalneCechy : "Wtapiają się w otoczenie i ciężko je dostrzec. Poruszają się powoli i łatwo je trafić (DR10). Ich przerażający wzrok atakuje 1-2/6, zawsze trafia. Wartość: złapany 190s, martwy (cały) 100s, martwy (w kawałkach) 10s."});
 createAndAddMonster({keyName: "wickheadKnifeWielder", nazwa : "Knotogłowy nożownik", HP : "10", morale : "7", pancerz : "brak", broń : "Nóż z zaschniętą krwią k4 - 1/4 szansy na infekcję", specjalneCechy : "Zakrada się do wrogów, cichy jak grób. 25% szans, że jego niesamowicie brudny nóż wywoła infekcję. Potrafi magicznie zgasić wszelkie okoliczne źródła światła, zapalić własną oślepiającą lampę i zaatakować, by następnie zniknąć w ciemnościach. Wartość: złapaty 60s, zdekapitowana latarnia 15s, zwłoki 20s."});
-//createAndAddMonster({keyName: "wyvern", nazwa : "Wiwerna", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
+createAndAddMonster({keyName: "wyvern", nazwa : "Wiwerna", HP : "25", morale : "10", pancerz : "Gruba skóra -k4", broń : "Ugryzienie/użądlenie k6", specjalneCechy : "60% szansy, że ugryzie. Jadowite żądło może sparaliżować ofiarę - test DR14 aby uniknąć bolesnej godziny paraliżu. Wartość: złapana 200s, zwłoki 100s, gruczoł jadowy 60s, kolec ogonowy 60s"});
+createAndAddMonster({keyName: "earthbound", nazwa : "Kundlak", HP : "8", morale : "7", pancerz : "brak", broń : "Laska/kość udowa k4", specjalneCechy : ""});
+createAndAddMonster({keyName: "wildWickhead", nazwa : "Dziki knotogłowy", HP : "10", morale : "7", pancerz : "brak", broń : "nóż k4", specjalneCechy : ""});
+createAndAddMonster({keyName: "paleOne", nazwa : "Bladawiec", HP : "5", morale : "8", pancerz : "brak", broń : "bezbronny k2", specjalneCechy : "50% szansy, że może raz dziennie użyć losowej mocy."});
+createAndAddMonster({keyName: "prowler", nazwa : "Włóczęga", HP : "8", morale : "8", pancerz : "Skórznia -k2", broń : "Nóż/kość udowa k4, okazjonalnie brudny krótki miecz k4+1", specjalneCechy : ""});
 //createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
 //kreatura":Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała.
