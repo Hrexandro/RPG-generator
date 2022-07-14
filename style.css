@@ -40,6 +40,9 @@ input {
     align-content: stretch;
 }
 @media only screen and (max-width: 1024px) {
+    p {
+        font-size: x-large;
+    }
     .input {
         flex-grow: 1;
         font-size: x-large;

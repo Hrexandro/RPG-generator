@@ -576,7 +576,7 @@ const MBArcaneCatastrophes = function () {// arcane catastrophes magiczne katast
       'Zmieniasz się w pająka na 3 dni, żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
       'Zmieniasz się w pająka na stałe. Co tydzień robisz rzut obronny, porażka oznaza, że zapominasz 1 rok swojego dawnego życia. Żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
       'Znikasz na 1 dzień, zostaje po tobie tylko cień.',
-      `Znikasz na zawsze, zostawiając po sobie jedynie wygłodniały cień: ${MBMonsters.shadowCreature}`,
+      `Znikasz na zawsze, zostawiając po sobie jedynie wygłodniały cień: ${JSON.stringify(MBMonsters.shadowCreature)}`,
       `Znikasz na ${k(6)} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd.`,
       `Znikasz na ${k(6)+k(6)+k(6)} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd. Wracasz z 1 HP.`,
       'Znikasz na zawsze.',
