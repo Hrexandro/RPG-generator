@@ -1,13 +1,10 @@
 // to add:
 // random encounters/ varied by regions - add some monsters to default, add defaults to nondefault as well
 //cult generator
-//wymyśl staty kundlaka
 //make sure half the encounters are creatures
-//kreatura":Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała.
 //ghoul
-//arcane catastrophes - add random mutation (add mutations roll)
 //add arcane catastrophes from: fatal, GURPS magic and thaumatology, Dark Heresy, WFRP, Dungeon Crawl Classics
-//add rest of monsters from core book
+//add animals
 
 import { MBNames } from './names.js';
 import { MBTowns } from './names.js';
@@ -103,7 +100,7 @@ const MBRandomEncounters = function () {
       'W środku nocy ogień w waszym ognisku ożywa. Domaga się więcej drewna.',
       'Z nieba spada mężczyzna, rozpryskując krew na wszystkie strony. Ma przy sobie Zwój Lewitacji, który powoduje unoszenie się w powietrzu. Po k20 minutach unoszenia się, zaklęcie przestaje działać.',
       'Napotykasz kryształowo czystą rzekę. Przyjrzyj się z bliska: twoje odbicie wygląda na zadowolone z tego, że cię widzi.',
-      'Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała.',
+      `Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała. ${MBMonsters.list.find((monster)=>{return monster.slice(0, 13)=== "Istota cienia"})}`,
       'Nagle czujesz bulgotanie w trzewiach i musisz natychmiast ściągnąć spodnie, bo inaczej w nie narobisz. Jeśli przyjrzysz się odchodom, zobaczysz malutkie różowe robaki, które z każdą chwilą rosną. Jeśli nie zdjąłeś spodni, śmierdzisz okropnie, a robaki wpełzają z powrotem do środka, wywołując kolejną defekację po 2k6 minutach.',
       'k6 różowych ptaków zaczepia ciebie i twoich kompanów, krytykując wasze czułe punkty',
       'Dwie gałęzie pękają jednocześnie, z obu stron zbliżają się identyczne jelenia albinosy, poruszające się jak lustrzane odbicia.',
@@ -164,26 +161,26 @@ const mutations = function () {
     'Wywrócony na lewą stronę. Okropieństwo, charyzma zredukowana do 2, HP zmniejszone o połowę.',
     'Dziura - Tajemnicza dziura w czole.',
     'Trująca plamka - niebieska plamka rozmiaru monety na twoim brzuchu. Każdy kto ją dotknię musi wykonać rzut obronny na śmierć.',
-    '1000 nosów na całym ciele - k6 charyzmy. Twój węch jest równie precyzyjny jak wzrok w zasięgu 10 metrów.',
+    `1000 nosów na całym ciele -${k(6)} charyzmy. Twój węch jest równie precyzyjny jak wzrok w zasięgu 10 metrów.`,
     'Wycieraczki do oczu - malutkie rączki wyrastają z twoich skroni. Przecierają ci brwi i wycierają oczy.',
     'Pomarańczowa kryza na szyi. Można ją postawić by wystraszyć bestie lub dzieci. Może wymagać rzutu na morale.',
     'Okropny smród - śmierdzisz spalonym mięsem i włosami. Ukrywanie się sprawia ci trudność.',
     'Magnetyczny zmysł - potrafisz wyczuć magnetyczną północ, chyba że przebywasz w pobliżu silnego pola magnetycznego lub żelaza.',
     'Zawiasowa głowa - ogromny zębaty uśmiech od ucha do ucha. Głowa otwiera się jak skrzyneczka.',
     'Skórzasty grzbiet - zawsze liczysz się tak, jakbyś miał skórzany pancerz.',
-    'Błyskawiczna szybkość - stajesz się ruchliwy i zwinny. +k6 do zręczności, podwójna szybkość poruszania się.',
+    `Błyskawiczna szybkość - stajesz się ruchliwy i zwinny. ${k(6)} do zręczności, podwójna szybkość poruszania się.`,
     'Jadowity - naturalne ataki (ugyzienie, drapanie itd.), zadają k4 obrażeń od trucizny.',
     'Szpiczaste zęby - długie i ząbkowane. Uszkodzone odrastają w tydzień.',
     'Opary - wydzielasz śmierdzące żółte opary z uszu. Skradanie się jest prawie niemożliwe.',
     'Mleko - 1 racja dziennie. Wywołuje ból, jeśli zaniedbywane przez więcej, niż 3 dni. Szczegóły ustal sam.',
     'Małpi ogon - może chwytać przedmioty. Daje przewagę podczas wspinaczki.',
     'Dziwaczny kolor - skóra zmienia kolory z jednego na drugi jak zepsuty telewizor.',
-    'Ogromne ręce - stają się gigantyczne, podczas gdy nogi się kurczą. Możesz używać ich do chodzenia. +k6 siły',
+    `Ogromne ręce - stają się gigantyczne, podczas gdy nogi się kurczą. Możesz używać ich do chodzenia. +${k(6)} siły`,
     'Przerost brawury - zero poczucia zagrożenia. Niewrażliwy na strach. Zachowuje niektóre, ale nie wszystkie środki ostrożności.',
     'Feromony - twój zapach odstrasza owady. Zasięg 6 metrów.',
     'Atrofia - losowa kończyna staje się uschnięta i bezużyteczna.',
     'Pozamieniane kończyny - nogi i ręce zamieniają się miejscami. Nie przeszkadza ci to w poruszaniu się',
-    'Anielska twarz - jak porcelanowa maska. +k6 do charyzmy.',
+    `Anielska twarz - jak porcelanowa maska. +${k(6)} do charyzmy.`,
 
   ],
   }
@@ -507,7 +504,7 @@ const MBArcaneCatastrophes = function () {// arcane catastrophes magiczne katast
       "Ziemia wokół twoich nóg gnije jak mokre mięso. Zapadasz się na metr głębokości i nie jesteś w stanie wyjść bez pomocy. Do twojego ciała przywiera k4 wrzeszczących i gryzących przezroczystych dzieci o ciałach raków oraz twojej twarzy. HP 3, Morale -, Ugryzienie/szczypanie k4.",
       "Twoja skóra łuszczy się jak papier, twoje mięśnie topią się jak wosk, twoje jelita nadymają się jak balony, pękają i wylewają się z ciebie, aż wszystko co po tobie zostało to chodzący, gadający szkielet.",
       "Twoje gardło rozszczepia się, ukazując zgrzytającą zębami paszczę, która wypluwa twoje sekrety i myśli (usypia ją jedynie krew).",
-      "Niebo wypacza się, a gwiazdy wirują niczym koła. Zostajesz wyrzucony jeden dzień w przyszłość, gdzie docierasz rzygając płynnym czasem, który wygląda jak parująca srebrna żółc (Nieszczęście zostaje wypełnione).",
+      "Niebo wypacza się, a gwiazdy wirują niczym koła. Zostajesz wyrzucony jeden dzień w przyszłość, gdzie docierasz rzygając płynnym czasem, który wygląda jak parująca srebrna żółć (Nieszczęście zostaje wypełnione).",
       "Światło cię nienawidzi. Twój wzrok gasi płomienie świec, lamp, czy pochodni.",
       "(W ciągu k4 dni wstrętny kokon wyłoni się z ziemi, zrodzony zostanie z niego twój identyczny klon. Bezmyślnie czyni on krzywdę wszystkiemu, co go otacza. Dzieje się tak co kilka dni, dopóki ten skrawek ziemi nie zostanie oczyszczony wodą święconą lub ogniem.",
       "Twoje oczy płoną potwornym bólem, ciężko krwawiąc, by potem poluzować się i wypaść, pozostawiając po sobie krwawe oczodoły. Dalej przez nie widzisz, gdziekolwiek są.",
@@ -576,7 +573,7 @@ const MBArcaneCatastrophes = function () {// arcane catastrophes magiczne katast
       'Zmieniasz się w pająka na 3 dni, żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
       'Zmieniasz się w pająka na stałe. Co tydzień robisz rzut obronny, porażka oznaza, że zapominasz 1 rok swojego dawnego życia. Żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
       'Znikasz na 1 dzień, zostaje po tobie tylko cień.',
-      `Znikasz na zawsze, zostawiając po sobie jedynie wygłodniały cień: ${JSON.stringify(MBMonsters.shadowCreature)}`,
+      `Znikasz na zawsze, zostawiając po sobie jedynie wygłodniały cień: ${MBMonsters.list.find((monster)=>{return monster.slice(0, 13)=== "Istota cienia"})}`,
       `Znikasz na ${k(6)} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd.`,
       `Znikasz na ${k(6)+k(6)+k(6)} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd. Wracasz z 1 HP.`,
       'Znikasz na zawsze.',
@@ -639,7 +636,6 @@ createAndAddMonster({keyName: "paleOne", nazwa : "Bladawiec", HP : "5", morale :
 createAndAddMonster({keyName: "prowler", nazwa : "Włóczęga", HP : "8", morale : "8", pancerz : "Skórznia -k2", broń : "Nóż/kość udowa k4, okazjonalnie brudny krótki miecz k4+1", specjalneCechy : ""});
 //createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
-//kreatura":Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała.
 function removeAllChildren(element) {
   let counter = element.children.length;
   for (let m = 0; m <= counter; m++) {
@@ -683,7 +679,7 @@ function pickFromList(pickedList) {
 }
 
 generateButton.addEventListener("click", () => {
-  console.log()
+  console.log(MBMonsters.list)
   let result = [];
   let pickedCategory = eval(category);
 
