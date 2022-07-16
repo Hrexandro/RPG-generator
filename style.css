@@ -41,10 +41,10 @@ input {
 }
 @media only screen and (max-width: 1024px) {
     p {
-        font-size: x-large;
+        font-size: larger;
     }
     .input {
         flex-grow: 1;
-        font-size: x-large;
+        font-size: xx-large;
     }
   }
