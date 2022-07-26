@@ -306,7 +306,7 @@ const MBBadHabits = {
 };
 
 const MBCorpseLoot = function () {
-  //przeszukiwanie zwłok, rabowanie zwłok
+  //przeszukiwanie zwłok, rabowanie zwłok, corpse loot
   return {
     type: "pickerRoller",
     list: [
@@ -450,7 +450,6 @@ const MBCorpseLoot = function () {
       "Wypchana sroka.",
       "Rzeźnicki nóż (k4)",
       `${k(20)} szt. srebra`,
-      ,
       "Słoik z fermentowanymi rybami.",
       "Pułapka na myszy (1 punkt obrażeń).",
       "Czarno-biała farba do twarzy.",
@@ -501,6 +500,7 @@ const MBCorpseLoot = function () {
       "Mały drewniany konik.",
       "Ciężkie żelazne obcęgi.",
       "Czarny worek z kocim sercem.",
+      "Czarny worek z kocim serem.",
       "Spory kawałek węgla.",
       "Dwie ucięte dłonie.",
       "Dziecięcych rozmiarów żelazna dziewica.",
@@ -574,7 +574,7 @@ const MBArcaneCatastrophes = function () {// arcane catastrophes magiczne katast
       'Desperacki głód, nie może działać, dopóki nie zje 1 racji.',
       `Skóra wydziela śluz, jego zdjęcie trwa ${k(6)} r.`,
       'Od teraz: rzut obronny na początek każdego dnia, porażka oznacza, że zyskujesz losową mutację, rzut obronny na koniec dnia - porażka oznacza, że mutacja jest permanentna.',
-      //'Zmieniasz się w wygłodniałą chaotyczną psychoplazmę.',
+      'Zmieniasz się w wygłodniałą chaotyczną psychoplazmę.',
       'Od teraz rzucający nie może wchodzić do miejsc uświęconych. Dotykanie srebra zadaje 1 pkt. obrażeń na rundę. Srebrna broń zadaje podwójne obrażenia.',
       'Rzucający zostaje zredukowany do 0 HP',
       'Rzucający traci zdolność do rzucania zaklęć przez 1 dzień.',
@@ -588,15 +588,19 @@ const MBArcaneCatastrophes = function () {// arcane catastrophes magiczne katast
       'Wszystkie zwłoki w zasięgu 20 mil powstają jako szkielety i zombie i próbują cię zabić',
       'Zmieniasz się w pająka na 1 dzień',
       'Zmieniasz się w pająka na 3 dni, żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
-      //'Zmieniasz się w pająka na stałe. Co tydzień robisz rzut obronny, porażka oznaza, że zapominasz 1 rok swojego dawnego życia. Żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
-      //'Znikasz na 1 dzień, zostaje po tobie tylko cień.',
-      //`Znikasz na zawsze, zostawiając po sobie jedynie wygłodniały cień: ${MBMonsters.list.find((monster)=>{return monster.slice(0, 13)=== "Istota cienia"})}`,
+      'Zmieniasz się w pająka na stałe. Co tydzień robisz rzut obronny, porażka oznaza, że zapominasz 1 rok swojego dawnego życia. Żywe istoty inne niż pająki uznają cię za szczególnie odrażającego i starają się cię rozgnieść',
+      'Znikasz na 1 dzień, zostaje po tobie tylko cień.',
+      `Znikasz na zawsze, zostawiając po sobie jedynie wygłodniały cień: ${MBMonsters.list.find((monster)=>{return monster.slice(0, 13)=== "Istota cienia"})}`,
       `Znikasz na ${k(6)} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd.`,
       `Znikasz na ${k(6)+k(6)+k(6)} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd. Wracasz z 1 HP.`,
-      //'Znikasz na zawsze.',
+      'Znikasz na zawsze.',
       'Znika cały twój ekwipunek, łącznie z odzieżą.',
       'Tracisz głos na jeden dzień.',
       'Od tej chwili rzucający starzeje się wstecz',
+      'Ze zwoju wystrzeliwuje chaotyczna moc, losowo zmieniając treść każdego z posiadanych zwojów',
+      'Ze zwoju wystrzeliwuje chaotyczna moc, spalając wszystkie posiadane przez ciebie zwoje',
+      'Z twoich oczu, ust, uszu i nosa wylewa się fala czerwonych motyli, rozlatują się na wszystkie strony, zderzając się ze wszystkim, od uderzenia rozbryzgując się na krwiste plamy',
+      'Ze zwoju wylewa się fala czerwonych motyli, rozlatują się na wszystkie strony, zderzając się ze wszystkim, od uderzenia rozbryzgując się na krwiste plamy'
     ]
 
   }
