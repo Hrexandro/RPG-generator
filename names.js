@@ -924,6 +924,14 @@ export const MBNames = {// name
       "Chrypex",
       "Opokan",
       "Vesicare",
+      "Palmitynian",
+      "Cholekalcyferol",
+      "Tokoferyl",
+      "Glukonian",
+      "Benzoesan",
+      "Sanostol",
+      "Espumisal",
+      "Simetykon"
     ],
   };
 
