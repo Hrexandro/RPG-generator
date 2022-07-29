@@ -930,8 +930,10 @@ export const MBNames = {// name
       "Glukonian",
       "Benzoesan",
       "Sanostol",
-      "Espumisal",
-      "Simetykon"
+      "Espumisan",
+      "Simetykon",
+      "Synbiotex",
+      "Pregna"
     ],
   };
 
