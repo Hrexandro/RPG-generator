@@ -16,13 +16,10 @@ const nameDisplay = document.getElementById("name-display");
 const categoryPicker = document.getElementById("kategoria");
 const numberPicker = document.getElementById("liczba");
 
-categoryPicker.addEventListener("change", (e) => {
+function updatePick() {
   category = categoryPicker.value;
-});
-
-numberPicker.addEventListener("change", (e) => {
   numberGenerated = numberPicker.value;
-});
+}
 
 let numberGenerated = 20;
 let category = "MBNames";
@@ -534,7 +531,7 @@ const MBArcaneCatastrophes = function () {// arcane catastrophes magiczne katast
       "Być może tak właśnie będzie najlepiej. ON wynurza się z cieni. Twoje cierpienie przynajmniej będzie krótkie, gdy pożarty zostaniesz przez dwugłowego bazyliszka.",
       'Twoje stopy stają się dłońmi. Twoja czaszka znika, sprawiając, że twoja głowa jest malutka, miękka, i poruszająca się bezwładnie przy każdym ruchu. Jedzenie sprawia ci problem. Wyglądasz tak dziwnie, że wszystkie interakcje społeczne mają +6 do trudności.',
       'Uzależniasz się od zapachu magicznego pyłu, który unosi się w powietrzu po każdym użyciu zaklęcia.Czujesz przymus rzucania zaklęć (dowolnych) na początku każdej walki oraz k10 godzin po ostatnim razie. Możesz powstrzymać się zdając test DR14 na Odporność, ale ten głód nigdy cię nie opuści.',
-      'Twoja skóra pęka, łuszczy się i zostaje pochłonięta prez szalejące płomienie. Twoja zbroja spala się na żużel i spada u twoich stóp. Twoja skóra nigdy się nie zregeneruje i stale pachniesz jak pieczona kiełbasa.',
+      'Twoja skóra pęka, łuszczy się i zostaje pochłonięta przez szalejące płomienie. Twoja zbroja spala się na żużel i spada u twoich stóp. Twoja skóra nigdy się nie zregeneruje i stale pachniesz jak pieczona kiełbasa.',
       'Twoja szyja znika jakby nigdy nie istniała. Żyjesz, ale musisz nosić głowę ze sobą. Nadal musisz jeść i pić.',
       'Twoje dłonie stale wydzielają śliski, śmierdzący, półstały tłuszcz z porów. Zostawia on tłuste ślady na wszystkim, czego dotykasz i bardzo trudno go zmyć. Za każdym razem, kiedy musisz ostrożnie posłużyć się jakimś przedmiotem, masz 1/6 szansy, że go upuścisz.',
       'Za każdym razem kiedy jesz, coś dziwnego wydobywa się z twojego brzucha: 1. Podmuch wiatru. 2. Śmierdząca chmura. 3. Błyskawica. 4. Chmara motyli. 5. Jaśniejące światło. 6. Jakaś istota (wybór MG).',
@@ -703,6 +700,7 @@ function pickFromList(pickedList) {
 }
 
 generateButton.addEventListener("click", () => {
+  updatePick();
   console.log(MBArcaneCatastrophes().list.length)
   let result = [];
   let pickedCategory = eval(category);
