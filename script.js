@@ -679,21 +679,23 @@ function displayArray(ar, parent) {
 }
 
 function pickFromList(pickedList) {
-  if (pickedList.type === "mixer") {
-    return (
-      randomizeFromArray(pickedList.prefix) +
-      randomizeFromArray(pickedList.suffix)
-    );
-  } else if (pickedList.type === "firstMiddleLastNameTripleMixer") {
-    return `${randomizeFromArray(pickedList.prefix)} ${randomizeFromArray(
-      pickedList.middle
-    )} ${randomizeFromArray(pickedList.suffix)}`;
+  if (pickedList.type === "mixerSpaced") {
+    let nonTypeKeys = Object.keys(pickedList).filter( (key) => { return key !== "type" });
+    let combinedParts = "";
+    for (let k = 0; k < nonTypeKeys.length; k++){
+      combinedParts += ` ${randomizeFromArray(pickedList[nonTypeKeys[k]])}`;
+    }
+    return combinedParts;
+  } else if (pickedList.type === "mixerConcatenated"){
+    let nonTypeKeys = Object.keys(pickedList).filter( (key) => { return key !== "type" });
+    let combinedParts = "";
+    for (let k = 0; k < nonTypeKeys.length; k++){
+      combinedParts += randomizeFromArray(pickedList[nonTypeKeys[k]]);
+    }
+    return combinedParts;
   } else if (pickedList.type === "picker") {
     return randomizeFromArray(pickedList.list);
-  } else if (pickedList.type === "multipleMixer"){// use this for unlimited number of tables to pick from (like x. cults)
-//not introduced YET
-
-  } else if (pickedList().type === "pickerRoller") {
+  }  else if (pickedList().type === "pickerRoller") {
     //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
     return randomizeFromArray(pickedList().list);
   } 
@@ -701,12 +703,9 @@ function pickFromList(pickedList) {
 
 generateButton.addEventListener("click", () => {
   updatePick();
-  console.log(MBArcaneCatastrophes().list.length)
   let result = [];
   let pickedCategory = eval(category);
-
   removeAllChildren(nameDisplay);
-
   for (let i = 0; i < numberGenerated; i++) {
     result.push(pickFromList(pickedCategory));
   }

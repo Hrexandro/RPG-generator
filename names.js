@@ -1,5 +1,5 @@
 export const MBNames = {// name
-    type: "mixer",
+    type: "mixerConcatenated",
     prefix: [
       "Al",
       "Rang",
@@ -228,7 +228,7 @@ export const MBNames = {// name
   };
   
   export const MBTowns = { //town
-    type: "mixer",
+    type: "mixerConcatenated",
     prefix: [
       "Alli",
       "Tün",
@@ -569,7 +569,7 @@ export const MBNames = {// name
   
  export const VOTENobleNames = {
     //VOTE Veins of the Earth Noble Names
-    type: "firstMiddleLastNameTripleMixer",
+    type: "mixerSpaced",
     prefix: [
       "Sötsbarkgrotten",
       "Vatnajökull",
