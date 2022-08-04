@@ -956,6 +956,9 @@ export const wizardNames = {
         "Celecoxib",
         "Methadone",
         "Dolophine",
-        "Methadose"
+        "Methadose",
+        "Valproate",
+        "Zyprexa",
+        "Olanzapine"
     ],
 };
