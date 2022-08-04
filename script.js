@@ -695,7 +695,7 @@ function pickFromList(pickedList) {
     return combinedParts;
   } else if (pickedList.type === "picker") {
     return randomizeFromArray(pickedList.list);
-  }  else if (pickedList().type === "pickerRoller") {
+  } else if (pickedList().type === "pickerRoller") {
     //pickerRollers (e.g. random encounters, corpse loot) are functions, so that the numbers are rerolled each time
     return randomizeFromArray(pickedList().list);
   } 
