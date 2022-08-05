@@ -11,9 +11,9 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-console": "off",
         "linebreak-style": "off",
         "no-unused-vars": "off",
-        "no-eval": "off"
+        "no-eval": "off",
+        "indent": ["error", 2]
     }
 }
