@@ -1,6 +1,8 @@
 export const MBNames = { // name
     type: "mixerConcatenated",
     prefix: [
+        "Mörk",
+        "Borg",
         "Al",
         "Rang",
         "Hrang",
@@ -117,6 +119,7 @@ export const MBNames = { // name
     suffix: [
         "",
         "ras",
+        "borg",
         "vold",
         "vord",
         "fa",
