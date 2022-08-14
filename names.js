@@ -9,9 +9,11 @@ export const MBNames = { // name
     'Adal',
     'Hor',
     'The',
+    'Dago',
     'Tor',
     'Tö',
     'Ur',
+    'Lam',
     'Wolf',
     'Wulf',
     'Dru',
@@ -962,6 +964,10 @@ export const wizardNames = {
     'Methadose',
     'Valproate',
     'Zyprexa',
-    'Olanzapine'
+    'Olanzapine',
+    'Desnoran',
+    'Acustone',
+    'Regenerum',
+    'Rapidentin'
   ]
 }
