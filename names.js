@@ -1020,6 +1020,14 @@ export const wizardNames = {
     'Wanlosin',
     'Tropicamidum',
     'Nutrof',
-    'Testosterol'
+    'Testosterol',
+    'Medispirant',
+    'Meprobamat',
+    'Equanil',
+    'Miltown',
+    'Librium',
+    'Valium',
+    'Benzodiazepina',
+    'Chloropromazyna'
   ]
 }
