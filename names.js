@@ -15,6 +15,7 @@ export const MBNames = { // name
     'Ur',
     'Lam',
     'Wolf',
+    'Agro',
     'Wulf',
     'Dru',
     'Vik',
@@ -149,6 +150,7 @@ export const MBNames = { // name
     'os',
     'mar',
     'ty',
+    'lok',
     'tos',
     'res',
     'ro',
@@ -1028,6 +1030,18 @@ export const wizardNames = {
     'Librium',
     'Valium',
     'Benzodiazepina',
-    'Chloropromazyna'
+    'Chloropromazyna',
+    'Sonata',
+    'Ativan',
+    'Restoril',
+    'Benadryl',
+    'Effexor',
+    'Trozadone',
+    'Elavil',
+    'Remeron',
+    'Doxepin',
+    'Seroquel',
+    'Risperdal',
+    'Geodon'
   ]
 }
