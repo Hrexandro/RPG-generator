@@ -260,7 +260,7 @@ const MBBadHabits = {
     'Jak już zacznie pić, nie może przestać',
     'Uzależniony od hazardu. Musi zakładać się choć raz dziennie. Jeśli przegra, podbija stawkę i zakłada się znów.',
     'Nie toleruje krytyki. Rezultatem jest wściekłość i płacz.',
-    'Nie może przejśc do sedna. Nigdy nie opowiedział żadnej historii od początku do końca',
+    'Nie może przejść do sedna. Nigdy nie opowiedział żadnej historii od początku do końca',
     'Najlepszym przyjacielem jest czaszka. Nosi ją ze sobą, opowiada jej wszystko, nikomu innemu nie ufa bardziej.',
     'Dłubie w nosie aż do krwi',
     'Histerycznie śmieje się z własnych żartów, które potem szczegółowo objaśnia.',
@@ -282,6 +282,33 @@ const MBBadHabits = {
     'Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5, 7, 9, 11 lub 13 wyrzuconym na k20',
     'Robi biżuterię z ludzkich zębów',
     'Przywłaszcza sobie wszelkie zasługi' // ok
+  ]
+}
+
+const MBTroublingTales = {
+  // troubling tales, troublingtales, niepokojące historie
+  type: 'picker',
+  list: [
+    'Poszukiwany za pozbawienie życia. Jest nagroda',
+    'Ogromne długi. Twój dług jest sprzedawany coraz bardziej bezlitosnym grupom',
+    'Posiada rzadki, pożądany przez wielu, przedmiot',
+    'Ma przeklętą ranę, która nigdy się nie goi,',
+    'Miał nielegalny, niemoralny i sekretny romans z członkiem rodziny królewskiej. Ma na to dowód.',
+    'Zbiegły kultysta. Przerażony i paranoidalny. Inni kultyści są wszędzie',
+    'Złodziej tożsamości, który niedawno zabił i zastąpił tę osobę',
+    'Wygnany i wydziedziczony za nieokreślony przewinienia. Nigdy nie może wrócić do domu.',
+    'Zdezerterował z wojska po byciu świadkiem masakry. Jest nagroda za jego głowę. Polują na niego dawni przyjaciele',
+    'Bardzo niedawno zamordował bliskiego krewnego. Bardzo niedawno',
+    'Sześcian-układanka został skalibrowany niewłaściwie (a może właśnie właściwie?), budząc śpiącą abominację',
+    'Złe istoty kochają twój zapach i są do niego przyciągane, sprowadzając nieszczęście wszędzie tam, gdzie się udasz',
+    'W bitewnej ranie pozostał fragment metalu, który powoli zbliża się do twojego serca. Każdego dnia jest 2% szansy, że do niego dotrze',
+    'Zostałeś przemocą wygoniony do lasu. Myślisz, że kołyszące się drzewa szepczą. Mówisz, krzyczysz na drzewa, atakujesz je.',
+    'Klątwa sprawia, że dzielisz koszmary innych ludzi. Śpisz jak najdalej od nich',
+    'W stanie wojny z krukowatymi. Żadnego kontaktu bez przemocy. Nosisz procę',
+    'Po śnie, w którym ujrzałeś podziemną świątynię zapomnianego boga, rozumiesz pieśni owadów i robaków',
+    'Jesteś śledzony i obserwowany przez golema po przystaniu na umowę, o której wiesz, że została wymazana z twojej pamięci',
+    '"Spal lub bądź spalony" to los, który akceptujesz',
+    'Twoje ciało regeneruje się dwa razy szybciej, ale twoim towarzyszom dwa razy wolniej. Widzisz wielookiego "anioła stróża"'
   ]
 }
 
