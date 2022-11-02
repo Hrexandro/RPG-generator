@@ -290,25 +290,32 @@ const MBTroublingTales = {
   type: 'picker',
   list: [
     'Poszukiwany za pozbawienie życia. Jest nagroda',
-    'Ogromne długi. Twój dług jest sprzedawany coraz bardziej bezlitosnym grupom',
-    'Posiada rzadki, pożądany przez wielu, przedmiot',
-    'Ma przeklętą ranę, która nigdy się nie goi,',
+    'Ogromne długi. Twój dług jest sprzedawany coraz bardziej bezlitosnym grupom.',
+    'Posiada rzadki, pożądany przez wielu, przedmiot.',
+    'Ma przeklętą ranę, która nigdy się nie goi.',
     'Miał nielegalny, niemoralny i sekretny romans z członkiem rodziny królewskiej. Ma na to dowód.',
-    'Zbiegły kultysta. Przerażony i paranoidalny. Inni kultyści są wszędzie',
+    'Zbiegły kultysta. Przerażony i paranoidalny. Inni kultyści są wszędzie.',
     'Złodziej tożsamości, który niedawno zabił i zastąpił tę osobę',
-    'Wygnany i wydziedziczony za nieokreślony przewinienia. Nigdy nie może wrócić do domu.',
-    'Zdezerterował z wojska po byciu świadkiem masakry. Jest nagroda za jego głowę. Polują na niego dawni przyjaciele',
+    'Wygnany i wydziedziczony za nieokreślone przewinienia. Nigdy nie może wrócić do domu.',
+    'Zdezerterował z wojska po tym, jak był świadkiem masakry. Jest nagroda za jego głowę. Polują na niego dawni towarzysze.',
     'Bardzo niedawno zamordował bliskiego krewnego. Bardzo niedawno',
-    'Sześcian-układanka został skalibrowany niewłaściwie (a może właśnie właściwie?), budząc śpiącą abominację',
-    'Złe istoty kochają twój zapach i są do niego przyciągane, sprowadzając nieszczęście wszędzie tam, gdzie się udasz',
+    'Sześcian-układanka został skalibrowany niewłaściwie (a może właśnie właściwie?), budząc śpiącą abominację.',
+    'Złe istoty kochają twój zapach i są do niego przyciągane, sprowadzając nieszczęście wszędzie tam, gdzie się udasz.',
     'W bitewnej ranie pozostał fragment metalu, który powoli zbliża się do twojego serca. Każdego dnia jest 2% szansy, że do niego dotrze',
     'Zostałeś przemocą wygoniony do lasu. Myślisz, że kołyszące się drzewa szepczą. Mówisz, krzyczysz na drzewa, atakujesz je.',
     'Klątwa sprawia, że dzielisz koszmary innych ludzi. Śpisz jak najdalej od nich',
     'W stanie wojny z krukowatymi. Żadnego kontaktu bez przemocy. Nosisz procę',
     'Po śnie, w którym ujrzałeś podziemną świątynię zapomnianego boga, rozumiesz pieśni owadów i robaków',
-    'Jesteś śledzony i obserwowany przez golema po przystaniu na umowę, o której wiesz, że została wymazana z twojej pamięci',
+    'Jesteś śledzony i obserwowany przez golema po tym jak przystałeś na umowę, o której wiesz, że została wymazana z twojej pamięci',
     '"Spal lub bądź spalony" to los, który akceptujesz',
-    'Twoje ciało regeneruje się dwa razy szybciej, ale twoim towarzyszom dwa razy wolniej. Widzisz wielookiego "anioła stróża"'
+    'Twoje ciało regeneruje się dwa razy szybciej, ale twoim towarzyszom dwa razy wolniej. Widzisz wielookiego "anioła stróża".',
+
+    'Twoje oczy ujrzały kiedyś przedmiot, o którym jesteś przekonany, że pochodzi z innego świata i jest kluczem do ucieczki z Umierających Ziem, a co za tym idzie, uniknięcia apokalipsy',
+    'Uniknął śmierci poprzez zaciągnięcie potwornego długu.',
+    'Zdezerterował z wojska dokonaniu potwornej zbrodni. Jest nagroda za jego głowę. Polują na niego dawni przyjaciele',
+    'Ledwo uniknął śmierci, teraz nawiedzają go wizje cudzego życia. Ma obsesję na punkcie odnalezienia tej osoby.',
+    'Rozbitek pochodzący z zamorskiej krainy, o której nikt z żywych nigdy nie słyszał',
+    'Wrobiony w przestępstwo. Nikt nie wierzy w jego niewinność.'
   ]
 }
 
