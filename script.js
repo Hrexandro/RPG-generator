@@ -38,6 +38,28 @@ class Roll {
   }
 }
 
+let MBTownEncounters = { // town encounters losowe spotkania w mieście
+  type: 'picker',
+  list: [
+    'Mieszkańcy biorą drużynę za przepowiedzianych im zbawicieli, nie pozwolą im odejść, dopóki nie rozwiążą ich problemów.',
+    'Mieszkańcy biorą drużynę za przepowiedzianych im zbawicieli, witają ich hucznie, planują ich złożyć w ofierze.',
+    'Mieszkańcy biorą drużynę za poszukiwanych zbiegów.',
+    'Jedna z dotychczas akceptowanych praktyk została nagle uznana za herezję. Rozzłoszczony tłum, rabowanie świątyń, ikonoklazm, egzekucje.',
+    'W mieście odbywają się na porządku dziennym praktyki, które gdzie indziej uznane zostałyby za bardzo heretyckie',
+    'Festiwal, wielkie święto.',
+    'Ślub kogoś ważnego.',
+    'W mieście panuje zaraza. Bramy są pozamykane, nikt nie może wejść ani wyjść.',
+    'Bramy są pozamykane, nikt nie może wejść ani wyjść, straż nie mówi dlaczego.',
+    'Miasto jest opustoszałe, wygląda tak, jakby nagle wszyscy zniknęli',
+    'Miasto jest opustoszałe, widać ślady straszliwej masakry',
+    'Miasto płonie.',
+    'Bijatyka na rynku.',
+    'Zawody.',
+    'Cyrk.'
+
+  ]
+}
+
 // random encounters losowe spotkania
 
 const MBRandomEncounters = function () {
@@ -615,6 +637,8 @@ const MBArcaneCatastrophes = function () { // arcane catastrophes magiczne katas
 
   }
 }
+
+
 
 let MBMonsters = { // monster monsters potwory
   type: 'picker',
