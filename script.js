@@ -50,12 +50,28 @@ let MBTownEncounters = { // town encounters losowe spotkania w mieście
     'Ślub kogoś ważnego.',
     'W mieście panuje zaraza. Bramy są pozamykane, nikt nie może wejść ani wyjść.',
     'Bramy są pozamykane, nikt nie może wejść ani wyjść, straż nie mówi dlaczego.',
-    'Miasto jest opustoszałe, wygląda tak, jakby nagle wszyscy zniknęli',
-    'Miasto jest opustoszałe, widać ślady straszliwej masakry',
+    'Miasto jest opustoszałe, wygląda tak, jakby nagle wszyscy zniknęli.',
+    'Miasto jest opustoszałe, widać ślady straszliwej masakry.',
+    'Ulice są opustoszałe, ludzie chowają się po domach',
     'Miasto płonie.',
     'Bijatyka na rynku.',
     'Zawody.',
-    'Cyrk.'
+    'Cyrk.',
+    'Polowanie na czarownice. Każdy, kto ma przy sobie przeklęty zwój, mistyczne znaki lub biżuterię, jakiekolwiek mutacje, zostaje zaatakowany przez rozwścieczony tłum.',
+    'Społeczność Zapobiegania Apokalipsie werbuje ochotników.',
+    'Kultysta krzyczy i nagabuje.',
+    'Władze miasta są wynoszone na widłach.',
+    'Wybory.',
+    'Zjazd zielarzy.',
+    'Budowana jest jakaś budowla.',
+    'Składanie ofiary',
+    'Okres wylęgu żab. W mieście jest plaga żab.',
+    'Okres wylęgu szczurów. W mieście jest plaga szczurów.',
+    'Powódź.',
+    'Defilada wojskowa',
+    'W mieście poczyna sobie złośliwie ktoś wysoko postawiony (arystokrata, wysoki duchowny, krewny Króla Cieni). Nikt nie śmie mu się postawić.',
+    'Wojsko ściąga ze wszystkich brutalnie brutalne podatki i daniny.'
+
 
   ]
 }
