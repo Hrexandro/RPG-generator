@@ -70,7 +70,27 @@ let MBTownEncounters = { // town encounters losowe spotkania w mieście
     'Powódź.',
     'Defilada wojskowa',
     'W mieście poczyna sobie złośliwie ktoś wysoko postawiony (arystokrata, wysoki duchowny, krewny Króla Cieni). Nikt nie śmie mu się postawić.',
-    'Wojsko ściąga ze wszystkich brutalnie brutalne podatki i daniny.'
+    'Wojsko ściąga ze wszystkich brutalnie brutalne podatki i daniny.',
+    'Wyczerpany przewoźnik zwłok kieruje się na cmentarz z pełnym ładunkiem.',
+    `Szlachcice, w liczbie ${k(4)}, przechadzają się, okładając osoby niższych stanów pozłacanymi pałami.`,
+    'Podróżujący handlarz zielskiem pytający o drogę do Wróżbity',
+    'Uliczny bachor wymalowuje na ścianie napis "Słuchajcie!" kozią krwią',
+    'Mija was wóz/barka ze odpadami. Smród jest nie do wytrzymania.',
+    'Melancholijne melodie od spłukanego, głodującego rynsztokowego barda.',
+    'Na ulicy leży trup. Nawet psy nie zwracają na niego uwagi.',
+    'Na rogu ulicy umiera biedne dziecko. Zagubione, zmarznięte i samotne.',
+    'Nagła kakofonia skrzydeł i krakania. Stado wron.',
+    'Silne deszcze. Na ulicach pusto, ludzie szukają schronienia.',
+    'Sprzedawca ryb próbuje odgonić stado kotów.',
+    'Procesja zamaskowanych biczowników. Klątwy i krzyki.',
+    'Dekadenccy akrobaci, odurzeni i nieostrożni. Prawie łamią sobie karki.',
+    'Rodzina desperacko próbuje odbudować swoją ruderę',
+    'Stary mężczyzna stoi oparty o ściane. Sapie, łapie się za serce.',
+    'Pozbawiony nadziei, przygnębiony rolnik gapi się w niebo. Wszystko stracił.',
+    'Młody głupiec o złamanym sercu szuka pocieszenia u ulicznych szumowin.',
+    'Wielki ładunek śmieci rozbryzguje się na ulicy, wyrzucony z okna.',
+    'Starsza kobieta leży w rynsztoku. Ktoś ukradł jej kulę.',
+    'Pijany urzędnik zatacza się, przewraca. Wszędzie lecą zwoje i mapy',
 
 
   ]
