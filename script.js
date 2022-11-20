@@ -4,7 +4,10 @@
 // make sure half the encounters are creatures
 // ghoul
 // add arcane catastrophes from: fatal, GURPS magic and thaumatology, Dark Heresy, WFRP, Dungeon Crawl Classics
-// add animals
+// add animals (from travel rules)
+// add character generator (classless)
+// add character generator (classes)
+
 
 import { MBNames, MBTowns, VOTENobleNames, wizardNames } from './names.js'
 
@@ -91,6 +94,25 @@ let MBTownEncounters = { // town encounters losowe spotkania w mieście
     'Wielki ładunek śmieci rozbryzguje się na ulicy, wyrzucony z okna.',
     'Starsza kobieta leży w rynsztoku. Ktoś ukradł jej kulę.',
     'Pijany urzędnik zatacza się, przewraca. Wszędzie lecą zwoje i mapy',
+    'Odziani w łachmany ludzie biją się o kawałek chleba. Strażnicy przyglądają się i robią zakłady.',
+    'Robotnicy zanoszą trumnę wielkości łodzi anonimowemu kapłanowi',
+    'Stolarz bez grosza (lub ktoś za niego się podający) próbuje sprzedać mocno zużytą kulę.',
+    'Klient brutalnie wyprowadzany z karczymy. Potem obrabowany. Potem zadźgany.',
+    'Piszczący rój szczurów przetacza się przez ulicę.',
+    'Grupa utytłanych szymowin gra w Trzy Trupie Czaszki obciążonymi kośćmi.',
+    'Nagle bełt od kuszy uderza w pobliskie drzwi. Ktoś ćwiczy.',
+    'Tuż za rogiem stoi ogromne drzewo z tuzinem powieszonych heretyków.',
+    'Dwadzieścioro osób ogrzewa się przy ognisku. Jest wśród nich szpieg z Griftu.',
+    'Ludzie trzymają się z daleka od wściekłego psa grzebiącego w śmieciach.',
+    'Trzech zatwardziałych najemników ciągnie martwego trolla przez ulicę.',
+    'Skacowany kapelan przeklina stan rzeczy.',
+    'Zapach suchej tabaki, ziół i haszu z zatłoczonego targowiska.',
+    'Dwie małpy zjadają pozostałości martwego kruka.',
+    'Eksplozja! Dym i krzyki wydobywają się ze zrujnowanego warsztatu alchemika.',
+    'Demagog wykrzykujący o fałszywych proroctwach. Strażnicy są już w drodze.',
+    'Załamany, bezoki chłop w dybach. Błaga o wodę.',
+    'Wyeksploatowana, zardzewiała gilotyna jest naprawiana i czyszczona.',
+    'Okultysta układa miedziane monety w misterne wzory.',
 
 
   ]
