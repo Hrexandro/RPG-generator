@@ -7,7 +7,8 @@
 // add animals (from travel rules)
 // add character generator (classless)
 // add character generator (classes)
-
+// monsters from death temple sztun
+// monsters from my owne dungeons
 
 import { MBNames, MBTowns, VOTENobleNames, wizardNames } from './names.js'
 
@@ -361,7 +362,8 @@ const MBBadHabits = {
     'Chichocze szaleńczo w najgorszych momentach',
     'Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5, 7, 9, 11 lub 13 wyrzuconym na k20',
     'Robi biżuterię z ludzkich zębów',
-    'Przywłaszcza sobie wszelkie zasługi' // ok
+    'Przywłaszcza sobie wszelkie zasługi', // ok
+    'Zbiera trofeum z każdego zabitego wroga.'
   ]
 }
 
