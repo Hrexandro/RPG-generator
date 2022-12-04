@@ -281,7 +281,7 @@ const MBTerribleTraits = {
     'Tchórzliwy',
     'Leniwy',
     'Podejrzliwy',
-    'Bezlistosny',
+    'Bezlitosny',
     'Zamartwia się',
     'Zgorzkniały',
     'Zdradliwy',
@@ -294,7 +294,10 @@ const MBTerribleTraits = {
     'Paranoik', // ok
     'Sarkastyczny',
     'Złośliwy',
-    'Naiwny, uwierzy nawet w najmniej wiarygodne kłamstwo'
+    'Naiwny, uwierzy nawet w najmniej wiarygodne kłamstwo',
+    'Hedonista',
+    'Skąpy',
+    'Uparty'
   ]
 }
 
@@ -756,6 +759,97 @@ createAndAddMonster({ keyName: 'wildWickhead', nazwa: 'Dziki knotogłowy', HP: '
 createAndAddMonster({ keyName: 'paleOne', nazwa: 'Bladawiec', HP: '5', morale: '8', pancerz: 'brak', broń: 'bezbronny k2', specjalneCechy: '50% szansy, że może raz dziennie użyć losowej mocy.' })
 createAndAddMonster({ keyName: 'prowler', nazwa: 'Włóczęga', HP: '8', morale: '8', pancerz: 'Skórznia -k2', broń: 'Nóż/kość udowa k4, okazjonalnie brudny krótki miecz k4+1', specjalneCechy: '' })
 // createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
+
+//  "MBClasslessCharacter">Postać bezklasowa - MB
+const MBClasslessCharacter = function () { // arcane catastrophes magiczne katastrofy
+  return {
+    type: 'pickerRoller',
+    list: [createCharacter()]
+    //list: [`${createCharacter({characterName: "bobke", terribleTraitOne: "pierdzi"})}`]
+    // list: [`${createCharacter().name}. ${createCharacter().terribleTraitOne}. ${createCharacter().terribleTraitTwo}. ${createCharacter().brokenBody}. ${createCharacter().badHabit}`]
+    //list: [`${pickFromList(MBNames)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`]
+  }
+}
+
+class MBCharacter {
+  constructor (characterName, terribleTraitOne) {//, terribleTraitTwo, brokenBody, badHabit
+    this.characterName = characterName
+    this.terribleTraitOne = terribleTraitOne
+    // this.terribleTraitTwo = terribleTraitTwo
+    // this.brokenBody = brokenBody
+    // this.badHabit = badHabit
+  }
+}
+
+// function createAndAddMonster ({ keyName, nazwa = '', HP = '', morale = '-', pancerz = '', broń = 'nieuzbrojony k2', specjalneCechy = '' }) {
+//   const newMonster = new MBMonster(nazwa, HP, morale, pancerz, broń, specjalneCechy)
+//   MBMonsters = {
+//     ...MBMonsters,
+//     ...{ [keyName]: newMonster }
+//   }
+//   MBMonsters.list.push(`${nazwa} - HP: ${HP}, Morale: ${morale}, pancerz: ${pancerz}, ${broń} ${specjalneCechy}`)
+// }
+
+function createCharacter (/*characterName, terribleTraitOne*/) {
+    //const createdCharacter = new MBCharacter(characterName, terribleTraitOne)
+    function generateAbility (modifier){
+      let rollForAbility = k(6) + k(6) + k(6) + modifier
+      console.log(rollForAbility)
+      let abilityScore = null
+
+      if (rollForAbility<=4){
+        abilityScore = "-3"
+      } else if (rollForAbility<=6){
+        abilityScore = "-2"
+      } else if (rollForAbility<=8){
+        abilityScore = "-1"
+      } else if (rollForAbility<=12){
+        abilityScore = "0"
+      } else if (rollForAbility<=14){
+        abilityScore = "+1"
+      } else if (rollForAbility<=16){
+        abilityScore = "+2"
+      } else {
+        abilityScore = "+3"
+      }
+
+      return abilityScore
+    }
+    let AGI = generateAbility(0)
+    let PRE = generateAbility(0)
+    let STR = generateAbility(0)
+    let TOU = generateAbility(0)
+    let HP = k(8) + parseInt(TOU)
+    if (HP < 1) {
+      HP = 1
+    }
+    const createdCharacter = `${pickFromList(MBNames)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
+    + ` HP: ${HP}/${HP}. Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.`
+    return createdCharacter
+}
+
+
+
+
+// function createAndAddMonster ({ keyName, nazwa = '', HP = '', morale = '-', pancerz = '', broń = 'nieuzbrojony k2', specjalneCechy = '' }) {
+//   const newMonster = new MBMonster(nazwa, HP, morale, pancerz, broń, specjalneCechy)
+//   MBMonsters = {
+//     ...MBMonsters,
+//     ...{ [keyName]: newMonster }
+//   }
+//   MBMonsters.list.push(`${nazwa} - HP: ${HP}, Morale: ${morale}, pancerz: ${pancerz}, ${broń} ${specjalneCechy}`)
+// }
+
+
+// function createCharacter () {
+//   return character = {
+//     name: pickFromList(MBNames),
+//     terribleTraitOne: pickFromList(MBTerribleTraits),
+//     terribleTraitTwo: ()=>{pickFromList(MBTerribleTraits)},
+//     brokenBody: pickFromList(MBBrokenBodies)
+//     //badHabit: pickFromList(MBBadHabits)
+//   }
+// }
 
 function removeAllChildren (element) {
   const counter = element.children.length
