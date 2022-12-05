@@ -179,7 +179,8 @@ const MBRandomEncounters = function () {
       'Zauważacie trolla tak masywnego, że zajmuje się polowaniem na inne trolle i masywne bestie. Nawet was nie zauważa, dziękować Bazyliszkom. Troll ma 1550 HP.',
       'Napotykasz kamień, na którym jest rozciągnięta wytatuowana twarz. Jeśli zdejmiesz twarz z kamienia i naciągniesz ją na swoją, otrzymujesz losowy przeklęty zwój tak długo, jak masz ją na sobie. Zwój jest przerzucany co zmrok. Rzuty na reakcję w czasie noszenia go mają -4 do wyniku.',
       'Kupiec z odwrotnymi rękami oferuje wam martwą kurę, wyskubaną i w perfekcyjnym stanie, za zaledwie 5 srebra. Jak tylko kupiec się oddali, bezgłowa kura ożywa i zaczyna niszczyć wasze zapasy.',
-      'Dręczy was rój nietoperzy. Zjadają one racje żywnościowe, żują wasze ubrania. Jeśli uda się zabić, któregoś z nich, zobaczycie, że całe są pokryte malutkimi marynarskimi tatuażami.'
+      'Dręczy was rój nietoperzy. Zjadają one racje żywnościowe, żują wasze ubrania. Jeśli uda się zabić, któregoś z nich, zobaczycie, że całe są pokryte malutkimi marynarskimi tatuażami.',
+      'Procesja obdartych ze skóry biczowników.'
     ]
   }
 }
@@ -343,7 +344,7 @@ const MBBadHabits = {
     'Nie użyje żadnego ostrza nie przetestowawszy go uprzednio na własnym ciele. Ręce poprzeszywane blizami.',
     'Jak już zacznie pić, nie może przestać',
     'Uzależniony od hazardu. Musi zakładać się choć raz dziennie. Jeśli przegra, podbija stawkę i zakłada się znów.',
-    'Nie toleruje krytyki. Rezultatem jest wściekłość i płacz.',
+    'Nie toleruje krytyki. Rezultatem jest wściekłość i płacz',
     'Nie może przejść do sedna. Nigdy nie opowiedział żadnej historii od początku do końca',
     'Najlepszym przyjacielem jest czaszka. Nosi ją ze sobą, opowiada jej wszystko, nikomu innemu nie ufa bardziej.',
     'Dłubie w nosie aż do krwi',
@@ -760,41 +761,20 @@ createAndAddMonster({ keyName: 'paleOne', nazwa: 'Bladawiec', HP: '5', morale: '
 createAndAddMonster({ keyName: 'prowler', nazwa: 'Włóczęga', HP: '8', morale: '8', pancerz: 'Skórznia -k2', broń: 'Nóż/kość udowa k4, okazjonalnie brudny krótki miecz k4+1', specjalneCechy: '' })
 // createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
+
 //  "MBClasslessCharacter">Postać bezklasowa - MB
 const MBClasslessCharacter = function () { // arcane catastrophes magiczne katastrofy
   return {
     type: 'pickerRoller',
     list: [createCharacter()]
-    //list: [`${createCharacter({characterName: "bobke", terribleTraitOne: "pierdzi"})}`]
-    // list: [`${createCharacter().name}. ${createCharacter().terribleTraitOne}. ${createCharacter().terribleTraitTwo}. ${createCharacter().brokenBody}. ${createCharacter().badHabit}`]
-    //list: [`${pickFromList(MBNames)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`]
   }
 }
 
-class MBCharacter {
-  constructor (characterName, terribleTraitOne) {//, terribleTraitTwo, brokenBody, badHabit
-    this.characterName = characterName
-    this.terribleTraitOne = terribleTraitOne
-    // this.terribleTraitTwo = terribleTraitTwo
-    // this.brokenBody = brokenBody
-    // this.badHabit = badHabit
-  }
-}
 
-// function createAndAddMonster ({ keyName, nazwa = '', HP = '', morale = '-', pancerz = '', broń = 'nieuzbrojony k2', specjalneCechy = '' }) {
-//   const newMonster = new MBMonster(nazwa, HP, morale, pancerz, broń, specjalneCechy)
-//   MBMonsters = {
-//     ...MBMonsters,
-//     ...{ [keyName]: newMonster }
-//   }
-//   MBMonsters.list.push(`${nazwa} - HP: ${HP}, Morale: ${morale}, pancerz: ${pancerz}, ${broń} ${specjalneCechy}`)
-// }
 
-function createCharacter (/*characterName, terribleTraitOne*/) {
-    //const createdCharacter = new MBCharacter(characterName, terribleTraitOne)
+function createCharacter () {
     function generateAbility (modifier){
       let rollForAbility = k(6) + k(6) + k(6) + modifier
-      console.log(rollForAbility)
       let abilityScore = null
 
       if (rollForAbility<=4){
@@ -823,8 +803,40 @@ function createCharacter (/*characterName, terribleTraitOne*/) {
     if (HP < 1) {
       HP = 1
     }
+    let maxOmens = 2
+    let currentOmens = k(maxOmens)
+    //weapons broń brońki bronie
+    const MBWeapons = ['kość udowa (k4)', 'laska (k4)','krótki miecz (k4)', 'nóż (k4)','młot bojowy (k6)', 'miecz (k6)', 'łuk (k6, Skupienie+10 strzał)', 'kiścień (k8)', 'kusza (k8, Skupienie+10 bełtów)', 'zweihänder (k10)']
+
+    const d6Equipment = ['', '', 'plecak o pojemności 6 przedmiotów', 'worek o pojemności 10 przedmiotów', 'mały wózek', 'osiołek']
+    //przeklęty zwój
+    const d12EquipmentOne = ['lina (10 metrów)', `pochodnie (${parseInt(PRE)+4} szt.)`, `latarnia i zapas oliwy na ${parseInt(PRE)+6} godz.`, 'pasek magnezji', 'przeklęty zwój', 'ostra igła', 
+    `skrzynka z lekami - użycia: ${parseInt(PRE)+4}} (powstrzymuje krwawienie/infekcję i leczy k6 HP)`, 'metalowy pilnik i wytrychy', 'pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)',
+    'bomba (zapieczętowana butelka, k10 obrażeń)', `buteleczka czerwonej trucizny - dawki: ${k(4)} (Odporność DR12 aby uniknąć k10 obrażeń)`, 'srebrny krucyfiks']
+    //święty zwój
+    const d12EquipmentTwo = [`eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję),`, 'święty zwój']
+
+// 2 random sacred scroll
+// 3 small but vicious dog (d6+2 HP, bite d4, only obeys you)
+// 4 d4 monkeys that ignore but love you
+// (d4+2 HP, punch/bite d4)
+// 5 exquisite perfume worth 25s
+// 6 toolbox 10 nails, tongs, hammer, small saw and drill
+// 7 heavy chain 15 feet
+// 8 grappling hook
+// 9 shield (-1 HP damage or have the shield break to ignore
+// one attack)
+// 10 crowbar (d4 damage)
+// 11 lard (may function as 5 meals in a pinch)
+// 12 tent
+    let d6EquipmentRoll = randomizeFromArray(d6Equipment)
+    let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
+    let d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
+
+
     const createdCharacter = `${pickFromList(MBNames)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
-    + ` HP: ${HP}/${HP}. Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.`
+    + ` HP: ${HP}/${HP}. Omeny ${currentOmens} (k${maxOmens}). Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}. Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
+    `${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}.`
     return createdCharacter
 }
 
@@ -894,6 +906,7 @@ function pickFromList (pickedList) {
     return randomizeFromArray(pickedList().list)
   }
 }
+
 
 generateButton.addEventListener('click', () => {
   updatePick()
