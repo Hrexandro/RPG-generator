@@ -811,32 +811,35 @@ function createCharacter () {
     const d6Equipment = ['', '', 'plecak o pojemności 6 przedmiotów', 'worek o pojemności 10 przedmiotów', 'mały wózek', 'osiołek']
     //przeklęty zwój
     const d12EquipmentOne = ['lina (10 metrów)', `pochodnie (${parseInt(PRE)+4} szt.)`, `latarnia i zapas oliwy na ${parseInt(PRE)+6} godz.`, 'pasek magnezji', 'przeklęty zwój', 'ostra igła', 
-    `skrzynka z lekami - użycia: ${parseInt(PRE)+4}} (powstrzymuje krwawienie/infekcję i leczy k6 HP)`, 'metalowy pilnik i wytrychy', 'pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)',
+    `skrzynka z lekami - użycia: ${parseInt(PRE)+4} (powstrzymuje krwawienie/infekcję i leczy k6 HP)`, 'metalowy pilnik i wytrychy', 'pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)',
     'bomba (zapieczętowana butelka, k10 obrażeń)', `buteleczka czerwonej trucizny - dawki: ${k(4)} (Odporność DR12 aby uniknąć k10 obrażeń)`, 'srebrny krucyfiks']
     //święty zwój
-    const d12EquipmentTwo = [`eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję),`, 'święty zwój']
+    const d12EquipmentTwo = [`eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję),`, 'święty zwój', `mały ale wredny pies (${k(6)+2} HP, ugryzienie k4, posłuszny tylko tobie)`,
+    `małpy (${k(4)}), które ignorują cię, ale też kochają, (${k(4)+2} HP, cios/ugryzienie k4)`, 'wykwintny perfum wart 25s', 'skrzynka z narzędziami: 10 gwoździ, cęgi, młotek, mała piła i wiertło',
+    'ciężki łańcuch (5m)', 'kotwiczka na linie', 'tarcza (-1 obrażeń lub zniszcz tarczę by zignorować atak)', 'łom (k4)', 'smalec (działa jak 5 posiłków)', 'namiot']
 
-// 2 random sacred scroll
-// 3 small but vicious dog (d6+2 HP, bite d4, only obeys you)
-// 4 d4 monkeys that ignore but love you
-// (d4+2 HP, punch/bite d4)
-// 5 exquisite perfume worth 25s
-// 6 toolbox 10 nails, tongs, hammer, small saw and drill
-// 7 heavy chain 15 feet
-// 8 grappling hook
-// 9 shield (-1 HP damage or have the shield break to ignore
-// one attack)
-// 10 crowbar (d4 damage)
-// 11 lard (may function as 5 meals in a pinch)
-// 12 tent
+    // Armor d4 (d2 if you begin with a scroll)
+    // 1 no armor (tier 0)
+    // 2 light (fur, padded cloth, leather etc, −d2 damage, tier 1) 20s
+    // 3 medium armor (scale, mail etc, −d4 damage, tier 2) 100s
+    // DR +2 on Agility tests including defence.
+    // 4 Heavy armor (splint, plate etc, −d6 damage, tier 3) 200s
+    // DR +4 on Agility tets, defence is DR+2
+    let armors =[
+      [''],
+      ['fur', 'padded cloth', 'leather'],
+      ['scale', 'mail']
+      ['splint', 'plate']
+    ]
+
     let d6EquipmentRoll = randomizeFromArray(d6Equipment)
-    let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
+    let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)//have an if statement to check if scroll, and use that in the armor roll
     let d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
 
 
     const createdCharacter = `${pickFromList(MBNames)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
     + ` HP: ${HP}/${HP}. Omeny ${currentOmens} (k${maxOmens}). Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}. Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
-    `${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}.`
+    `${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}.`
     return createdCharacter
 }
 
