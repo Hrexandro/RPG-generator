@@ -762,15 +762,35 @@ createAndAddMonster({ keyName: 'prowler', nazwa: 'Włóczęga', HP: '8', morale:
 // createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
 
-//  "MBClasslessCharacter">Postać bezklasowa - MB
+let MBUncleanScroll = { //TO DO: ADD ALL SCROLLS
+  type: 'picker',
+  list: ['Dłonie Otwierają Południową Bramę - kula ognia trafia k2 istoty zadając każdej z nich k8 obrażeń',
+  'Język Eris - wybrana przez ciebie istota jest zdezorientowana przez 10 minut',
+
+  'Te-le-kin-eza - przesuwasz przedmioty do k4x4 metry przez k6 minut',
+  'Lucy-ferna Lewitacja - unosisz się przez Skupienie +k10 rund',
+  'Demon Żył - jedna istota dusi się przez k6 rund, tracąc k4 HP na rundę',
+  'Dziewięć Purpurowych Znaków Rozwiązuje Burzę - tworzysz k2 pioruny po k6 obrażeń każdy',
+  'Odrażający Psychopomp - przywołujesz (k6): 1-3 k4 szkielety, 4-6 k4 zombie',
+  'Metzhuotl Oślepia Twoje Oko - istota staje się niewidzialna przez k6 rund lub dopóki otrzyma obrażenia, atakuje i broni się z DR6'
+]
+
+}
+
+let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
+  type: 'picker',
+  list: ['Łaska Martwego Świętego - k2 istoty regenerują k10 HP każda',
+  'Łaska Dla Grzesznika - wybrana istota dostaje +k6 do wybranego rzutu'
+  ]
+}
+
+//  "MBClasslessCharacter">Postać bezklasowa - MB // TO DO: CHANGE TO CLASS PICKER APPEARING WHEN CHARACTER OPTION IS SELECTED: CLASSLESS, RANDOM, LIST
 const MBClasslessCharacter = function () { // arcane catastrophes magiczne katastrofy
   return {
     type: 'pickerRoller',
     list: [createCharacter()]
   }
 }
-
-
 
 function createCharacter () {
     function generateAbility (modifier){
@@ -809,37 +829,45 @@ function createCharacter () {
     const MBWeapons = ['kość udowa (k4)', 'laska (k4)','krótki miecz (k4)', 'nóż (k4)','młot bojowy (k6)', 'miecz (k6)', 'łuk (k6, Skupienie+10 strzał)', 'kiścień (k8)', 'kusza (k8, Skupienie+10 bełtów)', 'zweihänder (k10)']
 
     const d6Equipment = ['', '', 'plecak o pojemności 6 przedmiotów', 'worek o pojemności 10 przedmiotów', 'mały wózek', 'osiołek']
-    //przeklęty zwój
+
     const d12EquipmentOne = ['lina (10 metrów)', `pochodnie (${parseInt(PRE)+4} szt.)`, `latarnia i zapas oliwy na ${parseInt(PRE)+6} godz.`, 'pasek magnezji', 'przeklęty zwój', 'ostra igła', 
     `skrzynka z lekami - użycia: ${parseInt(PRE)+4} (powstrzymuje krwawienie/infekcję i leczy k6 HP)`, 'metalowy pilnik i wytrychy', 'pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)',
     'bomba (zapieczętowana butelka, k10 obrażeń)', `buteleczka czerwonej trucizny - dawki: ${k(4)} (Odporność DR12 aby uniknąć k10 obrażeń)`, 'srebrny krucyfiks']
-    //święty zwój
     const d12EquipmentTwo = [`eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję),`, 'święty zwój', `mały ale wredny pies (${k(6)+2} HP, ugryzienie k4, posłuszny tylko tobie)`,
     `małpy (${k(4)}), które ignorują cię, ale też kochają, (${k(4)+2} HP, cios/ugryzienie k4)`, 'wykwintny perfum wart 25s', 'skrzynka z narzędziami: 10 gwoździ, cęgi, młotek, mała piła i wiertło',
     'ciężki łańcuch (5m)', 'kotwiczka na linie', 'tarcza (-1 obrażeń lub zniszcz tarczę by zignorować atak)', 'łom (k4)', 'smalec (działa jak 5 posiłków)', 'namiot']
 
-    // Armor d4 (d2 if you begin with a scroll)
-    // 1 no armor (tier 0)
-    // 2 light (fur, padded cloth, leather etc, −d2 damage, tier 1) 20s
-    // 3 medium armor (scale, mail etc, −d4 damage, tier 2) 100s
-    // DR +2 on Agility tests including defence.
-    // 4 Heavy armor (splint, plate etc, −d6 damage, tier 3) 200s
-    // DR +4 on Agility tets, defence is DR+2
     let armors =[
       [''],
-      ['fur', 'padded cloth', 'leather'],
-      ['scale', 'mail']
-      ['splint', 'plate']
+      ['futrzasta zbroja', 'przeszywanica', 'skórzana zbroja'],
+      ['zbroja łuskowa', 'kolczuga'],
+      ['zbroja lamelkowa', 'zbroja płytowa']
+    ]
+
+    let armorTiers = [
+      'zbroja lekka, -k2 obrażeń',
+      'zbroja średnia, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony',
+      'zbroja ciężka, -k6 obrażeń, DR+4 do testów zręczności, DR+2 do obrony'
     ]
 
     let d6EquipmentRoll = randomizeFromArray(d6Equipment)
     let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)//have an if statement to check if scroll, and use that in the armor roll
     let d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
+    let armorRoll = k(4)-1
+    if (d12EquipmentRollOne === 'przeklęty zwój'){
+      armorRoll = k(2)-1
+      d12EquipmentRollOne = pickFromList(MBUncleanScroll)
+    }
+    if (d12EquipmentRollTwo === 'święty zwój'){
+      armorRoll = k(2)-1
+      d12EquipmentRollTwo = pickFromList(MBSacredScroll)
+    }
 
+    let pickedArmor = randomizeFromArray(armors[armorRoll])
 
     const createdCharacter = `${pickFromList(MBNames)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
     + ` HP: ${HP}/${HP}. Omeny ${currentOmens} (k${maxOmens}). Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}. Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
-    `${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}.`
+    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}.`
     return createdCharacter
 }
 
