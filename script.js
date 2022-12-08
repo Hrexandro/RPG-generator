@@ -323,7 +323,7 @@ const MBBrokenBodies = {
     'Jednej ręce brakuje kciuka i palca wskazującego, łapie jak homar',
     'Czerwony, spuchnięty nos alkoholika',
     'Neutralny wyraz twarzy ma maniakalny, ciężko zdobyć przyjaciół',
-    'Przewlekła grzybica stóp. Śmierdzi.',
+    'Przewlekła grzybica stóp. Śmierdzi',
     'Niedawno rozcięte i śmierdzące, ropiejące oko zakryte opaską',
     'Popękane czarne paznokcie, mogą w każdej chwili odpaść',
     'Zezowate spojrzenie', // ok
@@ -341,18 +341,18 @@ const MBBadHabits = {
   type: 'picker',
   list: [
     'Obsesyjnie zbiera małe, ostre kamienie',
-    'Nie użyje żadnego ostrza nie przetestowawszy go uprzednio na własnym ciele. Ręce poprzeszywane blizami.',
+    'Nie użyje żadnego ostrza nie przetestowawszy go uprzednio na własnym ciele. Ręce poprzeszywane blizami',
     'Jak już zacznie pić, nie może przestać',
-    'Uzależniony od hazardu. Musi zakładać się choć raz dziennie. Jeśli przegra, podbija stawkę i zakłada się znów.',
+    'Uzależniony od hazardu. Musi zakładać się choć raz dziennie. Jeśli przegra, podbija stawkę i zakłada się znów',
     'Nie toleruje krytyki. Rezultatem jest wściekłość i płacz',
     'Nie może przejść do sedna. Nigdy nie opowiedział żadnej historii od początku do końca',
-    'Najlepszym przyjacielem jest czaszka. Nosi ją ze sobą, opowiada jej wszystko, nikomu innemu nie ufa bardziej.',
+    'Najlepszym przyjacielem jest czaszka. Nosi ją ze sobą, opowiada jej wszystko, nikomu innemu nie ufa bardziej',
     'Dłubie w nosie aż do krwi',
-    'Histerycznie śmieje się z własnych żartów, które potem szczegółowo objaśnia.',
-    'Nihilista, upiera się, żeby mówić wszystkim, że jest nihilistą i wyjaśniać dlaczego.',
+    'Histerycznie śmieje się z własnych żartów, które potem szczegółowo objaśnia',
+    'Nihilista, upiera się, żeby mówić wszystkim, że jest nihilistą i wyjaśniać dlaczego',
     'Notoryczny zjadacz robali',
-    'Na stres reaguje okazywaniem estetyki. Im gorzej sprawy się mają, tym szykowniej musi wyglądać.',
-    'Stale zalegająca w gardle flegma. Nieustannie kaszle, smarka, spluwa i przełyka.',
+    'Na stres reaguje strojeniem się. Im gorzej sprawy się mają, tym szykowniej musi wyglądać',
+    'Stale zalegająca w gardle flegma. Nieustannie kaszle, smarka, spluwa i przełyka',
     'Nałogowo kłamie, ciężko mu zdobyć zaufanie innych', // ok
     'Zbieractwo - zbiera i targa ze sobą pełno niepotrzebnych przedmiotów', // ok
     'Ma tendencję do katatonicznego wpatrywania się w jeden punkt przez kilka minut', // ok
@@ -770,9 +770,11 @@ let MBUncleanScroll = { //TO DO: ADD ALL SCROLLS
   'Te-le-kin-eza - przesuwasz przedmioty do k4x4 metry przez k6 minut',
   'Lucy-ferna Lewitacja - unosisz się przez Skupienie +k10 rund',
   'Demon Żył - jedna istota dusi się przez k6 rund, tracąc k4 HP na rundę',
-  'Dziewięć Purpurowych Znaków Rozwiązuje Burzę - tworzysz k2 pioruny po k6 obrażeń każdy',
+  'Dziewięć Purpurowych Znaków Rozplątuje Burzę - tworzysz k2 pioruny po k6 obrażeń każdy',
+  'Metzhuotl Oślepia Twoje Oko - istota staje się niewidzialna przez k6 rund lub dopóki otrzyma obrażenia, atakuje i broni się z DR6',
   'Odrażający Psychopomp - przywołujesz (k6): 1-3 k4 szkielety, 4-6 k4 zombie',
-  'Metzhuotl Oślepia Twoje Oko - istota staje się niewidzialna przez k6 rund lub dopóki otrzyma obrażenia, atakuje i broni się z DR6'
+  'Powieka Oślepia Wiatr - k4 istoty zasypiają na godzinę, chyba że przejdą test DR14',
+  'Śmierć - wszystkie istory w obrębie 10 metrów tracą w sumie 4k10 HP'
 ]
 
 }
@@ -780,7 +782,15 @@ let MBUncleanScroll = { //TO DO: ADD ALL SCROLLS
 let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
   type: 'picker',
   list: ['Łaska Martwego Świętego - k2 istoty regenerują k10 HP każda',
-  'Łaska Dla Grzesznika - wybrana istota dostaje +k6 do wybranego rzutu'
+  'Łaska Dla Grzesznika - wybrana istota dostaje +k6 do wybranego rzutu',
+  'Szepty Przekraczają Wrota - zadaj trzy pytania martwej istocie',
+  'Egida Rozpaczy - wybrana istota otrzymuje 2k6 dodatkowych HP na 10 rund',
+  'Oszukane Przeznaczenie - jedna istota, martwa krócej niż tydzień, zostaje ożywiona z przerażającymi wspomnieniami',
+  'Bestialska Mowa - możesz rozmawiać ze zwierzętami przez k20 minut',
+  'Fałszywy Świt/Rydwan Nocy - światło lub całkowita ciemność przez 3k10 minut',
+  'Hermetyczny Krok - odnajdujesz wszystkie pułapki na swojej drodze przez 2k10 minut',
+  'Pochłaniające Spojrzenie - k4 istoty tracą po k8 HP każda',
+  'Enochiańska Składnia - jedna istota ślepo podąża za pojedyńczym rozkazem'
   ]
 }
 
@@ -867,7 +877,7 @@ function createCharacter () {
 
     const createdCharacter = `${pickFromList(MBNames)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
     + ` HP: ${HP}/${HP}. Omeny ${currentOmens} (k${maxOmens}). Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}. Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
-    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}.`
+    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
     return createdCharacter
 }
 
