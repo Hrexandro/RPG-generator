@@ -16,6 +16,37 @@ const generateButton = document.getElementById('generate-button')
 const nameDisplay = document.getElementById('name-display')
 const categoryPicker = document.getElementById('kategoria')
 const numberPicker = document.getElementById('liczba')
+let pickedClass = null //can also be later used as any secondary option for generating, as only one can be used at a time
+
+const MBCharacterClassPicker = document.createElement('select')
+
+function updateSecondarySelectStatus (){
+  if (categoryPicker.value === 'MBCharacter'){   
+    function addOption (displayedName, valueIfDifferent){
+      let option = document.createElement('option')
+      option.text = displayedName
+      option.value = displayedName
+      MBCharacterClassPicker.appendChild(option)
+    }
+      document.body.insertBefore(MBCharacterClassPicker, nameDisplay)
+      addOption('Postać bezklasowa')
+      addOption('Zębaty dezerter')
+      MBCharacterClassPicker.addEventListener('click',()=>{ 
+      pickedClass = MBClasses.list.find((charClass)=>{ return charClass.characterClassName === MBCharacterClassPicker.value})
+      console.log(pickedClass)
+    })
+
+    } else {
+      MBCharacterClassPicker.remove()
+      //remove it
+    }
+    console.log(pickedClass)
+}
+
+
+categoryPicker.addEventListener('change',(e)=>{
+  updateSecondarySelectStatus ()
+})
 
 function updatePick () {
   category = categoryPicker.value
@@ -794,15 +825,61 @@ let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
   ]
 }
 
-//  "MBClasslessCharacter">Postać bezklasowa - MB // TO DO: CHANGE TO CLASS PICKER APPEARING WHEN CHARACTER OPTION IS SELECTED: CLASSLESS, RANDOM, LIST
-const MBClasslessCharacter = function () { // arcane catastrophes magiczne katastrofy
+class MBCharacterClass {
+  constructor (characterClassName, description, originLabel, origin, agility, presence, strength, toughness, omens) {
+    this.characterClassName = characterClassName
+    this.description = description
+    this.originLabel = originLabel
+    this.origin = origin
+    this.agility = agility
+    this.presence = presence
+    this.strength = strength
+    this.toughness = toughness
+    this.omens = omens
+  }
+}
+
+let MBClasses = { // classes lista klas
+  type: 'picker',
+  list: []
+}
+
+
+function createAndAddClass ({characterClassName, description, originLabel, origin, agility, presence, strength, toughness, omens}) {
+  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, agility, presence, strength, toughness, omens)
+  MBClasses.list.push(newClass)
+  console.log(newClass)
+}
+
+
+createAndAddClass({characterClassName: 'Zębaty dezerter',//Ugryzienie - atak DR10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny //abilities, earliest memories, one of the following
+description: 'Masz jakichś trzydzieścioro przyjaciół, którzy cię nigdy nie zawiedli: TWOJE ZĘBY. Jesteś nielojalny, niepoczytalny, czy po prostu nie dajesz się kontrolować - sam odszedłeś z każdej grupy, która sama cię nie wykopała. Ale twój parlament zębów - ogromnych, wystających, grubych i ostrychh - zawsze był twoim sprzymierzeńcem',
+originLabel: 'Najdawniejsze wspomnienie: ',
+origin: ['spalony budynek w Sarkash. Twój dom?',
+'gnijący wrak dryfujący po szarym morzu.',
+'burdel w Schleswigu. Całkiem przyjemne miejsce.',
+'spanie razem z psami w kącie karczmy, oczekując czyjegoś powrotu.',
+'podążanie za armią we wschodnim Wästlandzie.',
+'ssanie piersi wilczycy w dziczy Bergen Chrypty.'],
+agility: -1,
+presence: 0,
+strength: 2,
+toughness: 0,
+omens: 2})
+
+const classLessCharacter = new MBCharacterClass('', '', '', '' , 0, 0, 0, 0, 2)
+
+
+const MBCharacter = function () { // arcane catastrophes magiczne katastrofy
   return {
     type: 'pickerRoller',
-    list: [createCharacter()]
+    list: [createCharacter(pickedClass)]
   }
 }
 
 function createCharacter () {
+    let characterClass = pickedClass ? pickedClass : classLessCharacter
+
     function generateAbility (modifier){
       let rollForAbility = k(6) + k(6) + k(6) + modifier
       let abilityScore = null
@@ -825,19 +902,23 @@ function createCharacter () {
 
       return abilityScore
     }
-    let AGI = generateAbility(0)
-    let PRE = generateAbility(0)
-    let STR = generateAbility(0)
-    let TOU = generateAbility(0)
+    let AGI = generateAbility(characterClass.agility)
+    let PRE = generateAbility(characterClass.presence)
+    let STR = generateAbility(characterClass.strength)
+    let TOU = generateAbility(characterClass.toughness)
     let HP = k(8) + parseInt(TOU)
     if (HP < 1) {
       HP = 1
     }
+
     let maxOmens = 2
+    if (characterClass){
+      maxOmens = characterClass.omens
+    }
     let currentOmens = k(maxOmens)
     //weapons broń brońki bronie
     const MBWeapons = ['kość udowa (k4)', 'laska (k4)','krótki miecz (k4)', 'nóż (k4)','młot bojowy (k6)', 'miecz (k6)', 'łuk (k6, Skupienie+10 strzał)', 'kiścień (k8)', 'kusza (k8, Skupienie+10 bełtów)', 'zweihänder (k10)']
-
+    //split into damage tiers and add different kinds with appropriate probability
     const d6Equipment = ['', '', 'plecak o pojemności 6 przedmiotów', 'worek o pojemności 10 przedmiotów', 'mały wózek', 'osiołek']
 
     const d12EquipmentOne = ['lina (10 metrów)', `pochodnie (${parseInt(PRE)+4} szt.)`, `latarnia i zapas oliwy na ${parseInt(PRE)+6} godz.`, 'pasek magnezji', 'przeklęty zwój', 'ostra igła', 
@@ -875,34 +956,21 @@ function createCharacter () {
 
     let pickedArmor = randomizeFromArray(armors[armorRoll])
 
-    const createdCharacter = `${pickFromList(MBNames)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
+    let terribleTraitOne = pickFromList(MBTerribleTraits)
+    let terribleTraitTwo = pickFromList(MBTerribleTraits)
+    
+    while (terribleTraitTwo === terribleTraitOne){
+      console.log(`trait one${terribleTraitOne}+ tester traid ${terribleTraitTwo}`)
+      terribleTraitTwo = pickFromList(MBTerribleTraits)
+    }
+
+    const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName + '.\n ' + characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n ` : '' }`
+    + `${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
     + ` HP: ${HP}/${HP}. Omeny ${currentOmens} (k${maxOmens}). Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}. Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
     return createdCharacter
 }
 
-
-
-
-// function createAndAddMonster ({ keyName, nazwa = '', HP = '', morale = '-', pancerz = '', broń = 'nieuzbrojony k2', specjalneCechy = '' }) {
-//   const newMonster = new MBMonster(nazwa, HP, morale, pancerz, broń, specjalneCechy)
-//   MBMonsters = {
-//     ...MBMonsters,
-//     ...{ [keyName]: newMonster }
-//   }
-//   MBMonsters.list.push(`${nazwa} - HP: ${HP}, Morale: ${morale}, pancerz: ${pancerz}, ${broń} ${specjalneCechy}`)
-// }
-
-
-// function createCharacter () {
-//   return character = {
-//     name: pickFromList(MBNames),
-//     terribleTraitOne: pickFromList(MBTerribleTraits),
-//     terribleTraitTwo: ()=>{pickFromList(MBTerribleTraits)},
-//     brokenBody: pickFromList(MBBrokenBodies)
-//     //badHabit: pickFromList(MBBadHabits)
-//   }
-// }
 
 function removeAllChildren (element) {
   const counter = element.children.length
@@ -959,3 +1027,5 @@ generateButton.addEventListener('click', () => {
   }
   displayArray(result, nameDisplay)
 })
+
+updateSecondarySelectStatus()

@@ -1109,6 +1109,7 @@ export const wizardNames = {
     'Doxepin',
     'Seroquel',
     'Risperdal',
-    'Geodon'
+    'Geodon',
+    'Femaltiker'
   ]
 }
