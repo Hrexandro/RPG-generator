@@ -33,14 +33,12 @@ function updateSecondarySelectStatus (){
       addOption('Zębaty dezerter')
       MBCharacterClassPicker.addEventListener('click',()=>{ 
       pickedClass = MBClasses.list.find((charClass)=>{ return charClass.characterClassName === MBCharacterClassPicker.value})
-      console.log(pickedClass)
     })
 
     } else {
+      removeAllChildren(MBCharacterClassPicker)
       MBCharacterClassPicker.remove()
-      //remove it
     }
-    console.log(pickedClass)
 }
 
 
@@ -853,7 +851,7 @@ function createAndAddClass ({characterClassName, description, originLabel, origi
 
 
 createAndAddClass({characterClassName: 'Zębaty dezerter',//Ugryzienie - atak DR10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny //abilities, earliest memories, one of the following
-description: 'Masz jakichś trzydzieścioro przyjaciół, którzy cię nigdy nie zawiedli: TWOJE ZĘBY. Jesteś nielojalny, niepoczytalny, czy po prostu nie dajesz się kontrolować - sam odszedłeś z każdej grupy, która sama cię nie wykopała. Ale twój parlament zębów - ogromnych, wystających, grubych i ostrychh - zawsze był twoim sprzymierzeńcem',
+description: 'Masz jakichś trzydzieścioro przyjaciół, którzy cię nigdy nie zawiedli: TWOJE ZĘBY. Jesteś nielojalny, niepoczytalny, czy po prostu nie dajesz się kontrolować - sam odszedłeś z każdej grupy, która sama cię nie wykopała. Ale twój parlament zębów - ogromnych, wystających, grubych i ostrych - zawsze był twoim sprzymierzeńcem',
 originLabel: 'Najdawniejsze wspomnienie: ',
 origin: ['spalony budynek w Sarkash. Twój dom?',
 'gnijący wrak dryfujący po szarym morzu.',
