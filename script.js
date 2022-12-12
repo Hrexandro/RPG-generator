@@ -824,11 +824,12 @@ let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
 }
 
 class MBCharacterClass {
-  constructor (characterClassName, description, originLabel, origin, agility, presence, strength, toughness, omens) {
+  constructor (characterClassName, description, originLabel, origin, specialAbility, agility, presence, strength, toughness, omens) {
     this.characterClassName = characterClassName
     this.description = description
     this.originLabel = originLabel
     this.origin = origin
+    this.specialAbility = specialAbility
     this.agility = agility
     this.presence = presence
     this.strength = strength
@@ -843,8 +844,8 @@ let MBClasses = { // classes lista klas
 }
 
 
-function createAndAddClass ({characterClassName, description, originLabel, origin, agility, presence, strength, toughness, omens}) {
-  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, agility, presence, strength, toughness, omens)
+function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, agility, presence, strength, toughness, omens}) {
+  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, agility, presence, strength, toughness, omens)
   MBClasses.list.push(newClass)
   console.log(newClass)
 }
@@ -852,20 +853,21 @@ function createAndAddClass ({characterClassName, description, originLabel, origi
 
 createAndAddClass({characterClassName: 'Zębaty dezerter',//Ugryzienie - atak DR10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny //abilities, earliest memories, one of the following
 description: 'Masz jakichś trzydzieścioro przyjaciół, którzy cię nigdy nie zawiedli: TWOJE ZĘBY. Jesteś nielojalny, niepoczytalny, czy po prostu nie dajesz się kontrolować - sam odszedłeś z każdej grupy, która sama cię nie wykopała. Ale twój parlament zębów - ogromnych, wystających, grubych i ostrych - zawsze był twoim sprzymierzeńcem',
-originLabel: 'Najdawniejsze wspomnienie: ',
+originLabel: 'Twoje najdawniejsze wspomnienie to ',
 origin: ['spalony budynek w Sarkash. Twój dom?',
 'gnijący wrak dryfujący po szarym morzu.',
 'burdel w Schleswigu. Całkiem przyjemne miejsce.',
 'spanie razem z psami w kącie karczmy, oczekując czyjegoś powrotu.',
 'podążanie za armią we wschodnim Wästlandzie.',
 'ssanie piersi wilczycy w dziczy Bergen Chrypty.'],
+specialAbility: '',
 agility: -1,
 presence: 0,
 strength: 2,
 toughness: 0,
 omens: 2})
 
-const classLessCharacter = new MBCharacterClass('', '', '', '' , 0, 0, 0, 0, 2)
+const classLessCharacter = new MBCharacterClass('', '', '', '', '' , 0, 0, 0, 0, 2)
 
 
 const MBCharacter = function () { // arcane catastrophes magiczne katastrofy
@@ -958,14 +960,26 @@ function createCharacter () {
     let terribleTraitTwo = pickFromList(MBTerribleTraits)
     
     while (terribleTraitTwo === terribleTraitOne){
-      console.log(`trait one${terribleTraitOne}+ tester traid ${terribleTraitTwo}`)
       terribleTraitTwo = pickFromList(MBTerribleTraits)
     }
 
-    const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName + '.\n ' + characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n ` : '' }`
-    + `${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
-    + ` HP: ${HP}/${HP}. Omeny ${currentOmens} (k${maxOmens}). Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}. Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
+    // const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName + '.\n ' + characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n ` : '' }`
+    // + `${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
+    // + ` HP: ${HP}/${HP}. Omeny ${currentOmens} (k${maxOmens}). Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}. Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
+    // `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
+    
+
+    //`${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''}
+    const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
+    ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
+    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n
+    Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
+    
+
+    
+
+
     return createdCharacter
 }
 
