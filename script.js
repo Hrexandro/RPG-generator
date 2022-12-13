@@ -31,9 +31,13 @@ function updateSecondarySelectStatus (){
       document.body.insertBefore(MBCharacterClassPicker, nameDisplay)
       addOption('Postać bezklasowa')
       addOption('Zębaty dezerter')
-      MBCharacterClassPicker.addEventListener('click',()=>{ 
-      pickedClass = MBClasses.list.find((charClass)=>{ return charClass.characterClassName === MBCharacterClassPicker.value})
-    })
+      MBCharacterClassPicker.addEventListener('click',()=>{      
+        pickedClass = MBClasses.list.find((charClass)=>{ return charClass.characterClassName === MBCharacterClassPicker.value})
+      })
+      MBCharacterClassPicker.addEventListener('change',()=>{      
+        removeAllChildren(nameDisplay)
+      })
+      
 
     } else {
       removeAllChildren(MBCharacterClassPicker)
@@ -43,6 +47,7 @@ function updateSecondarySelectStatus (){
 
 
 categoryPicker.addEventListener('change',(e)=>{
+  removeAllChildren(nameDisplay)
   updateSecondarySelectStatus ()
 })
 
@@ -976,9 +981,6 @@ function createCharacter () {
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
     
-
-    
-
 
     return createdCharacter
 }
