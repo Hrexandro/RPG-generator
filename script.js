@@ -829,17 +829,19 @@ let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
 }
 
 class MBCharacterClass {
-  constructor (characterClassName, description, originLabel, origin, specialAbility, agility, presence, strength, toughness, omens) {
+  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction) {
     this.characterClassName = characterClassName
     this.description = description
     this.originLabel = originLabel
     this.origin = origin
     this.specialAbility = specialAbility
+    this.rolledAbility =  rolledAbility
     this.agility = agility
     this.presence = presence
     this.strength = strength
     this.toughness = toughness
     this.omens = omens
+    this.scrollRestriction = scrollRestriction
   }
 }
 
@@ -849,11 +851,15 @@ let MBClasses = { // classes lista klas
 }
 
 
-function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, agility, presence, strength, toughness, omens}) {
-  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, agility, presence, strength, toughness, omens)
+function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction}) {
+  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction)
   MBClasses.list.push(newClass)
   console.log(newClass)
 }
+
+// Clumsy and Dull-witted
+
+// Agility tests are DR+2, excluding defence. You are incapable of understanding scrolls.
 
 
 createAndAddClass({characterClassName: 'Zębaty dezerter',//Ugryzienie - atak DR10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny //abilities, earliest memories, one of the following
@@ -865,14 +871,16 @@ origin: ['spalony budynek w Sarkash. Twój dom?',
 'spanie razem z psami w kącie karczmy, oczekując czyjegoś powrotu.',
 'podążanie za armią we wschodnim Wästlandzie.',
 'ssanie piersi wilczycy w dziczy Bergen Chrypty.'],
-specialAbility: '',
+specialAbility: 'Niezdarny - testy zręczności są trudniejsze o 2 punkty (z wyjątkiem obrony). Analfabeta - jesteś niezdolny do odczytywania zwojów. Ugryzienie - atak DR10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny',
+rolledAbility: [],
 agility: -1,
 presence: 0,
 strength: 2,
 toughness: 0,
-omens: 2})
+omens: 2,
+scrollRestriction: 'illiterate'})
 
-const classLessCharacter = new MBCharacterClass('', '', '', '', '' , 0, 0, 0, 0, 2)
+const classLessCharacter = new MBCharacterClass('', '', '', '', '', '' , 0, 0, 0, 0, 2, false)
 
 
 const MBCharacter = function () { // arcane catastrophes magiczne katastrofy
@@ -951,12 +959,24 @@ function createCharacter () {
     let d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
     let armorRoll = k(4)-1
     if (d12EquipmentRollOne === 'przeklęty zwój'){
-      armorRoll = k(2)-1
-      d12EquipmentRollOne = pickFromList(MBUncleanScroll)
+      if (characterClass.scrollRestriction === 'illiterate'){
+        while (d12EquipmentRollOne === 'przeklęty zwój'){
+          d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
+        }
+      } else {
+        armorRoll = k(2)-1
+        d12EquipmentRollOne = `${pickFromList(MBUncleanScroll)} (przeklęty zwój)`
+      }
     }
     if (d12EquipmentRollTwo === 'święty zwój'){
+      if (characterClass.scrollRestriction === 'illiterate'){
+        while (d12EquipmentRollTwo === 'święty zwój'){
+          d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
+        }
+      } else {
       armorRoll = k(2)-1
-      d12EquipmentRollTwo = pickFromList(MBSacredScroll)
+      d12EquipmentRollTwo = `${pickFromList(MBSacredScroll)} (święty zwój)`
+      }
     }
 
     let pickedArmor = randomizeFromArray(armors[armorRoll])
@@ -977,7 +997,7 @@ function createCharacter () {
     //`${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''}
     const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
-    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n
+    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.description ? `\n${characterClass.specialAbility}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
     
