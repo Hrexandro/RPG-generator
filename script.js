@@ -872,7 +872,14 @@ origin: ['spalony budynek w Sarkash. Twój dom?',
 'podążanie za armią we wschodnim Wästlandzie.',
 'ssanie piersi wilczycy w dziczy Bergen Chrypty.'],
 specialAbility: 'Niezdarny - testy zręczności są trudniejsze o 2 punkty (z wyjątkiem obrony). Analfabeta - jesteś niezdolny do odczytywania zwojów. Ugryzienie - atak DR10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny',
-rolledAbility: [],
+rolledAbility: [
+  'Wykrzywiona Maska Potwora - wywołuje prymitywny strach u pomniejszych istot, takich jak gobliny, gnoumy i dzieci. Gdy ją nosisz, testują one morale co rundę',
+  'Brązowy Bułat z Galgenbeck - śmierdzący miecz wygrzebany z wojskowego wychodka (k6 obrażeń). Gdy go dzierżysz, atak i obrona mają DR10. 1/6 szansy, że trafiony przeciwnik ulegnie gwałtownej sepsie i zginie w ciągu 10 minut',
+  'Zęby Czarodzieja - cztery dziwne zęby grzechoczą w czarnym woreczku. Przed walką rzuć k6 na każdy z zębów. Każda 6 oznacza, że jeden z twoich ataków zada maksymalne obrażenia',
+  'Proca Starego Sigűrda - Sigűrd był najsilniejszym człowiekiem, którego gardło przegryzłeś. Ta proca, upleciona z jego długich siwych włosów, nigdy cię nie zawiodła. 2k4 obrażeń, wymaga kamieni wielkości pięści, które na szczęście (lub nieszczęście) znaleźć można wszędzie',
+  'Wiekowy Posokowiec - astmatyczny, niepoczytalny i ledwo żywy, ten zasuszony pies ma doskonały węch, który potrafi wywęszyć skarby nawet w najobrzydliwszych śmieciach. Atakuje z DR10 (ugryzienie k6), broni się z DR12. Ma 12 HP. Wpada w szał w pobliżu goblinów i berserków',
+  'Podkowa Rumaka Kostuchy - wygląda zwyczajnie, ale od momentu znalezienia jej w jakiejś mrocznej krypcie jesteś przekonany, że pochodzi od konia samej Śmierci. W twoich rękach atakuje z DR10, k4 obrażeń. 1/6 szansy, że zmiażdży czaszkę, natychmiastowo uśmiercając małą lub średnią istotę. Podkowa wraca do twojej dłoni jak bumerang.'
+],
 agility: -1,
 presence: 0,
 strength: 2,
@@ -997,7 +1004,7 @@ function createCharacter () {
     //`${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''}
     const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
-    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.description ? `\n${characterClass.specialAbility}. \n` : ''}
+    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.description ? `\n${characterClass.specialAbility}. ${randomizeFromArray(characterClass.rolledAbility)}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
     
