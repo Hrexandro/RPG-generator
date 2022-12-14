@@ -1,4 +1,9 @@
 // to add:
+//PIORITY: reformat silver rolling to handle multiple dice
+//finish gutterborn scum
+
+
+
 // random encounters/ varied by regions - add some monsters to default, add defaults to nondefault as well
 // cult generator
 // make sure half the encounters are creatures
@@ -34,6 +39,7 @@ function updateSecondarySelectStatus (){
       MBCharacterClassPicker.classList.add('input')
       addOption('Postać bezklasowa')
       addOption('Zębaty dezerter')
+      addOption('Rynsztokowa szumowina')
       MBCharacterClassPicker.addEventListener('click',()=>{      
         pickedClass = MBClasses.list.find((charClass)=>{ return charClass.characterClassName === MBCharacterClassPicker.value})
       })
@@ -832,7 +838,7 @@ let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
 }
 
 class MBCharacterClass {
-  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction) {
+  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silver, weaponRoll, armorRoll) {
     this.characterClassName = characterClassName
     this.description = description
     this.originLabel = originLabel
@@ -845,6 +851,11 @@ class MBCharacterClass {
     this.toughness = toughness
     this.omens = omens
     this.scrollRestriction = scrollRestriction
+    this.HPdie = HPdie
+    this.silver = silver
+    this.weaponRoll = weaponRoll
+    this.armorRoll = armorRoll
+
   }
 }
 
@@ -854,8 +865,8 @@ let MBClasses = { // classes lista klas
 }
 
 
-function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction}) {
-  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction)
+function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silver, weaponRoll, armorRoll}) {
+  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silver, weaponRoll, armorRoll)
   MBClasses.list.push(newClass)
   console.log(newClass)
 }
@@ -865,7 +876,7 @@ function createAndAddClass ({characterClassName, description, originLabel, origi
 // Agility tests are DR+2, excluding defence. You are incapable of understanding scrolls.
 
 
-createAndAddClass({characterClassName: 'Zębaty dezerter',//Ugryzienie - atak DR10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny //abilities, earliest memories, one of the following
+createAndAddClass({characterClassName: 'Zębaty dezerter',
 description: 'Masz jakichś trzydzieścioro przyjaciół, którzy cię nigdy nie zawiedli: TWOJE ZĘBY. Jesteś nielojalny, niepoczytalny, czy po prostu nie dajesz się kontrolować - sam odszedłeś z każdej grupy, która sama cię nie wykopała. Ale twój parlament zębów - ogromnych, wystających, grubych i ostrych - zawsze był twoim sprzymierzeńcem',
 originLabel: 'Twoje najdawniejsze wspomnienie to ',
 origin: ['spalony budynek w Sarkash. Twój dom?',
@@ -888,7 +899,54 @@ presence: 0,
 strength: 2,
 toughness: 0,
 omens: 2,
-scrollRestriction: 'illiterate'})
+scrollRestriction: 'illiterate',
+HPdie: 10,
+silver: false,
+weaponRoll: false, 
+armorRoll: false})
+
+createAndAddClass({characterClassName: 'Rynsztokowa szumowina',
+description: 'Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami. Bieda, przestępczość i kiepskie wychowanie nie pomogły. W tojej społeczności uczciwy zarobek nigdy nie wchodził w grze. Nie żebyś próbował, co ty jesteś, jakiś frajer? Ostry nóż i bezksiężycowa noc warte są więcej niż tydzień harówki',
+originLabel: 'Niskourodzony: ',
+origin: [
+  'wrzucony do wozu z nawozem razem z błonami płodowymi',
+  'matka powieszona na drzewie na obrzeżach Galgenbeck, wypadłeś z jej zwłok',
+  'wychowany przez szczury w rynsztokach Griftu',
+  'kopany i bity pod stołem w piekarni w Schleswigu',
+  'zbiegły z z Tvelandzkiego sierocińca',
+  'wychowany przez banitów w ruderze na południe od Alliánsu'
+],
+specialAbility: 'Skryty - testy zręczności i skupienia są łatwiejsze o 2 punkty',
+rolledAbility: [
+  'Tchórzliwe Pchnięcie - kiedy atakujesz lekką bronią jednoręczną z zaskoczenia, rzuć DR10 na zręczność. Sukces oznacza jedno automatyczne trafienie, zadające normalne obrażenia +3',
+  'Brudne Paluszki - twoje zręczne dłonie dostają się do kieszeni i otwierają zamki z testem DR8 na zręczność. Zaczynasz z zestawem wytrychoów'],
+agility: 0,
+presence: 0,
+strength: -2,
+toughness: 0,
+omens: 2,
+scrollRestriction: false,
+HPdie: 6,
+silver: 6,// CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
+weaponRoll: 6, 
+armorRoll: 2}) 
+
+// createAndAddClass({characterClassName: '',
+// description: '',
+// originLabel: '',
+// origin: [''],
+// specialAbility: '',
+// rolledAbility: [''],
+// agility: 0,
+// presence: 0,
+// strength: 0,
+// toughness: 0,
+// omens: 0,
+// scrollRestriction: false,
+// HPdie: false
+// silver: false // CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
+// weaponRoll: false, 
+// armorRoll: false})
 
 const classLessCharacter = new MBCharacterClass('', '', '', '', '', '' , 0, 0, 0, 0, 2, false)
 
@@ -929,7 +987,7 @@ function createCharacter () {
     let PRE = generateAbility(characterClass.presence)
     let STR = generateAbility(characterClass.strength)
     let TOU = generateAbility(characterClass.toughness)
-    let HP = k(8) + parseInt(TOU)
+    let HP = (characterClass.HPdie ? k(characterClass.HPdie) : k(8)) + parseInt(TOU)
     if (HP < 1) {
       HP = 1
     }
@@ -967,7 +1025,8 @@ function createCharacter () {
     let d6EquipmentRoll = randomizeFromArray(d6Equipment)
     let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)//have an if statement to check if scroll, and use that in the armor roll
     let d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
-    let armorRoll = k(4)-1
+    let armorRoll = (characterClass.armorRoll ? k(characterClass.armorRoll) : k(4))-1
+    let weaponRoll = (characterClass.weaponRoll ? k(characterClass.weaponRoll) : k(10))-1
     if (d12EquipmentRollOne === 'przeklęty zwój'){
       if (characterClass.scrollRestriction === 'illiterate'){
         while (d12EquipmentRollOne === 'przeklęty zwój'){
@@ -990,7 +1049,7 @@ function createCharacter () {
     }
 
     let pickedArmor = randomizeFromArray(armors[armorRoll])
-
+    let pickedWeapon = MBWeapons[weaponRoll]
     let terribleTraitOne = pickFromList(MBTerribleTraits)
     let terribleTraitTwo = pickFromList(MBTerribleTraits)
     
@@ -998,11 +1057,13 @@ function createCharacter () {
       terribleTraitTwo = pickFromList(MBTerribleTraits)
     }
 
+    let silver = (characterClass.silver ? characterClass.silver : (k(6)+k(6)))*10
+
     const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
     Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.description ? `\n${characterClass.specialAbility}. ${randomizeFromArray(characterClass.rolledAbility)}. \n` : ''}
-    Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
-    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
+    Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, `+
+    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${silver} szt. srebra.`
     
     return createdCharacter
 }
