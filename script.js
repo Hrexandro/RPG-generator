@@ -9,6 +9,8 @@
 // add character generator (classes)
 // monsters from death temple sztun
 // monsters from my owne dungeons
+// elf names
+// dwarf names
 
 import { MBNames, MBTowns, VOTENobleNames, wizardNames } from './names.js'
 
@@ -29,6 +31,7 @@ function updateSecondarySelectStatus (){
       MBCharacterClassPicker.appendChild(option)
     }
       document.body.insertBefore(MBCharacterClassPicker, nameDisplay)
+      MBCharacterClassPicker.classList.add('input')
       addOption('Postać bezklasowa')
       addOption('Zębaty dezerter')
       MBCharacterClassPicker.addEventListener('click',()=>{      
@@ -995,20 +998,12 @@ function createCharacter () {
       terribleTraitTwo = pickFromList(MBTerribleTraits)
     }
 
-    // const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName + '.\n ' + characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n ` : '' }`
-    // + `${pickFromList(MBTerribleTraits)}. ${pickFromList(MBTerribleTraits)}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.`
-    // + ` HP: ${HP}/${HP}. Omeny ${currentOmens} (k${maxOmens}). Zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}. Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
-    // `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
-    
-
-    //`${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''}
     const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
     Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.description ? `\n${characterClass.specialAbility}. ${randomizeFromArray(characterClass.rolledAbility)}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${randomizeFromArray(MBWeapons)}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${(k(6)+k(6))*10} szt. srebra.`
     
-
     return createdCharacter
 }
 

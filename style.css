@@ -32,16 +32,17 @@ input {
     border: 1px solid white;
 } */
 
-#top-bar {
+.bar {
     width:100vw;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     align-content: stretch;
 }
+
 @media only screen and (max-width: 1024px) {
     p {
-        font-size: larger;
+        font-size: xx-large;
     }
     .input {
         flex-grow: 1;
