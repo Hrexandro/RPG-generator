@@ -871,11 +871,6 @@ function createAndAddClass ({characterClassName, description, originLabel, origi
   console.log(newClass)
 }
 
-// Clumsy and Dull-witted
-
-// Agility tests are DR+2, excluding defence. You are incapable of understanding scrolls.
-
-
 createAndAddClass({characterClassName: 'Zębaty dezerter',
 description: 'Masz jakichś trzydzieścioro przyjaciół, którzy cię nigdy nie zawiedli: TWOJE ZĘBY. Jesteś nielojalny, niepoczytalny, czy po prostu nie dajesz się kontrolować - sam odszedłeś z każdej grupy, która sama cię nie wykopała. Ale twój parlament zębów - ogromnych, wystających, grubych i ostrych - zawsze był twoim sprzymierzeńcem',
 originLabel: 'Twoje najdawniejsze wspomnienie to ',
@@ -909,17 +904,21 @@ createAndAddClass({characterClassName: 'Rynsztokowa szumowina',
 description: 'Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami. Bieda, przestępczość i kiepskie wychowanie nie pomogły. W tojej społeczności uczciwy zarobek nigdy nie wchodził w grze. Nie żebyś próbował, co ty jesteś, jakiś frajer? Ostry nóż i bezksiężycowa noc warte są więcej niż tydzień harówki',
 originLabel: 'Niskourodzony: ',
 origin: [
-  'wrzucony do wozu z nawozem razem z błonami płodowymi',
-  'matka powieszona na drzewie na obrzeżach Galgenbeck, wypadłeś z jej zwłok',
-  'wychowany przez szczury w rynsztokach Griftu',
-  'kopany i bity pod stołem w piekarni w Schleswigu',
-  'zbiegły z z Tvelandzkiego sierocińca',
-  'wychowany przez banitów w ruderze na południe od Alliánsu'
+  'wrzucony do wozu z nawozem razem z błonami płodowymi.',
+  'matka powieszona na drzewie na obrzeżach Galgenbeck, wypadłeś z jej zwłok.',
+  'wychowany przez szczury w rynsztokach Griftu.',
+  'kopany i bity pod stołem w piekarni w Schleswigu.',
+  'zbiegły z z Tvelandzkiego sierocińca.',
+  'wychowany przez banitów w ruderze na południe od Alliánsu.'
 ],
 specialAbility: 'Skryty - testy zręczności i skupienia są łatwiejsze o 2 punkty',
 rolledAbility: [
   'Tchórzliwe Pchnięcie - kiedy atakujesz lekką bronią jednoręczną z zaskoczenia, rzuć DR10 na zręczność. Sukces oznacza jedno automatyczne trafienie, zadające normalne obrażenia +3',
-  'Brudne Paluszki - twoje zręczne dłonie dostają się do kieszeni i otwierają zamki z testem DR8 na zręczność. Zaczynasz z zestawem wytrychoów'],
+  'Brudne Paluszki - twoje zręczne dłonie dostają się do kieszeni i otwierają zamki z testem DR8 na zręczność. Zaczynasz z zestawem wytrychoów',
+  'Odrażający Smarkomiot - twoja flegma jest lepka, grudkowata i celna na niewielkie dystanse. Możesz pluć k2 razy na starcie. Rzuć test DR8 na skupienie, żeby trafić. Cel zostaje oślepiony, harczy i wymiotuje przez k4 rundy. Każdy, kto to widzi - przyjaciel czy wróg - musi zdać test na odporność by również nie zwymiotować. BG testują DR10, wrogowie DR12',
+  'Oszukać Przeznaczenie - za każdym razem, kiedy zużywasz omen, jest 50% szansy, że go jednak nie zużywasz',
+  'Ekskrementalnie Skryty - masz niesamowitą zdolnośc ukrywania się w brudzie i odpadach. Dostrzeżenie cię w takich warunkach wymaga testu DR16 na skupienie',
+  'Unikanie Śmierci -  jesteś tak nieprzyjemny, nieważny i odrażający, że nawet Śmierć woli cię unikać. W przypadku śmierci, jeśli jest choć najmniejsze prawdopodobieństwo, że mógłbyś przetrwać, jest 50% szans, że tak się stało. Wracasz wtedy po 10 rundach z k4 HP oraz mało prawdopodobnym wyjaśnieniem swojego powrotu'],
 agility: 0,
 presence: 0,
 strength: -2,
