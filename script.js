@@ -1,8 +1,3 @@
-// to add:
-//PIORITY: reformat silver rolling to handle multiple dice
-//finish gutterborn scum
-
-
 
 // random encounters/ varied by regions - add some monsters to default, add defaults to nondefault as well
 // cult generator
@@ -16,6 +11,8 @@
 // monsters from my owne dungeons
 // elf names
 // dwarf names
+
+//divide MB weapons into damage classes and roll accordingly (to enable to add more weapon types)
 
 import { MBNames, MBTowns, VOTENobleNames, wizardNames } from './names.js'
 
@@ -838,7 +835,7 @@ let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
 }
 
 class MBCharacterClass {
-  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silver, weaponRoll, armorRoll) {
+  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll) {
     this.characterClassName = characterClassName
     this.description = description
     this.originLabel = originLabel
@@ -852,7 +849,8 @@ class MBCharacterClass {
     this.omens = omens
     this.scrollRestriction = scrollRestriction
     this.HPdie = HPdie
-    this.silver = silver
+    this.silverDie = silverDie
+    this.silverNumberOfRolls = silverNumberOfRolls
     this.weaponRoll = weaponRoll
     this.armorRoll = armorRoll
 
@@ -865,8 +863,8 @@ let MBClasses = { // classes lista klas
 }
 
 
-function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silver, weaponRoll, armorRoll}) {
-  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silver, weaponRoll, armorRoll)
+function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll}) {
+  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll)
   MBClasses.list.push(newClass)
   console.log(newClass)
 }
@@ -896,7 +894,8 @@ toughness: 0,
 omens: 2,
 scrollRestriction: 'illiterate',
 HPdie: 10,
-silver: false,
+silverDie: false,
+silverNumberOfRolls: false,
 weaponRoll: false, 
 armorRoll: false})
 
@@ -926,9 +925,28 @@ toughness: 0,
 omens: 2,
 scrollRestriction: false,
 HPdie: 6,
-silver: 6,// CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
+silverDie: 6,
+silverNumberOfRolls: 4,//test, should be 1
 weaponRoll: 6, 
 armorRoll: 2}) 
+
+// createAndAddClass({characterClassName: 'Upadły arystokrata',
+// description: '',
+// originLabel: '',
+// origin: [''],
+// specialAbility: '',
+// rolledAbility: [''],
+// agility: 0,
+// presence: 0,
+// strength: 0,
+// toughness: 0,
+// omens: 0,
+// scrollRestriction: false,
+// HPdie: false,
+// silverDie: false, 
+// silverNumberOfRolls: false,
+// weaponRoll: false, 
+// armorRoll: false})
 
 // createAndAddClass({characterClassName: '',
 // description: '',
@@ -942,8 +960,9 @@ armorRoll: 2})
 // toughness: 0,
 // omens: 0,
 // scrollRestriction: false,
-// HPdie: false
-// silver: false // CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
+// HPdie: false,
+// silverDie: false // CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
+// silverNumberOfRolls: false,
 // weaponRoll: false, 
 // armorRoll: false})
 
@@ -1056,7 +1075,17 @@ function createCharacter () {
       terribleTraitTwo = pickFromList(MBTerribleTraits)
     }
 
-    let silver = (characterClass.silver ? characterClass.silver : (k(6)+k(6)))*10
+    let silver = (k(6)+k(6))*10
+    if (characterClass.silverDie){
+      let silverCounter = 0
+      for (let i=0; i < characterClass.silverNumberOfRolls; i++){
+        silverCounter+=k(characterClass.silverDie)
+      }
+      silver = silverCounter*10
+    }
+    
+    
+    (characterClass.silverDie ? characterClass.silverDie : (k(6)+k(6)))*10
 
     const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
