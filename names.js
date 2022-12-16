@@ -1110,6 +1110,10 @@ export const wizardNames = {
     'Seroquel',
     'Risperdal',
     'Geodon',
-    'Femaltiker'
+    'Femaltiker',
+    'Sinupret',
+    'Fromilid',
+    'Syrolimus',
+    'Takrolimus'
   ]
 }

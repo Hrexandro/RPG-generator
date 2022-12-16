@@ -1,4 +1,4 @@
-
+//add random class
 // random encounters/ varied by regions - add some monsters to default, add defaults to nondefault as well
 // cult generator
 // make sure half the encounters are creatures
@@ -37,6 +37,7 @@ function updateSecondarySelectStatus (){
       addOption('Postać bezklasowa')
       addOption('Zębaty dezerter')
       addOption('Rynsztokowa szumowina')
+      addOption('Ezoteryczny pustelnik')
       MBCharacterClassPicker.addEventListener('click',()=>{      
         pickedClass = MBClasses.list.find((charClass)=>{ return charClass.characterClassName === MBCharacterClassPicker.value})
       })
@@ -926,27 +927,41 @@ omens: 2,
 scrollRestriction: false,
 HPdie: 6,
 silverDie: 6,
-silverNumberOfRolls: 4,//test, should be 1
+silverNumberOfRolls: 1,
 weaponRoll: 6, 
 armorRoll: 2}) 
 
-// createAndAddClass({characterClassName: 'Upadły arystokrata',
-// description: '',
-// originLabel: '',
-// origin: [''],
-// specialAbility: '',
-// rolledAbility: [''],
-// agility: 0,
-// presence: 0,
-// strength: 0,
-// toughness: 0,
-// omens: 0,
-// scrollRestriction: false,
-// HPdie: false,
-// silverDie: false, 
-// silverNumberOfRolls: false,
-// weaponRoll: false, 
-// armorRoll: false})
+createAndAddClass({characterClassName: 'Ezoteryczny pustelnik',
+description: 'Kamień twej jaskini jest jednością z gwiazdami. Cisza i perfekcja. Teraz jednak chaos upadającego świata zakłóca twoje rytuały a płaszcz nocy staje się ciemniejszy niż mrok twojej jaskini. Irytujące!',
+originLabel: 'Upiorne pochodzenie: ',
+origin: [
+  'obudził się dorosły wewnątrz rytualnego kręgu pod północnym mostem do Griftu.',
+  'wyszedł pozbawiony wspomnień z jaskini w klifach Terionu.',
+  'jedyne dziecko, które przetrwało incydent w Dolinie Niefortunnych Nieumarłych.',
+  'umierając na zarazę w szałasie w Bergen Chrypcie, dotknąłeś czegoś z zewnątrz.',
+  'zwykły człowiek, do momentu, gdy napotkał coś na ciemnej polanie w Sarkash.',
+  'wychowany na samotnej wyspie na jeziorze Onda. Nikt inny nie słyszał nigdy o tej wyspie i nie możesz na nią wrócić.'
+],
+specialAbility: '',//add the random scroll here? write a function for picking a random array from a number of them
+rolledAbility: [
+  'Mistrz Przeznaczenia - po ci mapy, skoro masz dostęp do kwintesencji przyczynowości? Znasz właściwą drogę po zdaniu testu DR8 na skupienie',
+  'Księga Wrzącej Krwi - możesz odczytać księgę raz dziennie. Twój przeciwnik musi zdać test DR12 aby cię powstrzymać. Jeśli mu się nie uda, pojawi się k2 berserków-pogromców z zapomnianego wymiaru krwi. Rzuć k6: 1-4 walczą u twojego boku. 5-6 obracają się przeciwko tobie i próbują zniszczyć księgę. Po starciu powracają do swojego więzienia',
+  'Mówca Prawd - dwa razy dizennie twoja mądrość, wiedza i wewnętrzny spokój mogą udzielić jasności wybranej istocie. DR jej następnego testu jest obniżone o 4',
+  'Uczeń Niewidzialnego Kolegium - raz dziennie możesz przywołać k2 zwojów, które mogą zostać użyte jeden raz. Rzuć k4: 1-2 zwoje są święte, 3-4 zwoje są przeklęte. Jeśli zwoje nie zostaną wykorzystane do zmroku, obracają się w popiół',
+  'Bard Nieumierających - poznałeś melodie zaświatów. Muzyka twojej harfy daje +k4 do rzutów na reakcję',
+  'Jastrząb Bojowy - twój podstępny, prawie inteligentny, jastrząb jest lojalny tylko wobec ciebie. Nawet bez wspólnego języka, rozumiesz jego okrzyki, gdy czuwa, prowadzi zwiad i atakuje nieprzyjaciół. Atak/obrona DR10 (szpony/dziobanie k4), 8 HP'
+],
+agility: 0,
+presence: 2,
+strength: -2,
+toughness: 0,
+omens: 4,
+scrollRestriction: false,
+HPdie: 4,
+silverDie: 6, 
+silverNumberOfRolls: 1,
+weaponRoll: 4, 
+armorRoll: 2})//Ordinary starting equipment plus one random scroll
 
 // createAndAddClass({characterClassName: '',
 // description: '',
@@ -1089,7 +1104,7 @@ function createCharacter () {
 
     const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
-    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.description ? `\n${characterClass.specialAbility}. ${randomizeFromArray(characterClass.rolledAbility)}. \n` : ''}
+    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${characterClass.rolledAbility ? `\n ${randomizeFromArray(characterClass.rolledAbility)}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${silver} szt. srebra.`
     
