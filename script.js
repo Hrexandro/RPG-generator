@@ -35,11 +35,16 @@ function updateSecondarySelectStatus (){
       document.body.insertBefore(MBCharacterClassPicker, nameDisplay)
       MBCharacterClassPicker.classList.add('input')
       addOption('Postać bezklasowa')
+      addOption('Losowa klasa')
       addOption('Zębaty dezerter')
       addOption('Rynsztokowa szumowina')
       addOption('Ezoteryczny pustelnik')
-      MBCharacterClassPicker.addEventListener('click',()=>{      
-        pickedClass = MBClasses.list.find((charClass)=>{ return charClass.characterClassName === MBCharacterClassPicker.value})
+      MBCharacterClassPicker.addEventListener('click',()=>{
+        if (MBCharacterClassPicker.value === 'Losowa klasa'){
+          pickedClass = 'Losowa klasa'
+        } else {
+          pickedClass = MBClasses.list.find((charClass)=>{ return charClass.characterClassName === MBCharacterClassPicker.value})
+        }
       })
       MBCharacterClassPicker.addEventListener('change',()=>{      
         removeAllChildren(nameDisplay)
@@ -805,38 +810,41 @@ createAndAddMonster({ keyName: 'prowler', nazwa: 'Włóczęga', HP: '8', morale:
 
 let MBUncleanScroll = { //TO DO: ADD ALL SCROLLS
   type: 'picker',
-  list: ['Dłonie Otwierają Południową Bramę - kula ognia trafia k2 istoty zadając każdej z nich k8 obrażeń',
-  'Język Eris - wybrana przez ciebie istota jest zdezorientowana przez 10 minut',
-
-  'Te-le-kin-eza - przesuwasz przedmioty do k4x4 metry przez k6 minut',
-  'Lucy-ferna Lewitacja - unosisz się przez Skupienie +k10 rund',
-  'Demon Żył - jedna istota dusi się przez k6 rund, tracąc k4 HP na rundę',
-  'Dziewięć Purpurowych Znaków Rozplątuje Burzę - tworzysz k2 pioruny po k6 obrażeń każdy',
-  'Metzhuotl Oślepia Twoje Oko - istota staje się niewidzialna przez k6 rund lub dopóki otrzyma obrażenia, atakuje i broni się z DR6',
-  'Odrażający Psychopomp - przywołujesz (k6): 1-3 k4 szkielety, 4-6 k4 zombie',
-  'Powieka Oślepia Wiatr - k4 istoty zasypiają na godzinę, chyba że przejdą test DR14',
-  'Śmierć - wszystkie istory w obrębie 10 metrów tracą w sumie 4k10 HP'
+  list: ['Dłonie Otwierają Południową Bramę (przeklęty zwój) - kula ognia trafia k2 istoty zadając każdej z nich k8 obrażeń',
+  'Język Eris (przeklęty zwój) - wybrana przez ciebie istota jest zdezorientowana przez 10 minut',
+  'Te-le-kin-eza (przeklęty zwój) - przesuwasz przedmioty do k4x4 metry przez k6 minut',
+  'Lucy-ferna Lewitacja (przeklęty zwój) - unosisz się przez Skupienie +k10 rund',
+  'Demon Żył (przeklęty zwój) - jedna istota dusi się przez k6 rund, tracąc k4 HP na rundę',
+  'Dziewięć Purpurowych Znaków Rozplątuje Burzę (przeklęty zwój) - tworzysz k2 pioruny po k6 obrażeń każdy',
+  'Metzhuotl Oślepia Twoje Oko (przeklęty zwój) - istota staje się niewidzialna przez k6 rund lub dopóki otrzyma obrażenia, atakuje i broni się z DR6',
+  'Odrażający Psychopomp (przeklęty zwój) - przywołujesz (k6): 1-3 k4 szkielety, 4-6 k4 zombie',
+  'Powieka Oślepia Wiatr (przeklęty zwój) - k4 istoty zasypiają na godzinę, chyba że przejdą test DR14',
+  'Śmierć (przeklęty zwój) - wszystkie istory w obrębie 10 metrów tracą w sumie 4k10 HP'
 ]
 
 }
 
 let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
   type: 'picker',
-  list: ['Łaska Martwego Świętego - k2 istoty regenerują k10 HP każda',
-  'Łaska Dla Grzesznika - wybrana istota dostaje +k6 do wybranego rzutu',
-  'Szepty Przekraczają Wrota - zadaj trzy pytania martwej istocie',
-  'Egida Rozpaczy - wybrana istota otrzymuje 2k6 dodatkowych HP na 10 rund',
-  'Oszukane Przeznaczenie - jedna istota, martwa krócej niż tydzień, zostaje ożywiona z przerażającymi wspomnieniami',
-  'Bestialska Mowa - możesz rozmawiać ze zwierzętami przez k20 minut',
-  'Fałszywy Świt/Rydwan Nocy - światło lub całkowita ciemność przez 3k10 minut',
-  'Hermetyczny Krok - odnajdujesz wszystkie pułapki na swojej drodze przez 2k10 minut',
-  'Pochłaniające Spojrzenie - k4 istoty tracą po k8 HP każda',
-  'Enochiańska Składnia - jedna istota ślepo podąża za pojedyńczym rozkazem'
+  list: ['Łaska Martwego Świętego (święty zwój) - k2 istoty regenerują k10 HP każda',
+  'Łaska Dla Grzesznika (święty zwój) - wybrana istota dostaje +k6 do wybranego rzutu',
+  'Szepty Przekraczają Wrota (święty zwój) - zadaj trzy pytania martwej istocie',
+  'Egida Rozpaczy (święty zwój) - wybrana istota otrzymuje 2k6 dodatkowych HP na 10 rund',
+  'Oszukane Przeznaczenie (święty zwój) - jedna istota, martwa krócej niż tydzień, zostaje ożywiona z przerażającymi wspomnieniami',
+  'Bestialska Mowa (święty zwój) - możesz rozmawiać ze zwierzętami przez k20 minut',
+  'Fałszywy Świt/Rydwan Nocy (święty zwój) - światło lub całkowita ciemność przez 3k10 minut',
+  'Hermetyczny Krok (święty zwój) - odnajdujesz wszystkie pułapki na swojej drodze przez 2k10 minut',
+  'Pochłaniające Spojrzenie (święty zwój) - k4 istoty tracą po k8 HP każda',
+  'Enochiańska Składnia (święty zwój) - jedna istota ślepo podąża za pojedyńczym rozkazem'
   ]
 }
 
+function returnRandomSacredOrUncleanScroll (){
+  return MBUncleanScroll.list.concat(MBSacredScroll.list)
+}
+
 class MBCharacterClass {
-  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll) {
+  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll) {
     this.characterClassName = characterClassName
     this.description = description
     this.originLabel = originLabel
@@ -848,7 +856,7 @@ class MBCharacterClass {
     this.strength = strength
     this.toughness = toughness
     this.omens = omens
-    this.scrollRestriction = scrollRestriction
+    this.scrollRule = scrollRule
     this.HPdie = HPdie
     this.silverDie = silverDie
     this.silverNumberOfRolls = silverNumberOfRolls
@@ -864,8 +872,8 @@ let MBClasses = { // classes lista klas
 }
 
 
-function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll}) {
-  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRestriction, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll)
+function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll}) {
+  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll)
   MBClasses.list.push(newClass)
   console.log(newClass)
 }
@@ -893,7 +901,7 @@ presence: 0,
 strength: 2,
 toughness: 0,
 omens: 2,
-scrollRestriction: 'illiterate',
+scrollRule: 'illiterate',
 HPdie: 10,
 silverDie: false,
 silverNumberOfRolls: false,
@@ -924,7 +932,7 @@ presence: 0,
 strength: -2,
 toughness: 0,
 omens: 2,
-scrollRestriction: false,
+scrollRule: false,
 HPdie: 6,
 silverDie: 6,
 silverNumberOfRolls: 1,
@@ -942,7 +950,7 @@ origin: [
   'zwykły człowiek, do momentu, gdy napotkał coś na ciemnej polanie w Sarkash.',
   'wychowany na samotnej wyspie na jeziorze Onda. Nikt inny nie słyszał nigdy o tej wyspie i nie możesz na nią wrócić.'
 ],
-specialAbility: '',//add the random scroll here? write a function for picking a random array from a number of them
+specialAbility: '',
 rolledAbility: [
   'Mistrz Przeznaczenia - po ci mapy, skoro masz dostęp do kwintesencji przyczynowości? Znasz właściwą drogę po zdaniu testu DR8 na skupienie',
   'Księga Wrzącej Krwi - możesz odczytać księgę raz dziennie. Twój przeciwnik musi zdać test DR12 aby cię powstrzymać. Jeśli mu się nie uda, pojawi się k2 berserków-pogromców z zapomnianego wymiaru krwi. Rzuć k6: 1-4 walczą u twojego boku. 5-6 obracają się przeciwko tobie i próbują zniszczyć księgę. Po starciu powracają do swojego więzienia',
@@ -956,12 +964,12 @@ presence: 2,
 strength: -2,
 toughness: 0,
 omens: 4,
-scrollRestriction: false,
+scrollRule: 'random scroll',
 HPdie: 4,
 silverDie: 6, 
 silverNumberOfRolls: 1,
 weaponRoll: 4, 
-armorRoll: 2})//Ordinary starting equipment plus one random scroll
+armorRoll: 2})
 
 // createAndAddClass({characterClassName: '',
 // description: '',
@@ -974,7 +982,7 @@ armorRoll: 2})//Ordinary starting equipment plus one random scroll
 // strength: 0,
 // toughness: 0,
 // omens: 0,
-// scrollRestriction: false,
+// scrollRule: false,
 // HPdie: false,
 // silverDie: false // CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
 // silverNumberOfRolls: false,
@@ -993,7 +1001,11 @@ const MBCharacter = function () { // arcane catastrophes magiczne katastrofy
 
 function createCharacter () {
     let characterClass = pickedClass ? pickedClass : classLessCharacter
-
+    console.log(pickedClass)
+    if (pickedClass === 'Losowa klasa'){
+      console.log('jest losowa klasa')
+      characterClass = pickFromList(MBClasses)
+    }
     function generateAbility (modifier){
       let rollForAbility = k(6) + k(6) + k(6) + modifier
       let abilityScore = null
@@ -1061,23 +1073,23 @@ function createCharacter () {
     let armorRoll = (characterClass.armorRoll ? k(characterClass.armorRoll) : k(4))-1
     let weaponRoll = (characterClass.weaponRoll ? k(characterClass.weaponRoll) : k(10))-1
     if (d12EquipmentRollOne === 'przeklęty zwój'){
-      if (characterClass.scrollRestriction === 'illiterate'){
+      if (characterClass.scrollRule === 'illiterate'){
         while (d12EquipmentRollOne === 'przeklęty zwój'){
           d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
         }
       } else {
         armorRoll = k(2)-1
-        d12EquipmentRollOne = `${pickFromList(MBUncleanScroll)} (przeklęty zwój)`
+        d12EquipmentRollOne = pickFromList(MBUncleanScroll)
       }
     }
     if (d12EquipmentRollTwo === 'święty zwój'){
-      if (characterClass.scrollRestriction === 'illiterate'){
+      if (characterClass.scrollRule === 'illiterate'){
         while (d12EquipmentRollTwo === 'święty zwój'){
           d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
         }
       } else {
       armorRoll = k(2)-1
-      d12EquipmentRollTwo = `${pickFromList(MBSacredScroll)} (święty zwój)`
+      d12EquipmentRollTwo = pickFromList(MBSacredScroll)
       }
     }
 
@@ -1098,15 +1110,15 @@ function createCharacter () {
       }
       silver = silverCounter*10
     }
+    let additionalStartingScroll = (characterClass.scrollRule === 'random scroll') ? randomizeFromArray(returnRandomSacredOrUncleanScroll()) : false
     
-    
-    (characterClass.silverDie ? characterClass.silverDie : (k(6)+k(6)))*10
+    //(characterClass.silverDie ? characterClass.silverDie : (k(6)+k(6)))*10
 
     const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
     Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${characterClass.rolledAbility ? `\n ${randomizeFromArray(characterClass.rolledAbility)}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, `+
-    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${silver} szt. srebra.`
+    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ''}${silver} szt. srebra.`
     
     return createdCharacter
 }
