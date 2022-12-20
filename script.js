@@ -36,9 +36,10 @@ function updateSecondarySelectStatus (){
       MBCharacterClassPicker.classList.add('input')
       addOption('Postać bezklasowa')
       addOption('Losowa klasa')
-      addOption('Zębaty dezerter')
-      addOption('Rynsztokowa szumowina')
       addOption('Ezoteryczny pustelnik')
+      addOption('Rynsztokowa szumowina')
+      addOption('Upadły arystokrata')
+      addOption('Zębaty dezerter')
       MBCharacterClassPicker.addEventListener('click',()=>{
         if (MBCharacterClassPicker.value === 'Losowa klasa'){
           pickedClass = 'Losowa klasa'
@@ -971,6 +972,38 @@ silverNumberOfRolls: 1,
 weaponRoll: 4, 
 armorRoll: 2})
 
+createAndAddClass({characterClassName: 'Upadły arystokrata',
+description: 'Ukorzony wyłącznie przed wspomnieniami twojej dawnej chwały, nigdy nie zgodziłbyś się podporządkować komuś innemu. Nie ty, szlachetna krew! (Nie żeby ci kmioci mogli zrozumieć głębię twojej rozpaczy)',
+originLabel: 'Wszystko szło tak dobrze, do czasu kiedy ',
+origin: [
+  'twój pałac w Wästlandzie został obrócony w gruzy.',
+  'twoje królestwo karawan w Tvelandzie popadło w nędzę.',
+  'brat króla Fathmu IX, Zikmund, twój ojciec, został zamordowany.',
+  'południowe imperium Südglans zatonęło w morzu.',
+  'Anthelia zażądała daru ze szlachetnej krwi',
+  'dwaj książęta zostali porwani na zachód Bergen Chrypty i zniknęli w czarnej szczelinie wschodnich stoków.'
+],
+specialAbility: '',
+rolledAbility: [
+  'Miecz Twoich Przodków - ten wspaniały i ewidentnie magiczny gadający miecz jest egzaltowany, niegodny zaufania i darzy cię cichą pogardą. Kpi z twoich porażek i jeśli zostanie wielokrotnie rozczarowany, ma 1/6 szansę, by podczas ataku "przypadkowo" razić ciebie lub twoich towarzyszy. Zadaje k6+1 obrażeń. Atak i obrona DR 10',
+  '"Poltroon" (Nędzny Tchórz), Nadworny Błazen - ten praktycznie bezużyteczny, osobiście irytujący i stanowiący ciężar emocjonalny trefniś rozprasza twoich wrogów w trakcie walki. W czasie dwóch pierwszych rund ty i twoi sprzymierzeńcy macie +2 do ataku i obrony',
+  'Barbarister, Niesamowity Koń - Barbarister jest magiczny, inteligentny, arogancki i próżny. Potrafi też mówić. Jeśli przekonasz go, Barbarister okazjonalnie może dodać ci +2 do testów na skupienie mających do czynienia z logiką i intelektem. Koń prawdopodobnie jest od ciebie mądrzejszy i dobrze o tym wie',
+  'Giermek Hamfund - jedyną funkcją tego niesamowicie tchórzliwego sługi jest sprawowanie pieczy nad przeklętym mieczem Eurekią. Raz na starcie, jeśli Hamfunda uda się odnaleźć, Eurekia może zostać dobyta. Miecz zadaje 2k6 obrażeń, przy każdym uderzeniu rzuć k6. Jeśli wypadnie 1, giermek zostaje zabity, a Eurekia znika na zawsze',
+  'Dar Wężowej Skóry - kosztowne pudełeczko z drzewa sandałowego pokryte wężową skórą. Wewnątrz znajduje się z pozoru zwykły sztylet, zawinięty w jedwab. Sztylet zadaje k4 obrażeń, ale przy wyrzucieniu 1 cel ginie natychmiastowo od śmiertelnej trucizny, którą nasączone jest ostrze',
+  'Róg Schleswidzkich Lordów! - raz dziennie możesz zadąć w tę powgniataną starą trąbkę i wykonać test DR12 na skupienie. Jedna istota może wykonać następny test niezwiązany z walką jako automatyczny sukces'
+],
+agility: 0,
+presence: 0,
+strength: 0,
+toughness: 0,
+omens: 2,
+scrollRule: false,
+HPdie: 6,
+silverDie: 6,
+silverNumberOfRolls: 4,
+weaponRoll: 8, 
+armorRoll: 3})
+
 // createAndAddClass({characterClassName: '',
 // description: '',
 // originLabel: '',
@@ -984,7 +1017,7 @@ armorRoll: 2})
 // omens: 0,
 // scrollRule: false,
 // HPdie: false,
-// silverDie: false // CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
+// silverDie: false, // CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
 // silverNumberOfRolls: false,
 // weaponRoll: false, 
 // armorRoll: false})
