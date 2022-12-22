@@ -37,6 +37,7 @@ function updateSecondarySelectStatus (){
       addOption('Postać bezklasowa')
       addOption('Losowa klasa')
       addOption('Ezoteryczny pustelnik')
+      addOption('Heretycki kapłan')
       addOption('Rynsztokowa szumowina')
       addOption('Upadły arystokrata')
       addOption('Zębaty dezerter')
@@ -876,7 +877,6 @@ let MBClasses = { // classes lista klas
 function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll}) {
   const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll)
   MBClasses.list.push(newClass)
-  console.log(newClass)
 }
 
 createAndAddClass({characterClassName: 'Zębaty dezerter',
@@ -1004,6 +1004,38 @@ silverNumberOfRolls: 4,
 weaponRoll: 8, 
 armorRoll: 3})
 
+createAndAddClass({characterClassName: 'Heretycki kapłan',
+description: 'Ścigany przez Dwugłowe Bazyliszki Prawdziwej Wiary, heretyk bredzi wśród ruin, włóczy się nieskończenie po zakurzonych traktach i bezcześci katedry nocą',
+originLabel: 'Przeklęte pochodzenie: ',
+origin: [
+  'Galgenbeck, w pobliżu katedry Dwugłowych Bazyliszków.',
+  'zmasakrowany kult w Alliánsie, jedyny ocalały.',
+  'krypty Griftu.',
+  'ruiny świątyni w Dolinie Niefortunnych Nieumarłych.',
+  'jeden z wielu złodziejskich tunelów w Graven-Tosk.',
+  'sekretny kościół w Bergen Chrypcie.'
+],
+specialAbility: 'Może używać Mocy odziany w średnią zbroję',
+rolledAbility: [
+  'Święty pastorał - zakończony hakiem z ludzkiej kości pokrytym zachodzącymi na siebie antymodlitwami. Ten żezł zahacza o inne światy. Zadaje 2k4 obrażeń każdemu, oprócz ludzi pozbawionych wiary',
+  'Kradziona mitra - doczesne ciało noszącego tę świętą czapkę zanika, stając się trudne do trafienia w walce (obrona DR10). Naciągnięta na uszy poza walką sprawia, że kapłan staje się prawie niewidzialny, testujac na ukrywanie z DR8',
+  'Lista grzechów - długi i precyzyjny dokument, weryfikowany z rzeczywistością by odkryć niewidocznych złoczyńców. Zdany test DR10 na prezencje sprawia, że dziwne światło otacza złe istoty. Właściciel listy broni się przed takim wykryciem z modyfikatorem +2',
+  'Bluźniercza Biblia Nechrubela - tak niesamowicie bluźniercza, że nawet sam kapłan może ją czytać tylko raz dziennie. Rzuć kością: wynik parzysty - przez resztę dnia bohaterowie graczy leczą k4 HP już po pięciu minutach odpoczynku, wynik nieparzysty - kapłana nawiedzają demoniczne halucynacje. MG może wymyślić k3 rzeczy, które tylko kapłan widzi i opisać je graczowi jak prawdziwe. Efekt przemija wraz ze świtem.',
+  'Kamienie ze świątyni Thel-Emasa - rzuć kamienie na ziemię. Ich ułożenie pokazuje, czy niebezpieczeństwo czyha w pobliskim pomieszczeniu. Kamienie mogą kłamać. Kapłan robi test DR10 aby sprawdzić czy mówią prawdę, ale po porażce nie może testować ponownie do zachodu słońca',
+  'Krucyfiks (Nie Ten Jezus) - tego krucyfiksu można użyc w starciach z nieumarłymi, jak również pomniejszymi trollami czy goblinami. Rzuć na morale (stosując modyfikator do skupienie kapłana), aby sprawdzić, czy istoty wycofają się z pokornym ukłonem'
+],
+agility: 0,
+presence: 2,
+strength: -2,
+toughness: 0,
+omens: 4,
+scrollRule: false,
+HPdie: 8,
+silverDie: 6,
+silverNumberOfRolls: 3,
+weaponRoll: 8, 
+armorRoll: 1})
+
 // createAndAddClass({characterClassName: '',
 // description: '',
 // originLabel: '',
@@ -1017,7 +1049,7 @@ armorRoll: 3})
 // omens: 0,
 // scrollRule: false,
 // HPdie: false,
-// silverDie: false, // CHANGE THIS WRETCHED ROYALTY HAS 4D6*10
+// silverDie: false,
 // silverNumberOfRolls: false,
 // weaponRoll: false, 
 // armorRoll: false})
@@ -1034,9 +1066,7 @@ const MBCharacter = function () { // arcane catastrophes magiczne katastrofy
 
 function createCharacter () {
     let characterClass = pickedClass ? pickedClass : classLessCharacter
-    console.log(pickedClass)
     if (pickedClass === 'Losowa klasa'){
-      console.log('jest losowa klasa')
       characterClass = pickFromList(MBClasses)
     }
     function generateAbility (modifier){
@@ -1101,28 +1131,30 @@ function createCharacter () {
     ]
 
     let d6EquipmentRoll = randomizeFromArray(d6Equipment)
-    let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)//have an if statement to check if scroll, and use that in the armor roll
+    let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
     let d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
     let armorRoll = (characterClass.armorRoll ? k(characterClass.armorRoll) : k(4))-1
     let weaponRoll = (characterClass.weaponRoll ? k(characterClass.weaponRoll) : k(10))-1
-    if (d12EquipmentRollOne === 'przeklęty zwój'){
-      if (characterClass.scrollRule === 'illiterate'){
-        while (d12EquipmentRollOne === 'przeklęty zwój'){
-          d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
+    if (armorRoll > 0){//so they won't get upgraded if they start without armor
+      if (d12EquipmentRollOne === 'przeklęty zwój'){
+        if (characterClass.scrollRule === 'illiterate'){
+          while (d12EquipmentRollOne === 'przeklęty zwój'){
+            d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
+          }
+        } else {
+          armorRoll = k(2)-1
+          d12EquipmentRollOne = pickFromList(MBUncleanScroll)
         }
-      } else {
-        armorRoll = k(2)-1
-        d12EquipmentRollOne = pickFromList(MBUncleanScroll)
       }
-    }
-    if (d12EquipmentRollTwo === 'święty zwój'){
-      if (characterClass.scrollRule === 'illiterate'){
-        while (d12EquipmentRollTwo === 'święty zwój'){
-          d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
+      if (d12EquipmentRollTwo === 'święty zwój'){
+        if (characterClass.scrollRule === 'illiterate'){
+          while (d12EquipmentRollTwo === 'święty zwój'){
+            d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
+          }
+        } else {
+        armorRoll = k(2)-1
+        d12EquipmentRollTwo = pickFromList(MBSacredScroll)
         }
-      } else {
-      armorRoll = k(2)-1
-      d12EquipmentRollTwo = pickFromList(MBSacredScroll)
       }
     }
 
@@ -1130,7 +1162,6 @@ function createCharacter () {
     let pickedWeapon = MBWeapons[weaponRoll]
     let terribleTraitOne = pickFromList(MBTerribleTraits)
     let terribleTraitTwo = pickFromList(MBTerribleTraits)
-    
     while (terribleTraitTwo === terribleTraitOne){
       terribleTraitTwo = pickFromList(MBTerribleTraits)
     }
