@@ -328,6 +328,7 @@ export const MBTowns = { // town
     'Alli',
     'Tün',
     'Galgen',
+    'Crë',
     'Schles',
     'Ker',
     'On',
@@ -666,6 +667,7 @@ export const MBTowns = { // town
     'dau',
     'zen',
     'den',
+    'lut',
     'schau',
     'ster',
     'sulm',
@@ -1117,6 +1119,8 @@ export const wizardNames = {
     'Sinupret',
     'Fromilid',
     'Syrolimus',
-    'Takrolimus'
+    'Takrolimus',
+    'Ezehron',
+    'Proktis'
   ]
 }

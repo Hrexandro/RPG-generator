@@ -38,6 +38,7 @@ function updateSecondarySelectStatus (){
       addOption('Losowa klasa')
       addOption('Ezoteryczny pustelnik')
       addOption('Heretycki kapłan')
+      addOption('Okultystyczny zielarz')
       addOption('Rynsztokowa szumowina')
       addOption('Upadły arystokrata')
       addOption('Zębaty dezerter')
@@ -1035,6 +1036,52 @@ silverDie: 6,
 silverNumberOfRolls: 3,
 weaponRoll: 8, 
 armorRoll: 1})
+
+createAndAddClass({characterClassName: 'Okultystyczny zielarz',
+description: 'Zrodzony z grzyba, wychowany na polanie, zajrzał w oko księżyca odbite w srebrnoczarnym stawie',
+originLabel: 'Pochodzi z ',
+origin: [
+  'cichego odosobnienia, jakie zapewnia mrok Sarkash.',
+  'cichego odosobnienia, jakie zapewnia mrok Sarkash.',
+  'cichego odosobnienia, jakie zapewnia mrok Sarkash.',
+  'nielegalnych nocnych targowisk Schleswigu.',
+  'heretyckiej wyspy Crëlut, dwie mile morskie na wschód od Griftu.',
+  'małej wiedźmiej chatki w Galgenbeck',
+  'starych zamarzniętych ruin niedaleko Alliánsu.',
+  'ruin posiadłości Króla Cieni, gęstych od wspomnień grzybów i dymu.'
+  
+],
+specialAbility: 'Przenośne laboratorium - bez przerwy zbierasz i stale zużywasz różne składniki, każdego dnia masz dośc materiałów do stworzena dwóch losowych wywarów (w sumie k4 dawki). Niewykorzystane tracą swoje właściwości po 24 godzinach',
+rolledAbility: [''],
+agility: 0,
+presence: 0,
+strength: -2,
+toughness: 2,
+omens: 2,
+scrollRule: false,
+HPdie: 6,
+silverDie: 6,
+silverNumberOfRolls: 2,
+weaponRoll: 6, 
+armorRoll: 2})
+
+// createAndAddClass({characterClassName: '',
+// description: '',
+// originLabel: '',
+// origin: [''],
+// specialAbility: '',
+// rolledAbility: [''],
+// agility: 0,
+// presence: 0,
+// strength: 0,
+// toughness: 0,
+// omens: 0,
+// scrollRule: false,
+// HPdie: false,
+// silverDie: false,
+// silverNumberOfRolls: false,
+// weaponRoll: false, 
+// armorRoll: false})
 
 // createAndAddClass({characterClassName: '',
 // description: '',
