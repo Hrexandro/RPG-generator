@@ -36,6 +36,7 @@ function updateSecondarySelectStatus (){
       MBCharacterClassPicker.classList.add('input')
       addOption('Postać bezklasowa')
       addOption('Losowa klasa')
+      addOption('Bladawiec')
       addOption('Ezoteryczny pustelnik')
       addOption('Heretycki kapłan')
       addOption('Okultystyczny zielarz')
@@ -1095,6 +1096,38 @@ scrollRule: false,
 HPdie: 8,
 silverDie: 6,
 silverNumberOfRolls: 2,
+weaponRoll: 6, 
+armorRoll: 2})
+
+createAndAddClass({characterClassName: 'Bladawiec',
+description: 'Czaisz się na skrajach osad, może i oceniając, ale rzadka wchodząc w interakcje. Jesteś fundamentalnie odmienny i nigdzie nie przynależysz. Miewasz napady niezrozumiałego szaleństwa i samodestrukcyjnego gniewu, ale głównie czekasz na nieuniknione w samotnej rezygnacji',
+originLabel: 'Niewypowiedziane pochodzenie: ',
+origin: [
+  'wyłowiony z Nieskończonego Morza przez rybaków.',
+  'przypadkowo przywołany przez kultystów w Graven-Tosk.',
+  'wyrzygany przez wstrętną bestię w Bergen Chrypcie.',
+  'spadł z nieba w pobliżu Alliánsu.',
+  'wykluł się z jaja złożonego przez bagienną babę na Wästlandzkim mokradle.',
+  'wypełzł z pęknięcia w ziemi w pobliżu Griftu.'
+],
+specialAbility: 'Jesteś piśmienny, ale tylko w martwych językach i nie możesz używać zwojów. Potrafisz jednak intuicyjnie użyć jednej Mocy dziennie, losowanej o zmierzchu lub o świcie (wybierz sobie).',
+rolledAbility: [
+  'Gwiazdy miały rację - rzucasz k4+2 na omeny. Powiedz coś tajemniczego za każdym razem, gdy wykorzystujesz jeden z nich',
+  'Błoniaste skrzydła - potrafisz latać krótkie dystanse, ale nie możesz nosić zbroi. Ptaki cię nie lubią',
+  'Niepospolita glina - potrafisz czerpać odżywienie z gleby, ale normalne jedzenie cię obrzydza. Pachniesz grzybami',
+  'Manna skądś - możesz wydać swój zapas mocy aby stworzyć dziwnie smakowitey, choć niepokojący, pokarm dla k6 osób',
+  'Giętkie kończyny - potrafisz wydostać się z wszelkich więzów i przecisnąć się przez malutkie przestrzenie. -4 DR do testów na gibkość',
+  'Zbyt wiele oczu - po prostu za dużo. Nie możesz zostać zaatakowany z zaskoczenia. Możesz wyrzec się na dany dzień mocy, aby zostawić za sobą jedno z oczu i patrzeć przez nie na odległość (jeśli oko zostanie zniszczone, otrzymujesz k2 pkt. obrażeń)'
+],
+agility: 1,
+presence: 1,
+strength: 0,
+toughness: -2,
+omens: 4,
+scrollRule: 'illiterate',
+HPdie: 6,
+silverDie: 6,
+silverNumberOfRolls: 1,
 weaponRoll: 6, 
 armorRoll: 2})
 
