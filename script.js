@@ -39,6 +39,7 @@ function updateSecondarySelectStatus (){
       addOption('Ezoteryczny pustelnik')
       addOption('Heretycki kapłan')
       addOption('Okultystyczny zielarz')
+      addOption('Przeklęty zmiennokształtny')
       addOption('Rynsztokowa szumowina')
       addOption('Upadły arystokrata')
       addOption('Zębaty dezerter')
@@ -1065,23 +1066,37 @@ silverNumberOfRolls: 2,
 weaponRoll: 6, 
 armorRoll: 2})
 
-// createAndAddClass({characterClassName: '',
-// description: '',
-// originLabel: '',
-// origin: [''],
-// specialAbility: '',
-// rolledAbility: [''],
-// agility: 0,
-// presence: 0,
-// strength: 0,
-// toughness: 0,
-// omens: 0,
-// scrollRule: false,
-// HPdie: false,
-// silverDie: false,
-// silverNumberOfRolls: false,
-// weaponRoll: false, 
-// armorRoll: false})
+createAndAddClass({characterClassName: 'Przeklęty zmiennokształtny',
+description: 'Powinieneś był umrzeć, ale coś złapało twoją duszę, gdy tonęła ona w rzece Śmierci i scaliło ją na powrót z twoim śmiertelnym ciałem. Tylko tym razem, nie jest to wyłącznie twoja klatka - w prądach zaświatów, twoja dusza wymieszała się z inną umierającą istotą. Teraz jesteś przepołowiony. Wiedziesz podzieloną egzystencję, zwarty w wiecznych zmaganiach człowieka z bestią. Powinieneś był umrzeć',
+originLabel: 'Zginąłeś ',
+origin: [
+  'trzymając ciało ukochanej osoby w ramionach.',
+  'od strzały, która przebiła twój mózg.',
+  'kilka minut po narodzinach',
+  'zabity ręką przyjaciela.',
+  'zamordowany w swoim łóżku.',
+  'na wozie wiozącym ofiary zarazy.'
+],
+specialAbility: 'Możesz świadomie ulec staraniom swojej drugiej strony i zmienić swoją anatomię na jej wzór. Przemieszczenie kości wymaga jednej bolesnej runy. Twoja zwierzęca forma prawdopodobnie nie jest w stanmie używać broni ani pancerza',
+rolledAbility: [
+  'Morderczy szczur: malutki - testy na zręczność, w tym obrona, mają DR8, twoje ugryzienie (k4) niesie chorobę - test DR 14 na skupienie, w przypadku porażki cel atakuje swojego sprzymeirzeńca do momentu śmierci któregoś z nich',
+  'Obdarty ze skóry i kapiący wilk: zaciekły - ataki mają DR10, twoje kły (k6) - zadają obrażenia krytyczne również przy naturalnym 19 i prowokują test na morale, śliski od krwi - redukcja obrażeń -k2',
+  'Czaszkogłowy kruk: szybki i latający - obrona ma DR10, wykonuje dwa ataki szponami (k4) na rundę, twoja koścista głowa działa jak broń i tarcza - redukcja obrażeń o -1, możesz zignorować całe obrażenia z jednego ataku. Czaszka zrasta się po k6 dniach',
+  'Niedźwiedź z Bergen Chrypty: ciężki i masywny - testy na siłę, odporność i ataki mają DR10, obrona ma DR14, gruba skóra - redukcja obrażeń k4, szpony i ugryzienie zadają k8 obrażeń',
+  'Jaszczurka życia i śmierci: regeneruje k4 HP na rundę, gryzie (k6) i pluje kwasem (k4, 1/4 szansa że obniży pancerz o 1 poziom), łuskowata skóra - redukcja obrażeń -k2',
+  'Prorokująca zagładę małpa: zręczna - testy na zręczność, w tym obrona, mają DR10, może używać lekkiej broni oraz zbroi, twoje trzecie oko pozwala ci czytać przeklęte zwoje z DR10'
+],
+agility: 0,
+presence: -2,
+strength: 1,
+toughness: 1,
+omens: 2,
+scrollRule: false,
+HPdie: 8,
+silverDie: 6,
+silverNumberOfRolls: 2,
+weaponRoll: 6, 
+armorRoll: 2})
 
 // createAndAddClass({characterClassName: '',
 // description: '',
