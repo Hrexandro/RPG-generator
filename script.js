@@ -1,12 +1,11 @@
-//add random class
+
 // random encounters/ varied by regions - add some monsters to default, add defaults to nondefault as well
 // cult generator
 // make sure half the encounters are creatures
 // ghoul
 // add arcane catastrophes from: fatal, GURPS magic and thaumatology, Dark Heresy, WFRP, Dungeon Crawl Classics
 // add animals (from travel rules)
-// add character generator (classless)
-// add character generator (classes)
+// pale one class - have the appropriate name generators
 // monsters from death temple sztun
 // monsters from my owne dungeons
 // elf names
@@ -14,7 +13,7 @@
 
 //divide MB weapons into damage classes and roll accordingly (to enable to add more weapon types)
 
-import { MBNames, MBTowns, VOTENobleNames, wizardNames } from './names.js'
+import { MBNames, MBTowns, VOTENobleNames, wizardNames, MBPaleOneNames } from './names.js'
 
 const generateButton = document.getElementById('generate-button')
 const nameDisplay = document.getElementById('name-display')
