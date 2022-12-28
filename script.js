@@ -1270,9 +1270,7 @@ function createCharacter () {
     }
     let additionalStartingScroll = (characterClass.scrollRule === 'random scroll') ? randomizeFromArray(returnRandomSacredOrUncleanScroll()) : false
     
-    //(characterClass.silverDie ? characterClass.silverDie : (k(6)+k(6)))*10
-
-    const createdCharacter = `${pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
+    const createdCharacter = `${(characterClass.characterClassName === 'Bladawiec') ? pickFromList(MBPaleOneNames) : pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
     Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${characterClass.rolledAbility ? `\n ${randomizeFromArray(characterClass.rolledAbility)}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, `+
