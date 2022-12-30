@@ -13,7 +13,7 @@
 
 //divide MB weapons into damage classes and roll accordingly (to enable to add more weapon types)
 
-import { MBNames, MBTowns, VOTENobleNames, wizardNames, MBPaleOneNames } from './names.js'
+import { MBNames, MBTowns, VOTENobleNames, wizardNames, MBPaleOneNames, MBDeadGod } from './names.js'
 
 const generateButton = document.getElementById('generate-button')
 const nameDisplay = document.getElementById('name-display')
@@ -39,6 +39,7 @@ function updateSecondarySelectStatus (){
       addOption('Ezoteryczny pustelnik')
       addOption('Heretycki kapłan')
       addOption('Okultystyczny zielarz')
+      addOption('Prorok martwego boga')
       addOption('Przeklęty zmiennokształtny')
       addOption('Rynsztokowa szumowina')
       addOption('Upadły arystokrata')
@@ -848,13 +849,14 @@ function returnRandomSacredOrUncleanScroll (){
 }
 
 class MBCharacterClass {
-  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll) {
+  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll) {
     this.characterClassName = characterClassName
     this.description = description
     this.originLabel = originLabel
     this.origin = origin
     this.specialAbility = specialAbility
     this.rolledAbility =  rolledAbility
+    this.numberOfRolledAbilities = numberOfRolledAbilities
     this.agility = agility
     this.presence = presence
     this.strength = strength
@@ -864,6 +866,7 @@ class MBCharacterClass {
     this.HPdie = HPdie
     this.silverDie = silverDie
     this.silverNumberOfRolls = silverNumberOfRolls
+    this.silverMultiplier = silverMultiplier
     this.weaponRoll = weaponRoll
     this.armorRoll = armorRoll
 
@@ -876,8 +879,8 @@ let MBClasses = { // classes lista klas
 }
 
 
-function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll}) {
-  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, weaponRoll, armorRoll)
+function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll}) {
+  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll)
   MBClasses.list.push(newClass)
 }
 
@@ -922,7 +925,7 @@ origin: [
   'zbiegły z z Tvelandzkiego sierocińca.',
   'wychowany przez banitów w ruderze na południe od Alliánsu.'
 ],
-specialAbility: 'Skryty - testy zręczności i skupienia są łatwiejsze o 2 punkty',
+specialAbility: 'Skryty - testy zręczności i skupienia są łatwiejsze o 2 punkty. Gdy po raz pierwszy zdobywasz poziom, rzuć jeszcze raz na Specjalność. Na kolejnych poziomach szumowina może przerzucić jedną lub obie Specjalności.',
 rolledAbility: [
   'Tchórzliwe Pchnięcie - kiedy atakujesz lekką bronią jednoręczną z zaskoczenia, rzuć DR10 na zręczność. Sukces oznacza jedno automatyczne trafienie, zadające normalne obrażenia +3',
   'Brudne Paluszki - twoje zręczne dłonie dostają się do kieszeni i otwierają zamki z testem DR8 na zręczność. Zaczynasz z zestawem wytrychoów',
@@ -1130,6 +1133,35 @@ silverNumberOfRolls: 1,
 weaponRoll: 6, 
 armorRoll: 2})
 
+createAndAddClass({characterClassName: 'Prorok martwego boga',
+description: 'Głosy w twojej głowie mówią ci, co masz robić - a przynajmniej tak myślisz. Jesteś prorokiem boga zabitego przez Bazyliszka, JĄ, pośród podłych wierzchołków Bergen Chrypty. Nikt nie chce słuchać słów twojego boga, ale ty nadal je słyszysz. Dzień i noc. Jak rozgrzane kable oplatające twój mózg',
+originLabel: 'Twój bóg to:',
+origin: [`${pickFromList(MBDeadGod)}`],
+specialAbility: 'Jesteś piśmienny i możesz używać zwojów, ale musisz zdać test DR12 na skupienie by powstrzymać się przed próbą zniszczenia słów fałszywych bogów. Jeśli zaczynasz ze zwojem, załóż, że automatycznie zdałeś test',
+rolledAbility: [
+  'Krwawe Znaki - jesteś biczownikiem, regularnie umartwiasz się, aby obudzić swojego boga. Jeśli zadasz sobie k3 obrażenia przed walką, zyskujesz +2 do liczby rzutów równej liczbie utraconych HP',
+  'Władca Niczego - nosisz dziwaczną aranżację strojów i strzępów, która wygląda na parodię króla lub królowej. Zyskujesz +2 do rzutów w celu zaimponowania naiwnym',
+  'Zapach Rozkładu - nie dość, że twój bóg jest martwy, odór jego gnicia przenika cię. Ten wywracający bebechy smród daje ci bonus +2 do rzutów na obronę',
+  'Nieskładny Sofistyczny Bełkot - skup się, aby wygłosić pogmatwaną litanię, której słuchacze muszą zdać test DR10 na Skupienie aby nie stracić następnej akcji',
+  'Posoka Zgnilizny - odrażające płyny twojego gnijącego boga wyciekają z twoich dłoni - czarne stygmaty. Możesz wytrzeć ręce w gołą skórę napastnika (jak atak z DR12), który musi wtedy zdać test DR12 na odporność, aby uniknąć spazmów i toczenia piany trwających dwie rundy',
+  'Moje Ciało Naczyniem - twój bóg może i jest martwy, ale czymże jest śmierć dla boga? Raz dziennie możesz pozwolić duchowi swojego bóstwa na wypełnienie twojego ciała i wyznania prawdy w formie pytania z odpowiedzią tak lub nie, której MG musi udzielić zgodnie z prawdą. Bóg odchodzi, pozostawiając twoje ciało osłabionym',
+  'W Śmierci Żyję - kiedy zginiesz, rzuć DR14 na Skupienie. Jeśli rzut się udał, twój bóg odmawia ci przejścia do zaświatów i wracasz z 1 HP. W przypadku porażki, twoje ciało zostaje pochłonięte przez święty płomień',
+  'Oczy Świętego Ognia - twoje źrenice płoną duszą twojego pana. Raz na starcie możesz zaatakować (DR10), miotając ogniem ze swoich oczu (k6 obrażeń); oślepia cię to do końca trwania walki'
+],
+numberOfRolledAbilities: 2,
+agility: 0,
+presence: 2,
+strength: 0,
+toughness: -2,
+omens: 0,
+scrollRule: false,
+HPdie: 4,
+silverDie: 6,
+silverNumberOfRolls: 1,
+silverMultiplier: 5,
+weaponRoll: 4, 
+armorRoll: 2})
+
 // createAndAddClass({characterClassName: '',
 // description: '',
 // originLabel: '',
@@ -1259,20 +1291,39 @@ function createCharacter () {
     while (terribleTraitTwo === terribleTraitOne){
       terribleTraitTwo = pickFromList(MBTerribleTraits)
     }
+    let numberOfRolledAbilities = characterClass.numberOfRolledAbilities ? characterClass.numberOfRolledAbilities : 1
+    let rolledAbilities = characterClass.rolledAbility ? randomizeFromArray(characterClass.rolledAbility) : false
+    console.log('number is'); console.log(numberOfRolledAbilities)
 
-    let silver = (k(6)+k(6))*10
+    if (numberOfRolledAbilities > 1){
+      for (let i=1; i < numberOfRolledAbilities; i++){
+        console.log(i)
+        let newRolledAbility = randomizeFromArray(characterClass.rolledAbility)
+        while (newRolledAbility === rolledAbilities){
+          newRolledAbility = randomizeFromArray(characterClass.rolledAbility)
+        }
+        //console.log('new iteration state')
+        rolledAbilities+= `. ${newRolledAbility}`
+        //console.log(rolledAbilities)
+      }
+    }
+    // console.log(numberOfRolledAbilities)
+
+    let silverMultiplier = characterClass.silverMultiplier ?  characterClass.silverMultiplier : 10
+
+    let silver = (k(6)+k(6))*silverMultiplier
     if (characterClass.silverDie){
       let silverCounter = 0
       for (let i=0; i < characterClass.silverNumberOfRolls; i++){
         silverCounter+=k(characterClass.silverDie)
       }
-      silver = silverCounter*10
+      silver = silverCounter*silverMultiplier
     }
     let additionalStartingScroll = (characterClass.scrollRule === 'random scroll') ? randomizeFromArray(returnRandomSacredOrUncleanScroll()) : false
     
     const createdCharacter = `${(characterClass.characterClassName === 'Bladawiec') ? pickFromList(MBPaleOneNames) : pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
-    ${characterClass.description ? `${characterClass.originLabel}${randomizeFromArray(characterClass.origin)} ${characterClass.description}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
-    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${characterClass.rolledAbility ? `\n ${randomizeFromArray(characterClass.rolledAbility)}. \n` : ''}
+    ${characterClass.description ? `${characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
+    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ''}${silver} szt. srebra.`
     

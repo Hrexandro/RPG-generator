@@ -1099,6 +1099,56 @@ export const MBPaleOneNames = {
   ]
 }
 
+export const MBDeadGod = {
+  // Mork borg pale one names
+  type: 'mixerSpaced',
+  prefix: [
+    'Acrophoe,',
+    'Elioch,',
+    'Ekk,',
+    'Ghzat,',
+    'Gnost,',
+    'Malais,',
+    'Varkka,',
+    'Ääel,',
+    'Öde,'
+  ],
+  middle: [
+    'Latarnia',
+    'Powiernik',
+    'Oblubienica',
+    'Dziecię',
+    'Herold',
+    'Król',
+    'Pani',
+    'Książę',
+    'Królowa',
+    'Pieśń'
+
+  ],
+  suffix: [
+    'Przeklętych',
+    'Rozkładu',
+    'Pyłu',
+    'Księżyca',
+    'Plagi',
+    'Zarazy',
+    'Morza',
+    'Prawdy',
+    'Prawdzie',
+    'Pustki',
+    'Krwi',
+    'Śmierci',
+    'Much',
+    'Niemocy',
+    'Zgnilizny',
+    'Rdzy',
+    'Niepokoju',
+    'Ciała',
+    'Mięsa'
+  ]
+}
+
 export const wizardNames = {
   // czarodzieje magowie leki nazwy leków
   type: 'picker',
