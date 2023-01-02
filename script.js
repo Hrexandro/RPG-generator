@@ -43,6 +43,7 @@ function updateSecondarySelectStatus (){
       addOption('Przeklęty zmiennokształtny')
       addOption('Rynsztokowa szumowina')
       addOption('Upadły arystokrata')
+      addOption('Zapomniany filozof')
       addOption('Zębaty dezerter')
       MBCharacterClassPicker.addEventListener('click',()=>{
         if (MBCharacterClassPicker.value === 'Losowa klasa'){
@@ -844,6 +845,22 @@ let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
   ]
 }
 
+const MBTabletOfOchreObscurity = {//finish this next, then add The dejection of your roots
+  type: 'picker',
+  list: [
+    'Teoria Snów (Tablica Ochrowej Ciemności) - cel zaczyna wątpić we własną prawdziwość. Atak i obrona przeciwko niemu jest łatwiejsza o 2',
+    'Całkowite Zrozumienie Materii (Tablica Ochrowej Ciemności) - naprawia lub psuje jeden przedmiot standardowego rozmiaru, normalny lub magiczny, w tym zbroję (zwiększa/zmniejsza o rangę) i broń',
+    'Połączenie z Podświadomością Zbiorową (Tablica Ochrowej Ciemności) - wyczuwasz obecność żywych istot w zasięgu 20 metrów, nawet w innych pomieszczeniach',
+    'Logiczne Przewidywanie (Tablica Ochrowej Ciemności) - używając Czystej Logiki możesz wydedukować naturę wszelkich pułapek lub mechanizmów w zasięgu 10 metrów lub wszelkich mocy użytych w zasięgu 20 metrów',
+    'Mięso-Organiczna Speleofagia (Tablica Ochrowej Ciemności) - transmogryfikuje skałę rozmiaru dziecka w przypalone, trudne do przeżucia mięso mogące wykarmić k4 wygłodniałe osoby',
+    'Zamknięta w Czasie Pneumotoksyna (Tablica Ochrowej Ciemności) - ta popękana tablica może zostać skruszona w grudkowaty pył. Wysypana na istotę zadaje k6 obrażeń - na 6 istota krztusi się i umiera. Tablica pojawia się następnego ranka w ekwipunku posiadacza. Test na Skupienie tej tablicy jest niegroźny dla użytkownika, wskazuje tylko, czy pył trafia w swój cel',
+    'Indukowana Nieważność (Tablica Ochrowej Ciemności) - zapisany na tej tablicy kod dosłownie usuwa zasadnicze znaczenie istoty na k4 rundy. W tym czasie przeciwnicy nie będą jej atakować, nawet jeśli ona ich zaatakuje',
+    'Strukturalna Krio-kondensacja (Zamarznięty Księżyc) (Tablica Ochrowej Ciemności) - wilgoć w powietrzu zamarza tworząc 5-metrowy most lub cała woda w zasięgu 50 metrów zamarza (z wyjątkiem znajdującej się w ciałach istot żywych)',
+    'Meta-Alchemia (Tablica Ochrowej Ciemności) - użytkownik może zmienić naczynie z cieczą w jeden z następujących sposobów: zmienić ją w dwie dawki czerwonej lub czarnej trucizny, stworzyć Pogardę Vularka (pijący rzuca DR16 na Odporność, porażka sprawia, że skacze z wielkiej wysokości), zmienić truciznę w wodę lub wino',
+    'Memetyczna Kognitywna Palpitacja (Tablica Ochrowej Ciemności) - niemalże niedostrzegalne ruchy ciała przekazują prostą zarazę umysłową, która sprawia, że jedna istota tańczy szaleńczo przez k4 rundy. Nie może ona atakować ani bronić się podczas tej choreomanii'
+  ]
+}
+
 function returnRandomSacredOrUncleanScroll (){
   return MBUncleanScroll.list.concat(MBSacredScroll.list)
 }
@@ -1162,6 +1179,40 @@ silverMultiplier: 5,
 weaponRoll: 4, 
 armorRoll: 2})
 
+createAndAddClass({characterClassName: 'Zapomniany filozof',//tablet of ochre obscurity - add through scrollRule
+description: 'Twoja droga to bezrozumny labirynt, każda świątynia skąpana we krwi, każdy cel obleczony w mrok. Kiedyś myślałeś, że chłodna analiza może ujarzmić Los, teraz to marzenie o rozumie zgniło i przeobraziło się w wirujące szaleństwo. Jedyne co pozostało, to sam chłód.',
+originLabel: 'Korzenie twojego odrzucenia: ',
+origin: [
+  'twoja matka na zmianę chwaliła cię i upokarzała, co doprowadziło cię do wyniosłego wyobrażenia o własnej osobie i płonącej nienawiści do samego siebie.',
+  'chciałeś być wojownikiem albo wielkim przywódcą, ale nie możesz! Przestać! Myśleć! DOŚĆ JUŻ TYCH MYŚLI!',
+  'środowiskowa głupota i jasne światła sprawiają, że twoje nadwrażliwe tkanki mózgowe PŁONĄ ŻYWYM OGNIEM.',
+  'mogłeś uratować ten przeklęty świat! Gdyby tylko te szare masy zrozumiały twój GENIUSZ!',
+  'padłeś ofiarą umysłowego wirusa "miłości", po czym obiekt twojego afektu udał się, by zamieszkać w dziurze.',
+  'zapisałeś swoją uniwersalną filozofię w pojedyńczym tomie dla potomnych i na własne oczy oglądałeś, jak płonie, podczas gdy uciekałeś. Wszystko jest stracone.',
+  'kultyści Udoka pochwycili twoją rodzinę i zmusili cię do debatowania, podczas gdy jedli twoich rodziców żywcem.',
+  'byłeś najbardziej rozchwytywanym filozofem Südglans (które zatonęło w morzu), teraz wszyscy bezlitośnie z ciebie kpią.'
+],
+specialAbility: 'Bezlitosna Inkwizycja - zrób test DR14 aby przejrzeć przez podstępy i złudzenia innych. Dość już tych KŁAMSTW!\n Posiadasz Tablicę Ochrowej Ciemności - relikwię zapomnianego umysłowego kultu, tak rzadką, że można ją sprzedać za 100 sztuk srebra. Tablica liczy się jako przedmiot standardowego rozmiaru. Jeśli bohater odniesie krytyczną porażkę w czasie ataku/obrony - jedna tablica pęka. Poza tym działają tak jak zwoje. Pokrywające je znaki są trudne do zrozumienia, bohater musi mieć +3 Skupienia lub być Zapomnianym Filozofem aby ich używać',
+rolledAbility: [
+  'Cierń Zrozumienia - gdy jest on noszony, ciernie wbijają się w twoje ciało (k2 obrażeń) i Potrzegasz Wszystko (-4DR do następnego testu i ignorujesz dwa następne ataki). Aby znowu uzyskać ten efekt, ukoronuj się ponownie. Obrażenia są za każdym razem większe (k2, k4, k6 itd.), resetuje je przespana noc',
+  'Hegeliańska Sowa - ta filozoficzna bestia jest zgorzkniałym, opornym i nadwrażliwym asystentem - przekonać ją możesz testem DR12 na Skupienie. Po dwóch pomocnych akcjach obserwuje cię z cichą pogardą. Potrafi przynosić drobne przedmioty, atakować wrogów oraz znajdować pułapki. Nocą sowa zsyła ci w snach wiedzę o tym, co powinieneś był zrobić danego dnia. Hegeliańska sowa - zbyt szybka, by ją trafić. Szpony/dziobanie k4. Ataki mają DR8',
+  'Pryzmat Niepewności - do jego aktywowania potrzebujesz zewnętrznego źródła światła oraz testu DR10 na Skupienie. Jego światło możesz skierować na maksymalnie dwie istoty, lecząc k6 HP. Przez następną godzinę wszystkie testy dla jednej z nich mają DR obniżone o 2. Jeśli test się nie powiedzie, otrzymują k4 obrażeń i ich broń lub zbroja zostaje zniszczona. Możesz użyć pryzmatu dwa razy na dzień',
+  'Flet Tosku - raz na walkę, kiedy istota ginie, możesz zagrać na tym kościanym flecie Rozbrzmiewającą Fugę. Zadaje ona "echo" śmiertelnych obrażeń losowemu z pobliskich wrogów',
+  'Szarfa Słupnika - UMYSŁ kontroluje ciało! Nic nie jest dobre ani złe, ale myślenie o tym to sprawia, tyczy się to również kalorii i protein. Noszenie tego pasa sprawia, że nie odczuwasz głodu i wystarczy, być pił wodę, aby odzyskać HP w czasie wypoczynku. Noszenie go dłużej, niż k4 dni powoduje omdlenie. Aby odzyskał moc, należy odczekać jedną dobę',
+  'Naznaczony Ciemnością - stale zmieniająca się Tablica Ochrowej Ciemności jest wytatuowana na twoim ciele. Co rano wylosuj, jaka Tablica to jest. Może być użyta raz dziennie, ale jej użycie to zawsze automatyczny sukces'
+],
+agility: 0,
+presence: 2,
+strength: -2,
+toughness: 0,
+omens: 0,
+scrollRule: 'Tablet of Ochre Obscurity',//use this rule to apply tablet
+HPdie: 4,
+silverDie: 6,
+silverNumberOfRolls: 1,
+weaponRoll: 6, 
+armorRoll: 2})
+
 // createAndAddClass({characterClassName: '',
 // description: '',
 // originLabel: '',
@@ -1180,7 +1231,7 @@ armorRoll: 2})
 // weaponRoll: false, 
 // armorRoll: false})
 
-const classLessCharacter = new MBCharacterClass('', '', '', '', '', '' , 0, 0, 0, 0, 2, false)
+const classLessCharacter = new MBCharacterClass('', '', '', '', '', '', '' , 0, 0, 0, 0, 2, false)
 
 
 const MBCharacter = function () { // arcane catastrophes magiczne katastrofy
@@ -1259,6 +1310,7 @@ function createCharacter () {
     let d6EquipmentRoll = randomizeFromArray(d6Equipment)
     let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
     let d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
+    let additionalSpecialItem = null
     let armorRoll = (characterClass.armorRoll ? k(characterClass.armorRoll) : k(4))-1
     let weaponRoll = (characterClass.weaponRoll ? k(characterClass.weaponRoll) : k(10))-1
     if (armorRoll > 0){//so they won't get upgraded if they start without armor
@@ -1283,6 +1335,10 @@ function createCharacter () {
         }
       }
     }
+    console.log(characterClass.scrollRule)
+    if (characterClass.scrollRule === 'Tablet of Ochre Obscurity'){
+      additionalSpecialItem = pickFromList(MBTabletOfOchreObscurity)
+    }
 
     let pickedArmor = randomizeFromArray(armors[armorRoll])
     let pickedWeapon = MBWeapons[weaponRoll]
@@ -1293,7 +1349,6 @@ function createCharacter () {
     }
     let numberOfRolledAbilities = characterClass.numberOfRolledAbilities ? characterClass.numberOfRolledAbilities : 1
     let rolledAbilities = characterClass.rolledAbility ? randomizeFromArray(characterClass.rolledAbility) : false
-    console.log('number is'); console.log(numberOfRolledAbilities)
 
     if (numberOfRolledAbilities > 1){
       for (let i=1; i < numberOfRolledAbilities; i++){
@@ -1320,10 +1375,10 @@ function createCharacter () {
       silver = silverCounter*silverMultiplier
     }
     let additionalStartingScroll = (characterClass.scrollRule === 'random scroll') ? randomizeFromArray(returnRandomSacredOrUncleanScroll()) : false
-    
+    console.log(additionalSpecialItem)
     const createdCharacter = `${(characterClass.characterClassName === 'Bladawiec') ? pickFromList(MBPaleOneNames) : pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
-    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ''}
+    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ''}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ''}${silver} szt. srebra.`
     
