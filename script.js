@@ -515,7 +515,7 @@ const MBCorpseLoot = function () {
       '"Woda życia", leczy k8, test twardości DR10 albo ślepniesz. Wysoce alkoholowa.',
       'Maska pośmiertna jednego z BG',
       `Z tym coś było ewidentnie nie tak. Ręce ma pokryte czymś ciepławym, brązowym i mocno kwasowym. ${k(2) + 1} obrażeń i okropnie śmierdzisz przez ${k(4)} dni.`,
-      'Czarny sztylet z Kergus, 2k4 obrażeń',
+      'Czarny sztylet z Kergüs, 2k4 obrażeń',
       'Podpisana buteleczka z trucizną, test DR12 na twardość, albo losowy atrybut spada o k4.',
       'Skalp z długimi czarnymi włosami',
       'Złota kula z niewidzialnym łączeniem, otwierana wykręcaniem',
@@ -866,7 +866,7 @@ function returnRandomSacredOrUncleanScroll (){
 }
 
 class MBCharacterClass {
-  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll) {
+  constructor (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll, secondaryOriginLabel, secondaryOrigin) {
     this.characterClassName = characterClassName
     this.description = description
     this.originLabel = originLabel
@@ -886,7 +886,8 @@ class MBCharacterClass {
     this.silverMultiplier = silverMultiplier
     this.weaponRoll = weaponRoll
     this.armorRoll = armorRoll
-
+    this.secondaryOriginLabel = secondaryOriginLabel 
+    this.secondaryOrigin = secondaryOrigin
   }
 }
 
@@ -896,8 +897,8 @@ let MBClasses = { // classes lista klas
 }
 
 
-function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll}) {
-  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll)
+function createAndAddClass ({characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll, secondaryOriginLabel, secondaryOrigin}) {
+  const newClass = new MBCharacterClass (characterClassName, description, originLabel, origin, specialAbility, rolledAbility, numberOfRolledAbilities, agility, presence, strength, toughness, omens, scrollRule, HPdie, silverDie, silverNumberOfRolls, silverMultiplier, weaponRoll, armorRoll, secondaryOriginLabel, secondaryOrigin)
   MBClasses.list.push(newClass)
 }
 
@@ -1211,14 +1212,26 @@ HPdie: 4,
 silverDie: 6,
 silverNumberOfRolls: 1,
 weaponRoll: 6, 
-armorRoll: 2})
+armorRoll: 2,
+secondaryOriginLabel: 'Odrzucenie twoich korzeni: ',
+secondaryOrigin: [
+  'wychowany przez fanatycznych teistów w świątyni pod jednym z mostów Griftu',
+  'urodzony przez bezimienną matkę w galgenbeckim sanatorium',
+  'wychowany przez niepiśmiennych, ciemnogrodzkich chamów w spokojnym wästlandzkim lesie',
+  'wychowany na zamarzniętym pustkowiu w Kergüs przez wstydzących się życia kultystów, którzy uważali, że nikt nie powinien przychodzić na ten umierający świat',
+  'opuszczony w jednej z katakumb Bergen Chrypty',
+  'wykształcony przez potępionych pośród błotnych dołów Doliny Niefortunnych Nieumarłych'
+]
+})
 
-// createAndAddClass({characterClassName: '',
+
+// createAndAddClass ({characterClassName: '',
 // description: '',
 // originLabel: '',
 // origin: [''],
 // specialAbility: '',
 // rolledAbility: [''],
+// numberOfRolledAbilities: false,
 // agility: 0,
 // presence: 0,
 // strength: 0,
@@ -1228,8 +1241,11 @@ armorRoll: 2})
 // HPdie: false,
 // silverDie: false,
 // silverNumberOfRolls: false,
-// weaponRoll: false, 
-// armorRoll: false})
+// silverMultiplier: false,
+// weaponRoll: false,
+// armorRoll: false,
+// secondaryOriginLabel: false,
+// secondaryOrigin: false})
 
 const classLessCharacter = new MBCharacterClass('', '', '', '', '', '', '' , 0, 0, 0, 0, 2, false)
 
@@ -1377,7 +1393,7 @@ function createCharacter () {
     let additionalStartingScroll = (characterClass.scrollRule === 'random scroll') ? randomizeFromArray(returnRandomSacredOrUncleanScroll()) : false
     console.log(additionalSpecialItem)
     const createdCharacter = `${(characterClass.characterClassName === 'Bladawiec') ? pickFromList(MBPaleOneNames) : pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
-    ${characterClass.description ? `${characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
+    ${characterClass.description ? `${characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n` : ''}${characterClass.secondaryOriginLabel ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(characterClass.secondaryOrigin)}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
     Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ''}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, `+
     `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll-1]}), ` : ''} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ''}${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ''}${silver} szt. srebra.`
