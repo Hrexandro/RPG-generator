@@ -10,6 +10,7 @@
 // monsters from my owne dungeons
 // elf names
 // dwarf names
+//those adventure prompts from mork borg rulebook
 
 //divide MB weapons into damage classes and roll accordingly (to enable to add more weapon types)
 
@@ -37,6 +38,7 @@ function updateSecondarySelectStatus (){
       addOption('Losowa klasa')
       addOption('Bladawiec')
       addOption('Ezoteryczny pustelnik')
+      addOption('Hardy kowal')
       addOption('Heretycki kapłan')
       addOption('Okultystyczny zielarz')
       addOption('Prorok martwego boga')
@@ -1224,6 +1226,44 @@ secondaryOrigin: [
 ]
 })
 
+createAndAddClass ({characterClassName: 'Hardy kowal',
+description: '"Błogosławieni niech będą ci, którzy wykuwają żelazo, gwoździe i drut kolczasty"',
+originLabel: '',
+origin: [
+  'Twój pan został pobity na śmierć na ulicach Galgenbeck, zaraz przed warsztatem.',
+  'Byłeś pracownikiem służebnym w Kergüs, dopiero co spłaciłeś swoje długi.',
+  'Bandyci płacili ci za pozbywanie się "dowodów" w twoim piecu.',
+  'Wykuwałeś narzędzia tortur w Pałacu Króla Cieni.',
+  'Twój terminator został porwany w biały dzień przez grupę zakapturzonych postaci.',
+  'Człowiek zwany Rzeźnikiem płacił ci sowicie za haki i łańcuchy.'
+
+],
+specialAbility: 'Jesteś piśmienny, ale nie możesz używać zwojów - po co komu takie rzeczy, gdy można wykuć porządną broń?',
+rolledAbility: [
+  'Wykuty w Ogniu - +6 do wszystkich testów mających do czynienia z ogniem lub gorącem',
+  'Niech Żyje Młot - zwykłe narzędzia, takie jak młotki, zadają w twoich rękach k6 obrażeń',
+  'Szybka Naprawa - jeśli masz pod ręką jakiś złom, zrób test DR12 na Skupienie aby naprawić zbroję, porażka redukuje zbroję o kolejny poziom',
+  'Cęgi - jeśli uda ci się obronić przed atakiem, 1/4 szansy na złapanie przeciwnika cęgami i zyskanie ataku okazyjnego',
+  'Szczęśliwa Podkowa - działa jak bumerang, zadake k6 obrażeń',
+  'Niezłomny - może naprawiać nawet zbroję zredukowaną do 0.',
+  'Kolekcjoner Kości - zdaj test na Skupienie DR14 aby wykonać z kości tarczę jednorazowego użytku -k2',
+  '"Znam Ten Mechanizm" - zdaj test na Skupienie DR12 aby otworzyć zamek. Porażka oznacza, że konieczny jest klucz'
+],
+numberOfRolledAbilities: false,
+agility: -2,
+presence: 0,
+strength: 1,
+toughness: 1,
+omens: 2,
+scrollRule: false,
+HPdie: false,
+silverDie: 6,
+silverNumberOfRolls: 3,
+silverMultiplier: 10,
+weaponRoll: false,
+armorRoll: false,
+secondaryOriginLabel: false,
+secondaryOrigin: false})
 
 // createAndAddClass ({characterClassName: '',
 // description: '',
