@@ -42,6 +42,7 @@ function updateSecondarySelectStatus (){
       addOption('Heretycki kapłan')
       addOption('Okultystyczny zielarz')
       addOption('Prorok martwego boga')
+      addOption('Przeklęta ofiara')
       addOption('Przeklęty zmiennokształtny')
       addOption('Rynsztokowa szumowina')
       addOption('Upadły arystokrata')
@@ -1264,6 +1265,47 @@ weaponRoll: false,
 armorRoll: false,
 secondaryOriginLabel: false,
 secondaryOrigin: false})
+
+createAndAddClass ({characterClassName: 'Przeklęta ofiara',
+description: 'Próbowali złożyć cię w ofierze dla swojej przeklętej sprawy, ale uciekłeś. Teraz jesteś zbiegiem, a zagłada ściga cię, gdziekolwiek się udasz',
+originLabel: 'Jesteś naznaczony piętnem kultu, który próbował złożyć cię w ofierze. Ich sługi ciągną do znaku na twoim ciele i duszy jak ćmy do ognia. Twoim prześladowcą jest ',
+origin: [
+  'Kościół Dwugłowych Bazyliszków.',
+  'Kult Nechrubela,',
+  'Las Sarkash.',
+  'Królowa Anthelia z Kergüs.',
+  'Nieskończony Gon.',
+  'Boska Ręka.'
+],
+specialAbility: '',
+rolledAbility: [
+  'Twój nawiedzany koszmarami sen jest tak lekki, że liczysz się jako obudzony jeśli coś wydarzy się podczas twojego snu',
+  'Masz szósty zmysł jeśli chodzi o niebezpieczeństwo. Rzucaj na inicjatywę dwukrotnie, wybierz wyższy wynik',
+  'Nosisz przeklętą zbroję, redukcja obrażeń -k6. Nie ogranicza ona twoich ruchów, ale nie możesz jej zdjąć, nie można więc opatrzeć twoich ran'//finish this
+],
+numberOfRolledAbilities: false,
+agility: 0,
+presence: -2,
+strength: 0,
+toughness: 0,//2k6+6 na odporność - i co teraz?
+omens: 2,
+scrollRule: false,
+HPdie: 10,
+silverDie: 6,
+silverNumberOfRolls: 2,
+silverMultiplier: 10,
+weaponRoll: false,
+armorRoll: false,
+secondaryOriginLabel: 'Aby zachować życie poświęciłeś ',
+secondaryOrigin: [
+  'kończynę lub oko',
+  'swój cień',
+  'swoją duszę',
+  'swoje nienarodzone dziecko',
+  'swoją jedyną prawdziwą miłość',
+  'całą swoją rodzinną wioskę'
+]
+})
 
 // createAndAddClass ({characterClassName: '',
 // description: '',
