@@ -1281,13 +1281,16 @@ specialAbility: '',
 rolledAbility: [
   'Twój nawiedzany koszmarami sen jest tak lekki, że liczysz się jako obudzony jeśli coś wydarzy się podczas twojego snu',
   'Masz szósty zmysł jeśli chodzi o niebezpieczeństwo. Rzucaj na inicjatywę dwukrotnie, wybierz wyższy wynik',
-  'Nosisz przeklętą zbroję, redukcja obrażeń -k6. Nie ogranicza ona twoich ruchów, ale nie możesz jej zdjąć, nie można więc opatrzeć twoich ran'//finish this
+  'Nosisz przeklętą zbroję, redukcja obrażeń -k6. Nie ogranicza ona twoich ruchów, ale nie możesz jej zdjąć, nie można więc opatrzeć twoich ran',
+  'Używasz ogromnej broni, wystarczająco wielkiej, by powalić bogów. Cokolwiek to jest, zadaje k12 obrażeń, ale ataki mają DR14',
+  'Zdobyłeś dziwnych sojuszników. Czymkolwiek są, mogą wyleczyć ci k6 HP w zamian za 1 omen',
+  'Zastąpiłeś jedną ze swoich kończyn ukrytą bronią. Atak z DR10, by zaskoczyć wroga, zadając k10 obrażeń. Przeładowanie jest problematyczne'
 ],
 numberOfRolledAbilities: false,
 agility: 0,
 presence: -2,
 strength: 0,
-toughness: 0,//2k6+6 na odporność - i co teraz?
+toughness: [6, 2, 6],
 omens: 2,
 scrollRule: false,
 HPdie: 10,
@@ -1314,7 +1317,7 @@ secondaryOrigin: [
 // specialAbility: '',
 // rolledAbility: [''],
 // numberOfRolledAbilities: false,
-// agility: 0,
+// agility: 0,//for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
 // presence: 0,
 // strength: 0,
 // toughness: 0,
@@ -1345,9 +1348,18 @@ function createCharacter () {
       characterClass = pickFromList(MBClasses)
     }
     function generateAbility (modifier){
-      let rollForAbility = k(6) + k(6) + k(6) + modifier
       let abilityScore = null
-
+      let rollForAbility = null
+      if (typeof modifier === "number"){
+        rollForAbility = k(6) + k(6) + k(6) + modifier
+  
+      } else {//array [die, number of dice, modifier] 
+        for (let x = 0; x < modifier[1]; x++){
+          rollForAbility += k(modifier[0])
+        }
+        rollForAbility += modifier[2]
+      }
+      
       if (rollForAbility<=4){
         abilityScore = "-3"
       } else if (rollForAbility<=6){
