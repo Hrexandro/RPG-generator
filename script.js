@@ -46,6 +46,7 @@ function updateSecondarySelectStatus (){
       addOption('Przeklęty zmiennokształtny')
       addOption('Rynsztokowa szumowina')
       addOption('Upadły arystokrata')
+      addOption('Wojownik')
       addOption('Zapomniany filozof')
       addOption('Zębaty dezerter')
       MBCharacterClassPicker.addEventListener('click',()=>{
@@ -1310,6 +1311,36 @@ secondaryOrigin: [
 ]
 })
 
+
+createAndAddClass ({characterClassName: 'Wojownik',
+description: 'Jesteś wojownikiem',
+originLabel: 'Gdzie poznałeś sztukę wojenną? ',
+origin: [
+  'Żołnierz - państwo wyszkoliło cię do walki, więc to właście robiłeś. A teraz co? Więcej walki.',
+  'Strażnik - jak żołnierz, tylko nie musiałeś opuszczać miejsca zamieszkania, aby mieć możliwość wymierzać przemoc.',
+  'Barowy zabijaka - upijałeś się i wdawałeś w bójki. W końcu stałeś się w tym dobry.',
+  'Kowal - uderzałeś rzeczy młotami, a głowy są mniej twarde od żelaza.',
+  'Łupieżca - dorastałeś w brutalnej społeczności złodziei. Walka to twoja druga natura.',
+  'Inkwizytor - kościół płacił ci za bicie heretyków, było świetnie.'
+],
+specialAbility: 'Zabójca - jeśli swoim atakiem zredukujesz wroga do 0 HP, zadaje resztę obrażeń pobliskiemu przeciwnikowi (o ile taki jest). Klasa klasyczna - gdy po raz pierwszy zdobędziesz poziom, możesz wybrać jeden nieheroiczny atut. Możesz mieć tylko jeden atut',
+rolledAbility: [''],
+numberOfRolledAbilities: false,
+agility: 0,//for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
+presence: -2,
+strength: 2,
+toughness: 0,
+omens: 2,
+scrollRule: 'illiterate',//not actually illiterate, just doesn't start with a scroll
+HPdie: 10,
+silverDie: 6,
+silverNumberOfRolls: 3,
+silverMultiplier: 10,
+weaponRoll: [6, 4],
+armorRoll: [3, 1],
+secondaryOriginLabel: false,
+secondaryOrigin: false})
+
 // createAndAddClass ({characterClassName: '',
 // description: '',
 // originLabel: '',
@@ -1327,7 +1358,7 @@ secondaryOrigin: [
 // silverDie: false,
 // silverNumberOfRolls: false,
 // silverMultiplier: false,
-// weaponRoll: false,
+// weaponRoll: false,//if more complex use [die, modifier]
 // armorRoll: false,
 // secondaryOriginLabel: false,
 // secondaryOrigin: false})
@@ -1421,8 +1452,28 @@ function createCharacter () {
     let d12EquipmentRollOne = randomizeFromArray(d12EquipmentOne)
     let d12EquipmentRollTwo = randomizeFromArray(d12EquipmentTwo)
     let additionalSpecialItem = null
-    let armorRoll = (characterClass.armorRoll ? k(characterClass.armorRoll) : k(4))-1
-    let weaponRoll = (characterClass.weaponRoll ? k(characterClass.weaponRoll) : k(10))-1
+
+    let armorRoll = null
+    
+    if (typeof characterClass.armorRoll  === 'number'){
+      armorRoll  = k(characterClass.armorRoll ) - 1
+    } else if (typeof characterClass.armorRoll  === 'boolean'){
+      armorRoll  = k(4) - 1
+    } else {
+      armorRoll  = k(characterClass.armorRoll[0]) + characterClass.armorRoll[1] - 1
+    }
+
+    let weaponRoll = null
+
+    if (typeof characterClass.weaponRoll === 'number'){
+      weaponRoll = k(characterClass.weaponRoll) - 1
+    } else if (typeof characterClass.weaponRoll === 'boolean'){
+      weaponRoll = k(10) - 1
+    } else {
+      weaponRoll = k(characterClass.weaponRoll[0]) + characterClass.weaponRoll[1] - 1
+    }
+
+
     if (armorRoll > 0){//so they won't get upgraded if they start without armor
       if (d12EquipmentRollOne === 'przeklęty zwój'){
         if (characterClass.scrollRule === 'illiterate'){
@@ -1445,7 +1496,7 @@ function createCharacter () {
         }
       }
     }
-    console.log(characterClass.scrollRule)
+
     if (characterClass.scrollRule === 'Tablet of Ochre Obscurity'){
       additionalSpecialItem = pickFromList(MBTabletOfOchreObscurity)
     }
@@ -1462,17 +1513,13 @@ function createCharacter () {
 
     if (numberOfRolledAbilities > 1){
       for (let i=1; i < numberOfRolledAbilities; i++){
-        console.log(i)
         let newRolledAbility = randomizeFromArray(characterClass.rolledAbility)
         while (newRolledAbility === rolledAbilities){
           newRolledAbility = randomizeFromArray(characterClass.rolledAbility)
         }
-        //console.log('new iteration state')
         rolledAbilities+= `. ${newRolledAbility}`
-        //console.log(rolledAbilities)
       }
     }
-    // console.log(numberOfRolledAbilities)
 
     let silverMultiplier = characterClass.silverMultiplier ?  characterClass.silverMultiplier : 10
 
@@ -1485,8 +1532,7 @@ function createCharacter () {
       silver = silverCounter*silverMultiplier
     }
     let additionalStartingScroll = (characterClass.scrollRule === 'random scroll') ? randomizeFromArray(returnRandomSacredOrUncleanScroll()) : false
-    console.log(additionalSpecialItem)
-    const createdCharacter = `${(characterClass.characterClassName === 'Bladawiec') ? pickFromList(MBPaleOneNames) : pickFromList(MBNames)}. ${characterClass.description ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
+    const createdCharacter = `${(characterClass.characterClassName === 'Bladawiec') ? pickFromList(MBPaleOneNames) : pickFromList(MBNames)}. ${characterClass.characterClassName ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n` : ''}${characterClass.secondaryOriginLabel ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(characterClass.secondaryOrigin)}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
     Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ''}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ''}
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, `+
