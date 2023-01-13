@@ -49,6 +49,7 @@ function updateSecondarySelectStatus (){
       addOption('Wojownik')
       addOption('Zapomniany filozof')
       addOption('Zębaty dezerter')
+      addOption('Złodziej')
       MBCharacterClassPicker.addEventListener('click',()=>{
         if (MBCharacterClassPicker.value === 'Losowa klasa'){
           pickedClass = 'Losowa klasa'
@@ -1331,13 +1332,42 @@ presence: -2,
 strength: 2,
 toughness: 0,
 omens: 2,
-scrollRule: 'illiterate',//not actually illiterate, just doesn't start with a scroll
+scrollRule: 'illiterate',//not actually illiterate, just doesn't start with a scroll; 
 HPdie: 10,
 silverDie: 6,
 silverNumberOfRolls: 3,
 silverMultiplier: 10,
 weaponRoll: [6, 4],
 armorRoll: [3, 1],
+secondaryOriginLabel: false,
+secondaryOrigin: false})
+
+createAndAddClass ({characterClassName: 'Złodziej',
+description: 'Jesteś złodziejem, kradniesz rzeczy. Kradniesz lepiej, niż większość. Co można jeszcze powiedzieć? Nic, bo nie gadasz ze strażnikami',
+originLabel: 'Gdzie poznałeś sztukę złodziejską? ',
+origin: [
+  'Sierota - nie miałeś nic, prócz tego, co sobie wziąłeś, więc brałeś, co mogłeś.',
+  'Szlachcic - urodziłeś się ze szlachetną krwią w twoich żyłach, ale coś się zmieniło. *Zasługujesz* na bogactwo.',
+  'Niesłusznie oskarżony - odsiedziałeś raz swoje i nauczyłeś się zawodu. Nie ma co marnować swojej wiedzy.',
+  'Pirat - kochałeś morze, a ono kochało ciebie. Złodziejstwo to twoja druga natura.',
+  'Przypadek - nie chciałeś zostać wmieszany w przestępstwa, ale oto jesteś.',
+  'Wygnaniec - musiałeś opuścić swój dom, teraz bierzesz, co musisz, by zrobić, co możesz.'
+],
+specialAbility: 'Uzdolniony - DR testów na Zręczność przy skradaniu wynosi dla ciebie 8. Klasa klasyczna - gdy po raz pierwszy zdobędziesz poziom, możesz wybrać jeden nieheroiczny atut. Możesz mieć tylko jeden atut. Zaczynasz z zestawem wytrychów.',
+rolledAbility: [''],
+numberOfRolledAbilities: false,
+agility: 2,//for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
+presence: 0,
+strength: 0,
+toughness: -2,
+omens: 2,
+scrollRule: false, //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, 'random scroll' 
+HPdie: 6,
+silverDie: 6,
+silverNumberOfRolls: 4,
+silverMultiplier: 10,
+weaponRoll: 6,//if more complex use [die, modifier]
+armorRoll: 2,
 secondaryOriginLabel: false,
 secondaryOrigin: false})
 
@@ -1353,7 +1383,7 @@ secondaryOrigin: false})
 // strength: 0,
 // toughness: 0,
 // omens: 0,
-// scrollRule: false,
+// scrollRule: false, //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, 'random scroll' 
 // HPdie: false,
 // silverDie: false,
 // silverNumberOfRolls: false,
