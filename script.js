@@ -40,6 +40,8 @@ function updateSecondarySelectStatus (){
       addOption('Ezoteryczny pustelnik')
       addOption('Hardy kowal')
       addOption('Heretycki kapłan')
+      addOption('Kleryk')
+      addOption('Mag')
       addOption('Okultystyczny zielarz')
       addOption('Prorok martwego boga')
       addOption('Przeklęta ofiara')
@@ -819,7 +821,7 @@ createAndAddMonster({ keyName: 'prowler', nazwa: 'Włóczęga', HP: '8', morale:
 // createAndAddMonster({keyName: "", nazwa : "", HP : "", morale : "-", pancerz : "brak", broń : "", specjalneCechy : ""});
 
 
-let MBUncleanScroll = { //TO DO: ADD ALL SCROLLS
+let MBUncleanScroll = {
   type: 'picker',
   list: ['Dłonie Otwierają Południową Bramę (przeklęty zwój) - kula ognia trafia k2 istoty zadając każdej z nich k8 obrażeń',
   'Język Eris (przeklęty zwój) - wybrana przez ciebie istota jest zdezorientowana przez 10 minut',
@@ -835,7 +837,7 @@ let MBUncleanScroll = { //TO DO: ADD ALL SCROLLS
 
 }
 
-let MBSacredScroll = { //TO DO: ADD ALL SCROLLS
+let MBSacredScroll = {
   type: 'picker',
   list: ['Łaska Martwego Świętego (święty zwój) - k2 istoty regenerują k10 HP każda',
   'Łaska Dla Grzesznika (święty zwój) - wybrana istota dostaje +k6 do wybranego rzutu',
@@ -993,7 +995,7 @@ presence: 2,
 strength: -2,
 toughness: 0,
 omens: 4,
-scrollRule: 'random scroll',
+scrollRule: ['scroll', 'random'],
 HPdie: 4,
 silverDie: 6, 
 silverNumberOfRolls: 1,
@@ -1371,6 +1373,64 @@ armorRoll: 2,
 secondaryOriginLabel: false,
 secondaryOrigin: false})
 
+createAndAddClass ({characterClassName: 'Kleryk',
+description: 'Kapłan, boski mag, czy też święty wojownik, nie obchodzi cię, jak nazywają cię ludzie, póki czczą właściwego boga. Jesteś tak oddany swojej religii, że zstąpiła na ciebie łaska bogów',
+originLabel: 'Gdzie poznałeś sztukę bycia pobożniejszym od innych? ',
+origin: [
+  'Akolita - niegdyś zapalałeś świece, teraz rozpalasz ogień wiary w sercach wiernych.',
+  'Neofita - byłeś już dorosły, gdy twoje oczy otworzyły się na nową wiarę.',
+  'Wybraniec - twój bóg lub bogowie pojawili się w twoich snach. Twoim przeznaczeniem jest... coś.',
+  'Nieznane - byłeś "normalny", a tu nagle możesz dzierżyć moc bogów.',
+  'Półbóg - bóstwo dołożyło się do twojego rodowodu. Teraz możesz dzierżyć jego moc.',
+  'Proto-kapłan - swojego rodzaju pra-kleryk, poznałeś sekret skradnięcia mocy bogów.'
+],
+specialAbility: 'Kleryk - możesz używać świętych zwojów nosząc średnią zbroję. Klasa klasyczna - gdy po raz pierwszy zdobędziesz poziom, możesz wybrać jeden nieheroiczny atut. Możesz mieć tylko jeden atut.',
+rolledAbility: [''],
+numberOfRolledAbilities: false,
+agility: -2,
+presence: 0,
+strength: 0,
+toughness: 2,
+omens: 4,
+scrollRule: ['scroll', 'sacred'], 
+HPdie: 8,
+silverDie: 6,
+silverNumberOfRolls: 3,
+silverMultiplier: 10,
+weaponRoll: 2,
+armorRoll: [2, 1],
+secondaryOriginLabel: false,
+secondaryOrigin: false})
+
+createAndAddClass ({characterClassName: 'Mag',
+description: 'Niektórzy nazywają cię magiem, inni czarodziejem, jeszcze inni bredzą coś o "specjalistach" czy "arkanomantach", cokolwiek to znaczy. Tak czy inaczej, używasz magii. Ludzie nie lubią magii. Mówili, że jest ona narzędziem Nechrubela. Mówili, że wszyscy okultyści to pustelnicy i heretycy. Mówili wiele różnych rzeczy, zanim pozmieniałeś ich w ropuchy',
+originLabel: 'Gdzie poznałeś sztukę magiczną? ',
+origin: [
+  'Uczeń - czarodziej wziął cię na ucznia. Zmarł *w tajemniczych okolicznościach*.',
+  'Bibliotekarz - zajmowałeś się książkami, ale pewnego razu natrafiłeś na *interesującą* książkę.',
+  'Wyklęty - byłeś religijny, do czasu gdy poznałeś siłę herezji.',
+  'Kultysta - wrodziłeś się w magiczny kult, czarodziejstwo jest dla ciebie jak oddychanie. Zwykle normalne.',
+  'Krew - miałeś potężnego przodka. Magię masz we krwi.',
+  'Pakt - zawarłeś umowę. Może i straciłeś duszę, ale było warto. Chyba.'
+],
+specialAbility: 'Magik - używanie zwojów przeklętych ma dla ciebie DR 8. Klasa klasyczna - gdy po raz pierwszy zdobędziesz poziom, możesz wybrać jeden nieheroiczny atut. Możesz mieć tylko jeden atut.',
+rolledAbility: [''],
+numberOfRolledAbilities: false,
+agility: 0,//for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
+presence: 2,
+strength: -2,
+toughness: 0,
+omens: 0,
+scrollRule: ['scroll', 'unclean'], //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, ['scroll', 'random'/'holy'/'unholy']
+HPdie: false,
+silverDie: 6,
+silverNumberOfRolls: 2,
+silverMultiplier: 10,
+weaponRoll: 4,//if more complex use [die, modifier]
+armorRoll: 1,
+secondaryOriginLabel: false,
+secondaryOrigin: false})
+
 // createAndAddClass ({characterClassName: '',
 // description: '',
 // originLabel: '',
@@ -1383,7 +1443,7 @@ secondaryOrigin: false})
 // strength: 0,
 // toughness: 0,
 // omens: 0,
-// scrollRule: false, //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, 'random scroll' 
+// scrollRule: false, //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, ['scroll', 'random'/'holy'/'unholy']
 // HPdie: false,
 // silverDie: false,
 // silverNumberOfRolls: false,
@@ -1393,8 +1453,7 @@ secondaryOrigin: false})
 // secondaryOriginLabel: false,
 // secondaryOrigin: false})
 
-const classLessCharacter = new MBCharacterClass('', '', '', '', '', '', '' , 0, 0, 0, 0, 2, false)
-
+const classLessCharacter = new MBCharacterClass('', '', '', '', '', '', '' , 0, 0, 0, 0, 2, false, false, false, false, false, false, false, false, false,)
 
 const MBCharacter = function () { // arcane catastrophes magiczne katastrofy
   return {
@@ -1503,7 +1562,7 @@ function createCharacter () {
       weaponRoll = k(characterClass.weaponRoll[0]) + characterClass.weaponRoll[1] - 1
     }
 
-
+    console.log(typeof characterClass.scrollRule)
     if (armorRoll > 0){//so they won't get upgraded if they start without armor
       if (d12EquipmentRollOne === 'przeklęty zwój'){
         if (characterClass.scrollRule === 'illiterate'){
@@ -1561,7 +1620,19 @@ function createCharacter () {
       }
       silver = silverCounter*silverMultiplier
     }
-    let additionalStartingScroll = (characterClass.scrollRule === 'random scroll') ? randomizeFromArray(returnRandomSacredOrUncleanScroll()) : false
+    let additionalStartingScroll = false
+
+    if (Array.isArray(characterClass.scrollRule)){
+      if (characterClass.scrollRule[1] === 'random'){
+        additionalStartingScroll = randomizeFromArray(returnRandomSacredOrUncleanScroll())
+      } else if (characterClass.scrollRule[1] === 'sacred'){
+        additionalStartingScroll = pickFromList(MBSacredScroll)
+      } else if (characterClass.scrollRule[1] === 'unclean'){
+        additionalStartingScroll = pickFromList(MBUncleanScroll)
+      }
+    } 
+
+
     const createdCharacter = `${(characterClass.characterClassName === 'Bladawiec') ? pickFromList(MBPaleOneNames) : pickFromList(MBNames)}. ${characterClass.characterClassName ? `${characterClass.characterClassName}.` : ''} HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
     ${characterClass.description ? `${characterClass.description}. ${characterClass.originLabel}${randomizeFromArray(characterClass.origin)}\n` : ''}${characterClass.secondaryOriginLabel ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(characterClass.secondaryOrigin)}.\n` : ''}\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(MBBrokenBodies)}. ${pickFromList(MBBadHabits)}.
     Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ''}${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ''}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ''}
