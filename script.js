@@ -49,6 +49,7 @@ function updateSecondarySelectStatus (){
       addOption('Rynsztokowa szumowina')
       addOption('Upadły arystokrata')
       addOption('Wojownik')
+      addOption('Świętokradczy śpiewak')
       addOption('Zapomniany filozof')
       addOption('Zębaty dezerter')
       addOption('Złodziej')
@@ -1428,6 +1429,42 @@ silverNumberOfRolls: 2,
 silverMultiplier: 10,
 weaponRoll: 4,//if more complex use [die, modifier]
 armorRoll: 1,
+secondaryOriginLabel: false,
+secondaryOrigin: false})
+
+createAndAddClass ({characterClassName: 'Świętokradczy śpiewak',
+description: 'Zawsze sprowadzałeś niechciane dźwięki, twoje powołanie jako bard doprowadziło cię do hańby i ruiny, aż do pamiętnego dnia, gdy istota o nieszlachetnym charakterze zaproponowała ci interes życia. Twoja dusza wyje, ale śpiew wypływający z twoich ust jest słodki, a twoja sakiewka coraz słodsza. Warto było',
+originLabel: 'Umowa została zawarta ',
+origin: [
+  'w wychodku na obrzeżach Griftu.',
+  'gdy ukrywałeś się przed strażą w Galgenbeck.',
+  'w komnacie Wästlandzkiego arystokraty.',
+  'gdy śniłeś w zapomnianym rowie.',
+  'w schleswidzkiej celi.',
+  'gdy minuty dzieliły cię od zamarznięcia na śmierć w drodze do Alliánsu.'
+],
+specialAbility: 'Otacza cię aura nienaturalnego uroku, pozwalająca niepokoić wrogów i uspokajać przyjaciół. Zamiast używania Mocy w danym dniu, możesz dodać lub odjąć k6 od dowolnego testu na morale.',
+rolledAbility: [
+  'Kobza Przeznaczenia - połączenie pozszywanych włochatych pęcherzy z wystającymi kościanymi rurkami, w które się dmicha. Kiedy to robisz, wybrani słuchacze przepełnieni są nieziemskim głodem, tak jakby nie jedli od tygodnia',
+  'Lira Korbowo-Bólowa - kręcenie tym ostrunowanym kawałkiem drewna i kości wydaje dźwięk, który rani uszy istot, które nie przejdą testu DR12 na prezencję. W pierwszej rundzie zadaje k2 obrażeń, w następnej k4 i tak dalej',
+  'Grzbietowa Łupina - gdy bijesz w ten bęben zrobiony ze skorupy diabła, rzuć 2k6: 6+ - wszyscy oprócz ciebie rzucają DR14 na Zręcznośc, albo padają na ziemię. 11 - wybierz k4 istoty, które słyszą twoje bębnienie. Ich kręgosłupy łamią się jak zapałki. Nie możesz już więcej użyć bębna tego dnia. 12 - w twoich uszach nie przestaje dzwonić. Jesteś głuchy przez następne 25 godziny. Może też służyć jako tarcza',
+  'Diabelska Koncha - róg belzebubonicznej istoty z najgłębszych głębin Bezkresnego Morza. Gdy w nie zadmiesz, płuca twoich wrogów wypełniają się morską wodą, jeśli nie przejdą testu DR14 na Odporność, muszą wtedy poświęcić rundę na pozbycie się wody, zanim będą mogli zrobić cokolwiek innego',
+  'Organki Doustne - zagraj na tych kościstych organkach, by natychmiastowo przywrócić Złamanemu (0HP) słuchaczowi k4 HP. Nie może on mówić, dopóki nie zregeneruje całkowicie HP',
+  'Lutnia Porządnego Łupnia - gdy na niej grasz, dźwięki tego instrumentu w kształcie topora (k8 obrażeń), sprawiają, że Siła i Prezencja każdego, kto je słyszy, zamieniają się na k6 dni. Kolejne odsłuchania w tym czasie nie dają efektów'
+],
+numberOfRolledAbilities: false,
+agility: 0,//for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
+presence: 2,
+strength: 0,
+toughness: -2,
+omens: 0,
+scrollRule: false, //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, ['scroll', 'random'/'holy'/'unholy']
+HPdie: false,
+silverDie: false,
+silverNumberOfRolls: false,
+silverMultiplier: false,
+weaponRoll: 6,//if more complex use [die, modifier]
+armorRoll: 3,
 secondaryOriginLabel: false,
 secondaryOrigin: false})
 
