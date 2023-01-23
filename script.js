@@ -348,6 +348,7 @@ const MBTerribleTraits = {
     'Zdradliwy',
     'Marnotrawny',
     'Arogancki',
+    'Mało pomocny',
     'Obżartus', // ok
     'Chciwy', // ok
     // "Erotoman", //nope
@@ -358,7 +359,9 @@ const MBTerribleTraits = {
     'Naiwny, uwierzy nawet w najmniej wiarygodne kłamstwo',
     'Hedonista',
     'Skąpy',
-    'Uparty'
+    'Uparty',
+    'Uprzedzony',
+    'Kłótliwy',
   ]
 }
 
@@ -387,12 +390,16 @@ const MBBrokenBodies = {
     'Niedawno rozcięte i śmierdzące, ropiejące oko zakryte opaską',
     'Popękane czarne paznokcie, mogą w każdej chwili odpaść',
     'Zezowate spojrzenie', // ok
+    'Nadprzeciętnie wysoki',
+    'Stale przygarbiony',
     'Obcięty koniec języka, sepleni gdy mówi', // ok
     'W chwilach dużego stresu, puszcza gazy', // ok
     'Karzeł', // ok
     'Ciągle jest mu gorąco, na co wiecznie narzeka', // ok
     'Ciągle jest mu zimno, na co wiecznie narzeka', // ok
-    'Wysoki jak drzewo, ale chudy jak szczapa' // ok
+    'Wysoki jak drzewo, ale chudy jak szczapa', // ok
+    'Włosy szorstkie jak szczecina dzika',
+    'Złamany nos, już na zawsze skrzywiony'
   ]
 }
 
@@ -420,6 +427,7 @@ const MBBadHabits = {
     'Gada do siebie w najmniej odpowiednich momentach i głośno pomstuje na wszelkie niedogodności', // ok
     'Czuje przymus pomodlenia się za duszę każdego z zabitych wrogów', // ok
     'Piroman',
+    'Czuje potrzebę wytykać i opisywać błędy inncy, ze szczegółami',
     'Stale gubi ważne przedmioty i zapomina ważne fakty',
     'Plotkarz, obgaduje każdego, którego akurat nie ma w pobliżu',
     'Jąka się, gdy kłamie',
@@ -427,7 +435,8 @@ const MBBadHabits = {
     'Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5, 7, 9, 11 lub 13 wyrzuconym na k20',
     'Robi biżuterię z ludzkich zębów',
     'Przywłaszcza sobie wszelkie zasługi', // ok
-    'Zbiera trofeum z każdego zabitego wroga.'
+    'Zbiera trofeum z każdego zabitego wroga.',
+    'Imiona stale wylatują mu z głowy, ale świetnie zapamiętuje twarze.'
   ]
 }
 
@@ -1021,7 +1030,10 @@ rolledAbility: [
   'Barbarister, Niesamowity Koń - Barbarister jest magiczny, inteligentny, arogancki i próżny. Potrafi też mówić. Jeśli przekonasz go, Barbarister okazjonalnie może dodać ci +2 do testów na skupienie mających do czynienia z logiką i intelektem. Koń prawdopodobnie jest od ciebie mądrzejszy i dobrze o tym wie',
   'Giermek Hamfund - jedyną funkcją tego niesamowicie tchórzliwego sługi jest sprawowanie pieczy nad przeklętym mieczem Eurekią. Raz na starcie, jeśli Hamfunda uda się odnaleźć, Eurekia może zostać dobyta. Miecz zadaje 2k6 obrażeń, przy każdym uderzeniu rzuć k6. Jeśli wypadnie 1, giermek zostaje zabity, a Eurekia znika na zawsze',
   'Dar Wężowej Skóry - kosztowne pudełeczko z drzewa sandałowego pokryte wężową skórą. Wewnątrz znajduje się z pozoru zwykły sztylet, zawinięty w jedwab. Sztylet zadaje k4 obrażeń, ale przy wyrzucieniu 1 cel ginie natychmiastowo od śmiertelnej trucizny, którą nasączone jest ostrze',
-  'Róg Schleswidzkich Lordów! - raz dziennie możesz zadąć w tę powgniataną starą trąbkę i wykonać test DR12 na skupienie. Jedna istota może wykonać następny test niezwiązany z walką jako automatyczny sukces'
+  'Róg Schleswidzkich Lordów! - raz dziennie możesz zadąć w tę powgniataną starą trąbkę i wykonać test DR12 na skupienie. Jedna istota może wykonać następny test niezwiązany z walką jako automatyczny sukces',
+  'Błękitnokrwisty - pokolenia znoszące spiski, trucizny i ostrza nędzarzy sprawiają, że twoja krew jest wyjątkowo odporna na infekcje. Nie dotyczy cię codzienna utrata HP w przypadku infekcji',
+  'Znak Bogactwa - długi i niedługi szlachty nie zostają łatwo zapomnane. Pokaż tę starożytną pieczęć swego rodu kupcowi, a masz 50% szans, że obniży ceny o połowę dla ciebie oraz twojej drużyny. W przeciwnym wypadku ceny są podwojone',
+  'Rodowy Klejnot - niegdyś chluba rodowej kolekcji, to szafirowe cudeńko jest kuszącym celem. Kiedy wzniesiesz go w górę, wrogie istoty łase na bogactwa atakować będą ciebie, przed kimkolwiek innym'
 ],
 agility: 0,
 presence: 0,
@@ -1550,7 +1562,26 @@ function createCharacter () {
     }
     let currentOmens = k(maxOmens)
     //weapons broń brońki bronie
-    const MBWeapons = ['kość udowa (k4)', 'laska (k4)','krótki miecz (k4)', 'nóż (k4)','młot bojowy (k6)', 'miecz (k6)', 'łuk (k6, Skupienie+10 strzał)', 'kiścień (k8)', 'kusza (k8, Skupienie+10 bełtów)', 'zweihänder (k10)']
+    const fourDamageMeleeWeapons = ['kość udowa (k4)', 'laska (k4)','krótki miecz (k4)', 'nóż (k4)', 'sierp (k4)']
+    const sixDamageMeleeWeapons = ['młot bojowy (k6)', 'miecz (k6)']
+    const bows = ['łuk (k6, Skupienie+10 strzał)']
+    const eightDamageMeleeWeapons = ['kiścień (k8)']
+    const crossbows = ['kusza (k8, Skupienie+10 bełtów)']
+    const tenDamageMeleeWeapons = ['zweihänder (k10)']
+
+    let MBWeapons = [
+      randomizeFromArray(fourDamageMeleeWeapons),
+      randomizeFromArray(fourDamageMeleeWeapons),
+      randomizeFromArray(fourDamageMeleeWeapons),
+      randomizeFromArray(fourDamageMeleeWeapons),
+      randomizeFromArray(sixDamageMeleeWeapons),
+      randomizeFromArray(sixDamageMeleeWeapons),
+      randomizeFromArray(bows),
+      randomizeFromArray(eightDamageMeleeWeapons),
+      randomizeFromArray(crossbows),
+      randomizeFromArray(tenDamageMeleeWeapons)
+    ]
+    //const MBWeapons = ['kość udowa (k4)', 'laska (k4)','krótki miecz (k4)', 'nóż (k4)','młot bojowy (k6)', 'miecz (k6)', 'łuk (k6, Skupienie+10 strzał)', 'kiścień (k8)', 'kusza (k8, Skupienie+10 bełtów)', 'zweihänder (k10)']
     //split into damage tiers and add different kinds with appropriate probability
     const d6Equipment = ['', '', 'plecak o pojemności 6 przedmiotów', 'worek o pojemności 10 przedmiotów', 'mały wózek', 'osiołek']
 
