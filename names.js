@@ -1157,10 +1157,16 @@ export const wizardNames = {
   // czarodzieje magowie leki nazwy leków
   type: 'picker',
   list: [
+    'Depakine',
+    'Pralex',
+    'Hydroxyzinum',
     'Venalex',
+    'Ketrel',
     'Fibraxine',
     'Arabinogalaktan',
     'Laktoferyna',
+    'Myrbetriq',
+    'Mirabegron',
     'Furagina',
     'Dicoflor',
     'Narivent',
