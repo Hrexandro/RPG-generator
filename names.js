@@ -580,7 +580,7 @@ export const MBTowns = { // town
     'Vik',
     'Vi',
     'Efte'
-    
+
   ],
   suffix: [
     '', // only prefix, short one syllable name
@@ -691,7 +691,7 @@ export const MBTowns = { // town
     'blud',
     'len',
     'vag'
-    
+
   ]
 }
 
@@ -1158,6 +1158,9 @@ export const wizardNames = {
   type: 'picker',
   list: [
     'Venalex',
+    'Fibraxine',
+    'Arabinogalaktan',
+    'Laktoferyna',
     'Furagina',
     'Dicoflor',
     'Narivent',
