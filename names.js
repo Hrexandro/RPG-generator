@@ -2368,6 +2368,44 @@ export const maleSlavicNames = {
     'Żyła',
     'Żyłka',
     'Żyrosław',
-    
+
+  ]
+}
+
+export const unsulliedNames = {
+  type: 'mixerSpaced',
+  prefix: [
+    "Grey",
+    'White',
+    'Yellow',
+    'Blue',
+    'Red',
+    'Green',
+    'Black',
+    'Brown',
+    'Purple',
+    'Orange',
+    'Ash',
+    'Filty',
+    'Greasy',
+    'Frail',
+    'Shameful',
+    'Dirty',
+    'Smelly'
+
+  ],
+  suffix: [
+    'Worm',
+    'Dog',
+    'Rat',
+    'Mouse',
+    'Roach',
+    'Spider',
+    'Mite',
+    'Flea',
+    'Beetle',
+    'Maggot',
+    'Ant',
+    'Pig'
   ]
 }
