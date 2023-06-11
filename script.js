@@ -14,7 +14,7 @@
 
 //divide MB weapons into damage classes and roll accordingly (to enable to add more weapon types)
 
-import { MBNames, MBTowns, VOTENobleNames, wizardNames, MBPaleOneNames, MBDeadGod, maleSlavicNames, unsulliedNames, maleLatinNames, maleRussianNames } from './names.js'
+import { MBNames, MBTowns, VOTENobleNames, wizardNames, MBPaleOneNames, MBDeadGod, maleSlavicNames, unsulliedNames, maleLatinNames, maleRussianNames, maleGaelicNames } from './names.js'
 
 const generateButton = document.getElementById('generate-button')
 const nameDisplay = document.getElementById('name-display')
