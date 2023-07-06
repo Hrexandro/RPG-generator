@@ -3236,5 +3236,7 @@ export const mercenaryCompanies = {
     "Ghilman",
     "Forest Brothers",
     "Black Company",
+    "Ironborn",
+    "Iron Men"
   ],
 };
