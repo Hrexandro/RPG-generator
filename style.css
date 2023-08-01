@@ -32,7 +32,9 @@ input {
     border: 1px solid white;
 } */
 
-.bar {
+/* below used before introducing bootstrap */
+
+/* .bar {
     width:100vw;
     display: flex;
     align-items: center;
@@ -48,4 +50,4 @@ input {
         flex-grow: 1;
         font-size: xx-large;
     }
-  }
+  } */

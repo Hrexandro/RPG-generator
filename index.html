@@ -4,52 +4,75 @@
 <head>
     <title>RPG generator</title>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-    <div class="bar">
-<select name="kategoria" id="kategoria" class="input">
-    <option value="MBNames">Imiona - MB</option>
-    <option value="VOTENobleNames">Imiona arystokratyczne - VotE</option>
-    <option value="MBPaleOneNames">Imiona Bladawców - MB</option>
-    <option value="maleGaelicNames">Imiona celtyckie - męskie</option>
-    <option value="wizardNames">Imiona czarodziejów - PK</option>
-    <option value="maleLatinNames">Imiona łacińskie - męskie</option>
-    <option value="unsulliedNames">Imiona Nieskalanych - ASOIAF (eng.)</option>
-    <option value="maleRussianNames">Imiona rosyjskie - męskie (transl. ang.)</option>
-    <option value="maleSlavicNames">Imiona słowiańskie - męskie</option>
-    <option value="mercenaryCompanies">Kompanie najemników (eng.)</option>
-    <option value="MBRandomEncounters">Losowe spotkania - MB</option>
-    <option value="MBTownEncounters">Losowe spotkania w mieście - MB</option>
-<!-- 
-    <option value="MBRandomEncountersGravenTosk">Losowe spotkania - Graven-Tosk - MB</option>
-    <option value="MBRandomEncountersShadowKing">Losowe spotkania - Pałac Króla Cieni - MB</option>
-    <option value="MBRandomEncountersSarkash">Losowe spotkania - Sarkash - MB</option>
-    <option value="MBRandomEncounters">Losowe spotkania - Tveland - MB</option> -->
-    <option value="MBArcaneCatastrophes">Magiczne katastrofy - MB</option>
-    <option value="MBDeadGod">Martwy Bóg - MB</option>
-    <option value="MBTowns">Miasta - MB</option>
-    <option value="mutations">Mutacje</option>
-    <option value="MBWeather">Pogoda - MB</option>
-    <option value="MBCharacter">Postać - MB</option>
-    <option value="MBMonsters">Potwory - MB</option>
-    <option value="MBCorpseLoot">Grabienie zwłok - MB</option>
-    <option value="MBTroublingTales">Niepokojące historie - MB</option>
-    <option value="MBTerribleTraits">Okropne cechy - MB</option>
-    <option value="MBBrokenBodies">Zniszczone ciała - MB</option>
-    <option value="MBBadHabits">Złe nawyki - MB</option>
-    <option value="MBUncleanScroll">Zwój (przeklęty) - MB</option>
-    <option value="MBSacredScroll">Zwój (święty) - MB</option>
 
-    
-    
-</select>
-<input type=number id="liczba" value="10" min="1" class="input">
-<button id='generate-button' class="input">Generuj</button>
-</div>
+    <div id="form-container" class="container bar">
+        <div class="row">
+            <div class="col" id="select-column">
+                <select name="kategoria" id="kategoria" class="input form-select">
+                    <option value="MBNames">Imiona - MB</option>
+                    <option value="VOTENobleNames">Imiona arystokratyczne - VotE</option>
+                    <option value="MBPaleOneNames">Imiona Bladawców - MB</option>
+                    <option value="maleGaelicNames">Imiona celtyckie - męskie</option>
+                    <option value="wizardNames">Imiona czarodziejów - PK</option>
+                    <option value="maleLatinNames">Imiona łacińskie - męskie</option>
+                    <option value="unsulliedNames">Imiona Nieskalanych - ASOIAF (eng.)</option>
+                    <option value="maleRussianNames">Imiona rosyjskie - męskie (transl. ang.)</option>
+                    <option value="maleSlavicNames">Imiona słowiańskie - męskie</option>
+                    <option value="mercenaryCompanies">Kompanie najemników (eng.)</option>
+                    <option value="MBRandomEncounters">Losowe spotkania - MB</option>
+                    <option value="MBTownEncounters">Losowe spotkania w mieście - MB</option>
+                    <!-- 
+            <option value="MBRandomEncountersGravenTosk">Losowe spotkania - Graven-Tosk - MB</option>
+            <option value="MBRandomEncountersShadowKing">Losowe spotkania - Pałac Króla Cieni - MB</option>
+            <option value="MBRandomEncountersSarkash">Losowe spotkania - Sarkash - MB</option>
+            <option value="MBRandomEncounters">Losowe spotkania - Tveland - MB</option> -->
+                    <option value="MBArcaneCatastrophes">Magiczne katastrofy - MB</option>
+                    <option value="MBDeadGod">Martwy Bóg - MB</option>
+                    <option value="MBTowns">Miasta - MB</option>
+                    <option value="mutations">Mutacje</option>
+                    <option value="MBWeather">Pogoda - MB</option>
+                    <option value="MBCharacter">Postać - MB</option>
+                    <option value="MBMonsters">Potwory - MB</option>
+                    <option value="MBCorpseLoot">Grabienie zwłok - MB</option>
+                    <option value="MBTroublingTales">Niepokojące historie - MB</option>
+                    <option value="MBTerribleTraits">Okropne cechy - MB</option>
+                    <option value="MBBrokenBodies">Zniszczone ciała - MB</option>
+                    <option value="MBBadHabits">Złe nawyki - MB</option>
+                    <option value="MBUncleanScroll">Zwój (przeklęty) - MB</option>
+                    <option value="MBSacredScroll">Zwój (święty) - MB</option>
 
-<div id='name-display'></div>
-<script src='script.js' type="module"></script>
+
+
+                </select>
+            </div>
+            <div class="col">
+                <input type=number id="liczba" value="10" min="1" class="input form-control">
+
+            </div>
+            <div class="col">
+                <button id='generate-button' class="input btn btn-dark">Generuj</button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <tbody id="name-display"></tbody>
+        </table>
+    </div>
+
+    <script src='script.js' type="module"></script>
 </body>
 
 
