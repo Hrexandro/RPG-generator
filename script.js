@@ -1810,6 +1810,7 @@ function pickFromList(pickedList) {
 
 generateButton.addEventListener('click', () => {
   updatePick()
+  updatePickedClass()
   const result = []
   const pickedCategory = eval(category)
   removeAllChildren(nameDisplay)
