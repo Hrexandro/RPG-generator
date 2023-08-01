@@ -26,6 +26,14 @@ let pickedClass = null //can also be later used as any secondary option for gene
 
 const MBCharacterClassPicker = document.createElement('select')
 
+function updatePickedClass(){
+  if (MBCharacterClassPicker.value === 'Losowa klasa') {
+    pickedClass = 'Losowa klasa'
+  } else {
+    pickedClass = MBClasses.list.find((charClass) => { return charClass.characterClassName === MBCharacterClassPicker.value })
+  }
+}
+
 function updateSecondarySelectStatus() {
   if (categoryPicker.value === 'MBCharacter') {
     function addOption(displayedName, valueIfDifferent) {
@@ -60,13 +68,15 @@ function updateSecondarySelectStatus() {
     addOption('Zębaty dezerter')
     addOption('Złodziej')
     MBCharacterClassPicker.addEventListener('click', () => {
-      if (MBCharacterClassPicker.value === 'Losowa klasa') {
-        pickedClass = 'Losowa klasa'
-      } else {
-        pickedClass = MBClasses.list.find((charClass) => { return charClass.characterClassName === MBCharacterClassPicker.value })
-      }
+      // if (MBCharacterClassPicker.value === 'Losowa klasa') {
+      //   pickedClass = 'Losowa klasa'
+      // } else {
+      //   pickedClass = MBClasses.list.find((charClass) => { return charClass.characterClassName === MBCharacterClassPicker.value })
+      // }
+      updatePickedClass()
     })
     MBCharacterClassPicker.addEventListener('change', () => {
+      updatePickedClass()
       removeAllChildren(nameDisplay)
     })
 
@@ -1542,7 +1552,7 @@ createAndAddClass({
 
 const classLessCharacter = new MBCharacterClass('', '', '', '', '', '', '', 0, 0, 0, 0, 2, false, false, false, false, false, false, false, false, false,)
 
-const MBCharacter = function () { // arcane catastrophes magiczne katastrofy
+const MBCharacter = function () {
   return {
     type: 'pickerRoller',
     list: [createCharacter(pickedClass)]
