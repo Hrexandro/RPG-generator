@@ -300,7 +300,9 @@ const MBRandomEncounters = function () {
       'Grządka dyniowa. Chorobliwy lecz słodki zapach unosi się w powietrzu. Są silnie halucynogeniczne, w nocy zbierają je zaborczy farmerzy.',
       'Sylwetka wiwerny odznacza się na tle nieba.',
       'Wieża zegarowa dzwoni. W jej cieniu heretyckie wiedźmy tworzą nieżyjące hybrydy trolli.',
-      'Ogromne bagno. Trudne do przebycia, rządzone przez spasłą, mackowatą istotę, która twierdzi, że należała niegdyś do rodziny królewskiej.'
+      'Ogromne bagno. Trudne do przebycia, rządzone przez spasłą, mackowatą istotę, która twierdzi, że należała niegdyś do rodziny królewskiej.',
+      'Zabity kurier noszący godło króla Fathmu IX z Wästlandu (złoty czworoskrzydły jastrząb na czarnym tle) leży w rowie, ma przy sobie list: "Na wschód od jeziora Onda, na Pełzającym Bagnie, znajduje się starożytny grobowiec Bagiennej Wiedźmy i ołtarz z martwych korzeni pokryty zapomnnianymi symbolami. Powiadają, że jeśli wypowie się nad nim pewne zakazane słowa, każde życzenie może zostać spełnione. Nawet odegnanie nadchodzącej zagłady leży w mocy ołtarza Bagiennej Wiedźmy.',
+      'Łowca zwłok'
     ]
   }
 }
