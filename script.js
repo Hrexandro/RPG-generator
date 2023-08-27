@@ -89,6 +89,7 @@ function updateSecondarySelectStatus() {
 
 
 categoryPicker.addEventListener('change', (e) => {
+  document.getElementsByTagName('footer')[0].classList.add('invisible')
   removeAllChildren(nameDisplay)
   updateSecondarySelectStatus()
 })
@@ -461,7 +462,8 @@ const MBBrokenBodies = {
     'Ciągle jest mu zimno, na co wiecznie narzeka', // ok
     'Wysoki jak drzewo, ale chudy jak szczapa', // ok
     'Włosy szorstkie jak szczecina dzika',
-    'Złamany nos, już na zawsze skrzywiony'
+    'Złamany nos, już na zawsze skrzywiony',
+    "Wielki pępek"
   ]
 }
 
@@ -1858,6 +1860,13 @@ generateButton.addEventListener('click', () => {
   updatePick()
   updatePickedClass()
   const result = []
+  let footer = document.getElementsByTagName('footer')[0]
+  if (/MB/.test(category)){
+    footer.classList.remove('invisible')
+  } else {
+    footer.classList.add('invisible')
+  }
+
   const pickedCategory = eval(category)
   removeAllChildren(nameDisplay)
   for (let i = 0; i < numberGenerated; i++) {
