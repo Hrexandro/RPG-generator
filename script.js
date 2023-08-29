@@ -203,6 +203,7 @@ const MBRandomEncounters = function () {
     list: [
       // Overland Travel
       'Nie dzieje się nic konkretnego, świat jest szary.',
+      'Wicher Czarnej Soli (okładka Feretory)',
       'Pogorszenie pogody.',
       'Zmiana pogody.', // na??
       'Droga się rozwidla, znaki są nieczytelne (przerzut).',
