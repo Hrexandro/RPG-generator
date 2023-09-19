@@ -26,7 +26,7 @@ let pickedClass = null //can also be later used as any secondary option for gene
 
 const MBCharacterClassPicker = document.createElement('select')
 
-function updatePickedClass(){
+function updatePickedClass() {
   if (MBCharacterClassPicker.value === 'Losowa klasa') {
     pickedClass = 'Losowa klasa'
   } else {
@@ -554,7 +554,44 @@ const medievalProfessions = {
     'Złodziej',
     'Żak',
     'Żołnierz',
-    'Żołnierz okrętowy'
+    'Żołnierz okrętowy',
+    'Bartodziej',
+    'Pasiecznik',
+    'Łagiewnik',
+    'Brązownik',
+    'Bursztynnik',
+    'Bursztyniarz',
+    'Cukiernik',
+    'Cienietnik',
+    'Fajkarz',
+    'Dziewiarz',
+    'Dekarz',
+    'Giser',
+    'Iluminator',
+    'Iskarz',
+    'Kaletnik',
+    'Karpiniarz',
+    'Kartownik',
+    'Kominiarz',
+    'Korabnik',
+    'Szkutnik',
+    'Koronkarz',
+    'Malarz szkła',
+    'Witrażysta',
+    'Modysta',
+    'Obraźnik',
+    'Organmistrz',
+    'Organista',
+    'Partacz',
+    'Pozłotnik',
+    'Pszczelarz',
+    'Bartnik',
+    'Rogownik',
+    'Strycharz',
+    'Cegielnik',
+    'Szczytnik',
+    'Szłomnik',
+    'Tapicer'
   ]
 
 }
@@ -2092,7 +2129,7 @@ generateButton.addEventListener('click', () => {
   updatePickedClass()
   const result = []
   let footer = document.getElementsByTagName('footer')[0]
-  if (/MB/.test(category)){
+  if (/MB/.test(category)) {
     footer.classList.remove('invisible')
   } else {
     footer.classList.add('invisible')
