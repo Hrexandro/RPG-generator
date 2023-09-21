@@ -330,6 +330,19 @@ const MBWeather = {
   ]
 }
 
+const MBUnheroicFeats = {
+  type: 'picker',
+  list: [
+    'Cios Zabójcy - Mocny chwyt. Ostry nóż. Tylko tyle trzeba, żeby ktoś nigdy już nie opuścił galgenbeckiego zaułka. Z biegiem lat coraz lepiej ci to wychodzi. Zdaj test DR12 na siłę aby pochwycić niczego nie podejrzewającą ofiarę i automatycznie zadać krytyczne trafienie jednoręczną bronią sieczną.',
+    'Zaprawiony w Bojach Mówca Śmierci - Twoja siła w bitwie nie bierze się z twojej biegłości z mieczem i tarczą, ani prędkości i muskulaturze, ale z twoich słów, które sprowadzają śmierć na wrogów. Moesz używać Mocy nosząć średnią zbroję. Jeśli wybierasz ten atut po raz drugi, możesz używać mocy odziany w ciężką zbroję.',
+    'Bestialski Uczony - Badasz bestie tej krainy, patrosząc je i wydobywając z ich flaków sekrety świata. Możesz zobaczyć przeszłość w zwierzęcych wnętrznościach. Zyskujes omen za każde 10HP bestii, ale nie więcej, niż twoja maksymalna liczba omenów. Można użyć raz na każdym typie zwierzęcia. Wnętrzności mogą ci też ujawnić interesujące informacje.',
+    'Krwawe Knykcie - Lata bitki przekształciły twoje pięści w zabójcze obuchy. Są twarde od blizn pozostawionych przez winnych i niewinnych. Twoje ataki pięściami zadają k6 obrażeń i ignorują lekki pancerz. Jeśli wybierzesz ten atut po raz drugi, obrażenia rosną do k8 i ignorują średni pancerz. Trzeci raz - k10 i ignorują wszelki pancerz. Skucha na ataku pięściami oznacza złamanie dłoni - obrażenia zadajesz sobie sam. Musisz odnaleźć specjalistę, który nastawi ci kości.',
+    'Krawy Pakt - Świat jest zbyt okrutny, żeby być w nim całkiem sam. Znalazłeś jednak sposób, aby uniknąć tego losu. Zawrzyj krwawy pakt z chętną osobą. Komunikujecie się myślami, niezależnie od dystansu, permanentnie. Cokolwiek doświadczy jeden, doświadcza też drugi - w tym rany i śmierć.',
+
+
+  ]
+}
+
 const medievalProfessions = {
   type: 'picker',
   list: [
