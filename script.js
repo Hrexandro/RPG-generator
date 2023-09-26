@@ -780,8 +780,8 @@ const MBBadHabits = {
     'Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5, 7, 9, 11 lub 13 wyrzuconym na k20',
     'Robi biżuterię z ludzkich zębów',
     'Przywłaszcza sobie wszelkie zasługi', // ok
-    'Zbiera trofeum z każdego zabitego wroga.',
-    'Imiona stale wylatują mu z głowy, ale świetnie zapamiętuje twarze.'
+    'Zbiera trofeum z każdego zabitego wroga',
+    'Imiona stale wylatują mu z głowy, ale świetnie zapamiętuje twarze'
   ]
 }
 
@@ -1298,7 +1298,7 @@ createAndAddClass({
 
 createAndAddClass({
   characterClassName: 'Rynsztokowa szumowina',
-  description: 'Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami. Bieda, przestępczość i kiepskie wychowanie nie pomogły. W tojej społeczności uczciwy zarobek nigdy nie wchodził w grze. Nie żebyś próbował, co ty jesteś, jakiś frajer? Ostry nóż i bezksiężycowa noc warte są więcej niż tydzień harówki',
+  description: 'Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami. Bieda, przestępczość i kiepskie wychowanie nie pomogły. W twojej społeczności uczciwy zarobek nigdy nie wchodził w grze. Nie żebyś próbował, co ty jesteś, jakiś frajer? Ostry nóż i bezksiężycowa noc warte są więcej niż tydzień harówki',
   originLabel: 'Niskourodzony: ',
   origin: [
     'wrzucony do wozu z nawozem razem z błonami płodowymi.',
@@ -1376,7 +1376,7 @@ createAndAddClass({
     'dwaj książęta zostali porwani na zachód Bergen Chrypty i zniknęli w czarnej szczelinie wschodnich stoków.'
   ],
   specialAbility: '',
-  rolledAbility: [
+  rolledAbility: [//should have two of those, actually
     'Miecz Twoich Przodków - ten wspaniały i ewidentnie magiczny gadający miecz jest egzaltowany, niegodny zaufania i darzy cię cichą pogardą. Kpi z twoich porażek i jeśli zostanie wielokrotnie rozczarowany, ma 1/6 szansę, by podczas ataku "przypadkowo" razić ciebie lub twoich towarzyszy. Zadaje k6+1 obrażeń. Atak i obrona DR 10',
     '"Poltroon" (Nędzny Tchórz), Nadworny Błazen - ten praktycznie bezużyteczny, osobiście irytujący i stanowiący ciężar emocjonalny trefniś rozprasza twoich wrogów w trakcie walki. W czasie dwóch pierwszych rund ty i twoi sprzymierzeńcy macie +2 do ataku i obrony',
     'Barbarister, Niesamowity Koń - Barbarister jest magiczny, inteligentny, arogancki i próżny. Potrafi też mówić. Jeśli przekonasz go, Barbarister okazjonalnie może dodać ci +2 do testów na skupienie mających do czynienia z logiką i intelektem. Koń prawdopodobnie jest od ciebie mądrzejszy i dobrze o tym wie',
@@ -1510,7 +1510,7 @@ createAndAddClass({
     'wykluł się z jaja złożonego przez bagienną babę na Wästlandzkim mokradle.',
     'wypełzł z pęknięcia w ziemi w pobliżu Griftu.'
   ],
-  specialAbility: 'Jesteś piśmienny, ale tylko w martwych językach i nie możesz używać zwojów. Potrafisz jednak intuicyjnie użyć jednej Mocy dziennie, losowanej o zmierzchu lub o świcie (wybierz sobie).',
+  specialAbility: 'Jesteś piśmienny, ale tylko w martwych językach i nie możesz używać zwojów. Potrafisz jednak intuicyjnie użyć jednej Mocy dziennie, losowanej o zmierzchu lub o świcie (wybierz sobie)',
   rolledAbility: [
     'Gwiazdy miały rację - rzucasz k4+2 na omeny. Powiedz coś tajemniczego za każdym razem, gdy wykorzystujesz jeden z nich',
     'Błoniaste skrzydła - potrafisz latać krótkie dystanse, ale nie możesz nosić zbroi. Ptaki cię nie lubią',
@@ -1831,7 +1831,7 @@ createAndAddClass({
     'w schleswidzkiej celi.',
     'gdy minuty dzieliły cię od zamarznięcia na śmierć w drodze do Alliánsu.'
   ],
-  specialAbility: 'Otacza cię aura nienaturalnego uroku, pozwalająca niepokoić wrogów i uspokajać przyjaciół. Zamiast używania Mocy w danym dniu, możesz dodać lub odjąć k6 od dowolnego testu na morale.',
+  specialAbility: 'Otacza cię aura nienaturalnego uroku, pozwalająca niepokoić wrogów i uspokajać przyjaciół. Zamiast używania Mocy w danym dniu, możesz dodać lub odjąć k6 od dowolnego testu na morale',
   rolledAbility: [
     'Kobza Przeznaczenia - połączenie pozszywanych włochatych pęcherzy z wystającymi kościanymi rurkami, w które się dmicha. Kiedy to robisz, wybrani słuchacze przepełnieni są nieziemskim głodem, tak jakby nie jedli od tygodnia',
     'Lira Korbowo-Bólowa - kręcenie tym ostrunowanym kawałkiem drewna i kości wydaje dźwięk, który rani uszy istot, które nie przejdą testu DR12 na prezencję. W pierwszej rundzie zadaje k2 obrażeń, w następnej k4 i tak dalej',
@@ -1965,7 +1965,7 @@ function createCharacter() {
   const d12EquipmentOne = ['lina (10 metrów)', `pochodnie (${parseInt(PRE) + 4} szt.)`, `latarnia i zapas oliwy na ${parseInt(PRE) + 6} godz.`, 'pasek magnezji', 'przeklęty zwój', 'ostra igła',
     `skrzynka z lekami - użycia: ${parseInt(PRE) + 4} (powstrzymuje krwawienie/infekcję i leczy k6 HP)`, 'metalowy pilnik i wytrychy', 'pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)',
     'bomba (zapieczętowana butelka, k10 obrażeń)', `buteleczka czerwonej trucizny - dawki: ${k(4)} (Odporność DR12 aby uniknąć k10 obrażeń)`, 'srebrny krucyfiks']
-  const d12EquipmentTwo = [`eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję),`, 'święty zwój', `mały ale wredny pies (${k(6) + 2} HP, ugryzienie k4, posłuszny tylko tobie)`,
+  const d12EquipmentTwo = [`eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję)`, 'święty zwój', `mały ale wredny pies (${k(6) + 2} HP, ugryzienie k4, posłuszny tylko tobie)`,
   `małpy (${k(4)}), które ignorują cię, ale też kochają, (${k(4) + 2} HP, cios/ugryzienie k4)`, 'wykwintny perfum wart 25s', 'skrzynka z narzędziami: 10 gwoździ, cęgi, młotek, mała piła i wiertło',
     'ciężki łańcuch (5m)', 'kotwiczka na linie', 'tarcza (-1 obrażeń lub zniszcz tarczę by zignorować atak)', 'łom (k4)', 'smalec (działa jak 5 posiłków)', 'namiot']
 
