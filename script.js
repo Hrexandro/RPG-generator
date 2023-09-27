@@ -857,40 +857,6 @@ const MBBadHabits = {
   // bad habits, złe nawyki cechy
   type: "picker",
   list: [
-<<<<<<< HEAD
-    'Obsesyjnie zbiera małe, ostre kamienie',
-    'Nie użyje żadnego ostrza nie przetestowawszy go uprzednio na własnym ciele. Ręce poprzeszywane blizami',
-    'Jak już zacznie pić, nie może przestać',
-    'Uzależniony od hazardu. Musi zakładać się choć raz dziennie. Jeśli przegra, podbija stawkę i zakłada się znów',
-    'Nie toleruje krytyki. Rezultatem jest wściekłość i płacz',
-    'Nie może przejść do sedna. Nigdy nie opowiedział żadnej historii od początku do końca',
-    'Najlepszym przyjacielem jest czaszka. Nosi ją ze sobą, opowiada jej wszystko, nikomu innemu nie ufa bardziej',
-    'Dłubie w nosie aż do krwi',
-    'Histerycznie śmieje się z własnych żartów, które potem szczegółowo objaśnia',
-    'Nihilista, upiera się, żeby mówić wszystkim, że jest nihilistą i wyjaśniać dlaczego',
-    'Notoryczny zjadacz robali',
-    'Na stres reaguje strojeniem się. Im gorzej sprawy się mają, tym szykowniej musi wyglądać',
-    'Stale zalegająca w gardle flegma. Nieustannie kaszle, smarka, spluwa i przełyka',
-    'Nałogowo kłamie, ciężko mu zdobyć zaufanie innych', // ok
-    'Zbieractwo - zbiera i targa ze sobą pełno niepotrzebnych przedmiotów', // ok
-    'Ma tendencję do katatonicznego wpatrywania się w jeden punkt przez kilka minut', // ok
-    'Skłonność do egzaltacji i przesadzonej gestykulacji', // ok
-    'Gada do siebie w najmniej odpowiednich momentach i głośno pomstuje na wszelkie niedogodności', // ok
-    'Czuje przymus pomodlenia się za duszę każdego z zabitych wrogów', // ok
-    'Piroman',
-    'Czuje potrzebę wytykać i opisywać błędy inncy, ze szczegółami',
-    'Stale gubi ważne przedmioty i zapomina ważne fakty',
-    'Plotkarz, obgaduje każdego, którego akurat nie ma w pobliżu',
-    'Jąka się, gdy kłamie',
-    'Chichocze szaleńczo w najgorszych momentach',
-    'Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5, 7, 9, 11 lub 13 wyrzuconym na k20',
-    'Robi biżuterię z ludzkich zębów',
-    'Przywłaszcza sobie wszelkie zasługi', // ok
-    'Zbiera trofeum z każdego zabitego wroga',
-    'Imiona stale wylatują mu z głowy, ale świetnie zapamiętuje twarze'
-  ]
-}
-=======
     "Obsesyjnie zbiera małe, ostre kamienie",
     "Nie użyje żadnego ostrza nie przetestowawszy go uprzednio na własnym ciele. Ręce poprzeszywane blizami",
     "Jak już zacznie pić, nie może przestać",
@@ -923,7 +889,6 @@ const MBBadHabits = {
     "Imiona stale wylatują mu z głowy, ale świetnie zapamiętuje twarze.",
   ],
 };
->>>>>>> 984076cc5d34219919c5d0aa566cbc3b4cdc636a
 
 const MBTroublingTales = {
   // troubling tales, troublingtales, niepokojące historie
@@ -1798,16 +1763,9 @@ createAndAddClass({
 });
 
 createAndAddClass({
-<<<<<<< HEAD
   characterClassName: 'Rynsztokowa szumowina',
   description: 'Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami. Bieda, przestępczość i kiepskie wychowanie nie pomogły. W twojej społeczności uczciwy zarobek nigdy nie wchodził w grze. Nie żebyś próbował, co ty jesteś, jakiś frajer? Ostry nóż i bezksiężycowa noc warte są więcej niż tydzień harówki',
   originLabel: 'Niskourodzony: ',
-=======
-  characterClassName: "Rynsztokowa szumowina",
-  description:
-    "Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami. Bieda, przestępczość i kiepskie wychowanie nie pomogły. W tojej społeczności uczciwy zarobek nigdy nie wchodził w grze. Nie żebyś próbował, co ty jesteś, jakiś frajer? Ostry nóż i bezksiężycowa noc warte są więcej niż tydzień harówki",
-  originLabel: "Niskourodzony: ",
->>>>>>> 984076cc5d34219919c5d0aa566cbc3b4cdc636a
   origin: [
     "wrzucony do wozu z nawozem razem z błonami płodowymi.",
     "matka powieszona na drzewie na obrzeżach Galgenbeck, wypadłeś z jej zwłok.",
@@ -1887,13 +1845,8 @@ createAndAddClass({
     "Anthelia zażądała daru ze szlachetnej krwi",
     "dwaj książęta zostali porwani na zachód Bergen Chrypty i zniknęli w czarnej szczelinie wschodnich stoków.",
   ],
-<<<<<<< HEAD
   specialAbility: '',
   rolledAbility: [//should have two of those, actually
-=======
-  specialAbility: "",
-  rolledAbility: [
->>>>>>> 984076cc5d34219919c5d0aa566cbc3b4cdc636a
     'Miecz Twoich Przodków - ten wspaniały i ewidentnie magiczny gadający miecz jest egzaltowany, niegodny zaufania i darzy cię cichą pogardą. Kpi z twoich porażek i jeśli zostanie wielokrotnie rozczarowany, ma 1/6 szansę, by podczas ataku "przypadkowo" razić ciebie lub twoich towarzyszy. Zadaje k6+1 obrażeń. Atak i obrona DR 10',
     '"Poltroon" (Nędzny Tchórz), Nadworny Błazen - ten praktycznie bezużyteczny, osobiście irytujący i stanowiący ciężar emocjonalny trefniś rozprasza twoich wrogów w trakcie walki. W czasie dwóch pierwszych rund ty i twoi sprzymierzeńcy macie +2 do ataku i obrony',
     "Barbarister, Niesamowity Koń - Barbarister jest magiczny, inteligentny, arogancki i próżny. Potrafi też mówić. Jeśli przekonasz go, Barbarister okazjonalnie może dodać ci +2 do testów na skupienie mających do czynienia z logiką i intelektem. Koń prawdopodobnie jest od ciebie mądrzejszy i dobrze o tym wie",
@@ -2032,12 +1985,7 @@ createAndAddClass({
     "wykluł się z jaja złożonego przez bagienną babę na Wästlandzkim mokradle.",
     "wypełzł z pęknięcia w ziemi w pobliżu Griftu.",
   ],
-<<<<<<< HEAD
   specialAbility: 'Jesteś piśmienny, ale tylko w martwych językach i nie możesz używać zwojów. Potrafisz jednak intuicyjnie użyć jednej Mocy dziennie, losowanej o zmierzchu lub o świcie (wybierz sobie)',
-=======
-  specialAbility:
-    "Jesteś piśmienny, ale tylko w martwych językach i nie możesz używać zwojów. Potrafisz jednak intuicyjnie użyć jednej Mocy dziennie, losowanej o zmierzchu lub o świcie (wybierz sobie).",
->>>>>>> 984076cc5d34219919c5d0aa566cbc3b4cdc636a
   rolledAbility: [
     "Gwiazdy miały rację - rzucasz k4+2 na omeny. Powiedz coś tajemniczego za każdym razem, gdy wykorzystujesz jeden z nich",
     "Błoniaste skrzydła - potrafisz latać krótkie dystanse, ale nie możesz nosić zbroi. Ptaki cię nie lubią",
@@ -2372,12 +2320,8 @@ createAndAddClass({
     "w schleswidzkiej celi.",
     "gdy minuty dzieliły cię od zamarznięcia na śmierć w drodze do Alliánsu.",
   ],
-<<<<<<< HEAD
-  specialAbility: 'Otacza cię aura nienaturalnego uroku, pozwalająca niepokoić wrogów i uspokajać przyjaciół. Zamiast używania Mocy w danym dniu, możesz dodać lub odjąć k6 od dowolnego testu na morale',
-=======
   specialAbility:
     "Otacza cię aura nienaturalnego uroku, pozwalająca niepokoić wrogów i uspokajać przyjaciół. Zamiast używania Mocy w danym dniu, możesz dodać lub odjąć k6 od dowolnego testu na morale.",
->>>>>>> 984076cc5d34219919c5d0aa566cbc3b4cdc636a
   rolledAbility: [
     "Kobza Przeznaczenia - połączenie pozszywanych włochatych pęcherzy z wystającymi kościanymi rurkami, w które się dmicha. Kiedy to robisz, wybrani słuchacze przepełnieni są nieziemskim głodem, tak jakby nie jedli od tygodnia",
     "Lira Korbowo-Bólowa - kręcenie tym ostrunowanym kawałkiem drewna i kości wydaje dźwięk, który rani uszy istot, które nie przejdą testu DR12 na prezencję. W pierwszej rundzie zadaje k2 obrażeń, w następnej k4 i tak dalej",
@@ -2535,16 +2479,6 @@ function createCharacter() {
   ];
   //const MBWeapons = ['kość udowa (k4)', 'laska (k4)','krótki miecz (k4)', 'nóż (k4)','młot bojowy (k6)', 'miecz (k6)', 'łuk (k6, Skupienie+10 strzał)', 'kiścień (k8)', 'kusza (k8, Skupienie+10 bełtów)', 'zweihänder (k10)']
   //split into damage tiers and add different kinds with appropriate probability
-<<<<<<< HEAD
-  const d6Equipment = ['', '', 'plecak o pojemności 6 przedmiotów', 'worek o pojemności 10 przedmiotów', 'mały wózek', 'osiołek']
-
-  const d12EquipmentOne = ['lina (10 metrów)', `pochodnie (${parseInt(PRE) + 4} szt.)`, `latarnia i zapas oliwy na ${parseInt(PRE) + 6} godz.`, 'pasek magnezji', 'przeklęty zwój', 'ostra igła',
-    `skrzynka z lekami - użycia: ${parseInt(PRE) + 4} (powstrzymuje krwawienie/infekcję i leczy k6 HP)`, 'metalowy pilnik i wytrychy', 'pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)',
-    'bomba (zapieczętowana butelka, k10 obrażeń)', `buteleczka czerwonej trucizny - dawki: ${k(4)} (Odporność DR12 aby uniknąć k10 obrażeń)`, 'srebrny krucyfiks']
-  const d12EquipmentTwo = [`eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję)`, 'święty zwój', `mały ale wredny pies (${k(6) + 2} HP, ugryzienie k4, posłuszny tylko tobie)`,
-  `małpy (${k(4)}), które ignorują cię, ale też kochają, (${k(4) + 2} HP, cios/ugryzienie k4)`, 'wykwintny perfum wart 25s', 'skrzynka z narzędziami: 10 gwoździ, cęgi, młotek, mała piła i wiertło',
-    'ciężki łańcuch (5m)', 'kotwiczka na linie', 'tarcza (-1 obrażeń lub zniszcz tarczę by zignorować atak)', 'łom (k4)', 'smalec (działa jak 5 posiłków)', 'namiot']
-=======
   const d6Equipment = [
     "",
     "",
@@ -2590,7 +2524,6 @@ function createCharacter() {
     "smalec (działa jak 5 posiłków)",
     "namiot",
   ];
->>>>>>> 984076cc5d34219919c5d0aa566cbc3b4cdc636a
 
   let armors = [
     [""],
