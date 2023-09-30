@@ -26,6 +26,7 @@ import {
   maleRussianNames,
   maleGaelicNames,
   mercenaryCompanies,
+  WHFMaleHumanNames
 } from "./names.js";
 
 const generateButton = document.getElementById("generate-button");
@@ -2032,7 +2033,7 @@ createAndAddClass({
   presence: 2,
   strength: 0,
   toughness: -2,
-  omens: 0,
+  omens: 3,
   scrollRule: false,
   HPdie: 4,
   silverDie: 6,
@@ -2071,7 +2072,7 @@ createAndAddClass({
   presence: 2,
   strength: -2,
   toughness: 0,
-  omens: 0,
+  omens: 4,
   scrollRule: "Tablet of Ochre Obscurity", //use this rule to apply tablet
   HPdie: 4,
   silverDie: 6,
@@ -2297,7 +2298,7 @@ createAndAddClass({
   presence: 2,
   strength: -2,
   toughness: 0,
-  omens: 0,
+  omens: 3,
   scrollRule: ["scroll", "unclean"], //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, ['scroll', 'random'/'holy'/'unholy']
   HPdie: false,
   silverDie: 6,
@@ -2337,7 +2338,7 @@ createAndAddClass({
   presence: 2,
   strength: 0,
   toughness: -2,
-  omens: 0,
+  omens: 2,
   scrollRule: false, //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, ['scroll', 'random'/'holy'/'unholy']
   HPdie: false,
   silverDie: false,
@@ -2360,7 +2361,7 @@ createAndAddClass({
 // presence: 0,
 // strength: 0,
 // toughness: 0,
-// omens: 0,
+// omens: 2,
 // scrollRule: false, //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, ['scroll', 'random'/'holy'/'unholy']
 // HPdie: false,
 // silverDie: false,
