@@ -1764,10 +1764,9 @@ createAndAddClass({
 });
 
 createAndAddClass({
-  characterClassName: "Rynsztokowa szumowina",
-  description:
-    "Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami. Bieda, przestępczość i kiepskie wychowanie nie pomogły. W tojej społeczności uczciwy zarobek nigdy nie wchodził w grze. Nie żebyś próbował, co ty jesteś, jakiś frajer? Ostry nóż i bezksiężycowa noc warte są więcej niż tydzień harówki",
-  originLabel: "Niskourodzony: ",
+  characterClassName: 'Rynsztokowa szumowina',
+  description: 'Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami. Bieda, przestępczość i kiepskie wychowanie nie pomogły. W twojej społeczności uczciwy zarobek nigdy nie wchodził w grze. Nie żebyś próbował, co ty jesteś, jakiś frajer? Ostry nóż i bezksiężycowa noc warte są więcej niż tydzień harówki',
+  originLabel: 'Niskourodzony: ',
   origin: [
     "wrzucony do wozu z nawozem razem z błonami płodowymi.",
     "matka powieszona na drzewie na obrzeżach Galgenbeck, wypadłeś z jej zwłok.",
@@ -1847,8 +1846,8 @@ createAndAddClass({
     "Anthelia zażądała daru ze szlachetnej krwi",
     "dwaj książęta zostali porwani na zachód Bergen Chrypty i zniknęli w czarnej szczelinie wschodnich stoków.",
   ],
-  specialAbility: "",
-  rolledAbility: [
+  specialAbility: '',
+  rolledAbility: [//should have two of those, actually
     'Miecz Twoich Przodków - ten wspaniały i ewidentnie magiczny gadający miecz jest egzaltowany, niegodny zaufania i darzy cię cichą pogardą. Kpi z twoich porażek i jeśli zostanie wielokrotnie rozczarowany, ma 1/6 szansę, by podczas ataku "przypadkowo" razić ciebie lub twoich towarzyszy. Zadaje k6+1 obrażeń. Atak i obrona DR 10',
     '"Poltroon" (Nędzny Tchórz), Nadworny Błazen - ten praktycznie bezużyteczny, osobiście irytujący i stanowiący ciężar emocjonalny trefniś rozprasza twoich wrogów w trakcie walki. W czasie dwóch pierwszych rund ty i twoi sprzymierzeńcy macie +2 do ataku i obrony',
     "Barbarister, Niesamowity Koń - Barbarister jest magiczny, inteligentny, arogancki i próżny. Potrafi też mówić. Jeśli przekonasz go, Barbarister okazjonalnie może dodać ci +2 do testów na skupienie mających do czynienia z logiką i intelektem. Koń prawdopodobnie jest od ciebie mądrzejszy i dobrze o tym wie",
@@ -1987,8 +1986,7 @@ createAndAddClass({
     "wykluł się z jaja złożonego przez bagienną babę na Wästlandzkim mokradle.",
     "wypełzł z pęknięcia w ziemi w pobliżu Griftu.",
   ],
-  specialAbility:
-    "Jesteś piśmienny, ale tylko w martwych językach i nie możesz używać zwojów. Potrafisz jednak intuicyjnie użyć jednej Mocy dziennie, losowanej o zmierzchu lub o świcie (wybierz sobie).",
+  specialAbility: 'Jesteś piśmienny, ale tylko w martwych językach i nie możesz używać zwojów. Potrafisz jednak intuicyjnie użyć jednej Mocy dziennie, losowanej o zmierzchu lub o świcie (wybierz sobie)',
   rolledAbility: [
     "Gwiazdy miały rację - rzucasz k4+2 na omeny. Powiedz coś tajemniczego za każdym razem, gdy wykorzystujesz jeden z nich",
     "Błoniaste skrzydła - potrafisz latać krótkie dystanse, ale nie możesz nosić zbroi. Ptaki cię nie lubią",
