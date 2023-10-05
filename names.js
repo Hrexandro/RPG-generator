@@ -1311,6 +1311,8 @@ export const wizardNames = {
     "Takrolimus",
     "Ezehron",
     "Proktis",
+    "Dip Rilif",
+    "Ismigen"
   ],
 };
 
