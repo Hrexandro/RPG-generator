@@ -1547,6 +1547,7 @@ const MBCorpseLoot = function () {
       "ciężki łańcuch (5m)",
       "kotwiczka na linie",
       "tarcza (-1 obrażeń lub zniszcz tarczę by zignorować atak)",
+      "tarcza (-1 obrażeń lub zniszcz tarczę by zignorować atak)",
       "łom (k4)",
       "smalec (działa jak 5 posiłków)",
       "namiot",
@@ -1576,7 +1577,15 @@ const MBCorpseLoot = function () {
       "plecak",
       "nożyczki",
       "sól",
-      "manierka"
+      "manierka",
+      "Mikstura: czerwona trucizna - wytrzymałość ST12 albo -k10 HP",
+      "Mikstura: opar Ezumiela - test ST14 - porażka to ostre halucynacje przez k4 godz.",
+      "Mikstura: południowy wywar z żaby - wymioty przez k4 godz.",
+      "Mikstura: eliksir vitalis - lecz k6 HP, powstrzymuje infekcję, uzależniający",
+      "Mikstura: zupa z pajęczej sowy - widzenie w ciemności i chodzenie po ścianach przez 30 minut",
+      "Mikstura Fernora - przezroczysty olej wkraplany do oka, leczy infekcję i daje +2 do rzutów na skupienie przez k4 godz.",
+      "Drażniąca tabaka Hyphosa - wpadasz w szał! Dwa ataki na rundę, ale obrona ma PT 14. Działa do końca starcia. Trzeba wciągać, wywołuje kichanie",
+      "Mikstura: czarna trucizna - wytrzymałość PT 14 albo -k6 HP i ślepota przez jedną godzinę"
     ],
   };
 };
