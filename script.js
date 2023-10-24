@@ -3221,46 +3221,120 @@ generateButton.addEventListener("click", () => {
 
 updateSecondarySelectStatus();
 
-// const currentEnemy = function () {
-//   return {
-//     type: "pickerRoller",
-//     list: [createCurrentEnemy()],
-//   };
-// };
+const MBFollower = function () {
+  return {
+    type: "pickerRoller",
+    list: [createMBFollower()],
+  };
+};
 
-// function createCurrentEnemy() {
-//   let weapons = [
-//     "kość udowa (k4)",
-//     "laska (k4)",
-//     "krótki miecz (k4)",
-//     "nóż (k4)",
-//     "siekiera (k4)",
-//     "sierp (k4)",
-//     "młot bojowy (k6)",
-//     "miecz (k6)",
-//     "topór (k6)",
-//     `łuk (k6, ${k(10)} strzał)`,
-//     "kiścień (k8)",
-//   ];
+function createMBFollower() {
+  let weapons = [
+    "kość udowa (k4)",
+    "laska (k4)",
+    "krótki miecz (k4)",
+    "nóż (k4)",
+    "siekiera (k4)",
+    "sierp (k4)",
+    "brudny miecz (k4+1)",
+  ];
 
-//   let armorTiers = [
-//     "",
-//     "skórzana zbroja, -k2 obrażeń",
-//     "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony",
-//   ];
+  let armorTiers = [
+    "futrzasta zbroja (-k2 obrażeń)",
+    "przeszywanica (-k2 obrażeń)",
+    "skórzana zbroja (-k2 obrażeń)"
+  ];
 
-//   let itemsRoll = k(3)
 
-//   let miscItems = ""
+  let traits = [
+    "Leń",
+    "Kłamca",
+    "Pyszałek",
+    "Zdrajca"
+  ]
 
-//   for (let i=0; i < itemsRoll; i++){
-//     miscItems +=`.\n ${pickFromList(MBCorpseLoot)}`
-//   }
+  let specialty = [
+    "rozbrajanie pułapek (trzeba je najpierw znaleźć)",
+    "kradzież pojedyńczych przedmiotów",
+    "samotna wspinaczka po niemożliwych szlakach",
+    "znajdowanie szlaków i zakątków pozwalających na ukrycie grupy"
+  ]
 
-//   const createdEnemy = `${pickFromList(MBNames)}, kundlak. HP: ${k(
-//     8
-//   )}. ${pickFromList(MBBrokenBodies)}.
-//   Ekwipunek: ${randomizeFromArray(weapons)}, ${randomizeFromArray(armorTiers)}, ${miscItems}`;
+  let values =[
+    "wypłatę w srebrze",
+    "jedzenie",
+    "plotki",
+    "alkohol",
+    "bezsensowną śmierć",
+    "uznanie za zasługi"
+  ]
 
-//   return createdEnemy;
-// }
+  let itemsRoll = k(2)
+
+  let miscItems = ""
+
+  for (let i=0; i < itemsRoll; i++){
+    miscItems +=`.\n ${pickFromList(MBCorpseLoot)}`
+  }
+
+  const createdFollower = `${pickFromList(MBNames)}, zbir. HP: ${k(
+    10
+  )}. Morale: 8. ${pickFromList(MBBrokenBodies)}. ${randomizeFromArray(traits)}.
+  
+  Specjalność (PT8): ${randomizeFromArray(specialty)}.
+
+  Ceni sobie: ${randomizeFromArray(values)}.
+
+  Ekwipunek: ${randomizeFromArray(weapons)}, ${randomizeFromArray(armorTiers)}, ${miscItems}`;
+
+  return createdFollower;
+}
+
+
+
+
+
+const currentEnemy = function () {
+  return {
+    type: "pickerRoller",
+    list: [createCurrentEnemy()],
+  };
+};
+
+function createCurrentEnemy() {
+  let weapons = [
+    "kość udowa (k4)",
+    "laska (k4)",
+    "krótki miecz (k4)",
+    "nóż (k4)",
+    "siekiera (k4)",
+    "sierp (k4)",
+    "młot bojowy (k6)",
+    "miecz (k6)",
+    "topór (k6)",
+    `łuk (k6, ${k(10)} strzał)`,
+    "kiścień (k8)",
+    "bomba (k10)"
+  ];
+
+  let armorTiers = [
+    "",
+    "skórzana zbroja, -k2 obrażeń",
+    "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony",
+  ];
+
+  let itemsRoll = k(3)
+
+  let miscItems = ""
+
+  for (let i=0; i < itemsRoll; i++){
+    miscItems +=`.\n ${pickFromList(MBCorpseLoot)}`
+  }
+
+  const createdEnemy = `${pickFromList(MBNames)}, kundlak. HP: ${k(
+    8
+  )}. ${pickFromList(MBBrokenBodies)}.
+  Ekwipunek: ${randomizeFromArray(weapons)}, ${randomizeFromArray(armorTiers)}, ${miscItems}`;
+
+  return createdEnemy;
+}
