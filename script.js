@@ -131,6 +131,8 @@ class Roll {
   }
 }
 
+
+
 let MBTownEncounters = {
   // town encounters losowe spotkania w mieście
   type: "picker",
@@ -221,8 +223,7 @@ const MBRandomEncounters = function () {
       "Pogorszenie pogody.",
       "Zmiana pogody.", // na??
       "Droga się rozwidla, znaki są nieczytelne (przerzut).",
-      "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
-      "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
+
       "Religijna procesja biczowników i pustelników (Zmierzają do NIEGO, ale zgubili drogę).",
       "Brudni rolnicy w drodze na targ.",
       "Po drugiej stronie drogi trwa walka pomiędzy bandą obdartych ze skóry kultystów a watahą kundlaków.",
@@ -234,9 +235,6 @@ const MBRandomEncounters = function () {
       `Grupa najemników i ich ${k(
         6
       )} strażników (wszyscy zainfekowani pasożytem mózgu).`,
-      `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(
-        8
-      )} zombie ukrywa się w krypcie.`,
       "Pochód pogrzebowy bezzębnych wieśniaków niosących bardzo wielką trumnę (olbrzym wewnątrz jest martwy, lecz śniący).",
       `Dwoje zwłok u boku drogi, w kieszeni jednego z nich znajduje się: ${pickFromList(
         MBCorpseLoot
@@ -279,7 +277,6 @@ const MBRandomEncounters = function () {
       "Waszą drogę przecina wir pyłowy, z jego wnętrza słychać odgłosy orkiestry dętej. Jeśli wrzucisz do środka trochę srebra, nie zbliży się do ciebie. Wrzuć więcej, a może przystanie na twoją prośbę.",
       "Na uboczu drogi siedzi stary mężczyzna ze złotym instrumentem strunowym. Obiecuje, że pozwoli wam przejść, jeśli pokonacie go w grze. A jeśli przegracie… ?",
       "Kobieta w bieli stoi przy drodze trzymając płaczące niemowlę, prosi rozpaczliwie by ktoś je potrzymał. Jeśli się zgodzisz, dziecko staje się cięższe z każdą sekundą. Test DR16 na siłę, porażka to upuszczenie dziecka, kobieta wysysa 1 omen, sukces - kobieta odbiera uspokojone dziecko i otrzymujesz 1 omen. Jeśli odmówią potrzymania, kobieta zmienia się w zjawę i atakuje.",
-      "Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.",
       'Małe dziecko podbiega do was i krzyczy "jesteście wybrańcami!".',
       "Dwoje zwłok leży w rowie. Drwal, zmiażdżony i z połamanymi kośćmi i kupiec z głęboką raną od siekiery z tyłu głowy. Obok nich leży (przeklęty) mieszek z k10*6 srebra. Po wzięciu srebra kupiec powstaje: HP 12, nieumarły (powstaje ponownie po k3 rundach), k10 obrażeń (miażdżąca kości siła).",
       'Ni stąd, ni zowąd pojawia się berserker. Nie atakuje jednak drużyny, chce im tylko opowiedzieć swoją hipotezę o Wymiarze Krwi jako części metafizycznego i dosłownego "ciała" obejmującego rzeczywistość. Pyta: Jaką część tego "ciała" zamieszkujecie?',
@@ -310,32 +307,45 @@ const MBRandomEncounters = function () {
       "Dręczy was rój nietoperzy. Zjadają one racje żywnościowe, żują wasze ubrania. Jeśli uda się zabić, któregoś z nich, zobaczycie, że całe są pokryte malutkimi marynarskimi tatuażami.",
       "Procesja obdartych ze skóry biczowników.",
       "Gubicie się, odnalezienie właściwej drogi zajmie wam cały dzień.",
-      `Wioska - opuszczona, można z niej wyszabrować ${k(
-        6
-      )} racji jedzenia i wody`,
-      "Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone",
-      "Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.",
-      "Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.",
-      "Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.",
-      "Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia",
-      "Skamieniały las.",
-      "Starożytne pole bitwy pełne na wpół zakopanych, zardzewiałych ostrzy i zjaw.",
-      "Dolina pełna kości wymarłych gatunków zwierząt.",
-      "Pokryta porostami świątynia przedludzkiego bóstwa.",
       "Wejście do głębszych podziemi.",
       "Wioska kanibali.",
       "Zamieszkałe przez gobliny wzgórza.",
       "Zrujnowane opactwo bronione przez garguolca. W krypcie ukryty jest losowy artefakt.",
-      "Grządka dyniowa. Chorobliwy lecz słodki zapach unosi się w powietrzu. Są silnie halucynogeniczne, w nocy zbierają je zaborczy farmerzy.",
       "Sylwetka wiwerny odznacza się na tle nieba.",
-      "Wieża zegarowa dzwoni. W jej cieniu heretyckie wiedźmy tworzą nieżyjące hybrydy trolli.",
-      "Ogromne bagno. Trudne do przebycia, rządzone przez spasłą, mackowatą istotę, która twierdzi, że należała niegdyś do rodziny królewskiej.",
-      'Zabity kurier noszący godło króla Fathmu IX z Wästlandu (złoty czworoskrzydły jastrząb na czarnym tle) leży w rowie, ma przy sobie list: "Na wschód od jeziora Onda, na Pełzającym Bagnie, znajduje się starożytny grobowiec Bagiennej Wiedźmy i ołtarz z martwych korzeni pokryty zapomnnianymi symbolami. Powiadają, że jeśli wypowie się nad nim pewne zakazane słowa, każde życzenie może zostać spełnione. Nawet odegnanie nadchodzącej zagłady leży w mocy ołtarza Bagiennej Wiedźmy.',
+      'Zabity kurier noszący godło króla Fathmu IX z Wästlandu (złoty czworoskrzydły jastrząb na czarnym tle) leży w rowie, ma przy sobie list: "Na wschód od jeziora Onda, na Pełzającym Bagnie, znajduje się starożytny grobowiec Bagiennej Wiedźmy i ołtarz z martwych korzeni pokryty zapomnianymi symbolami. Powiadają, że jeśli wypowie się nad nim pewne zakazane słowa, każde życzenie może zostać spełnione. Nawet odegnanie nadchodzącej zagłady leży w mocy ołtarza Bagiennej Wiedźmy.',
       "Łowca zwłok",
       `Zwłoki przy drodze, liczba - ${k(20)}`,
     ],
   };
 };
+
+// random discoveries odkrycia hexcrawl hex contents
+let MBRandomDiscoveries = {
+  type: "picker",
+  list:[
+    "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
+    "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
+    "Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.",
+    `Wioska - opuszczona, można z niej wyszabrować ${k(
+      6
+    )} racji jedzenia i wody`,
+    "Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone",
+    "Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.",
+    "Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.",
+    "Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.",
+    "Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia",
+    "Skamieniały las.",
+    "Starożytne pole bitwy pełne na wpół zakopanych, zardzewiałych ostrzy i zjaw.",
+    "Dolina pełna kości wymarłych gatunków zwierząt.",
+    "Pokryta porostami świątynia przedludzkiego bóstwa.",
+    "Grządka dyniowa. Chorobliwy lecz słodki zapach unosi się w powietrzu. Są silnie halucynogeniczne, w nocy zbierają je zaborczy farmerzy.",
+    "Wieża zegarowa dzwoni. W jej cieniu heretyckie wiedźmy tworzą nieżyjące hybrydy trolli.",
+    "Ogromne bagno. Trudne do przebycia, rządzone przez spasłą, mackowatą istotę, która twierdzi, że należała niegdyś do rodziny królewskiej.",
+    `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(
+      8
+    )} zombie ukrywa się w krypcie.`,
+  ]
+}
 
 // Other other
 
