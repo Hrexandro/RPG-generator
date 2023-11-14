@@ -213,7 +213,7 @@ let MBTownEncounters = {
 
 // random encounters losowe spotkania
 
-const MBRandomEncounters = function () {
+const MBRandomEncountersCivilized = function () {
   return {
     type: "pickerRoller",
     list: [
@@ -223,14 +223,116 @@ const MBRandomEncounters = function () {
       "Pogorszenie pogody.",
       "Zmiana pogody.", // na??
       "Droga się rozwidla, znaki są nieczytelne (przerzut).",
-
       "Religijna procesja biczowników i pustelników (Zmierzają do NIEGO, ale zgubili drogę).",
       "Brudni rolnicy w drodze na targ.",
       "Po drugiej stronie drogi trwa walka pomiędzy bandą obdartych ze skóry kultystów a watahą kundlaków.",
       "Troll Adnah atakuje z zaskoczenia.",
       `${k(6)} racji żywności/wody się psuje.`,
-      `${k(6) + 1} łowców niewolników prowadzi ${
-        k(11) + 1
+      `${k(6) + 1} łowców niewolników prowadzi ${k(11) + 1
+      } niewolników, połowa pobita niemal na śmierć, połowa świeżo złapanych.`,
+      `Grupa najemników i ich ${k(
+        6
+      )} strażników (wszyscy zainfekowani pasożytem mózgu).`,
+      "Pochód pogrzebowy bezzębnych wieśniaków niosących bardzo wielką trumnę (olbrzym wewnątrz jest martwy, lecz śniący).",
+      `Dwoje zwłok u boku drogi, w kieszeni jednego z nich znajduje się: ${pickFromList(
+        MBCorpseLoot
+      )}`,
+      // new
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
+      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+      "Zbliża się osiodłany koń bez jeźdźca. W torbach ma 4k10 racji zakonserwowanego ludzkiego mięsa. Jeśli drużyna zabierze mięso, koń opuści głowę i pogalopuje w dal.",
+      "Zbliża się stary mężczyzna pchający wózek, na którym znajduje się ogromna książka i pyta bohaterów o ich imiona. Jeśli mu je podadzą, zapisuje je w księdze. Zimny dreszcz przebiega po ich kręgosłupach.",
+      "Spotykacie dwójkę upiornych dzieci grających w kości doliny śmierci. Robią zakłady z omenów i chętnie zaproszą nowych graczy do rozgrywki.",
+      "Staje przed wami fraktalna forma Y'cthonlla, tego, który zamieszkuje Pomiędzy. Członkowie drużyny muszą przejść test DR16 na Prezencję, aby nie uciec z wrzaskiem od jego przeraźliwego widoku. Ci, którzy pozostali otrzymują mały mosiężny kluczyk.",
+      "Waszą drogę przecina wir pyłowy, z jego wnętrza słychać odgłosy orkiestry dętej. Jeśli wrzucisz do środka trochę srebra, nie zbliży się do ciebie. Wrzuć więcej, a może przystanie na twoją prośbę.",
+      "Na uboczu drogi siedzi stary mężczyzna ze złotym instrumentem strunowym. Obiecuje, że pozwoli wam przejść, jeśli pokonacie go w grze. A jeśli przegracie… ?",
+      "Kobieta w bieli stoi przy drodze trzymając płaczące niemowlę, prosi rozpaczliwie by ktoś je potrzymał. Jeśli się zgodzisz, dziecko staje się cięższe z każdą sekundą. Test DR16 na siłę, porażka to upuszczenie dziecka, kobieta wysysa 1 omen, sukces - kobieta odbiera uspokojone dziecko i otrzymujesz 1 omen. Jeśli odmówią potrzymania, kobieta zmienia się w zjawę i atakuje.",
+      'Małe dziecko podbiega do was i krzyczy "jesteście wybrańcami!".',
+      "Dwoje zwłok leży w rowie. Drwal, zmiażdżony i z połamanymi kośćmi i kupiec z głęboką raną od siekiery z tyłu głowy. Obok nich leży (przeklęty) mieszek z k10*6 srebra. Po wzięciu srebra kupiec powstaje: HP 12, nieumarły (powstaje ponownie po k3 rundach), k10 obrażeń (miażdżąca kości siła).",
+      'Ni stąd, ni zowąd pojawia się berserker. Nie atakuje jednak drużyny, chce im tylko opowiedzieć swoją hipotezę o Wymiarze Krwi jako części metafizycznego i dosłownego "ciała" obejmującego rzeczywistość. Pyta: Jaką część tego "ciała" zamieszkujecie?',
+      "W oddali tanecznymi ruchami porusza się latarnia. Nie widzicie żadnej postaci trzymającej latarnię. Zauważa was. O BOŻE LECI PROSTO NA WAS!!!",
+      'Mija was procesja zakapturzonych mnichów, którzy powtarzają w kółko "koniunkcja nadeszła koniunkcja nadeszła!". Czujesz drżenie podłoża w miarę zbliżania się do nich.',
+      "W środku nocy ogień w waszym ognisku ożywa. Domaga się więcej drewna.",
+      "Z nieba spada mężczyzna, rozpryskując krew na wszystkie strony. Ma przy sobie Zwój Lewitacji, który powoduje unoszenie się w powietrzu. Po k20 minutach unoszenia się, zaklęcie przestaje działać.",
+      "Napotykasz kryształowo czystą rzekę. Przyjrzyj się z bliska: twoje odbicie wygląda na zadowolone z tego, że cię widzi.",
+      `Spoglądasz w ciemność i czujesz się, jakbyś napotkał czyjś wzrok. Jesteś sparaliżowany. Nagle naciera na ciebie istota. Ma 4 metry wysokości i składa się z cienia. Jest wygłodniała. ${MBMonsters.list.find(
+        (monster) => {
+          return monster.slice(0, 13) === "Istota cienia";
+        }
+      )}`,
+      "Nagle czujesz bulgotanie w trzewiach i musisz natychmiast ściągnąć spodnie, bo inaczej w nie narobisz. Jeśli przyjrzysz się odchodom, zobaczysz malutkie różowe robaki, które z każdą chwilą rosną. Jeśli nie zdjąłeś spodni, śmierdzisz okropnie, a robaki wpełzają z powrotem do środka, wywołując kolejną defekację po 2k6 minutach.",
+      "k6 różowych ptaków zaczepia ciebie i twoich kompanów, krytykując wasze czułe punkty",
+      "Dwie gałęzie pękają jednocześnie, z obu stron zbliżają się identyczne jelenia albinosy, poruszające się jak lustrzane odbicia.",
+      "Hrangvold Posokowiec, wynajęty przez Zakon Roztopionego Sztyletu aby zabić członka drużyny, zbliża się do was i domaga się pojedynku. Nic nie wiecie o takim zakonie. Hrangvold chce pojedynkować się o świcie, albo o północy, w zależności od tego, co jest bliżej. Godzinę odczytuje z oczu kota, którego trzyma w płaszczu. HP: 9, Morale: 6, Bez zbroi, k6 (kot jako broń), cechy specjalne: wszystkie udane ataki liczą się jak krytyki, porażki jako krytyczne porażki. Kiedy Hrangvold zginie, jego kot będzie podążał za drużyną przez 2k6 dni, aż mu się znudzi. Ma talent do harmonicznego miauczenia.",
+      "Przebiega przed wami czarny kot.",
+      "Przebiega przed wami biały kot.",
+      "Kątem oka dostrzegasz drewnianą chatę. Przysiągłbyś, że jeszcze przed chwilą jej tam nie było. Z komina unosi się dym, nad ogniem piecze się apetycznie pachnąca zupa, ale czujesz, że coś jest nie tak.",
+      "Ucięta głowa spada z nieba, wrzeszcząc cały czas. 1/6, że powie coś przydatnego zanim się rozbryźnie.",
+      "Wydaje ci się, że słyszysz głos. Przy bliższej inspekcji zauważasz, że to stare drzewo mówi, bardzo powoli. Jeśli poświęcisz czas na rozmowę z nim, opowie dłuuuugą historię, trwającą k6 dni. Na oniec historii, drzewo spełni jedno życzenie, drzewo spełnia dokładnie to co powiesz, ale interpretuje słowa w najgorszy możliwy sposób.",
+      "32 nieumarłych stoi na polu rozgrywając wielką partię szachów przeciwko sobie.",
+      'Ptak próbuje nieść ropuchę, która jest zbyt wielka dla jego dzioba. Ropucha krzyczy: "Ratujcie mnie! Jestem księciem! Nagrodzę was!" Nagrodą ropuchy jest ukryta kupka much.',
+      "Zauważacie trolla tak masywnego, że zajmuje się polowaniem na inne trolle i masywne bestie. Nawet was nie zauważa, dziękować Bazyliszkom. Troll ma 1550 HP.",
+      "Napotykasz kamień, na którym jest rozciągnięta wytatuowana twarz. Jeśli zdejmiesz twarz z kamienia i naciągniesz ją na swoją, otrzymujesz losowy przeklęty zwój tak długo, jak masz ją na sobie. Zwój jest przerzucany co zmrok. Rzuty na reakcję w czasie noszenia go mają -4 do wyniku.",
+      "Kupiec z odwrotnymi rękami oferuje wam martwą kurę, wyskubaną i w perfekcyjnym stanie, za zaledwie 5 srebra. Jak tylko kupiec się oddali, bezgłowa kura ożywa i zaczyna niszczyć wasze zapasy.",
+      "Dręczy was rój nietoperzy. Zjadają one racje żywnościowe, żują wasze ubrania. Jeśli uda się zabić, któregoś z nich, zobaczycie, że całe są pokryte malutkimi marynarskimi tatuażami.",
+      "Procesja obdartych ze skóry biczowników.",
+      "Gubicie się, odnalezienie właściwej drogi zajmie wam cały dzień.",
+      "Wejście do głębszych podziemi.",
+      "Wioska kanibali.",
+      "Zamieszkałe przez gobliny wzgórza.",
+      "Zrujnowane opactwo bronione przez garguolca. W krypcie ukryty jest losowy artefakt.",
+      "Sylwetka wiwerny odznacza się na tle nieba.",
+      'Zabity kurier noszący godło króla Fathmu IX z Wästlandu (złoty czworoskrzydły jastrząb na czarnym tle) leży w rowie, ma przy sobie list: "Na wschód od jeziora Onda, na Pełzającym Bagnie, znajduje się starożytny grobowiec Bagiennej Wiedźmy i ołtarz z martwych korzeni pokryty zapomnianymi symbolami. Powiadają, że jeśli wypowie się nad nim pewne zakazane słowa, każde życzenie może zostać spełnione. Nawet odegnanie nadchodzącej zagłady leży w mocy ołtarza Bagiennej Wiedźmy.',
+      "Łowca zwłok",
+      `Zwłoki przy drodze, liczba - ${k(20)}`,
+    ],
+  };
+};
+
+const MBRandomEncountersWilderness = function () {
+  return {
+    type: "pickerRoller",
+    list: [
+      // Overland Travel
+      "Nie dzieje się nic konkretnego, świat jest szary.",
+      "Wicher Czarnej Soli (okładka Feretory)",
+      "Pogorszenie pogody.",
+      "Zmiana pogody.", // na??
+      "Droga się rozwidla, znaki są nieczytelne (przerzut).",
+      "Religijna procesja biczowników i pustelników (Zmierzają do NIEGO, ale zgubili drogę).",
+      "Brudni rolnicy w drodze na targ.",
+      "Po drugiej stronie drogi trwa walka pomiędzy bandą obdartych ze skóry kultystów a watahą kundlaków.",
+      "Troll Adnah atakuje z zaskoczenia.",
+      `${k(6)} racji żywności/wody się psuje.`,
+      `${k(6) + 1} łowców niewolników prowadzi ${k(11) + 1
       } niewolników, połowa pobita niemal na śmierć, połowa świeżo złapanych.`,
       `Grupa najemników i ich ${k(
         6
@@ -320,9 +422,36 @@ const MBRandomEncounters = function () {
 };
 
 // random discoveries odkrycia hexcrawl hex contents
-let MBRandomDiscoveries = {
+let MBRandomDiscoveriesCivilized = {
   type: "picker",
-  list:[
+  list: [
+    "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
+    "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
+    "Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.",
+    `Wioska - opuszczona, można z niej wyszabrować ${k(
+      6
+    )} racji jedzenia i wody`,
+    "Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone",
+    "Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.",
+    "Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.",
+    "Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.",
+    "Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia",
+    "Skamieniały las.",
+    "Starożytne pole bitwy pełne na wpół zakopanych, zardzewiałych ostrzy i zjaw.",
+    "Dolina pełna kości wymarłych gatunków zwierząt.",
+    "Pokryta porostami świątynia przedludzkiego bóstwa.",
+    "Grządka dyniowa. Chorobliwy lecz słodki zapach unosi się w powietrzu. Są silnie halucynogeniczne, w nocy zbierają je zaborczy farmerzy.",
+    "Wieża zegarowa dzwoni. W jej cieniu heretyckie wiedźmy tworzą nieżyjące hybrydy trolli.",
+    "Ogromne bagno. Trudne do przebycia, rządzone przez spasłą, mackowatą istotę, która twierdzi, że należała niegdyś do rodziny królewskiej.",
+    `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(
+      8
+    )} zombie ukrywa się w krypcie.`,
+  ]
+}
+
+let MBRandomDiscoveriesWilderness = {
+  type: "picker",
+  list: [
     "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
     "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
     "Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.",
@@ -1181,8 +1310,7 @@ const MBCorpseLoot = function () {
       "Papier dłużny, lokalny potentat jest winny posiadaczowi znaczną sumę pieniędzy",
       '"Woda życia", leczy k8, test twardości DR10 albo ślepniesz. Wysoce alkoholowa.',
       "Maska pośmiertna jednego z BG",
-      `Z tym coś było ewidentnie nie tak. Ręce ma pokryte czymś ciepławym, brązowym i mocno kwasowym. ${
-        k(2) + 1
+      `Z tym coś było ewidentnie nie tak. Ręce ma pokryte czymś ciepławym, brązowym i mocno kwasowym. ${k(2) + 1
       } obrażeń i okropnie śmierdzisz przez ${k(4)} dni.`,
       "Czarny sztylet z Kergüs, 2k4 obrażeń",
       "Podpisana buteleczka z trucizną, test DR12 na twardość, albo losowy atrybut spada o k4",
@@ -1193,8 +1321,7 @@ const MBCorpseLoot = function () {
       "Puchar z czaszki jakiegoś nieszczęśnika",
       "Wisiorek z ususzonej krowiej głowy wiszącej do góry nogami na rzemyku",
       "Zestaw kart tarota, dwóch brakuje",
-      `Woreczek z bladozielonymi ziołami (herbata, daje sen bez marzeń, ale redukuje prezencję o 1 następnego dnia ${
-        k(6) + k(6)
+      `Woreczek z bladozielonymi ziołami (herbata, daje sen bez marzeń, ale redukuje prezencję o 1 następnego dnia ${k(6) + k(6)
       } porcji)`,
       "Żelazna obroża",
       "Zakorkowana flaszka z bardzo silnym alkoholem",
@@ -1657,8 +1784,7 @@ const MBArcaneCatastrophes = function () {
       "Rzucający traci jeden poziom pod względem zdolności magicznych",
       "Od tej chwili za każdym razem, kiedy rzucający rzuci zaklęcie, z jego odbytu wypływają rzadkie fekalia",
       "Z dłoni rzucającego wyrastają 30cm rogi, działające jak sztylety",
-      `Następny cios w walce, który otrzyma rzucający, zada ${
-        k(100) + k(100)
+      `Następny cios w walce, który otrzyma rzucający, zada ${k(100) + k(100)
       } punktów obrażeń`,
       "Ciało rzucającego wydziela oślepiający blask za każdym razem, kiedy jakiś wróg ma zaatakować z zaskoczenia",
       "Rzucający i cel zamieniają się bronią",
@@ -1701,8 +1827,7 @@ const MBArcaneCatastrophes = function () {
       `Znikasz na ${k(
         6
       )} godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd.`,
-      `Znikasz na ${
-        k(6) + k(6) + k(6)
+      `Znikasz na ${k(6) + k(6) + k(6)
       } godz. przenosząc się do dziwnego świata oślepiajacych świateł i geometrycznych kształtów. Dokonujesz dziwnych czynów, pod blaskiem tysiąca gorejących gwiazd. Wracasz z 1 HP.`,
       "Znikasz na zawsze.",
       "Znika cały twój ekwipunek, łącznie z odzieżą.",
@@ -1748,15 +1873,27 @@ function createAndAddMonster({
     morale,
     pancerz,
     broń,
-    specjalneCechy
+    specjalneCechy,
   );
   MBMonsters = {
     ...MBMonsters,
     ...{ [keyName]: newMonster },
   };
+  let description = `${nazwa} - HP: ${HP}, Morale: ${morale}, pancerz: ${pancerz}, ${broń} ${specjalneCechy}`
   MBMonsters.list.push(
-    `${nazwa} - HP: ${HP}, Morale: ${morale}, pancerz: ${pancerz}, ${broń} ${specjalneCechy}`
+    description
   );
+  newMonster.description = description
+  newMonster.keyName = keyName
+  MBMonsterObjects.list.push(
+    newMonster
+  );
+
+}
+
+let MBMonsterObjects = {
+  type: "picker",
+  list: []
 }
 
 createAndAddMonster({
@@ -2971,8 +3108,7 @@ function createCharacter() {
     "pasek magnezji",
     "przeklęty zwój",
     "ostra igła",
-    `skrzynka z lekami - użycia: ${
-      parseInt(PRE) + 4
+    `skrzynka z lekami - użycia: ${parseInt(PRE) + 4
     } (powstrzymuje krwawienie/infekcję i leczy k6 HP)`,
     "metalowy pilnik i wytrychy",
     "pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)",
@@ -2985,11 +3121,9 @@ function createCharacter() {
   const d12EquipmentTwo = [
     `eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję),`,
     "święty zwój",
-    `mały ale wredny pies (${
-      k(6) + 2
+    `mały ale wredny pies (${k(6) + 2
     } HP, ugryzienie k4, posłuszny tylko tobie)`,
-    `małpy (${k(4)}), które ignorują cię, ale też kochają, (${
-      k(4) + 2
+    `małpy (${k(4)}), które ignorują cię, ale też kochają, (${k(4) + 2
     } HP, cios/ugryzienie k4)`,
     "wykwintny perfum wart 25s",
     "skrzynka z narzędziami: 10 gwoździ, cęgi, młotek, mała piła i wiertło",
@@ -3120,40 +3254,31 @@ function createCharacter() {
   }
 
   const createdCharacter =
-    `${
-      characterClass.characterClassName === "Bladawiec"
-        ? pickFromList(MBPaleOneNames)
-        : pickFromList(MBNames)
-    }. ${
-      characterClass.characterClassName
-        ? `${characterClass.characterClassName}.`
-        : ""
+    `${characterClass.characterClassName === "Bladawiec"
+      ? pickFromList(MBPaleOneNames)
+      : pickFromList(MBNames)
+    }. ${characterClass.characterClassName
+      ? `${characterClass.characterClassName}.`
+      : ""
     } HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
-    ${
-      characterClass.description
-        ? `${characterClass.description}. ${
-            characterClass.originLabel
-          }${randomizeFromArray(characterClass.origin)}\n`
-        : ""
-    }${
-      characterClass.secondaryOriginLabel
-        ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(
-            characterClass.secondaryOrigin
-          )}.\n`
-        : ""
+    ${characterClass.description
+      ? `${characterClass.description}. ${characterClass.originLabel
+      }${randomizeFromArray(characterClass.origin)}\n`
+      : ""
+    }${characterClass.secondaryOriginLabel
+      ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(
+        characterClass.secondaryOrigin
+      )}.\n`
+      : ""
     }\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
       MBBrokenBodies
     )}. ${pickFromList(MBBadHabits)}.
-    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${
-      characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
-    }${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ""}${
-      rolledAbilities ? `\n ${rolledAbilities}. \n` : ""
+    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
+    }${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ""}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ""
     }
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, ` +
-    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""} ${
-      d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""
-    }${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${
-      additionalStartingScroll ? `${additionalStartingScroll}. ` : ""
+    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""
+    }${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ""
     }${silver} szt. srebra.`;
 
   return createdCharacter;
@@ -3270,7 +3395,7 @@ function createMBFollower() {
     "znajdowanie szlaków i zakątków pozwalających na ukrycie grupy"
   ]
 
-  let values =[
+  let values = [
     "wypłatę w srebrze",
     "jedzenie",
     "plotki",
@@ -3283,8 +3408,8 @@ function createMBFollower() {
 
   let miscItems = ""
 
-  for (let i=0; i < itemsRoll; i++){
-    miscItems +=`.\n ${pickFromList(MBCorpseLoot)}`
+  for (let i = 0; i < itemsRoll; i++) {
+    miscItems += `.\n ${pickFromList(MBCorpseLoot)}`
   }
 
   const createdFollower = `${pickFromList(MBNames)}, zbir. HP: ${k(
@@ -3337,8 +3462,8 @@ function createCurrentEnemy() {
 
   let miscItems = ""
 
-  for (let i=0; i < itemsRoll; i++){
-    miscItems +=`.\n ${pickFromList(MBCorpseLoot)}`
+  for (let i = 0; i < itemsRoll; i++) {
+    miscItems += `.\n ${pickFromList(MBCorpseLoot)}`
   }
 
   const createdEnemy = `${pickFromList(MBNames)}, kundlak. HP: ${k(
@@ -3348,3 +3473,13 @@ function createCurrentEnemy() {
 
   return createdEnemy;
 }
+
+// console.log(MBMonsters.list.find(e=>e.))
+console.log(MBMonsterObjects.list.find(
+  (monster) => {
+    return monster.keyName === "goblin";
+  }))
+
+console.log(MBMonsterObjects)
+//next thing to do: adjust wilderness and civilized encounters and discoveries
+//see VORPAL
