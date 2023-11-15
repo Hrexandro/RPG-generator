@@ -268,6 +268,52 @@ const MBRandomEncountersCivilized = function () {
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "underpaidTiredGuard";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "innocentBystander";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mongrel";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "scum";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserk";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "undeadDoll";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "grotesque";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "grotesque";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wickheadKnifeWielder";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: ${k(3)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "earthbound";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wildWickhead";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "paleOne";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "underpaidTiredGuard";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "innocentBystander";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mongrel";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "scum";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserk";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "undeadDoll";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "grotesque";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "grotesque";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wickheadKnifeWielder";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: ${k(3)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "earthbound";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wildWickhead";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "paleOne";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6)}`,
       "Zbliża się osiodłany koń bez jeźdźca. W torbach ma 4k10 racji zakonserwowanego ludzkiego mięsa. Jeśli drużyna zabierze mięso, koń opuści głowę i pogalopuje w dal.",
       "Zbliża się stary mężczyzna pchający wózek, na którym znajduje się ogromna książka i pyta bohaterów o ich imiona. Jeśli mu je podadzą, zapisuje je w księdze. Zimny dreszcz przebiega po ich kręgosłupach.",
       "Spotykacie dwójkę upiornych dzieci grających w kości doliny śmierci. Robią zakłady z omenów i chętnie zaproszą nowych graczy do rozgrywki.",
@@ -3478,8 +3524,13 @@ function createCurrentEnemy() {
 console.log(MBMonsterObjects.list.find(
   (monster) => {
     return monster.keyName === "goblin";
-  }))
+  }).description)
 
 console.log(MBMonsterObjects)
 //next thing to do: adjust wilderness and civilized encounters and discoveries
 //see VORPAL
+
+
+// MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description
+
+console.log(`Przeciwnicy! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`)
