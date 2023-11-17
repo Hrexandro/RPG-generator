@@ -218,6 +218,10 @@ const MBRandomEncountersCivilized = function () {
     type: "pickerRoller",
     list: [
       // Overland Travel
+      `${createCharacter("Losowa klasa")}`,
+      `${createCharacter("Losowa klasa")}`,
+      `${createCharacter("Losowa klasa")}`,
+      `${createCharacter("Losowa klasa")}`,
       "Nie dzieje się nic konkretnego, świat jest szary.",
       "Wicher Czarnej Soli (okładka Feretory)",
       "Pogorszenie pogody.",
@@ -243,28 +247,18 @@ const MBRandomEncountersCivilized = function () {
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
-      `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
@@ -275,10 +269,14 @@ const MBRandomEncountersCivilized = function () {
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mongrel";}).description} - liczba: ${k(20, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
-      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
+      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description} - liczba: ${k(4, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "scum";}).description} - liczba: ${k(4, true)}`,
-      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserk";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(4, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(10, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "undeadDoll";}).description} - liczba: ${k(10, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "grotesque";}).description} - liczba: 1`,
@@ -298,10 +296,41 @@ const MBRandomEncountersCivilized = function () {
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mongrel";}).description} - liczba: ${k(20, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
-      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
+      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description} - liczba: ${k(4, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "scum";}).description} - liczba: ${k(4, true)}`,
-      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserk";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "undeadDoll";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "grotesque";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "grotesque";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wickheadKnifeWielder";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: ${k(3)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "earthbound";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wildWickhead";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "paleOne";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "underpaidTiredGuard";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "innocentBystander";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mongrel";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "scum";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(4, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(10, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "undeadDoll";}).description} - liczba: ${k(10, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "grotesque";}).description} - liczba: 1`,
@@ -352,7 +381,7 @@ const MBRandomEncountersCivilized = function () {
       "Procesja obdartych ze skóry biczowników.",
       "Gubicie się, odnalezienie właściwej drogi zajmie wam cały dzień.",
       "Wejście do głębszych podziemi.",
-      "Wioska kanibali.",
+      `${pickFromList(MBTowns)} - Wioska kanibali.`,
       "Zamieszkałe przez gobliny wzgórza.",
       "Zrujnowane opactwo bronione przez garguolca. W krypcie ukryty jest losowy artefakt.",
       "Sylwetka wiwerny odznacza się na tle nieba.",
@@ -368,6 +397,7 @@ const MBRandomEncountersWilderness = function () {
     type: "pickerRoller",
     list: [
       // Overland Travel
+      `${createCharacter("Losowa klasa")}`,
       "Nie dzieje się nic konkretnego, świat jest szary.",
       "Wicher Czarnej Soli (okładka Feretory)",
       "Pogorszenie pogody.",
@@ -418,15 +448,106 @@ const MBRandomEncountersWilderness = function () {
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(8)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(6)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(4)}`,
+
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "innocentBystander";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mongrel";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "scum";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wickheadKnifeWielder";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: ${k(3)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "earthbound";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wildWickhead";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "paleOne";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "innocentBystander";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mongrel";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "scum";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wickheadKnifeWielder";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: ${k(3)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "earthbound";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wildWickhead";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "paleOne";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "innocentBystander";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "kobolth";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mongrel";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "mutatedTombRobber";}).description} - liczba: ${k(4, true)}`,
+      `Banda! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, 
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)},
+      
+      ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "scum";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(10, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wickheadKnifeWielder";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wyvern";}).description} - liczba: ${k(3)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "earthbound";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wildWickhead";}).description} - liczba: ${k(4)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "paleOne";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "duskGnoum";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "duskGnoum";}).description} - liczba: ${k(6)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "weakMindlessUndead";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "weakMindlessUndead";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "weakMindlessUndead";}).description} - liczba: ${k(20, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "nestingDeath";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "nestingDeath";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "nestingDeath";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "fleshEatingMonster";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "fleshEatingMonster";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "fleshEatingMonster";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "clawsEyesSpideryLegs";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "clawsEyesSpideryLegs";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "clawsEyesSpideryLegs";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "antiArcaneLichQueen";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "daemon";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "shadowCreature";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "shadowCreature";}).description} - liczba: ${k(3)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "shadowCreature";}).description} - liczba: ${k(3, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wraith";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wraith";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "wraith";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "bloodDrenchedSkeleton";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "bloodDrenchedSkeleton";}).description} - liczba: ${k(2, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "bloodDrenchedSkeleton";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "undeadNecromancer";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "troll";}).description} - liczba: 1`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(4, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(8, true)}`,
+      `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(20, true)}`,
       "Zbliża się osiodłany koń bez jeźdźca. W torbach ma 4k10 racji zakonserwowanego ludzkiego mięsa. Jeśli drużyna zabierze mięso, koń opuści głowę i pogalopuje w dal.",
-      "Zbliża się stary mężczyzna pchający wózek, na którym znajduje się ogromna książka i pyta bohaterów o ich imiona. Jeśli mu je podadzą, zapisuje je w księdze. Zimny dreszcz przebiega po ich kręgosłupach.",
-      "Spotykacie dwójkę upiornych dzieci grających w kości doliny śmierci. Robią zakłady z omenów i chętnie zaproszą nowych graczy do rozgrywki.",
-      "Staje przed wami fraktalna forma Y'cthonlla, tego, który zamieszkuje Pomiędzy. Członkowie drużyny muszą przejść test DR16 na Prezencję, aby nie uciec z wrzaskiem od jego przeraźliwego widoku. Ci, którzy pozostali otrzymują mały mosiężny kluczyk.",
-      "Waszą drogę przecina wir pyłowy, z jego wnętrza słychać odgłosy orkiestry dętej. Jeśli wrzucisz do środka trochę srebra, nie zbliży się do ciebie. Wrzuć więcej, a może przystanie na twoją prośbę.",
-      "Na uboczu drogi siedzi stary mężczyzna ze złotym instrumentem strunowym. Obiecuje, że pozwoli wam przejść, jeśli pokonacie go w grze. A jeśli przegracie… ?",
       "Kobieta w bieli stoi przy drodze trzymając płaczące niemowlę, prosi rozpaczliwie by ktoś je potrzymał. Jeśli się zgodzisz, dziecko staje się cięższe z każdą sekundą. Test DR16 na siłę, porażka to upuszczenie dziecka, kobieta wysysa 1 omen, sukces - kobieta odbiera uspokojone dziecko i otrzymujesz 1 omen. Jeśli odmówią potrzymania, kobieta zmienia się w zjawę i atakuje.",
       'Małe dziecko podbiega do was i krzyczy "jesteście wybrańcami!".',
-      "Dwoje zwłok leży w rowie. Drwal, zmiażdżony i z połamanymi kośćmi i kupiec z głęboką raną od siekiery z tyłu głowy. Obok nich leży (przeklęty) mieszek z k10*6 srebra. Po wzięciu srebra kupiec powstaje: HP 12, nieumarły (powstaje ponownie po k3 rundach), k10 obrażeń (miażdżąca kości siła).",
+      `Dwoje zwłok leży w rowie. Drwal, zmiażdżony i z połamanymi kośćmi i kupiec z głęboką raną od siekiery z tyłu głowy. Obok nich leży (przeklęty) mieszek z ${k(10)*6} srebra. Po wzięciu srebra kupiec powstaje: HP 12, nieumarły (powstaje ponownie po k3 rundach), k10 obrażeń (miażdżąca kości siła).`,
       'Ni stąd, ni zowąd pojawia się berserker. Nie atakuje jednak drużyny, chce im tylko opowiedzieć swoją hipotezę o Wymiarze Krwi jako części metafizycznego i dosłownego "ciała" obejmującego rzeczywistość. Pyta: Jaką część tego "ciała" zamieszkujecie?',
       "W oddali tanecznymi ruchami porusza się latarnia. Nie widzicie żadnej postaci trzymającej latarnię. Zauważa was. O BOŻE LECI PROSTO NA WAS!!!",
       'Mija was procesja zakapturzonych mnichów, którzy powtarzają w kółko "koniunkcja nadeszła koniunkcja nadeszła!". Czujesz drżenie podłoża w miarę zbliżania się do nich.',
@@ -444,9 +565,8 @@ const MBRandomEncountersWilderness = function () {
       "Hrangvold Posokowiec, wynajęty przez Zakon Roztopionego Sztyletu aby zabić członka drużyny, zbliża się do was i domaga się pojedynku. Nic nie wiecie o takim zakonie. Hrangvold chce pojedynkować się o świcie, albo o północy, w zależności od tego, co jest bliżej. Godzinę odczytuje z oczu kota, którego trzyma w płaszczu. HP: 9, Morale: 6, Bez zbroi, k6 (kot jako broń), cechy specjalne: wszystkie udane ataki liczą się jak krytyki, porażki jako krytyczne porażki. Kiedy Hrangvold zginie, jego kot będzie podążał za drużyną przez 2k6 dni, aż mu się znudzi. Ma talent do harmonicznego miauczenia.",
       "Przebiega przed wami czarny kot.",
       "Przebiega przed wami biały kot.",
-      "Kątem oka dostrzegasz drewnianą chatę. Przysiągłbyś, że jeszcze przed chwilą jej tam nie było. Z komina unosi się dym, nad ogniem piecze się apetycznie pachnąca zupa, ale czujesz, że coś jest nie tak.",
       "Ucięta głowa spada z nieba, wrzeszcząc cały czas. 1/6, że powie coś przydatnego zanim się rozbryźnie.",
-      "Wydaje ci się, że słyszysz głos. Przy bliższej inspekcji zauważasz, że to stare drzewo mówi, bardzo powoli. Jeśli poświęcisz czas na rozmowę z nim, opowie dłuuuugą historię, trwającą k6 dni. Na oniec historii, drzewo spełni jedno życzenie, drzewo spełnia dokładnie to co powiesz, ale interpretuje słowa w najgorszy możliwy sposób.",
+      "Wydaje ci się, że słyszysz głos. Przy bliższej inspekcji zauważasz, że to stare drzewo mówi, bardzo powoli. Jeśli poświęcisz czas na rozmowę z nim, opowie dłuuuugą historię, trwającą k6 dni. Na koniec historii, drzewo spełni jedno życzenie, drzewo spełnia dokładnie to co powiesz, ale interpretuje słowa w najgorszy możliwy sposób.",
       "32 nieumarłych stoi na polu rozgrywając wielką partię szachów przeciwko sobie.",
       'Ptak próbuje nieść ropuchę, która jest zbyt wielka dla jego dzioba. Ropucha krzyczy: "Ratujcie mnie! Jestem księciem! Nagrodzę was!" Nagrodą ropuchy jest ukryta kupka much.',
       "Zauważacie trolla tak masywnego, że zajmuje się polowaniem na inne trolle i masywne bestie. Nawet was nie zauważa, dziękować Bazyliszkom. Troll ma 1550 HP.",
@@ -455,10 +575,6 @@ const MBRandomEncountersWilderness = function () {
       "Dręczy was rój nietoperzy. Zjadają one racje żywnościowe, żują wasze ubrania. Jeśli uda się zabić, któregoś z nich, zobaczycie, że całe są pokryte malutkimi marynarskimi tatuażami.",
       "Procesja obdartych ze skóry biczowników.",
       "Gubicie się, odnalezienie właściwej drogi zajmie wam cały dzień.",
-      "Wejście do głębszych podziemi.",
-      "Wioska kanibali.",
-      "Zamieszkałe przez gobliny wzgórza.",
-      "Zrujnowane opactwo bronione przez garguolca. W krypcie ukryty jest losowy artefakt.",
       "Sylwetka wiwerny odznacza się na tle nieba.",
       'Zabity kurier noszący godło króla Fathmu IX z Wästlandu (złoty czworoskrzydły jastrząb na czarnym tle) leży w rowie, ma przy sobie list: "Na wschód od jeziora Onda, na Pełzającym Bagnie, znajduje się starożytny grobowiec Bagiennej Wiedźmy i ołtarz z martwych korzeni pokryty zapomnianymi symbolami. Powiadają, że jeśli wypowie się nad nim pewne zakazane słowa, każde życzenie może zostać spełnione. Nawet odegnanie nadchodzącej zagłady leży w mocy ołtarza Bagiennej Wiedźmy.',
       "Łowca zwłok",
@@ -472,26 +588,19 @@ let MBRandomDiscoveriesCivilized = {
   type: "picker",
   list: [
     "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
-    "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
-    "Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.",
     `Wioska - opuszczona, można z niej wyszabrować ${k(
       6
     )} racji jedzenia i wody`,
-    "Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone",
-    "Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.",
-    "Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.",
-    "Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.",
-    "Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia",
-    "Skamieniały las.",
-    "Starożytne pole bitwy pełne na wpół zakopanych, zardzewiałych ostrzy i zjaw.",
-    "Dolina pełna kości wymarłych gatunków zwierząt.",
-    "Pokryta porostami świątynia przedludzkiego bóstwa.",
+    `${pickFromList(MBTowns)} - Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone`,
+    `${pickFromList(MBTowns)} - Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.`,
+    `${pickFromList(MBTowns)} - Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.`,
+    `${pickFromList(MBTowns)} - Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.`,
+    `${pickFromList(MBTowns)} - Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia`,
     "Grządka dyniowa. Chorobliwy lecz słodki zapach unosi się w powietrzu. Są silnie halucynogeniczne, w nocy zbierają je zaborczy farmerzy.",
-    "Wieża zegarowa dzwoni. W jej cieniu heretyckie wiedźmy tworzą nieżyjące hybrydy trolli.",
-    "Ogromne bagno. Trudne do przebycia, rządzone przez spasłą, mackowatą istotę, która twierdzi, że należała niegdyś do rodziny królewskiej.",
     `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(
       8
     )} zombie ukrywa się w krypcie.`,
+    "Zrujnowane opactwo bronione przez gargulca. W krypcie ukryty jest losowy artefakt.",
   ]
 }
 
@@ -504,12 +613,13 @@ let MBRandomDiscoveriesWilderness = {
     `Wioska - opuszczona, można z niej wyszabrować ${k(
       6
     )} racji jedzenia i wody`,
-    "Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone",
-    "Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.",
-    "Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.",
-    "Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.",
-    "Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia",
+    `${pickFromList(MBTowns)} - Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone`,
+    `${pickFromList(MBTowns)} - Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.`,
+    `${pickFromList(MBTowns)} - Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.`,
+    `${pickFromList(MBTowns)} - Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.`,
+    `${pickFromList(MBTowns)} - Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia`,
     "Skamieniały las.",
+    "Kątem oka dostrzegasz drewnianą chatę. Przysiągłbyś, że jeszcze przed chwilą jej tam nie było. Z komina unosi się dym, nad ogniem piecze się apetycznie pachnąca zupa, ale czujesz, że coś jest nie tak.",
     "Starożytne pole bitwy pełne na wpół zakopanych, zardzewiałych ostrzy i zjaw.",
     "Dolina pełna kości wymarłych gatunków zwierząt.",
     "Pokryta porostami świątynia przedludzkiego bóstwa.",
@@ -519,6 +629,10 @@ let MBRandomDiscoveriesWilderness = {
     `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(
       8
     )} zombie ukrywa się w krypcie.`,
+    "Zrujnowane opactwo bronione przez gargulca. W krypcie ukryty jest losowy artefakt.",
+    "Zamieszkałe przez gobliny wzgórza.",
+    "Wejście do głębszych podziemi.",
+    `${pickFromList(MBTowns)} - Wioska kanibali.`,
   ]
 }
 
@@ -3059,9 +3173,9 @@ const MBCharacter = function () {
   };
 };
 
-function createCharacter() {
-  let characterClass = pickedClass ? pickedClass : classLessCharacter;
-  if (pickedClass === "Losowa klasa") {
+function createCharacter(chosenCharacterClass) {
+  let characterClass = chosenCharacterClass ? chosenCharacterClass: classLessCharacter;
+  if (chosenCharacterClass === "Losowa klasa") {
     characterClass = pickFromList(MBClasses);
   }
   function generateAbility(modifier) {
@@ -3301,8 +3415,8 @@ function createCharacter() {
 
   const createdCharacter =
     `${characterClass.characterClassName === "Bladawiec"
-      ? pickFromList(MBPaleOneNames)
-      : pickFromList(MBNames)
+      ? pickFromList(MBPaleOneNames) :
+      (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNames) + " " + pickFromList(MBTowns)) : pickFromList(MBNames) )
     }. ${characterClass.characterClassName
       ? `${characterClass.characterClassName}.`
       : ""
@@ -3530,7 +3644,7 @@ console.log(MBMonsterObjects)
 //next thing to do: adjust wilderness and civilized encounters and discoveries
 //see VORPAL
 
-
+console.log(pickFromList(MBTowns))
 // MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description
 
-console.log(`Przeciwnicy! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "corruptedWarlord";}).description}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "berserker";}).description} - liczba: ${k(2, true)}, ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "prowler";}).description} - liczba: ${k(6, true)}`)
+
