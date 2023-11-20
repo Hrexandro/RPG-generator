@@ -247,21 +247,6 @@ const MBRandomEncountersCivilized = function () {
       "Wicher Czarnej Soli (okładka Feretory)",
       "Pogorszenie pogody.",
       "Zmiana pogody.", // na??
-      "Droga się rozwidla, znaki są nieczytelne (przerzut).",
-      "Religijna procesja biczowników i pustelników (Zmierzają do NIEGO, ale zgubili drogę).",
-      "Brudni rolnicy w drodze na targ.",
-      "Po drugiej stronie drogi trwa walka pomiędzy bandą obdartych ze skóry kultystów a watahą kundlaków.",
-      "Troll Adnah atakuje z zaskoczenia.",
-      `${k(6)} racji żywności/wody się psuje.`,
-      `${k(6) + 1} łowców niewolników prowadzi ${k(11) + 1
-      } niewolników, połowa pobita niemal na śmierć, połowa świeżo złapanych.`,
-      `Grupa najemników i ich ${k(
-        6
-      )} strażników (wszyscy zainfekowani pasożytem mózgu).`,
-      "Pochód pogrzebowy bezzębnych wieśniaków niosących bardzo wielką trumnę (olbrzym wewnątrz jest martwy, lecz śniący).",
-      `Dwoje zwłok u boku drogi, w kieszeni jednego z nich znajduje się: ${pickFromList(
-        MBCorpseLoot
-      )}`,
       // new
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
@@ -420,24 +405,6 @@ const MBRandomEncountersCivilized = function () {
       "Ogryzione kości wielkiego potwora",
       "Kilka świeżych, płytkich grobów",
       "Kilku martwych maruderów",
-    ],
-  };
-};
-
-const MBRandomEncountersWilderness = function () {
-  return {
-    type: "pickerRoller",
-    list: [
-      // Overland Travel
-      `${createCharacter("Losowa klasa")}`,
-      "Trup myśliwego",
-      "Odpoczywająca karawana",
-      "Napadnięta karawana",
-      "Nie dzieje się nic konkretnego, świat jest szary.",
-      "Wicher Czarnej Soli (okładka Feretory)",
-      "Pogorszenie pogody.",
-      "Zmiana pogody.", // na??
-      "Droga się rozwidla, znaki są nieczytelne (przerzut).",
       "Religijna procesja biczowników i pustelników (Zmierzają do NIEGO, ale zgubili drogę).",
       "Brudni rolnicy w drodze na targ.",
       "Po drugiej stronie drogi trwa walka pomiędzy bandą obdartych ze skóry kultystów a watahą kundlaków.",
@@ -452,6 +419,40 @@ const MBRandomEncountersWilderness = function () {
       `Dwoje zwłok u boku drogi, w kieszeni jednego z nich znajduje się: ${pickFromList(
         MBCorpseLoot
       )}`,
+      'Pułapka na niedźwiedzie',
+      'Grzybiarz',
+      'Znachor',
+      'Zielarz',
+      'Zielarka',
+      'Dziwna roślina, jej kwiat lśni własnym światłem',
+      'Kaszlący starzec',
+      'Martwa zwierzyna',
+      'Uciekająca chmara szczurów',
+      'Dręczy was rój owadów',
+      'Meteoryt',
+      'Pielgrzymi',
+      'Uchodźcy',
+      'Morsujący ludzie',
+      'Modlący się wierni',
+      'Objezdny cyrk',
+      'Walki zwierząt',
+      'Diler',
+      'Walczące ze sobą kaczki',
+      'Szlachcic ze świtą',
+      'Zbłąkany koń',
+      'Zbłąkany pies',
+      'Obłąkany człowiek',
+      'Heretycki kaznodzieja ćwiczy przemówienie'
+    ],
+  };
+};
+
+const MBRandomEncountersWilderness = function () {
+  return {
+    type: "pickerRoller",
+    list: [
+      // Overland Travel
+      `${createCharacter("Losowa klasa")}`,
       // new
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
@@ -614,7 +615,28 @@ const MBRandomEncountersWilderness = function () {
       'Zabity kurier noszący godło króla Fathmu IX z Wästlandu (złoty czworoskrzydły jastrząb na czarnym tle) leży w rowie, ma przy sobie list: "Na wschód od jeziora Onda, na Pełzającym Bagnie, znajduje się starożytny grobowiec Bagiennej Wiedźmy i ołtarz z martwych korzeni pokryty zapomnianymi symbolami. Powiadają, że jeśli wypowie się nad nim pewne zakazane słowa, każde życzenie może zostać spełnione. Nawet odegnanie nadchodzącej zagłady leży w mocy ołtarza Bagiennej Wiedźmy.',
       "Łowca zwłok",
       `Zwłoki przy drodze, liczba - ${k(20)}`,
-
+      "Trup myśliwego",
+      "Odpoczywająca karawana",
+      "Napadnięta karawana",
+      "Nie dzieje się nic konkretnego, świat jest szary.",
+      "Wicher Czarnej Soli (okładka Feretory)",
+      "Pogorszenie pogody.",
+      "Zmiana pogody.", // na??
+      "Droga się rozwidla, znaki są nieczytelne (przerzut).",
+      "Religijna procesja biczowników i pustelników (Zmierzają do NIEGO, ale zgubili drogę).",
+      "Brudni rolnicy w drodze na targ.",
+      "Po drugiej stronie drogi trwa walka pomiędzy bandą obdartych ze skóry kultystów a watahą kundlaków.",
+      "Troll Adnah atakuje z zaskoczenia.",
+      `${k(6)} racji żywności/wody się psuje.`,
+      `${k(6) + 1} łowców niewolników prowadzi ${k(11) + 1
+      } niewolników, połowa pobita niemal na śmierć, połowa świeżo złapanych.`,
+      `Grupa najemników i ich ${k(
+        6
+      )} strażników (wszyscy zainfekowani pasożytem mózgu).`,
+      "Pochód pogrzebowy bezzębnych wieśniaków niosących bardzo wielką trumnę (olbrzym wewnątrz jest martwy, lecz śniący).",
+      `Dwoje zwłok u boku drogi, w kieszeni jednego z nich znajduje się: ${pickFromList(
+        MBCorpseLoot
+      )}`,
       "Błędne ogniki prowadzą na śmierć",
       "Drużyna zabłądziła na losowe pole przyległe do docelowego",
       "Frywolne duszki szukają rozrywki",
@@ -673,6 +695,24 @@ const MBRandomEncountersWilderness = function () {
       "Kilka świeżych, płytkich grobów",
       "Kilku martwych maruderów",
 
+      'Pułapka na niedźwiedzie',
+      'Grzybiarz',
+      'Znachor',
+      'Zielarz',
+      'Zielarka',
+      'Dziwna roślina, jej kwiat lśni własnym światłem',
+      'Kaszlący starzec',
+      'Martwa zwierzyna',
+      'Uciekająca chmara szczurów',
+      'Dręczy was rój owadów',
+      'Meteoryt',
+
+      'Walczące ze sobą kaczki',
+      'Zbłąkany koń',
+      'Zbłąkany pies',
+      'Obłąkany człowiek',
+      'Heretycki kaznodzieja ćwiczy przemówienie'
+
     ],
   };
 };
@@ -695,6 +735,14 @@ let MBRandomDiscoveriesCivilized = {
       8
     )} zombie ukrywa się w krypcie.`,
     "Zrujnowane opactwo bronione przez gargulca. W krypcie ukryty jest losowy artefakt.",
+
+    'Klasztor',
+    'Karczma',
+    'Muzeum dziwactw',
+    'Staw z leczącą wodą',
+    'Wieża',
+    'Fort',
+    'Ruiny pałacu'
   ]
 }
 
@@ -756,7 +804,16 @@ let MBRandomDiscoveriesWilderness = {
     "Splądrowany obóz barbarzyńców",
     "Świeżo rozstawiony obóz barbarzyńców",
     "Zatrute źródło",
-    "Zrujnowana świątynia",
+    "Zrujnowana świątynia - kretuńska",
+    "Zrujnowana świątynia - pogańska",
+      'Ruiny',
+    'Staw z leczącą wodą',
+    'Wieża',
+    'Fort',
+    'Ruiny pałacu',
+    'Kurhany',
+    'Staw pełen żółwi',
+    'Staw zamieszkiwany przez obślizgłych ludzi'
 
     //enc
 
