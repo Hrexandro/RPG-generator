@@ -813,8 +813,9 @@ let MBRandomDiscoveriesWilderness = {
     'Ruiny pałacu',
     'Kurhany',
     'Staw pełen żółwi',
-    'Staw zamieszkiwany przez obślizgłych ludzi'
-
+    'Staw zamieszkiwany przez obślizgłych ludzi',
+    'Kamienny posąg ludzkiej postaci, wygładzony przez czas - potarcie go krwią otwiera przejście do ogromnego podziemnego kompleksu na k6 rund, nie ma z niego normalnego wyjścia na powierzchnię, ale podobny portal otwiera się za każdym razem, gdy jeden z przybyszy ginie.',
+    'Kamienny posąg ludzkiej postaci, wygładzony przez czas i pokryty śladami krwi - potarcie go krwią otwiera przejście do ogromnego podziemnego kompleksu na k6 rund, nie ma z niego normalnego wyjścia na powierzchnię, ale podobny portal otwiera się za każdym razem, gdy jeden z przybyszy ginie.',
     //enc
 
   ]

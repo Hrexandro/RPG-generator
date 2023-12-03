@@ -161,6 +161,7 @@ export const MBNames = {
     "Hal",
     "Bak",
     "Efte",
+    "Marmol"
   ],
   suffix: [
     "",
@@ -335,6 +336,7 @@ export const MBNames = {
     "sang",
     "nack",
     "sevåg",
+    "radorl"
   ],
 };
 
