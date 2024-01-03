@@ -2014,7 +2014,7 @@ const MBCorpseLoot = function () {
       "lina (10 metrów)",
       `pochodnie (${k(4)} szt.)`,
       `latarnia i zapas oliwy na ${k(6)} godz.`,
-      "pasek magnezji",
+      "pasek magnezu",
       "przeklęty zwój",
       "ostra igła",
       `skrzynka z lekami - użycia: ${k(4)} (powstrzymuje krwawienie/infekcję i leczy k6 HP)`,
@@ -3450,7 +3450,7 @@ function createCharacter(chosenCharacterClass) {
     "lina (10 metrów)",
     `pochodnie (${parseInt(PRE) + 4} szt.)`,
     `latarnia i zapas oliwy na ${parseInt(PRE) + 6} godz.`,
-    "pasek magnezji",
+    "pasek magnezu",
     "przeklęty zwój",
     "ostra igła",
     `skrzynka z lekami - użycia: ${parseInt(PRE) + 4
