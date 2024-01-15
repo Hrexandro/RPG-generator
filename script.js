@@ -29,6 +29,11 @@ import {
   WHFMaleHumanNames,
 } from "./names.js";
 
+import {
+  bozkiImiona,
+  bozkiDomeny
+} from "./vorpal.js";
+
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
 const categoryPicker = document.getElementById("kategoria");
@@ -2186,6 +2191,27 @@ const MBArcaneCatastrophes = function () {
   };
 };
 
+//"MBCults"
+const MBCults = function () {
+  return {
+    type: "pickerRoller",
+    list: [
+      "Kościół Dwugłowych Bazyliszków",
+      "Kościół Dwugłowych Bazyliszków (odłam heretycki)",
+      "Kult Nechrubela",
+      "Kult Udoka",
+      "Kult Powieszonego Boga",
+      "Kult Słońca",
+      `Wyznawcy Martwego Boga zabitego przez Bazyliszki (${pickFromList(MBDeadGod)})`,
+      `Wyznawcy bóstwa: ${pickFromList(bozkiImiona)}, władca domeny: ${pickFromList(bozkiDomeny)}`,
+      "Czciciele Lasu Sarkash.",
+      "Zalotnicy Królowej Anthelii z Kergüs.",
+      "Posłańcy Nieskończonego Gonu",
+      "Powiernicy Boskiej Ręki",
+    ]
+  }
+}
+
 let MBMonsters = {
   // monster monsters potwory
   type: "picker",
@@ -3618,7 +3644,7 @@ function createCharacter(chosenCharacterClass) {
     }\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
       MBBrokenBodies
     )}. ${pickFromList(MBBadHabits)}.
-    Atrybuty: zręczność: ${AGI}, skupienie ${PRE}, siła ${STR}, odporność ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
+    Atrybuty: siła ${STR}, zwinność: ${AGI}, skupienie ${PRE}, wytrzymałość ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
     }${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ""}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ""
     }
     Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, ` +
