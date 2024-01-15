@@ -2192,7 +2192,7 @@ const MBArcaneCatastrophes = function () {
 };
 
 //"MBCults"
-const MBCults = function () {
+const MBCultNames = function () {
   return {
     type: "pickerRoller",
     list: [
@@ -2211,6 +2211,21 @@ const MBCults = function () {
     ]
   }
 }
+
+const Goal = function (){
+  // cele postaci cele drużyny
+  return{
+    type: "pickerRoller",
+    list: [
+      'Zarobić a się nie narobić',
+      'Żądza adrenaliny',
+      'Żądza chwały',
+      'Wygnany z ojczyzny, tuła się po świecie',
+      'Zmycie plamy na honorze',
+      `Dług w wysokości ${(k(6, true)+3)*100}`
+    ]
+  }
+};
 
 let MBMonsters = {
   // monster monsters potwory
