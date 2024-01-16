@@ -448,7 +448,8 @@ const MBRandomEncountersCivilized = function () {
       'Zbłąkany pies',
       'Obłąkany człowiek',
       'Heretycki kaznodzieja ćwiczy przemówienie',
-      'Patrol wojska'
+      'Patrol wojska',
+      'Nieumarli bandyci'
     ],
   };
 };
@@ -717,8 +718,8 @@ const MBRandomEncountersWilderness = function () {
       'Zbłąkany koń',
       'Zbłąkany pies',
       'Obłąkany człowiek',
-      'Heretycki kaznodzieja ćwiczy przemówienie'
-
+      'Heretycki kaznodzieja ćwiczy przemówienie',
+      'Nieumarli bandyci'
     ],
   };
 };
@@ -2254,6 +2255,23 @@ const MBClasslessOrigin = function (){
       'Uchodźca',
       'Karczmarz'
       `${pickFromList(medievalProfessions)}`
+    ]
+  }
+};
+
+const whatConnectsUs = function (){
+  // co nas łączy źródła drużyny party origins
+  return{
+    type: "pickerRoller",
+    list: [
+      "Przyjaciele",
+      "Rodzina",
+      "Członkowie gangu",
+      "Banici",
+      "Słudzy, którzy zabili swojego pana",
+      "Zabili kogoś wspólnie",
+      "Jedyni ocalali z nieudanej ekspedycji",
+      "Pochodzą z tej samej miejscowości"
     ]
   }
 };
