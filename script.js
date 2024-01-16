@@ -447,7 +447,8 @@ const MBRandomEncountersCivilized = function () {
       'Zbłąkany koń',
       'Zbłąkany pies',
       'Obłąkany człowiek',
-      'Heretycki kaznodzieja ćwiczy przemówienie'
+      'Heretycki kaznodzieja ćwiczy przemówienie',
+      'Patrol wojska'
     ],
   };
 };
@@ -811,7 +812,7 @@ let MBRandomDiscoveriesWilderness = {
     "Zatrute źródło",
     "Zrujnowana świątynia - kretuńska",
     "Zrujnowana świątynia - pogańska",
-      'Ruiny',
+    'Ruiny',
     'Staw z leczącą wodą',
     'Wieża',
     'Fort',
@@ -1194,6 +1195,7 @@ const medievalProfessions = {
     "Szczytnik",
     "Szłomnik",
     "Tapicer",
+    "Kat"
   ],
 };
 
@@ -2213,16 +2215,45 @@ const MBCultNames = function () {
 }
 
 const Goal = function (){
-  // cele postaci cele drużyny
+  // cele postaci cele drużyny motywacja motivations motywacje
   return{
     type: "pickerRoller",
     list: [
       'Zarobić a się nie narobić',
       'Żądza adrenaliny',
       'Żądza chwały',
+      'Żądza bogactwa',
       'Wygnany z ojczyzny, tuła się po świecie',
       'Zmycie plamy na honorze',
-      `Dług w wysokości ${(k(6, true)+3)*100}`
+      `Dług w wysokości ${(k(6, true)+3)*100} szt. srebra, wierzyciele są na twoim tropie`,
+      'Głód wiedzy',
+      'Zew przygody',
+      'Pragnienie powstrzymania Apokalipsy'
+    ]
+  }
+};
+
+const MBClasslessOrigin = function (){
+  // pochodzenie
+  return{
+    type: "pickerRoller",
+    list: [
+      'Arystokrata',
+      'Szumowina',
+      'Banita',
+      'Chłop',
+      'Żołdak',
+      'Bandyta',
+      'Zakonnik',
+      'Heretyk',
+      'Mieszczanin',
+      'Kultysta',
+      'Dezerter',
+      'Dziki człowiek',
+      'Pustelnik',
+      'Uchodźca',
+      'Karczmarz'
+      `${pickFromList(medievalProfessions)}`
     ]
   }
 };
