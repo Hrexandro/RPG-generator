@@ -2271,7 +2271,9 @@ const whatConnectsUs = function (){
       "Słudzy, którzy zabili swojego pana",
       "Zabili kogoś wspólnie",
       "Jedyni ocalali z nieudanej ekspedycji",
-      "Pochodzą z tej samej miejscowości"
+      "Pochodzą z tej samej miejscowości",
+      "Koledzy z pracy",
+      "Wspólnie dotknięci klątwą"
     ]
   }
 };
