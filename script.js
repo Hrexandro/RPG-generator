@@ -2207,7 +2207,7 @@ const MBCultNames = function () {
       "Kult Słońca",
       `Wyznawcy Martwego Boga zabitego przez Bazyliszki (${pickFromList(MBDeadGod)})`,
       `Wyznawcy bóstwa: ${pickFromList(bozkiImiona)}, władca domeny: ${pickFromList(bozkiDomeny)}`,
-      "Czciciele Lasu Sarkash.",
+      "Czciciele Lasu Sarkash",
       "Zalotnicy Królowej Anthelii z Kergüs.",
       "Posłańcy Nieskończonego Gonu",
       "Powiernicy Boskiej Ręki",
@@ -2248,13 +2248,20 @@ const MBClasslessOrigin = function (){
       'Zakonnik',
       'Heretyk',
       'Mieszczanin',
-      'Kultysta',
+      `Kultysta (${pickFromList(MBCultNames)})`,
       'Dezerter',
       'Dziki człowiek',
       'Pustelnik',
       'Uchodźca',
       'Karczmarz',
-      `${pickFromList(medievalProfessions)}`
+      `${pickFromList(medievalProfessions)}`,
+      `${pickFromList(medievalProfessions)}`,
+      `${pickFromList(medievalProfessions)}`,
+      `${pickFromList(medievalProfessions)}`,
+      `${pickFromList(medievalProfessions)}`,
+      `${pickFromList(medievalProfessions)}`,
+      `${pickFromList(medievalProfessions)}`,
+      `${pickFromList(medievalProfessions)}`,
     ]
   }
 };
