@@ -2253,7 +2253,7 @@ const MBClasslessOrigin = function (){
       'Dziki człowiek',
       'Pustelnik',
       'Uchodźca',
-      'Karczmarz'
+      'Karczmarz',
       `${pickFromList(medievalProfessions)}`
     ]
   }
