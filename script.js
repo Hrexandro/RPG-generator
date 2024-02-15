@@ -736,6 +736,7 @@ const MBRandomEncountersWilderness = function () {
 let MBRandomDiscoveriesCivilized = {
   type: "picker",
   list: [
+    `Opuszczona świątynia, wewnątrz nieumarła panna młoda, bierze jednego z bohaterów za swojego oblubieńca.`,
     "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
     `Wioska - opuszczona, można z niej wyszabrować ${k(
       6
@@ -764,6 +765,7 @@ let MBRandomDiscoveriesCivilized = {
 let MBRandomDiscoveriesWilderness = {
   type: "picker",
   list: [
+    `Opuszczona świątynia, wewnątrz nieumarła panna młoda, bierze jednego z bohaterów za swojego oblubieńca.`,
     "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
     "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
     "Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.",
@@ -3960,6 +3962,6 @@ function createCurrentEnemy() {
 //see VORPAL
 
 // console.log(pickFromList(MBTowns))
-// MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description
+// MBMonsterObjects.list.find((monster) => { return monster.keyName === "undeadNecromancer";}).description
 
 
