@@ -130,6 +130,14 @@ function k(sides, exploding = false) {
   return result;
 }
 
+function rollDFourDropLowest(){
+  let rolls = [k(6), k(6), k(6), k(6)]
+  rolls.sort().shift()
+  return rolls.reduce((a, b) => a + b)
+}
+
+rollDFourDropLowest()
+
 class Roll {
   constructor(result) {
     this.result = result;
@@ -3457,13 +3465,33 @@ const MBCharacter = function () {
   };
 };
 
+function calculateAbilityModifier (score){
+  let abilityModifier = 0
+  if (score <= 4) {
+    abilityModifier = "-3";
+  } else if (score <= 6) {
+    abilityModifier = "-2";
+  } else if (score <= 8) {
+    abilityModifier = "-1";
+  } else if (score <= 12) {
+    abilityModifier = "0";
+  } else if (score <= 14) {
+    abilityModifier = "+1";
+  } else if (score <= 16) {
+    abilityModifier = "+2";
+  } else {
+    abilityModifier = "+3";
+  }
+  return abilityModifier
+}
+
 function createCharacter(chosenCharacterClass) {
   let characterClass = chosenCharacterClass ? chosenCharacterClass: classLessCharacter;
   if (chosenCharacterClass === "Losowa klasa") {
     characterClass = pickFromList(MBClasses);
   }
   function generateAbility(modifier) {
-    let abilityScore = null;
+    // let abilityScore = null;
     let rollForAbility = null;
     if (typeof modifier === "number") {
       rollForAbility = k(6) + k(6) + k(6) + modifier;
@@ -3474,35 +3502,38 @@ function createCharacter(chosenCharacterClass) {
       }
       rollForAbility += modifier[2];
     }
-
-    if (rollForAbility <= 4) {
-      abilityScore = "-3";
-    } else if (rollForAbility <= 6) {
-      abilityScore = "-2";
-    } else if (rollForAbility <= 8) {
-      abilityScore = "-1";
-    } else if (rollForAbility <= 12) {
-      abilityScore = "0";
-    } else if (rollForAbility <= 14) {
-      abilityScore = "+1";
-    } else if (rollForAbility <= 16) {
-      abilityScore = "+2";
-    } else {
-      abilityScore = "+3";
-    }
-
-    return abilityScore;
+    return calculateAbilityModifier(rollForAbility);
   }
   let AGI = generateAbility(characterClass.agility);
   let PRE = generateAbility(characterClass.presence);
   let STR = generateAbility(characterClass.strength);
   let TOU = generateAbility(characterClass.toughness);
+
+
+  if (!characterClass.characterClassName){//classless
+    let betterAbilityRolls = [k(4), k(4)]
+    while (betterAbilityRolls[0] === betterAbilityRolls[1]){
+      betterAbilityRolls[1] = k(4)
+    }   
+    if (betterAbilityRolls.includes(1)){
+      AGI = calculateAbilityModifier(rollDFourDropLowest())
+    }
+    if (betterAbilityRolls.includes(2)){
+      PRE = calculateAbilityModifier(rollDFourDropLowest())
+    }
+    if (betterAbilityRolls.includes(3)){
+      STR = calculateAbilityModifier(rollDFourDropLowest())
+    }
+    if (betterAbilityRolls.includes(4)){
+      TOU = calculateAbilityModifier(rollDFourDropLowest()) 
+    }
+  }
   let HP =
-    (characterClass.HPdie ? k(characterClass.HPdie) : k(8)) + parseInt(TOU);
+  (characterClass.HPdie ? k(characterClass.HPdie) : k(8)) + parseInt(TOU);
   if (HP < 1) {
     HP = 1;
   }
-
+  
   let maxOmens = 2;
   if (characterClass) {
     maxOmens = characterClass.omens;
@@ -3919,16 +3950,16 @@ function createCurrentEnemy() {
 }
 
 // console.log(MBMonsters.list.find(e=>e.))
-console.log(MBMonsterObjects.list.find(
-  (monster) => {
-    return monster.keyName === "goblin";
-  }).description)
+// console.log(MBMonsterObjects.list.find(
+//   (monster) => {
+//     return monster.keyName === "goblin";
+//   }).description)
 
-console.log(MBMonsterObjects)
+// console.log(MBMonsterObjects)
 //next thing to do: adjust wilderness and civilized encounters and discoveries
 //see VORPAL
 
-console.log(pickFromList(MBTowns))
+// console.log(pickFromList(MBTowns))
 // MBMonsterObjects.list.find((monster) => { return monster.keyName === "goblin";}).description
 
 
