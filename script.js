@@ -27,6 +27,7 @@ import {
   maleGaelicNames,
   mercenaryCompanies,
   WHFMaleHumanNames,
+  crusaderNames,
 } from "./names.js";
 
 import {
