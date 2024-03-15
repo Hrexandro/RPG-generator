@@ -5378,7 +5378,7 @@ export const crusaderNames = function () {
     'Girismann', 'Giselbert', 'Giselher', 'Giso', 'Godfrey', 'Godric', 'Goldinellus',
     'Gontier', 'Gosbert', 'Gospert', 'Goswin', 'Gotmann', 'Gottschalk', 'Gouffier',
     'Gozelo', 'Grimbald', 'Grimoald', 'Guarin', 'Guiraut', 'Gunscelin', 'Gunter',
-    'Guy', 'Hadmar', 'Hadwida', 'Halldor', 'Hamelin', 'Hamo', 'Hamundr', 'Hartmann',
+    'Guy', 'Hadmar', 'Halldor', 'Hamelin', 'Hamo', 'Hamundr', 'Hartmann',
     'Hauvines', 'Helias', 'Helie', 'Heliodore', 'Henry', 'Heraclius', 'Herbert',
     'Heribrand', 'Herluin', 'Herman', 'Hermann', 'Herment', 'Herpert', 'Hervey',
     'Hezelo', 'Hildebert', 'Hilduin', 'Hildulf', 'Hosto', 'Hubert'
