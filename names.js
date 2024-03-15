@@ -5227,7 +5227,7 @@ export const crusaderNames = function () {
     "Thibaud",
     "Robert",
     "Baudouin",
-    "Sir",
+
     "Aimon",
     "Geoffroy",
     "Geoffroy",
@@ -5235,7 +5235,7 @@ export const crusaderNames = function () {
     "Geoffroy",
     "Jacques",
     "Baudouin",
-    "Sir",
+
     "Barthélemy",
     "Aimon",
 
