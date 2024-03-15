@@ -5356,7 +5356,7 @@ export const crusaderNames = function () {
     'Achard', 'Adalbero', 'Adalbert', 'Adalram', 'Adam', 'Aimery', 'Ainard',
     'Airald', 'Alan', 'Alard', 'Albert', 'Aldo', 'Alelm', 'Alexander',
     'Alfonso', 'Alo', 'Alram', 'Alvisus', 'Amadeus', 'Amanieu', 'Andrew',
-    'Anfred', 'Angerius', 'Anonyma', 'Anonymus', 'Ansaldo', 'Ansellus',
+    'Anfred', 'Angerius', 'Ansaldo', 'Ansellus',
     'Anselm', 'Anseric', 'Antelme', 'Archibald', 'Arduin', 'Arni', 'Arnold',
     'Arnulf', 'Artald', 'Arved', 'Aslak', 'Astanove', 'Attropius', 'Aubrey',
     'Aufan', 'Autran', 'Aznar', 'Baldric', 'Baldwin', 'Barisan', 'Bartholomew',
