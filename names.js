@@ -5366,7 +5366,7 @@ export const crusaderNames = function () {
     'Centule', 'Chalo', 'Charles', 'Chastard', 'Cherfron', 'Clarembald', 'Conan',
     'Cono', 'Conrad', 'Constantine', 'Constantius', 'Corba', 'Daibert', 'Daniel',
     'Dithmar', 'Dodo', 'Domenico', 'Doon', 'Drogo', 'Durand', 'During', 'Eberhard',
-    'Ebles', 'Edgar', 'Edith', 'Egilolf', 'Ekkehard', 'Eleanor', 'Elvira',
+    'Ebles', 'Edgar', 'Egilolf', 'Ekkehard',
     'Emerias', 'Emicho', 'Emma', 'Engelbert', 'Englelm', 'Engelmar', 'Engelrand',
     'Erald', 'Erard', 'Erkenbald', 'Ermengald', 'Ernest', 'Eurvin', 'Eustace',
     'Everard', 'Fantin', 'Farald', 'Faucon', 'Florina', 'Folkmar', 'Fortun',
