@@ -28,6 +28,7 @@ import {
   mercenaryCompanies,
   WHFMaleHumanNames,
   crusaderNames,
+  tavernNames
 } from "./names.js";
 
 import {
