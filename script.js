@@ -3906,7 +3906,122 @@ function createMBFollower() {
 
 
 
+const description = function () {
+  let list = []
+  let build = [
+    "Wysportowany",
+    "Krzepki",
+    "Korpulentny",
+    "Delikatny",
+    "Wychudły",
+    "Masywny",
+    "Wiotki",
+    "Chudy",
+    "Muskularny",
+    "Żylasty",
+    "Tęgi"
+  ]
+  let face = [
+    "nalana",
+    "koścista",
+    "przystojna",
+    "o delikatnych rysach",
+    "arystokratyczna",
+    "wydłużona",
+    "zniszczona",
+    "orla",
+    "szelmowska",
+    "wąska",
+    "szczurowata",
+    "okrągła",
+    "zapadła",
+    "o ostrych rysach",
+    "kwadratowa",
+    "szeroka",
+    "wilcza"
+  ]
+  let facialHair = [
+    "gładko ogolony",
+    "wąsy",
+    "broda"
+  ]
+  let skin = [
+    "pokryta bliznami",
+    "oleista",
+    "ciemna",
+    "blada",
+    "perfekcyjna",
+    "ospowata",
+    "rumiana",
+    "ziemista",
+    "opalona"
+  ]
+  let hair = [
+    "łysy",
+    "blondyn",
+    "brunet",
+    "szatyn",
+    "rudy"
+  ]
+  let virtue = [
+    "ambitny",
+    "ostrożny",
+    "odważny",
+    "kulturalny",
+    "ciekawski",
+    "zdyscyplinowany",
+    "zdeterminowany",
+    "szczodry",
+    "towarzyski",
+    "uczciwy",
+    "honorowy",
+    "skromny",
+    "idealistyczny",
+    "sprawiedliwy",
+    "lojalny",
+    "litościwy",
+    "pracy",
+    "łagodny",
+    "opanowany",
+    "tolerancyjny"
+  ]
+  let vice = [
+    "agresywny",
+    "arogancki",
+    "zgorzkniały",
+    "tchórzliwy",
+    "okrutny",
+    "zdradliwy",
+    "lekkomyślny",
+    "żarłoczny",
+    "chciwy",
+    "wybuchowy",
+    "leniwy",
+    "nerwowy",
+    "uprzedzony",
+    "nonszalancki",
+    "opryskliwy",
+    "podejrzliwy",
+    "próżny",
+    "mściwy",
+    "marnotrawny",
+    "marudny"
+  ]
 
+  list.push(
+    randomizeFromArray(build)+ ", twarz " + 
+    randomizeFromArray(face) + ", " + randomizeFromArray(facialHair) + ", skóra " +
+    randomizeFromArray(skin)+ ", " +
+    randomizeFromArray(hair) + ", " +
+    randomizeFromArray(virtue) + ", " +
+    randomizeFromArray(vice)
+  )
+
+  return {
+    type: "pickerRoller",
+    list
+  };
+}
 
 const currentEnemy = function () {
   return {
