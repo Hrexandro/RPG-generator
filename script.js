@@ -3938,7 +3938,13 @@ generateButton.addEventListener("click", () => {
   const pickedCategory = eval(category);
   removeAllChildren(nameDisplay);
   for (let i = 0; i < numberGenerated; i++) {
-    result.push(pickFromList(pickedCategory));
+    let toAddToResult = pickFromList(pickedCategory)
+    if (/Miseries/.test(category) && numberGenerated <= 36){//ensure unique Mork Borg miseries if possible
+      while (result.includes(toAddToResult)){
+        toAddToResult = pickFromList(pickedCategory)
+      }
+    }
+    result.push(toAddToResult);
   }
   if (/Miseries/.test(category)){
     result.push(pickedCategory().last)
