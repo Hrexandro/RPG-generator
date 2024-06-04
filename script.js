@@ -2087,7 +2087,8 @@ const MBCorpseLoot = function () {
       "Mikstura: zupa z pajęczej sowy - widzenie w ciemności i chodzenie po ścianach przez 30 minut",
       "Mikstura Fernora - przezroczysty olej wkraplany do oka, leczy infekcję i daje +2 do rzutów na skupienie przez k4 godz.",
       "Drażniąca tabaka Hyphosa - wpadasz w szał! Dwa ataki na rundę, ale obrona ma PT 14. Działa do końca starcia. Trzeba wciągać, wywołuje kichanie",
-      "Mikstura: czarna trucizna - wytrzymałość PT 14 albo -k6 HP i ślepota przez jedną godzinę"
+      "Mikstura: czarna trucizna - wytrzymałość PT 14 albo -k6 HP i ślepota przez jedną godzinę",
+      pickFromList(MBTreasure)
     ],
   };
 };
@@ -2339,6 +2340,21 @@ const Goal = function (){
     ]
   }
 };
+
+const MBTreasure = function (){
+  let list = []
+  let minorTreasure = ["Bluźnierczy bożek", "Grafitowo czarny kielich", "Bransoletka z zębów", "Zakrzywiony rytualny sztylet", "Zatruta broszka", "Zakrwawione monety", "Obsydianowy pręt", "Żelazna maska diabła"]
+  let majorTreasure = ["Demoniczna figurka, jej oczy zdają się podążać za tobą wzrokiem", "Pierścień czarny jak otchłań, zadziwiająco ciężki", "Garść klejnotów", "Zmumifikowana głowa proroka", "Kryształowa kula", "Bluźnierczy zwój"]
+  let minorTreasureWorth = k(20)+k(20)+k(20)
+  let majorTreasureWorth = 30+k(20)+k(20)
+
+  list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
+  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
+  return {
+    type: "pickerRoller",
+    list
+  }
+}
 
 const MBClasslessOrigin = function (){
   // pochodzenie
