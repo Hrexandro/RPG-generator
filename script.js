@@ -28,7 +28,8 @@ import {
   mercenaryCompanies,
   WHFMaleHumanNames,
   crusaderNames,
-  tavernNames
+  tavernNames,
+  MBNobleNames
 } from "./names.js";
 
 import {
@@ -3845,7 +3846,7 @@ function createCharacter(chosenCharacterClass) {
   const createdCharacter =
     `${characterClass.characterClassName === "Bladawiec"
       ? pickFromList(MBPaleOneNames) :
-      (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNames) + " " + pickFromList(MBTowns)) : pickFromList(MBNames) )
+      (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNobleNames)) : pickFromList(MBNames) )
     }. ${characterClass.characterClassName
       ? `${characterClass.characterClassName}.`
       : ""
