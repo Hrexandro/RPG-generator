@@ -2342,15 +2342,72 @@ const Goal = function (){
   }
 };
 
+
+
 const MBTreasure = function (){
   let list = []
-  let minorTreasure = ["Bluźnierczy bożek", "Grafitowo czarny kielich", "Bransoletka z zębów", "Zakrzywiony rytualny sztylet", "Zatruta broszka", "Zakrwawione monety", "Obsydianowy pręt", "Żelazna maska diabła"]
-  let majorTreasure = ["Demoniczna figurka, jej oczy zdają się podążać za tobą wzrokiem", "Pierścień czarny jak otchłań, zadziwiająco ciężki", "Garść klejnotów", "Zmumifikowana głowa proroka", "Kryształowa kula", "Bluźnierczy zwój"]
+  let minorTreasure = ["Bluźnierczy bożek", "Grafitowo czarny kielich", "Bransoletka z zębów", "Zakrzywiony rytualny sztylet", "Zatruta broszka", "Zakrwawione monety", "Obsydianowy pręt", "Żelazna maska diabła",
+////
+
+"Bransoletka",
+"Figurka",
+"Guz (ozdobny guzik)",
+"Kielich",
+"Kolczyki",
+"Łańcuszek",
+"Maska",
+"Naszyjnik",
+"Obrączka",
+"Pierścień",
+"Pozytywka",
+"Przycisk do papieru",
+"Świecznik",
+"Torkwes",
+"Waza"
+]
+  let majorTreasure = ["Demoniczna figurka, jej oczy zdają się podążać za tobą wzrokiem", "Pierścień czarny jak otchłań, zadziwiająco ciężki", "Garść klejnotów", "Zmumifikowana głowa proroka", "Kryształowa kula", "Bluźnierczy zwój",
+/////
+"Berło",
+
+"Diadem",
+
+
+"Kielich",
+"Kolczyki",
+"Korona",
+"Maska",
+"Naszyjnik",
+"Pierścień",
+"Sztabka",
+
+]
+
+let hugeTreasure = [
+  "Berło",
+  "Garść klejnotów",
+  "Klejnot",
+"Diadem",
+"Kielich",
+"Kolczyki",
+"Korona",
+"Maska",
+"Naszyjnik",
+"Pierścień",
+"Sztabka",
+]
   let minorTreasureWorth = k(20)+k(20)+k(20)
   let majorTreasureWorth = 30+k(20)+k(20)
-
+  let hugeTreasureWorth = (k(20)+k(20))*10
+  list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
+  list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
+  list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
   list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
   list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
+  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
+  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
+  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
+  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
+  list.push(randomizeFromArray(hugeTreasure)+", o wartości "+hugeTreasureWorth+" szt. sr.")
   return {
     type: "pickerRoller",
     list
