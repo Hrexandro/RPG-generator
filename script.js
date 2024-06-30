@@ -1266,7 +1266,7 @@ const mutations = function () {
       "Niemowa - twój język znika.",
       "Nietypowe genitalia - cokolwiek miałeś tam wcześniej, teraz jest inne i dziwne.",
       "Fioletowe zarodniki - fioletowy kapelusz grzyba w miejscu włosów, w chwili śmierci wydziela halucynogeniczne zarodniki w zasięgu 10 metrów.",
-      "Pojedyńcze ptasie skrzydło - zlokalizowane na losowej kończynie, bezużyteczne.",
+      "Pojedyncze ptasie skrzydło - zlokalizowane na losowej kończynie, bezużyteczne.",
       "Nędzna szczęka - potężny nagryz pionowy.",
       "Trzecie oko - na czole. Nie wpływa na nic, ale wygląda mistycznie.",
       "Psia twarz - obwisłe policzki, długi nos, opadnięte uszu. Bez futra, tylko pomarszczona skóra.",
@@ -1719,7 +1719,7 @@ const MBCorpseLoot = function () {
       "Kilka zgniłych jabłek",
       "Czaszki",
       "Dwie zakrwawione pochodnie",
-      "Grzebień z pojedyńczym siwym włosem",
+      "Grzebień z pojedynczym siwym włosem",
       "Flet (smakuje okropnie)",
       "Mała buteleczka wypełniona krwią",
       "Ćwiekowany skórzany naramiennik",
@@ -2832,7 +2832,7 @@ let MBSacredScroll = {
     "Fałszywy Świt/Rydwan Nocy (święty zwój) - światło lub całkowita ciemność przez 3k10 minut",
     "Hermetyczny Krok (święty zwój) - odnajdujesz wszystkie pułapki na swojej drodze przez 2k10 minut",
     "Pochłaniające Spojrzenie (święty zwój) - k4 istoty tracą po k8 HP każda",
-    "Enochiańska Składnia (święty zwój) - jedna istota ślepo podąża za pojedyńczym rozkazem",
+    "Enochiańska Składnia (święty zwój) - jedna istota ślepo podąża za pojedynczym rozkazem",
   ],
 };
 
@@ -3288,7 +3288,7 @@ createAndAddClass({
     "środowiskowa głupota i jasne światła sprawiają, że twoje nadwrażliwe tkanki mózgowe PŁONĄ ŻYWYM OGNIEM.",
     "mogłeś uratować ten przeklęty świat! Gdyby tylko te szare masy zrozumiały twój GENIUSZ!",
     'padłeś ofiarą umysłowego wirusa "miłości", po czym obiekt twojego afektu udał się, by zamieszkać w dziurze.',
-    "zapisałeś swoją uniwersalną filozofię w pojedyńczym tomie dla potomnych i na własne oczy oglądałeś, jak płonie, podczas gdy uciekałeś. Wszystko jest stracone.",
+    "zapisałeś swoją uniwersalną filozofię w pojedynczym tomie dla potomnych i na własne oczy oglądałeś, jak płonie, podczas gdy uciekałeś. Wszystko jest stracone.",
     "kultyści Udoka pochwycili twoją rodzinę i zmusili cię do debatowania, podczas gdy jedli twoich rodziców żywcem.",
     "byłeś najbardziej rozchwytywanym filozofem Südglans (które zatonęło w morzu), teraz wszyscy bezlitośnie z ciebie kpią.",
   ],
@@ -4033,7 +4033,8 @@ function createMBFollower() {
   let armorTiers = [
     "futrzasta zbroja (-k2 obrażeń)",
     "przeszywanica (-k2 obrażeń)",
-    "skórzana zbroja (-k2 obrażeń)"
+    "skórzana zbroja (-k2 obrażeń)",
+    "nieopancerzony"
   ];
 
 
@@ -4046,7 +4047,7 @@ function createMBFollower() {
 
   let specialty = [
     "rozbrajanie pułapek (trzeba je najpierw znaleźć)",
-    "kradzież pojedyńczych przedmiotów",
+    "kradzież pojedynczych przedmiotów",
     "samotna wspinaczka po niemożliwych szlakach",
     "znajdowanie szlaków i zakątków pozwalających na ukrycie grupy"
   ]
@@ -4065,7 +4066,7 @@ function createMBFollower() {
   let miscItems = ""
 
   for (let i = 0; i < itemsRoll; i++) {
-    miscItems += `.\n ${pickFromList(MBCorpseLoot)}`
+    miscItems += `\n ${pickFromList(MBCorpseLoot)}`
   }
 
   const createdFollower = `${pickFromList(MBNames)}, zbir. HP: ${k(
