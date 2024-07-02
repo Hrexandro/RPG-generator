@@ -29,7 +29,8 @@ import {
   WHFMaleHumanNames,
   crusaderNames,
   tavernNames,
-  MBNobleNames
+  MBNobleNames,
+  wildClanNames
 } from "./names.js";
 
 import {

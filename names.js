@@ -1214,6 +1214,113 @@ export const MBDeadGod = {
   ],
 };
 
+export const wildClanNames = {
+  // czarodzieje magowie leki nazwy leków
+  type: "picker",
+  list: [
+    "Klan Bliznosercych",
+    "Klan Gnatożujów",
+    "Klan Hardodzielnych",
+    "Klan Krzywonogich",
+    "Klan Kwasożłopów",
+    "Klan Łamikarków",
+    "Klan Miażdżyczaszek",
+    "Klan Mieczogryzów",
+    "Klan Niedźwiedziouchych",
+    "Klan Ogniowłosych",
+    "Klan Panterookich",
+    "Klan Sinowłosych",
+    "Klan Smokobójców",
+    "Klan Stalomiotów",
+    "Klan Wężosercych",
+    "Klan Wilkojadów",
+    "Klan Wyrwidębów",
+    "Klan Żarogębych",
+    "Klan Żebrołamów",
+    "Klan Żelaznorękich",
+
+    "Plemię Burzowego Młota",
+    "Plemię Czarnej Dłoni",
+    "Plemię Czarnych Cierni",
+    "Plemię Czerwonych Kruków",
+    "Plemię Kamiennych Serc",
+    "Plemię Krwawej Pięści",
+    "Plemię Milczącej Gwiazdy",
+    "Plemię Niebieskich Wilków",
+    "Plemię Płonącej Stali",
+    "Plemię Spijaczy Posoki",
+    "Plemię Splątanych Rogów",
+    "Plemię Stalowych Orłów",
+    "Plemię Szarych Serc",
+    "Plemię Topora",
+    "Plemię Wężowych Uszu",
+    "Plemię Wyjącego Pnia",
+    "Plemię Zatrutych Serc",
+    "Plemię Zgniataczy Czaszek",
+    "Plemię Zjadaczy Skał",
+    "Plemię Złamanego Kła",
+
+    "Czarne Uszy",
+    "Spaleni",
+    "Wyjcy",
+    "Mleczne Węże",
+    "Księżycowi Bracia",
+    "Malowane Psy",
+    "Czerwoni Kowale",
+    "Synowie Mgły",
+    "Synowie Drzewa",
+    "Kamienne Wrony",
+
+    "Żelazne Karki",
+    "Żelaźni Ludzie",
+
+    "Węże",
+    "Trupie Czaszki",
+    "Krwawe Topory",
+    "Czarne Rogi",
+    "Żelazne Szpony",
+    "Czerwone Pająki",
+    "Złamany Kieł",
+    "Złamany Ząb",
+    "Białe Pająki",
+    "Krwawe Nosy",
+    "Złamane Topory",
+    "Psi Chłopcy",
+    "Jednoocy",
+    "Łupieżcy",
+    "Czerwone Twarze",
+    "Blade Twarze",
+    "Żółtoocy",
+    "Czarne Czapki",
+    "Krwawe Włócznie",
+    "Płonące Twarze",
+    "Księżycowe Nietoperze",
+    "Czerwonoocy",
+    "Krwawe Kły",
+    "Krwawe Ręce",
+    "Krwawe Słońca",
+    "Łamignaty",
+    "Złamane Zęby",
+    "Krzywoocy",
+    "Żelazne Plecy",
+    "Żelazne Szpony",
+    "Żelazoskórzy",
+    "Czerwone Kły",
+    "Czerwone Tarcze",
+    "Czerwone Słońca",
+    "Białe Czaszki",
+    "Rogate Czaszki",
+    "Kamienne Węże",
+    "Kamienne Psy"
+
+
+
+
+
+
+  ]
+}
+
 export const wizardNames = {
   // czarodzieje magowie leki nazwy leków
   type: "picker",
