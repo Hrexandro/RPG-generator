@@ -4209,27 +4209,29 @@ const currentEnemy = function () {
 
 function createCurrentEnemy() {
   let weapons = [
-    "kość udowa (k4)",
-    "laska (k4)",
-    "krótki miecz (k4)",
-    "nóż (k4)",
-    "siekiera (k4)",
-    "sierp (k4)",
+    // "kość udowa (k4)",
+    // "laska (k4)",
+    // "krótki miecz (k4)",
+    // "nóż (k4)",
+    // "siekiera (k4)",
+    // "sierp (k4)",
     "młot bojowy (k6)",
     "miecz (k6)",
     "topór (k6)",
     `łuk (k6, ${k(10)} strzał)`,
     "kiścień (k8)",
-    "bomba (k10)"
+    //"bomba (k10)"
   ];
 
   let armorTiers = [
-    "",
+    //"",
     "skórzana zbroja, -k2 obrażeń",
     "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony",
+    "skórzana zbroja, -k2 obrażeń, tarcza -1 obrażenie",
+    "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony, tarcza -1 obrażenie",
   ];
 
-  let itemsRoll = k(3)
+  let itemsRoll = k(2)
 
   let miscItems = ""
 
@@ -4237,9 +4239,12 @@ function createCurrentEnemy() {
     miscItems += `.\n ${pickFromList(MBCorpseLoot)}`
   }
 
-  const createdEnemy = `${pickFromList(MBNames)}, kundlak. HP: ${k(
-    8
-  )}. ${pickFromList(MBBrokenBodies)}.
+  const createdEnemy = `${pickFromList(MBNames)}, bandyta. HP: ${k(
+    4
+  )+3}.
+  
+  ${pickFromList(MBBrokenBodies)}.
+  
   Ekwipunek: ${randomizeFromArray(weapons)}, ${randomizeFromArray(armorTiers)}, ${miscItems}`;
 
   return createdEnemy;
