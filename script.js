@@ -4209,12 +4209,12 @@ const currentEnemy = function () {
 
 function createCurrentEnemy() {
   let weapons = [
-    // "kość udowa (k4)",
-    // "laska (k4)",
-    // "krótki miecz (k4)",
-    // "nóż (k4)",
-    // "siekiera (k4)",
-    // "sierp (k4)",
+    "kość udowa (k4)",
+    "laska (k4)",
+    "krótki miecz (k4)",
+    "nóż (k4)",
+    "siekiera (k4)",
+    "sierp (k4)",
     "młot bojowy (k6)",
     "miecz (k6)",
     "topór (k6)",
@@ -4225,10 +4225,13 @@ function createCurrentEnemy() {
 
   let armorTiers = [
     //"",
-    "skórzana zbroja, -k2 obrażeń",
-    "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony",
-    "skórzana zbroja, -k2 obrażeń, tarcza -1 obrażenie",
-    "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony, tarcza -1 obrażenie",
+    "futrzana zbroja, -k2 obrażeń",
+    // "skórzana zbroja, -k2 obrażeń",
+    // "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony",
+    // "skórzana zbroja, -k2 obrażeń, tarcza -1 obrażenie",
+    // "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony, tarcza -1 obrażenie",
+    // "zbroja płytowa, -k6 obrażeń, DR+4 do testów zręczności, DR+2 obrony, tarcza -1 obrażenie",
+    // "zbroja płytowa, -k6 obrażeń, DR+4 do testów zręczności, DR+2 obrony",
   ];
 
   let itemsRoll = k(2)
@@ -4239,9 +4242,9 @@ function createCurrentEnemy() {
     miscItems += `.\n ${pickFromList(MBCorpseLoot)}`
   }
 
-  const createdEnemy = `${pickFromList(MBNames)}, bandyta. HP: ${k(
+  const createdEnemy = `${pickFromList(MBNames)}, łupieżca z lodowych pustkowi. HP: ${k(
     4
-  )+3}.
+  )+1}.
   
   ${pickFromList(MBBrokenBodies)}.
   
