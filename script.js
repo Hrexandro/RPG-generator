@@ -4209,6 +4209,48 @@ const description = function () {
   };
 }
 
+
+//MBTownsDesc
+
+const MBTownsDesc = function () {
+  return {
+    type: "pickerRoller",
+    list: [
+      `Wioska - opuszczona, można z niej wyszabrować ${k(
+        6
+      )} racji jedzenia i wody`,
+      `${pickFromList(MBTowns)} - Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone`,
+      `${pickFromList(MBTowns)} - Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.`,
+      `${pickFromList(MBTowns)} - Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.`,
+      `${pickFromList(MBTowns)} - Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.`,
+      `${pickFromList(MBTowns)} - Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia`,
+      `${pickFromList(MBTowns)} - tętniąca życiem metropolia.`,
+      `${pickFromList(MBTowns)} - dawna metropolia, prawie opustoszała, ludzie snują się po ulicach jak cienie.`,
+      `${pickFromList(MBTowns)} - Wioska - rozsiana wśród wzgórz osada pasterzy`,
+      `${pickFromList(MBTowns)} - Wioska - miejscowi boją się obcych`,
+      `${pickFromList(MBTowns)} - Wioska - miejscowi czekają tylko na okazję, żeby dopaść przyjezdnych`,
+      `${pickFromList(MBTowns)} - położona nad wodą wioska rybacka`,
+      `${pickFromList(MBTowns)} - Wioska - otoczona palisadą, niebezpieczna okolica, nerwowi wieśniacy`,
+      `${pickFromList(MBTowns)} - wioska przy szlaku, zbudowana wokół prosperującej karczmy`,
+      `${pickFromList(MBTowns)} - niewielkie miasteczko`,
+      `${pickFromList(MBTowns)} - spore miasto`,
+      `${pickFromList(MBTowns)} - spore miasto, miejsce kultu, cel pielgrzymek`,
+      `Opuszczone duże miasto`,
+      `Opuszczone duże miasto - siedlisko potworów`,
+      `Opuszczone duże miasto - kryjówka kultystów`,
+      `Opuszczone duże miasto - kryjówka bandytów`,
+      `Opuszczone miasteczko`,
+      `Opuszczone miasteczko - siedlisko potworów`,
+      `Opuszczone miasteczko - kryjówka kultystów`,
+      `Opuszczone miasteczko - kryjówka bandytów`,
+      `Opuszczona wioska - siedlisko potworów`,
+      `Opuszczona wioska - kryjówka kultystów`,
+      `Opuszczona wioska - kryjówka bandytów`,
+    ],
+  };
+};
+
+
 const currentEnemy = function () {
   return {
     type: "pickerRoller",
