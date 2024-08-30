@@ -461,7 +461,11 @@ const MBRandomEncountersCivilized = function () {
       'Obłąkany człowiek',
       'Heretycki kaznodzieja ćwiczy przemówienie',
       'Patrol wojska',
-      'Nieumarli bandyci'
+      'Nieumarli bandyci',
+      'Niedźwiedź - 12 HP, morale 8, cios łapą k6 obrażeń, gruba skóra - k2',
+      '4 nieumarłe lalki śpiewające kołysankę o misiu i nieumarły niedźwiedź - 12 HP, morale -, cios łapą k6 obrażeń, gruba skóra - k2',
+      '1 nieumarła lalka śpiewająca kołysankę o misiu i nieumarły niedźwiedź - 12 HP, morale -, cios łapą k6 obrażeń, gruba skóra - k2',
+      'Do obozowiska w nocy podchodzi żywy trup, niezaczepiany odejdzie o świcie, zaatakowany krzykiem wezwie więcej swoich'
     ],
   };
 };
@@ -731,7 +735,12 @@ const MBRandomEncountersWilderness = function () {
       'Zbłąkany pies',
       'Obłąkany człowiek',
       'Heretycki kaznodzieja ćwiczy przemówienie',
-      'Nieumarli bandyci'
+      'Nieumarli bandyci',
+
+      'Niedźwiedź - 12 HP, morale 8, cios łapą k6 obrażeń, gruba skóra - k2',
+      '4 nieumarłe lalki śpiewające kołysankę o misiu i nieumarły niedźwiedź - 12 HP, morale -, cios łapą k6 obrażeń, gruba skóra - k2',
+      '1 nieumarła lalka śpiewająca kołysankę o misiu i nieumarły niedźwiedź - 12 HP, morale -, cios łapą k6 obrażeń, gruba skóra - k2',
+      'Do obozowiska w nocy podchodzi żywy trup, niezaczepiany odejdzie o świcie, zaatakowany krzykiem wezwie więcej swoich'
     ],
   };
 };
