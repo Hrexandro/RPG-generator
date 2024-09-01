@@ -148,7 +148,45 @@ class Roll {
   }
 }
 
+//MBTownsDesc
 
+const MBTownsDesc = function () {
+  return {
+    type: "pickerRoller",
+    list: [
+      `Wioska - opuszczona, można z niej wyszabrować ${k(
+        6
+      )} racji jedzenia i wody`,
+      `${pickFromList(MBTowns)} - Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone`,
+      `${pickFromList(MBTowns)} - Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.`,
+      `${pickFromList(MBTowns)} - Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.`,
+      `${pickFromList(MBTowns)} - Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.`,
+      `${pickFromList(MBTowns)} - Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia`,
+      `${pickFromList(MBTowns)} - tętniąca życiem metropolia.`,
+      `${pickFromList(MBTowns)} - dawna metropolia, prawie opustoszała, ludzie snują się po ulicach jak cienie.`,
+      `${pickFromList(MBTowns)} - Wioska - rozsiana wśród wzgórz osada pasterzy`,
+      `${pickFromList(MBTowns)} - Wioska - miejscowi boją się obcych`,
+      `${pickFromList(MBTowns)} - Wioska - miejscowi czekają tylko na okazję, żeby dopaść przyjezdnych`,
+      `${pickFromList(MBTowns)} - położona nad wodą wioska rybacka`,
+      `${pickFromList(MBTowns)} - Wioska - otoczona palisadą, niebezpieczna okolica, nerwowi wieśniacy`,
+      `${pickFromList(MBTowns)} - wioska przy szlaku, zbudowana wokół prosperującej karczmy`,
+      `${pickFromList(MBTowns)} - niewielkie miasteczko`,
+      `${pickFromList(MBTowns)} - spore miasto`,
+      `${pickFromList(MBTowns)} - spore miasto, miejsce kultu, cel pielgrzymek`,
+      `Opuszczone duże miasto`,
+      `Opuszczone duże miasto - siedlisko potworów`,
+      `Opuszczone duże miasto - kryjówka kultystów`,
+      `Opuszczone duże miasto - kryjówka bandytów`,
+      `Opuszczone miasteczko`,
+      `Opuszczone miasteczko - siedlisko potworów`,
+      `Opuszczone miasteczko - kryjówka kultystów`,
+      `Opuszczone miasteczko - kryjówka bandytów`,
+      `Opuszczona wioska - siedlisko potworów`,
+      `Opuszczona wioska - kryjówka kultystów`,
+      `Opuszczona wioska - kryjówka bandytów`,
+    ],
+  };
+};
 
 let MBTownEncounters = {
   // town encounters losowe spotkania w mieście
@@ -771,84 +809,109 @@ let MBRandomDiscoveriesCivilized = {
     'Staw z leczącą wodą',
     'Wieża',
     'Fort',
-    'Ruiny pałacu'
+    'Ruiny pałacu',
+
+    `Opuszczone miasteczko`,
+    `Opuszczone miasteczko - siedlisko potworów`,
+    `Opuszczone miasteczko - kryjówka kultystów`,
+    `Opuszczone miasteczko - kryjówka bandytów`,
+    `Opuszczona wioska - siedlisko potworów`,
+    `Opuszczona wioska - kryjówka kultystów`,
+    `Opuszczona wioska - kryjówka bandytów`,
+    `Opuszczona wioska`
   ]
 }
 
-let MBRandomDiscoveriesWilderness = {
-  type: "picker",
-  list: [
-    `Opuszczona świątynia, wewnątrz nieumarła panna młoda, bierze jednego z bohaterów za swojego oblubieńca.`,
-    "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
-    "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
-    "Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.",
-    `Wioska - opuszczona, można z niej wyszabrować ${k(
-      6
-    )} racji jedzenia i wody`,
-    `${pickFromList(MBTowns)} - Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone`,
-    `${pickFromList(MBTowns)} - Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.`,
-    `${pickFromList(MBTowns)} - Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.`,
-    `${pickFromList(MBTowns)} - Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.`,
-    `${pickFromList(MBTowns)} - Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia`,
-    "Skamieniały las.",
-    "Kątem oka dostrzegasz drewnianą chatę. Przysiągłbyś, że jeszcze przed chwilą jej tam nie było. Z komina unosi się dym, nad ogniem piecze się apetycznie pachnąca zupa, ale czujesz, że coś jest nie tak.",
-    "Starożytne pole bitwy pełne na wpół zakopanych, zardzewiałych ostrzy i zjaw.",
-    "Dolina pełna kości wymarłych gatunków zwierząt.",
-    "Pokryta porostami świątynia przedludzkiego bóstwa.",
-    "Grządka dyniowa. Chorobliwy lecz słodki zapach unosi się w powietrzu. Są silnie halucynogeniczne, w nocy zbierają je zaborczy farmerzy.",
-    "Wieża zegarowa dzwoni. W jej cieniu heretyckie wiedźmy tworzą nieżyjące hybrydy trolli.",
-    "Ogromne bagno. Trudne do przebycia, rządzone przez spasłą, mackowatą istotę, która twierdzi, że należała niegdyś do rodziny królewskiej.",
-    `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(
-      8
-    )} zombie ukrywa się w krypcie.`,
-    "Zrujnowane opactwo bronione przez gargulca. W krypcie ukryty jest losowy artefakt.",
-    "Zamieszkałe przez gobliny wzgórza.",
-    "Wejście do głębszych podziemi.",
-    `${pickFromList(MBTowns)} - Wioska kanibali.`,
+let MBRandomDiscoveriesWilderness = function (){
+  return{
+    type: "pickerRoller",
+    list: [
+      `Opuszczona świątynia, wewnątrz nieumarła panna młoda, bierze jednego z bohaterów za swojego oblubieńca.`,
+      "Klasztor przy drodze (Mnisi i zakonnice są kultystami Nechrubela).",
+      "Ruiny zamku odznaczają się na tle nieba (zamieszkują je dzikie wrony, w jednej wieży, która przetrwała mieszka ślepy alchemik).",
+      "Spotykacie wyniszczone mauzoleum, które skrywa dziwny sekret. Uwięziony w nim, wewnętrz stale obracającego się kryształowego więzienia, został bard. Przez wiele dziesięcioleci uznawany był za martwego i prosi was o uwolnienie. Jest bardzo sławny w tej okolicy i obiecuje nagrodę.",
+      `Wioska - opuszczona, można z niej wyszabrować ${k(
+        6
+      )} racji jedzenia i wody`,
+      `${pickFromList(MBTowns)} - Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone`,
+      `${pickFromList(MBTowns)} - Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.`,
+      `${pickFromList(MBTowns)} - Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.`,
+      `${pickFromList(MBTowns)} - Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.`,
+      `${pickFromList(MBTowns)} - Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia`,
+      "Skamieniały las.",
+      "Kątem oka dostrzegasz drewnianą chatę. Przysiągłbyś, że jeszcze przed chwilą jej tam nie było. Z komina unosi się dym, nad ogniem piecze się apetycznie pachnąca zupa, ale czujesz, że coś jest nie tak.",
+      "Starożytne pole bitwy pełne na wpół zakopanych, zardzewiałych ostrzy i zjaw.",
+      "Dolina pełna kości wymarłych gatunków zwierząt.",
+      "Pokryta porostami świątynia przedludzkiego bóstwa.",
+      "Grządka dyniowa. Chorobliwy lecz słodki zapach unosi się w powietrzu. Są silnie halucynogeniczne, w nocy zbierają je zaborczy farmerzy.",
+      "Wieża zegarowa dzwoni. W jej cieniu heretyckie wiedźmy tworzą nieżyjące hybrydy trolli.",
+      "Ogromne bagno. Trudne do przebycia, rządzone przez spasłą, mackowatą istotę, która twierdzi, że należała niegdyś do rodziny królewskiej.",
+      `Opuszczony cmentarz (w kaplicy znajduje się odwrócony złoty krzyż wart 50s. ${k(
+        8
+      )} zombie ukrywa się w krypcie.`,
+      "Zrujnowane opactwo bronione przez gargulca. W krypcie ukryty jest losowy artefakt.",
+      "Zamieszkałe przez gobliny wzgórza.",
+      "Wejście do głębszych podziemi.",
+      `${pickFromList(MBTowns)} - Wioska kanibali.`,
+  
+      "Gorące źródła",
+      "Grota za wodospadem",
+      "Kromlech",
+      "Leże potwora",
+      "Niewielkie ruiny",
+      "Obozowisko myśliwych",
+      "Obozowisko uchodźców",
+      "Obozowisko zwiadowców",
+      "Ogryzione kości potwora",
+      "Ołtarz lokalnych bożków",
+      "Opuszczona kopalnia",
+      "Rzadkie zioła",
+      "Smolne sadzawki",
+      "Ślady potworów",
+      "Wieża czarodzieja",
+      "Wrak statku",
+  
+      "Kości starożytnych mieszkańców ruin",
+      "Krąg rytualny",
+      "Kryjówka banitów",
+      "Krater",
+      "Nietknięty stos pogrzebowy",
+      "Niewielkie ruiny",
+      "Spalony dom",
+      "Spalony las",
+      "Splądrowany obóz barbarzyńców",
+      "Świeżo rozstawiony obóz barbarzyńców",
+      "Zatrute źródło",
+      "Zrujnowana świątynia - kretuńska",
+      "Zrujnowana świątynia - pogańska",
+      'Ruiny',
+      'Staw z leczącą wodą',
+      'Wieża',
+      'Fort',
+      'Ruiny pałacu',
+      'Kurhany',
+      'Staw pełen żółwi',
+      'Staw zamieszkiwany przez obślizgłych ludzi',
+      'Kamienny posąg ludzkiej postaci, wygładzony przez czas - potarcie go krwią otwiera przejście do ogromnego podziemnego kompleksu na k6 rund, nie ma z niego normalnego wyjścia na powierzchnię, ale podobny portal otwiera się za każdym razem, gdy jeden z przybyszy ginie.',
+      'Kamienny posąg ludzkiej postaci, wygładzony przez czas i pokryty śladami krwi - potarcie go krwią otwiera przejście do ogromnego podziemnego kompleksu na k6 rund, nie ma z niego normalnego wyjścia na powierzchnię, ale podobny portal otwiera się za każdym razem, gdy jeden z przybyszy ginie.',
+      //enc
+      `Opuszczone duże miasto`,
+      `Opuszczone duże miasto - siedlisko potworów`,
+      `Opuszczone duże miasto - kryjówka kultystów`,
+      `Opuszczone duże miasto - kryjówka bandytów`,
+      `Opuszczone miasteczko`,
+      `Opuszczone miasteczko - siedlisko potworów`,
+      `Opuszczone miasteczko - kryjówka kultystów`,
+      `Opuszczone miasteczko - kryjówka bandytów`,
+      `Opuszczona wioska - siedlisko potworów`,
+      `Opuszczona wioska - kryjówka kultystów`,
+      `Opuszczona wioska - kryjówka bandytów`,
+      `Opuszczona wioska`,
+  
+      `${pickFromList(MBTownsDesc)}`
+    ]
 
-    "Gorące źródła",
-    "Grota za wodospadem",
-    "Kromlech",
-    "Leże potwora",
-    "Niewielkie ruiny",
-    "Obozowisko myśliwych",
-    "Obozowisko uchodźców",
-    "Obozowisko zwiadowców",
-    "Ogryzione kości potwora",
-    "Ołtarz lokalnych bożków",
-    "Opuszczona kopalnia",
-    "Rzadkie zioła",
-    "Smolne sadzawki",
-    "Ślady potworów",
-    "Wieża czarodzieja",
-    "Wrak statku",
-
-    "Kości starożytnych mieszkańców ruin",
-    "Krąg rytualny",
-    "Kryjówka banitów",
-    "Krater",
-    "Nietknięty stos pogrzebowy",
-    "Niewielkie ruiny",
-    "Spalony dom",
-    "Spalony las",
-    "Splądrowany obóz barbarzyńców",
-    "Świeżo rozstawiony obóz barbarzyńców",
-    "Zatrute źródło",
-    "Zrujnowana świątynia - kretuńska",
-    "Zrujnowana świątynia - pogańska",
-    'Ruiny',
-    'Staw z leczącą wodą',
-    'Wieża',
-    'Fort',
-    'Ruiny pałacu',
-    'Kurhany',
-    'Staw pełen żółwi',
-    'Staw zamieszkiwany przez obślizgłych ludzi',
-    'Kamienny posąg ludzkiej postaci, wygładzony przez czas - potarcie go krwią otwiera przejście do ogromnego podziemnego kompleksu na k6 rund, nie ma z niego normalnego wyjścia na powierzchnię, ale podobny portal otwiera się za każdym razem, gdy jeden z przybyszy ginie.',
-    'Kamienny posąg ludzkiej postaci, wygładzony przez czas i pokryty śladami krwi - potarcie go krwią otwiera przejście do ogromnego podziemnego kompleksu na k6 rund, nie ma z niego normalnego wyjścia na powierzchnię, ale podobny portal otwiera się za każdym razem, gdy jeden z przybyszy ginie.',
-    //enc
-
-  ]
+  }
 }
 
 // Other other
@@ -4210,45 +4273,7 @@ const description = function () {
 }
 
 
-//MBTownsDesc
 
-const MBTownsDesc = function () {
-  return {
-    type: "pickerRoller",
-    list: [
-      `Wioska - opuszczona, można z niej wyszabrować ${k(
-        6
-      )} racji jedzenia i wody`,
-      `${pickFromList(MBTowns)} - Wioska - dotknięta przez zarazę, jedzenie z niej ma 2/6 szans być zakażone`,
-      `${pickFromList(MBTowns)} - Wioska - dostatni posterunek handlowy, jedzenie i woda dostępne w dużych ilościach i niskich cenach.`,
-      `${pickFromList(MBTowns)} - Wioska - rządzona przez bandytów, lepiej nie chwalić się bogactwem.`,
-      `${pickFromList(MBTowns)} - Wioska - zdominowana przez pajęczych kultystów, nie handluje z obcymi.`,
-      `${pickFromList(MBTowns)} - Wioska - zamieszkana przez kanibali, brak wody na sprzedaż, ale pod dostatkiem jedzenia`,
-      `${pickFromList(MBTowns)} - tętniąca życiem metropolia.`,
-      `${pickFromList(MBTowns)} - dawna metropolia, prawie opustoszała, ludzie snują się po ulicach jak cienie.`,
-      `${pickFromList(MBTowns)} - Wioska - rozsiana wśród wzgórz osada pasterzy`,
-      `${pickFromList(MBTowns)} - Wioska - miejscowi boją się obcych`,
-      `${pickFromList(MBTowns)} - Wioska - miejscowi czekają tylko na okazję, żeby dopaść przyjezdnych`,
-      `${pickFromList(MBTowns)} - położona nad wodą wioska rybacka`,
-      `${pickFromList(MBTowns)} - Wioska - otoczona palisadą, niebezpieczna okolica, nerwowi wieśniacy`,
-      `${pickFromList(MBTowns)} - wioska przy szlaku, zbudowana wokół prosperującej karczmy`,
-      `${pickFromList(MBTowns)} - niewielkie miasteczko`,
-      `${pickFromList(MBTowns)} - spore miasto`,
-      `${pickFromList(MBTowns)} - spore miasto, miejsce kultu, cel pielgrzymek`,
-      `Opuszczone duże miasto`,
-      `Opuszczone duże miasto - siedlisko potworów`,
-      `Opuszczone duże miasto - kryjówka kultystów`,
-      `Opuszczone duże miasto - kryjówka bandytów`,
-      `Opuszczone miasteczko`,
-      `Opuszczone miasteczko - siedlisko potworów`,
-      `Opuszczone miasteczko - kryjówka kultystów`,
-      `Opuszczone miasteczko - kryjówka bandytów`,
-      `Opuszczona wioska - siedlisko potworów`,
-      `Opuszczona wioska - kryjówka kultystów`,
-      `Opuszczona wioska - kryjówka bandytów`,
-    ],
-  };
-};
 
 
 const currentEnemy = function () {
@@ -4298,7 +4323,8 @@ function createCurrentEnemy() {
   )+1}.
   
   ${pickFromList(MBBrokenBodies)}.
-  
+  ${pickFromList(MBTerribleTraits)}.
+
   Ekwipunek: ${randomizeFromArray(weapons)}, ${randomizeFromArray(armorTiers)}, ${miscItems}`;
 
   return createdEnemy;
