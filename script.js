@@ -1466,8 +1466,8 @@ const MBBadHabits = {
     "Gwiżdże, gdy próbuje się ukryć, zaprzecza, jakoby tak robił. Gwiżdże przy 5, 7, 9, 11 lub 13 wyrzuconym na k20",
     "Robi biżuterię z ludzkich zębów",
     "Przywłaszcza sobie wszelkie zasługi", // ok
-    "Zbiera trofeum z każdego zabitego wroga.",
-    "Imiona stale wylatują mu z głowy, ale świetnie zapamiętuje twarze.",
+    "Zbiera trofeum z każdego zabitego wroga",
+    "Imiona stale wylatują mu z głowy, ale świetnie zapamiętuje twarze",
   ],
 };
 
@@ -3230,7 +3230,7 @@ createAndAddClass({
     "ruin posiadłości Króla Cieni, gęstych od wspomnień grzybów i dymu.",
   ],
   specialAbility:
-    "Przenośne laboratorium - bez przerwy zbierasz i stale zużywasz różne składniki, każdego dnia masz dośc materiałów do stworzena dwóch losowych wywarów (w sumie k4 dawki). Niewykorzystane tracą swoje właściwości po 24 godzinach",
+    "Przenośne laboratorium - bez przerwy zbierasz i stale zużywasz różne składniki, każdego dnia masz dość materiałów do stworzena dwóch losowych wywarów (w sumie k4 dawki). Niewykorzystane tracą swoje właściwości po 24 godzinach",
   rolledAbility: [""],
   agility: 0,
   presence: 0,
@@ -3259,7 +3259,7 @@ createAndAddClass({
     "na wozie wiozącym ofiary zarazy.",
   ],
   specialAbility:
-    "Możesz świadomie ulec staraniom swojej drugiej strony i zmienić swoją anatomię na jej wzór. Przemieszczenie kości wymaga jednej bolesnej runy. Twoja zwierzęca forma prawdopodobnie nie jest w stanmie używać broni ani pancerza",
+    "Możesz świadomie ulec staraniom swojej drugiej strony i zmienić swoją anatomię na jej wzór. Przemieszczenie kości wymaga jednej bolesnej runy. Twoja zwierzęca forma prawdopodobnie nie jest w stanie używać broni ani pancerza",
   rolledAbility: [
     "Morderczy szczur: malutki - testy na zręczność, w tym obrona, mają DR8, twoje ugryzienie (k4) niesie chorobę - test DR 14 na skupienie, w przypadku porażki cel atakuje swojego sprzymeirzeńca do momentu śmierci któregoś z nich",
     "Obdarty ze skóry i kapiący wilk: zaciekły - ataki mają DR10, twoje kły (k6) - zadają obrażenia krytyczne również przy naturalnym 19 i prowokują test na morale, śliski od krwi - redukcja obrażeń -k2",
@@ -4344,3 +4344,61 @@ function createCurrentEnemy() {
 // MBMonsterObjects.list.find((monster) => { return monster.keyName === "undeadNecromancer";}).description
 
 
+const unfriendlyUndead = function () {
+
+  function createUnfriendlyUndead(){
+
+    let armor = [
+      "0 (bez zbroi)",
+      "0 (szmaty)",
+      "-k2",
+      "-k4",
+      "-k6"
+    ]
+
+    let weapon = [
+      "k2 (zardzewiały nóż)",
+      "k2 (zgniłe zęby)",
+      "k2 (tępe paznokcie)",
+      "k2 (przegniła maczuga)",
+      "k2 (wygięty łuk)",
+      "k4 (tępy topór)",
+      "k4 (ostre szpony)",
+      "k4 (tępy miecz)",
+      "k4 (wyszczerbiony młot)",
+      "k6 (krzywa kusza)",
+      "k6 (ostra włócznia)",
+      "k6 (metalowa laska)",
+      "k8 (kolczasty korbacz)",
+      "k8 (ciężki miecz)",
+    ]
+
+    let special = [
+      "wściekły, PT ataku/obrony to 14",
+      "wyczerpany, PT ataku/obrony to 10",
+      `okultystyczny, używa losowego przeklętego zwoju: ${pickFromList(MBUncleanScroll)}`,
+      `błogosławiony, używa losowego świętego zwoju: ${pickFromList(MBSacredScroll)}`,
+      "Schorowany, test Wytrzymałości PT12 przy trafieniu lub 1 pkt obrażeń przez k4 rundy",
+      "upiorny, test Skupienia PT12 lub paraliż na k2 rundy",
+      "heroiczny, zwiększa morale sprzymierzeńców o k6",
+      "weteran, atakuje 2x na rundę",
+      "kanibal, 50% szansy, że ugryzie, zadając k4 obrażeń",
+      "pełzacz, potrafi wspinać się po ścianach i sufitach",
+      "transformuje się w innego nieumarłego po redukcji do 50% HP",
+      "brak",
+      "brak",
+      "brak",
+      "brak"
+    ]
+    return `HP: ${k(12)}. Morale ${k(12)}.
+    
+    Zbroja: ${randomizeFromArray(armor)}. Broń: ${randomizeFromArray(weapon)}
+
+    Cecha Specjalna: ${randomizeFromArray(special)}
+    `
+  }
+  return {
+    type: "pickerRoller",
+    list: [createUnfriendlyUndead()],
+  };
+};
