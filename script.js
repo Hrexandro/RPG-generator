@@ -4390,7 +4390,21 @@ const unfriendlyUndead = function () {
       "brak",
       "brak"
     ]
-    return `HP: ${k(12)}. Morale ${k(12)}.
+
+    let HP = k(12)
+
+    let types = [
+      "Zombie",
+      "Kościotrup (+2 obrażenia od broni obuchowych, -2 od broni kłutych)"
+    ]
+
+    let type = randomizeFromArray(types)
+
+    if (HP > 7){
+      type = types[0]
+    }
+
+    return `${type}. HP: ${HP}. Morale ${k(12)}.
     
     Zbroja: ${randomizeFromArray(armor)}. Broń: ${randomizeFromArray(weapon)}
 
