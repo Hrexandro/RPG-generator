@@ -30,7 +30,8 @@ import {
   crusaderNames,
   tavernNames,
   MBNobleNames,
-  wildClanNames
+  wildClanNames,
+  orkishNames
 } from "./names.js";
 
 import {

@@ -756,7 +756,46 @@ export const MBTowns = {
     "vag",
   ],
 };
-
+export const orkishNames = {
+  type: "mixerConcatenated",
+  prefix: [
+    "Kronn", "Khaz", "Tro", "Bora", "Urg", "Zora", "Scal", "Krell", "Vora", "Mor",
+    "Dra", "Sor", "Var", "Ul", "Ja", "Kresh", "Za", "Tor", "Rok", "Gar", "Isk", 
+    "Zira", "Va", "Gralk", "Ran", "Korv", "Hro", "Tra", "Brol", "Arr", "Bad", 
+    "Giga", "Zag", "Bog", "Bol", "Bor", "Ba", "Brak", "Brog", "Brug", "Bull", 
+    "Buzz", "Dakka", "Deff", "Drag", "Dreg", "Duz", "El", "Garag", "Garga", "Gaz", 
+    "Gha", "Ghar", "Ghaz", "Ghur", "Gitz", "Glut", "Go", "Gol", "Gor", "Mag", 
+    "Grag", "Grash", "Grim", "Gri", "Grob", "Grokk", "Grom", "Grosh", "Groz", 
+    "Grug", "Gruk", "Grung", "Grukk", "Gul", "Gut", "Hag", "Hruk", "Jud", "Khor", 
+    "Koz", "Krak", "Kraz", "Krugg", "Kug", "Kur", "Mar", "Ma", "Mog", "Mug", 
+    "Mur", "Naz", "Urd", "Nog", "Noz", "Nur", "Nurk", "Nuzz", "Ogr", "Orka", 
+    "Rar", "Raz", "Rip", "Shagg", "Shank", "Shokk", "Skag", "Skar", "Skrog", 
+    "Snagga", "Snag", "Thog", "Trag", "Ug", "Ugul", "Ung", "Ur", "Uz", "Vor", 
+    "Vorh", "Wug", "Zan", "Zhad", "Zog", "Zorg", "Az", "Dur", "Og", "Tau", 
+    "Urk", "Vag", "Wyrr", "Rug", "Balc", "Bolg", "Golfim", "Grish", "Lag", 
+    "Lug", "Mau", "Muz", "Orco", "Oth", "Rad", "Shag", "Snaga", "Uft", "Nazg", 
+    "Ash", "Durba", "Gim", "Thraka", "Bur", "Burz", "Krim", "Durb", "Carnish", 
+    "Gazat", "Ghash", "Glob", "Krimp", "Nugu", "Ombi", "Ronk"
+  ],
+  suffix: [
+    "ghul", "ga", "al", "ana", "ak", "gar", "la", "na", "vash", "ara",
+    "tak", "ra", "sha", "gan", "go", "an", "gard", "dakka", "fang", "frag",
+    "gob", "lob", "grog", "krull", "ok", "rag", "ka", "rok", "gark", "bad",
+    "natz", "grakka", "goz", "hak", "koz", "mek", "shul", "zulk", "grim",
+    "kul", "ghkull", "rk", "mott", "tok", "bag", "baz", "drang", "grok", "gutz",
+    "kug", "lad", "rath", "shag", "snik", "ash", "zod", "bakh", "shak",
+    "skull", "snag", "tusk", "shnak", "znak", "smak", "nok", "pit", "bok",
+    "drak", "Dungus", "grudd", "spar", "rog", "grob", "nag", "rutz", "guz",
+    "Krosnik", "za", "drug", "shogg", "goulth", "lurk", "gor", "dreg", "grub",
+    "rub", "grot", "gok", "grond", "uk", "mungus", "guts", "gukk", "grod",
+    "ro", "grin", "rod", "skraga", "hard", "skar", "gak", "guk", "lakk",
+    "zog", "gall", "gnott", "had", "zark", "bog", "zag", "snark", "ax",
+    "rond", "og", "hag", "gut", "kol", "or", "glum", "lok", "grek", "raz",
+    "lud", "meg", "dog", "bul", "gol", "nakh", "duf", "dush", "hur", "gash",
+    "bal", "bug", "rat", "luk", "nazg", "tuluk", "batul", "zum", "burz",
+    "ishi", "patul", "durb", "glob", "gul", "ronk", "zagh"
+  ]
+}
 export const VOTENobleNames = {
   // VOTE Veins of the Earth Noble Names
   type: "mixerSpaced",
