@@ -2163,7 +2163,10 @@ const MBCorpseLoot = function () {
       "Mikstura Fernora - przezroczysty olej wkraplany do oka, leczy infekcję i daje +2 do rzutów na skupienie przez k4 godz.",
       "Drażniąca tabaka Hyphosa - wpadasz w szał! Dwa ataki na rundę, ale obrona ma PT 14. Działa do końca starcia. Trzeba wciągać, wywołuje kichanie",
       "Mikstura: czarna trucizna - wytrzymałość PT 14 albo -k6 HP i ślepota przez jedną godzinę",
-      pickFromList(MBTreasure)
+      pickFromList(MBTreasure),
+      pickFromList(MBTreasure),
+      pickFromList(MBTreasure),
+      pickFromList(MBTreasure),
     ],
   };
 };
