@@ -4355,6 +4355,13 @@ const unfriendlyUndead = function () {
     let armor = [
       "0 (bez zbroi)",
       "0 (szmaty)",
+
+      "0 (bez zbroi)",
+      "0 (szmaty)",
+
+      "0 (bez zbroi)",
+      "0 (szmaty)",
+
       "-k2",
       "-k4",
       "-k6"
@@ -4364,6 +4371,12 @@ const unfriendlyUndead = function () {
       "k2 (zardzewiały nóż)",
       "k2 (zgniłe zęby)",
       "k2 (tępe paznokcie)",
+
+      "k2 (zardzewiały nóż)",
+      "k2 (zgniłe zęby)",
+      "k2 (tępe paznokcie)",
+
+
       "k2 (przegniła maczuga)",
       "k2 (wygięty łuk)",
       "k4 (tępy topór)",
@@ -4389,6 +4402,9 @@ const unfriendlyUndead = function () {
       "kanibal, 50% szansy, że ugryzie, zadając k4 obrażeń",
       "pełzacz, potrafi wspinać się po ścianach i sufitach",
       "transformuje się w innego nieumarłego po redukcji do 50% HP",
+      "brak",
+      "brak",
+      "brak",
       "brak",
       "brak",
       "brak",
