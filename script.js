@@ -2414,7 +2414,27 @@ const Goal = function (){
       `Dług w wysokości ${(k(6, true)+3)*100} szt. srebra, wierzyciele są na twoim tropie`,
       'Głód wiedzy',
       'Zew przygody',
-      'Pragnienie powstrzymania Apokalipsy'
+      'Pragnienie powstrzymania Apokalipsy',
+      'Szukasz kogoś ważnego, kto może już być dawno martwy',
+      'Wierzysz, że ten świat można jeszcze uratować',
+      'Chcesz zdobyć pieniądze, aby spędzić swoje pozostałe dni w luksusie',
+      'Szukasz ważnej pamiątki rodowej, z którą związanych jest wiele wspomnień',
+      'Próbujesz spełnić przepowiednię, która ocali twoją duszę',
+      'Próbujesz wypełnić pustkę w twoim sercu, dosłownie i w przenośni',
+      'Szukasz odkupienia za to, co zrobiłeś',
+      'Chcesz wrócić do domu, ale nie pamiętasz, gdzie on jest',
+      'Czujesz zew siły, której nie możesz się oprzeć',
+      'Kochasz odkrywać i szukać przygód, w szczególności niebezpiecznych',
+      'Chcesz dopełnić przyrzeczenia, choć wiesz, że jest to niemal niemożliwe',
+      'Chcesz pomodlić się u celu swojej wędrówki, aby zdobyć w ten sposób zbawienie',
+      'Szukasz lekarstwa na rzadką chorobę',
+      'Pragniesz skompletować swoją kolekcję fragmentów ciał potworów',
+      'Motywuje cię więź z grupą, z którą podróżujesz',
+      'Musisz zabić konkretną osobę, aby uciszyć głosy w swojej głowie',
+      //'Chcesz zobaczyć zachód słońca w konkretnym miejscu, które przypomina ci twoją przeszłość',
+      'Jesteś kartografem amatorem, próbujesz wypełnić nieznane luki w mapach Umierających Krain',
+      'Prowadzi cię nieuchwytny impuls, opieranie mu się oznaczało by śmierć... prawda?',
+      'Co rano tracisz wspomnienia, włóczysz się więc po świecie bez celu'
     ]
   }
 };
