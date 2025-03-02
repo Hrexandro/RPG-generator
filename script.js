@@ -3997,33 +3997,70 @@ function createCharacter(chosenCharacterClass) {
     }
   }
 
-  const createdCharacter =
-    `${characterClass.characterClassName === "Bladawiec"
-      ? pickFromList(MBPaleOneNames) :
-      (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNobleNames)) : pickFromList(MBNames) )
-    }. ${characterClass.characterClassName
-      ? `${characterClass.characterClassName}.`
-      : ""
-    } HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
-    ${characterClass.description
-      ? `${characterClass.description}. ${characterClass.originLabel
-      }${randomizeFromArray(characterClass.origin)}\n`
-      : ""
-    }${characterClass.secondaryOriginLabel
-      ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(
-        characterClass.secondaryOrigin
-      )}.\n`
-      : ""
-    }\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
-      MBBrokenBodies
-    )}. ${pickFromList(MBBadHabits)}.
-    Atrybuty: siła ${STR}, zwinność: ${AGI}, skupienie ${PRE}, wytrzymałość ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
-    }${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ""}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ""
+  // const createdCharacter =
+  //   `${characterClass.characterClassName === "Bladawiec"
+  //     ? pickFromList(MBPaleOneNames) :
+  //     (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNobleNames)) : pickFromList(MBNames) )
+  //   }. ${characterClass.characterClassName
+  //     ? `${characterClass.characterClassName}.`
+  //     : ""
+  //   } HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
+  //   ${characterClass.description
+  //     ? `${characterClass.description}. ${characterClass.originLabel
+  //     }${randomizeFromArray(characterClass.origin)}\n`
+  //     : ""
+  //   }${characterClass.secondaryOriginLabel
+  //     ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(
+  //       characterClass.secondaryOrigin
+  //     )}.\n`
+  //     : ""
+  //   }\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
+  //     MBBrokenBodies
+  //   )}. ${pickFromList(MBBadHabits)}.
+  //   Atrybuty: siła ${STR}, zwinność: ${AGI}, skupienie ${PRE}, wytrzymałość ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
+  //   }${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ""}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ""
+  //   }
+  //   Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, ` +
+  //   `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""
+  //   }${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ""
+  //   }${silver} szt. srebra.`;
+
+
+
+
+  /////Finish changing the string description into an object
+  /////To enable formatting with jspdf in print
+    let newName = `${characterClass.characterClassName === "Bladawiec"
+        ? pickFromList(MBPaleOneNames) :
+        (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNobleNames)) : pickFromList(MBNames) )
+      }`
+    const createdCharacter = {
+      createdCharacterName: newName,
+       
+      createdCharacterDescription: `${newName}. ${characterClass.characterClassName
+        ? `${characterClass.characterClassName}.`
+        : ""
+      } HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
+      ${characterClass.description
+        ? `${characterClass.description}. ${characterClass.originLabel
+        }${randomizeFromArray(characterClass.origin)}\n`
+        : ""
+      }${characterClass.secondaryOriginLabel
+        ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(
+          characterClass.secondaryOrigin
+        )}.\n`
+        : ""
+      }\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
+        MBBrokenBodies
+      )}. ${pickFromList(MBBadHabits)}.
+      Atrybuty: siła ${STR}, zwinność: ${AGI}, skupienie ${PRE}, wytrzymałość ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
+      }${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ""}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ""
+      }
+      Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, ` +
+      `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""
+      }${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ""
+      }${silver} szt. srebra.`
     }
-    Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, ` +
-    `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""
-    }${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ""
-    }${silver} szt. srebra.`;
 
   return createdCharacter;
 }
@@ -4045,9 +4082,34 @@ function displayArray(ar, parent) {
   for (let j = 0; j < ar.length; j++) {
     const tableRow = document.createElement("tr");
     parent.appendChild(tableRow);
-
     const line = document.createElement("p");
     line.innerText = `${j + 1}. ${ar[j]}`;
+    if (category === "MBCharacter"){//add character sheet generation and handle data differently (characters are objects not strings)
+      line.innerText = `${j + 1}. ${ar[j].createdCharacterDescription}`;
+      let saveButton = document.createElement("button");
+      line.appendChild(saveButton);
+      saveButton.classList.add('input');
+      saveButton.classList.add('btn');
+      saveButton.classList.add('btn-dark');
+      saveButton.innerHTML= "Eksportuj kartę postaci";
+
+      saveButton.addEventListener('click', ()=>{
+        var docDefinition = {
+         content: [
+             //{ text: 'Imię: ' + ar[j].createdCharacterName, fontSize: 14 },
+             { text: ar[j].createdCharacterDescription}
+         ]
+        };
+    
+        // Generate and download the PDF
+        pdfMake.createPdf(docDefinition).open();
+
+
+
+
+
+      })
+    }
     tableRow.appendChild(line);
   }
 }

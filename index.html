@@ -10,6 +10,8 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/vfs_fonts.js"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -18,6 +20,7 @@
         <div class="row">
             <div class="col" id="select-column">
                 <select name="kategoria" id="kategoria" class="input form-select">
+                    <option value="MBCharacter">Postać - Mörk Borg</option>
                     <option value="currentEnemy">Przeciwnik do aktualnej przygody</option>
                     <option value="MBUnheroicFeats">Atuty - Mörk Borg</option>
                     <option value="Goal">Cele postaci</option>
