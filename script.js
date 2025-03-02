@@ -1459,7 +1459,7 @@ const MBBadHabits = {
     "Gada do siebie w najmniej odpowiednich momentach i głośno pomstuje na wszelkie niedogodności", // ok
     "Czuje przymus pomodlenia się za duszę każdego z zabitych wrogów", // ok
     "Piroman",
-    "Czuje potrzebę wytykać i opisywać błędy inncy, ze szczegółami",
+    "Czuje potrzebę wytykać i opisywać błędy innych, ze szczegółami",
     "Stale gubi ważne przedmioty i zapomina ważne fakty",
     "Plotkarz, obgaduje każdego, którego akurat nie ma w pobliżu",
     "Jąka się, gdy kłamie",
@@ -3107,7 +3107,7 @@ createAndAddClass({
     "wychowany przez banitów w ruderze na południe od Alliánsu.",
   ],
   specialAbility:
-    "Skryty - testy zręczności i skupienia są łatwiejsze o 2 punkty. Gdy po raz pierwszy zdobywasz poziom, rzuć jeszcze raz na Specjalność. Na kolejnych poziomach szumowina może przerzucić jedną lub obie Specjalności.",
+    "Skryty - testy zręczności i skupienia mają standardowo trudność 10 zamiast 12. Gdy po raz pierwszy zdobywasz poziom, rzuć jeszcze raz na Specjalność. Na kolejnych poziomach szumowina może przerzucić jedną lub obie Specjalności.",
   rolledAbility: [
     "Tchórzliwe Pchnięcie - kiedy atakujesz lekką bronią jednoręczną z zaskoczenia, rzuć DR10 na zręczność. Sukces oznacza jedno automatyczne trafienie, zadające normalne obrażenia +3",
     "Brudne Paluszki - twoje zręczne dłonie dostają się do kieszeni i otwierają zamki z testem DR8 na zręczność. Zaczynasz z zestawem wytrychoów",
@@ -4034,31 +4034,77 @@ function createCharacter(chosenCharacterClass) {
         ? pickFromList(MBPaleOneNames) :
         (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNobleNames)) : pickFromList(MBNames) )
       }`
+
+    let newClass = `${characterClass.characterClassName
+      ? `Klasa: ${characterClass.characterClassName}.`
+      : ""}`
+
+    let newClassDescription =`${characterClass.description
+      ? `${characterClass.description}. ${characterClass.originLabel
+      }${randomizeFromArray(characterClass.origin)}\n`
+      : ""
+    }${characterClass.secondaryOriginLabel
+      ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(
+        characterClass.secondaryOrigin
+      )}.\n`
+      : ""
+    }`
+
+    let newClassBenefitsHeader = characterClass.characterClassName ? "Atuty klasowe: " : "";
+
+    let newBenefits = `${characterClass.specialAbility ? `\n• ${characterClass.specialAbility}.` : ""
+  }\n${additionalSpecialItem ? `\n• ${additionalSpecialItem}.\n` : ""}${rolledAbilities ? `\n • ${rolledAbilities}. \n` : ""}`;
+  
+//coś tu jest chyba zjebane z class description, jest jakieś secondary
+    let newOmens = `Omeny: k${maxOmens}/dzień.`
+    let newHP = `HP: ${HP}.` 
+    let newSTR = `Siła: ${STR}`
+    let newAGI = `Zwinność: ${AGI}`
+    let newPRE = `Skupienie: ${PRE}`
+    let newTOU = `Wytrzymałość: ${TOU}`
+
+    let newPersonality = `${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
+      MBBrokenBodies
+    )}. ${pickFromList(MBBadHabits)}.`;
+    
+    let newArmor = `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""}`
+    let newD6EquipmentRoll = `${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""}`
+    let newD12EquipmentRollOne = `${d12EquipmentRollOne}`
+    let newD12EquipmentRollTwo = `${d12EquipmentRollTwo}`
+    let newStartingScroll = `${additionalStartingScroll ? `• ${additionalStartingScroll}. ` : ""}`
+    let newFood = `Manierka, racje żywnościowe (${k(4)})`
+
     const createdCharacter = {
       createdCharacterName: newName,
-       
+      createdCharacterClass: newClass,
+      createdCharacterClassDescription: newClassDescription,
+      createdCharacterPersonality: newPersonality,
+      createdCharacterHP: newHP,
+      createdCharacterOmens: newOmens,
+      createdCharacterStrength: newSTR,
+      createdCharacterAgility: newAGI,
+      createdCharacterPresence: newPRE,
+      createdCharacterToughness: newTOU,
+      createdCharacterClassBenefitsHeader: newClassBenefitsHeader,
+      createdCharacterClassBenefits: newBenefits,
+      createdCharacterArmor: newArmor,
+      createdCharacterWeapon: pickedWeapon,
+      createdCharacterD6EquipmentRoll: newD6EquipmentRoll,
+      createdCharacterD12EquipmentRollOne: newD12EquipmentRollOne,
+      createdCharacterD12EquipmentRollTwo: newD12EquipmentRollTwo,
+      createdCharacterAdditionalStartingScroll: newStartingScroll,
+      createdCharacterSilver: silver,
+      createdCharacterFood: newFood,
+
       createdCharacterDescription: `${newName}. ${characterClass.characterClassName
         ? `${characterClass.characterClassName}.`
         : ""
       } HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
-      ${characterClass.description
-        ? `${characterClass.description}. ${characterClass.originLabel
-        }${randomizeFromArray(characterClass.origin)}\n`
-        : ""
-      }${characterClass.secondaryOriginLabel
-        ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(
-          characterClass.secondaryOrigin
-        )}.\n`
-        : ""
-      }\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
-        MBBrokenBodies
-      )}. ${pickFromList(MBBadHabits)}.
-      Atrybuty: siła ${STR}, zwinność: ${AGI}, skupienie ${PRE}, wytrzymałość ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
-      }${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ""}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ""
-      }
-      Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, ` +
-      `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""
-      }${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ""
+      ${newClassDescription}\n${newPersonality}.
+      Atrybuty: siła ${STR}, zwinność: ${AGI}, skupienie ${PRE}, wytrzymałość ${TOU}.\n ${newBenefits}
+      Ekwipunek: ${newFood}, ${pickedWeapon}, ` +
+      `${newArmor} ${newD6EquipmentRoll
+      }${newD12EquipmentRollOne}, ${newD12EquipmentRollTwo}, ${newStartingScroll
       }${silver} szt. srebra.`
     }
 
@@ -4084,7 +4130,7 @@ function displayArray(ar, parent) {
     parent.appendChild(tableRow);
     const line = document.createElement("p");
     line.innerText = `${j + 1}. ${ar[j]}`;
-    if (category === "MBCharacter"){//add character sheet generation and handle data differently (characters are objects not strings)
+    if (category === "MBCharacter"){
       line.innerText = `${j + 1}. ${ar[j].createdCharacterDescription}`;
       let saveButton = document.createElement("button");
       line.appendChild(saveButton);
@@ -4094,20 +4140,37 @@ function displayArray(ar, parent) {
       saveButton.innerHTML= "Eksportuj kartę postaci";
 
       saveButton.addEventListener('click', ()=>{
-        var docDefinition = {
+        let docDefinition = {
          content: [
-             //{ text: 'Imię: ' + ar[j].createdCharacterName, fontSize: 14 },
-             { text: ar[j].createdCharacterDescription}
+             { text: ar[j].createdCharacterName, fontSize: 20, bold: true},
+             { text: ar[j].createdCharacterClass, margin: [0, 5, 0, 10], bold: true},
+            //  { text: ar[j].createdCharacterClassDescription, margin: [0, 5, 0, 10]},
+             { text: ar[j].createdCharacterPersonality, margin: [0, 5, 0, 10]},
+             { text: ar[j].createdCharacterClassBenefitsHeader, bold: true},
+             { text: ar[j].createdCharacterClassBenefits, margin: [0, 5, 0, 10]},
+             { text: ar[j].createdCharacterHP, margin: [0, 5, 0, 0], fontSize: 16, bold: true},
+             { text: ar[j].createdCharacterStrength, margin: [0, 5, 0, 0], bold: true},
+             { text: ar[j].createdCharacterAgility, margin: [0, 5, 0, 0], bold: true},
+             { text: ar[j].createdCharacterPresence, margin: [0, 5, 0, 0], bold: true},
+             { text: ar[j].createdCharacterToughness, margin: [0, 5, 0, 10], bold: true},
+             { text: "Broń:", bold: true},
+             { text: ar[j].createdCharacterWeapon, margin: [0, 0, 0, 10]},
+             { text: "Pancerz:", bold: true},
+             { text: ar[j].createdCharacterArmor, margin: [0, 0, 0, 10]},
+             { text: "Ekwipunek:", bold: true},
+             { text: "Udźwig: siła + 8 przedmiotów", fontSize: 8, margin: [0, 0, 0, 10]},
+             { text: "• " + ar[j].createdCharacterFood},
+             { text: "• " + ar[j].createdCharacterD6EquipmentRoll},
+             { text: "• " + ar[j].createdCharacterD12EquipmentRollOne},
+             { text: "• " + ar[j].createdCharacterD12EquipmentRollTwo},
+             { text: "• " + ar[j].createdCharacterAdditionalStartingScroll, margin: [0, 0, 0, 10]},
+             { text: ar[j].createdCharacterSilver + " szt. srebra", margin: [0, 0, 0, 10]},
+             { text: ar[j].createdCharacterOmens, bold: true},
+             { text: "Maksymalne obrażenia, redukcja obrażeń o k6, powtórzenie rzutu, obniżenie poziomu trudności testu o 4", fontSize: 8},
          ]
         };
-    
-        // Generate and download the PDF
+
         pdfMake.createPdf(docDefinition).open();
-
-
-
-
-
       })
     }
     tableRow.appendChild(line);
