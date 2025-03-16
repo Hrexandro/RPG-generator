@@ -4144,7 +4144,7 @@ function displayArray(ar, parent) {
          content: [
              { text: ar[j].createdCharacterName, fontSize: 20, bold: true},
              { text: ar[j].createdCharacterClass, margin: [0, 5, 0, 10], bold: true},
-            //  { text: ar[j].createdCharacterClassDescription, margin: [0, 5, 0, 10]},
+             { text: ar[j].createdCharacterClassDescription, margin: [0, 5, 0, 10]},
              { text: ar[j].createdCharacterPersonality, margin: [0, 5, 0, 10]},
              { text: ar[j].createdCharacterClassBenefitsHeader, bold: true},
              { text: ar[j].createdCharacterClassBenefits, margin: [0, 5, 0, 10]},
