@@ -4096,6 +4096,8 @@ function createCharacter(chosenCharacterClass) {
       createdCharacterSilver: silver,
       createdCharacterFood: newFood,
 
+      createdCharacterStrengthValue: Number(STR),
+
       createdCharacterDescription: `${newName}. ${characterClass.characterClassName
         ? `${characterClass.characterClassName}.`
         : ""
@@ -4126,6 +4128,7 @@ function randomizeFromArray(array) {
 
 function displayArray(ar, parent) {
   for (let j = 0; j < ar.length; j++) {
+    console.log(ar)
     const tableRow = document.createElement("tr");
     parent.appendChild(tableRow);
     const line = document.createElement("p");
@@ -4138,6 +4141,33 @@ function displayArray(ar, parent) {
       saveButton.classList.add('btn');
       saveButton.classList.add('btn-dark');
       saveButton.innerHTML= "Eksportuj kartę postaci";
+
+      const liftingCapacity = ar[j].createdCharacterStrengthValue + 8;
+//redo this, currently does nothing
+
+// I want this to first generate the full capacity of slots as only •, and then fills them with the generated equipment
+
+//to do later: include weapons and armour, exclude animals
+      let equipmentSlots = []
+
+      for (let g = 0; g < liftingCapacity; g++){
+        equipmentSlots.push("• ")
+      }
+///////////////////////////////////////////////////////////////
+      let equipmentItems = [
+        ar[j].createdCharacterFood,
+        ar[j].createdCharacterD6EquipmentRoll,
+        ar[j].createdCharacterD12EquipmentRollOne,
+        ar[j].createdCharacterD12EquipmentRollTwo,
+        ar[j].createdCharacterAdditionalStartingScroll
+      ].filter(item => item && item.trim() !== "");
+
+      let displayedEquipment = equipmentItems.slice(0, liftingCapacity);
+
+
+
+      let equipmentParagraphs = displayedEquipment.map(item => ({ text: "• " + item }));
+////////////////////////////////////////////////////////////////////
 
       saveButton.addEventListener('click', ()=>{
         let docDefinition = {
@@ -4159,11 +4189,7 @@ function displayArray(ar, parent) {
              { text: ar[j].createdCharacterArmor, margin: [0, 0, 0, 10]},
              { text: "Ekwipunek:", bold: true},
              { text: "Udźwig: siła + 8 przedmiotów", fontSize: 8, margin: [0, 0, 0, 10]},
-             { text: "• " + ar[j].createdCharacterFood},
-             { text: "• " + ar[j].createdCharacterD6EquipmentRoll},
-             { text: "• " + ar[j].createdCharacterD12EquipmentRollOne},
-             { text: "• " + ar[j].createdCharacterD12EquipmentRollTwo},
-             { text: "• " + ar[j].createdCharacterAdditionalStartingScroll, margin: [0, 0, 0, 10]},
+             ...equipmentParagraphs,
              { text: ar[j].createdCharacterSilver + " szt. srebra", margin: [0, 0, 0, 10]},
              { text: ar[j].createdCharacterOmens, bold: true},
              { text: "Maksymalne obrażenia, redukcja obrażeń o k6, powtórzenie rzutu, obniżenie poziomu trudności testu o 4", fontSize: 8},
