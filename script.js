@@ -3834,8 +3834,7 @@ function createCharacter(chosenCharacterClass) {
     randomizeFromArray(crossbows),
     randomizeFromArray(tenDamageMeleeWeapons),
   ];
-  //const MBWeapons = ['kość udowa (k4)', 'laska (k4)','krótki miecz (k4)', 'nóż (k4)','młot bojowy (k6)', 'miecz (k6)', 'łuk (k6, Skupienie+10 strzał)', 'kiścień (k8)', 'kusza (k8, Skupienie+10 bełtów)', 'zweihänder (k10)']
-  //split into damage tiers and add different kinds with appropriate probability
+
   const d6Equipment = [
     "",
     "",
@@ -3919,7 +3918,7 @@ function createCharacter(chosenCharacterClass) {
       k(characterClass.weaponRoll[0]) + characterClass.weaponRoll[1] - 1;
   }
 
-  if (armorRoll > 0) {
+  //if (armorRoll > 0) { - no idea what the hell I had in mind with this bit, but it caused raw scrolls to pop up instead of rolling when starting with no armor
     //so they won't get upgraded if they start without armor
     if (d12EquipmentRollOne === "przeklęty zwój") {
       if (characterClass.scrollRule === "illiterate") {
@@ -3941,7 +3940,7 @@ function createCharacter(chosenCharacterClass) {
         d12EquipmentRollTwo = pickFromList(MBSacredScroll);
       }
     }
-  }
+  //}
 
   if (characterClass.scrollRule === "Tablet of Ochre Obscurity") {
     additionalSpecialItem = pickFromList(MBTabletOfOchreObscurity);
@@ -3997,39 +3996,6 @@ function createCharacter(chosenCharacterClass) {
     }
   }
 
-  // const createdCharacter =
-  //   `${characterClass.characterClassName === "Bladawiec"
-  //     ? pickFromList(MBPaleOneNames) :
-  //     (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNobleNames)) : pickFromList(MBNames) )
-  //   }. ${characterClass.characterClassName
-  //     ? `${characterClass.characterClassName}.`
-  //     : ""
-  //   } HP: ${HP}/${HP} Omeny ${currentOmens} (k${maxOmens}).
-  //   ${characterClass.description
-  //     ? `${characterClass.description}. ${characterClass.originLabel
-  //     }${randomizeFromArray(characterClass.origin)}\n`
-  //     : ""
-  //   }${characterClass.secondaryOriginLabel
-  //     ? `${characterClass.secondaryOriginLabel}${randomizeFromArray(
-  //       characterClass.secondaryOrigin
-  //     )}.\n`
-  //     : ""
-  //   }\n${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
-  //     MBBrokenBodies
-  //   )}. ${pickFromList(MBBadHabits)}.
-  //   Atrybuty: siła ${STR}, zwinność: ${AGI}, skupienie ${PRE}, wytrzymałość ${TOU}.\n ${characterClass.specialAbility ? `\n${characterClass.specialAbility}.` : ""
-  //   }${additionalSpecialItem ? `\n\n${additionalSpecialItem}.\n` : ""}${rolledAbilities ? `\n ${rolledAbilities}. \n` : ""
-  //   }
-  //   Ekwipunek: manierka, racje żywnościowe (${k(4)}), ${pickedWeapon}, ` +
-  //   `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""} ${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""
-  //   }${d12EquipmentRollOne}, ${d12EquipmentRollTwo}, ${additionalStartingScroll ? `${additionalStartingScroll}. ` : ""
-  //   }${silver} szt. srebra.`;
-
-
-
-
-  /////Finish changing the string description into an object
-  /////To enable formatting with jspdf in print
     let newName = `${characterClass.characterClassName === "Bladawiec"
         ? pickFromList(MBPaleOneNames) :
         (characterClass.characterClassName === "Upadły arystokrata" ? (pickFromList(MBNobleNames)) : pickFromList(MBNames) )
@@ -4071,7 +4037,7 @@ function createCharacter(chosenCharacterClass) {
     let newD6EquipmentRoll = `${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""}`
     let newD12EquipmentRollOne = `${d12EquipmentRollOne}`
     let newD12EquipmentRollTwo = `${d12EquipmentRollTwo}`
-    let newStartingScroll = `${additionalStartingScroll ? `• ${additionalStartingScroll}. ` : ""}`
+    let newStartingScroll = `${additionalStartingScroll ? `${additionalStartingScroll}. ` : ""}`
     let newFood = `Manierka, racje żywnościowe (${k(4)})`
 
     const createdCharacter = {
@@ -4143,18 +4109,9 @@ function displayArray(ar, parent) {
       saveButton.innerHTML= "Eksportuj kartę postaci";
 
       const liftingCapacity = ar[j].createdCharacterStrengthValue + 8;
-//redo this, currently does nothing
-
-// I want this to first generate the full capacity of slots as only •, and then fills them with the generated equipment
-
-//to do later: include weapons and armour, exclude animals
-      let equipmentSlots = []
-
-      for (let g = 0; g < liftingCapacity; g++){
-        equipmentSlots.push("• ")
-      }
-///////////////////////////////////////////////////////////////
       let equipmentItems = [
+        ar[j].createdCharacterWeapon,
+        ar[j].createdCharacterArmor,
         ar[j].createdCharacterFood,
         ar[j].createdCharacterD6EquipmentRoll,
         ar[j].createdCharacterD12EquipmentRollOne,
@@ -4162,12 +4119,18 @@ function displayArray(ar, parent) {
         ar[j].createdCharacterAdditionalStartingScroll
       ].filter(item => item && item.trim() !== "");
 
-      let displayedEquipment = equipmentItems.slice(0, liftingCapacity);
+      let equipmentSlots = []
+
+      for (let g = 0; g <= liftingCapacity; g++){
+
+        equipmentSlots.push("• " + (equipmentItems[g] ? equipmentItems[g] : "")) 
+      }
+      console.log(equipmentSlots)
+
+     let displayedEquipment = equipmentSlots.slice(0, liftingCapacity);
 
 
-
-      let equipmentParagraphs = displayedEquipment.map(item => ({ text: "• " + item }));
-////////////////////////////////////////////////////////////////////
+      let equipmentParagraphs = displayedEquipment.map(item => ({ text: item }));
 
       saveButton.addEventListener('click', ()=>{
         let docDefinition = {
