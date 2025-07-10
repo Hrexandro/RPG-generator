@@ -4034,7 +4034,7 @@ function createCharacter(chosenCharacterClass) {
     )}. ${pickFromList(MBBadHabits)}.`;
     
     let newArmor = `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""}`
-    let newD6EquipmentRoll = `${d6EquipmentRoll ? `${d6EquipmentRoll}, ` : ""}`
+    let newD6EquipmentRoll = `${d6EquipmentRoll ? `${d6EquipmentRoll}` : ""}`
     let newD12EquipmentRollOne = `${d12EquipmentRollOne}`
     let newD12EquipmentRollTwo = `${d12EquipmentRollTwo}`
     let newStartingScroll = `${additionalStartingScroll ? `${additionalStartingScroll}. ` : ""}`
@@ -4072,7 +4072,7 @@ function createCharacter(chosenCharacterClass) {
       Atrybuty: siła ${STR}, zwinność: ${AGI}, skupienie ${PRE}, wytrzymałość ${TOU}.\n ${newBenefits}
       Ekwipunek: ${newFood}, ${pickedWeapon}, ` +
       `${newArmor} ${newD6EquipmentRoll
-      }${newD12EquipmentRollOne}, ${newD12EquipmentRollTwo}, ${newStartingScroll
+      }, ${newD12EquipmentRollOne}, ${newD12EquipmentRollTwo}, ${newStartingScroll
       }${silver} szt. srebra.`
     }
 
@@ -4094,7 +4094,6 @@ function randomizeFromArray(array) {
 
 function displayArray(ar, parent) {
   for (let j = 0; j < ar.length; j++) {
-    console.log(ar)
     const tableRow = document.createElement("tr");
     parent.appendChild(tableRow);
     const line = document.createElement("p");
@@ -4109,6 +4108,7 @@ function displayArray(ar, parent) {
       saveButton.innerHTML= "Eksportuj kartę postaci";
 
       const liftingCapacity = ar[j].createdCharacterStrengthValue + 8;
+
       let equipmentItems = [
         ar[j].createdCharacterWeapon,
         ar[j].createdCharacterArmor,
@@ -4119,18 +4119,28 @@ function displayArray(ar, parent) {
         ar[j].createdCharacterAdditionalStartingScroll
       ].filter(item => item && item.trim() !== "");
 
+      const nonSlotExamples = ["mały wózek", "osiołek", "mały ale wredny pies", "małpy"];
+
       let equipmentSlots = []
 
-      for (let g = 0; g <= liftingCapacity; g++){
+      let equipmentOutsideSlots = equipmentItems.filter(el =>
+        nonSlotExamples.some(item => el.includes(item))
+      );
 
+      equipmentItems = equipmentItems.filter(el =>
+        !equipmentOutsideSlots.includes(el)
+      );
+
+      for (let g = 0; g <= liftingCapacity; g++){
         equipmentSlots.push("• " + (equipmentItems[g] ? equipmentItems[g] : "")) 
       }
-      console.log(equipmentSlots)
+
 
      let displayedEquipment = equipmentSlots.slice(0, liftingCapacity);
 
 
       let equipmentParagraphs = displayedEquipment.map(item => ({ text: item }));
+      let equipmentOutsideSlotsParagraphs = equipmentOutsideSlots.map(item => ({ text: item }));
 
       saveButton.addEventListener('click', ()=>{
         let docDefinition = {
@@ -4153,9 +4163,13 @@ function displayArray(ar, parent) {
              { text: "Ekwipunek:", bold: true},
              { text: "Udźwig: siła + 8 przedmiotów", fontSize: 8, margin: [0, 0, 0, 10]},
              ...equipmentParagraphs,
-             { text: ar[j].createdCharacterSilver + " szt. srebra", margin: [0, 0, 0, 10]},
+             { text: "______________________"},
+             ...equipmentOutsideSlotsParagraphs,
+             { text: ar[j].createdCharacterSilver + " szt. srebra", margin: [0, 10, 0, 10]},
              { text: ar[j].createdCharacterOmens, bold: true},
              { text: "Maksymalne obrażenia, redukcja obrażeń o k6, powtórzenie rzutu, obniżenie poziomu trudności testu o 4", fontSize: 8},
+             { text: "Używanie zwojów", margin: [0, 5, 0, 0],bold: true},
+             { text: "Skupienie +k4 razy na dzień. Test Skupienie ST12, lub -k2 HP oraz brak Mocy przez 1 godz.", fontSize: 8},
          ]
         };
 
