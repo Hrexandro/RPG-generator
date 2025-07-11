@@ -3441,7 +3441,7 @@ createAndAddClass({
     "Niech Żyje Młot - zwykłe narzędzia, takie jak młotki, zadają w twoich rękach k6 obrażeń",
     "Szybka Naprawa - jeśli masz pod ręką jakiś złom, zrób test DR12 na Skupienie aby naprawić zbroję, porażka redukuje zbroję o kolejny poziom",
     "Cęgi - jeśli uda ci się obronić przed atakiem, 1/4 szansy na złapanie przeciwnika cęgami i zyskanie ataku okazyjnego",
-    "Szczęśliwa Podkowa - działa jak bumerang, zadake k6 obrażeń",
+    "Szczęśliwa Podkowa - działa jak bumerang, zadaje k6 obrażeń",
     "Niezłomny - może naprawiać nawet zbroję zredukowaną do 0.",
     "Kolekcjoner Kości - zdaj test na Skupienie DR14 aby wykonać z kości tarczę jednorazowego użytku -k2",
     '"Znam Ten Mechanizm" - zdaj test na Skupienie DR12 aby otworzyć zamek. Porażka oznacza, że konieczny jest klucz',
