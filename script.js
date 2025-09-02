@@ -3283,7 +3283,7 @@ createAndAddClass({
     "na wozie wiozącym ofiary zarazy.",
   ],
   specialAbility:
-    "Możesz świadomie ulec staraniom swojej drugiej strony i zmienić swoją anatomię na jej wzór. Przemieszczenie kości wymaga jednej bolesnej runy. Twoja zwierzęca forma prawdopodobnie nie jest w stanie używać broni ani pancerza",
+    "Możesz świadomie ulec staraniom swojej drugiej strony i zmienić swoją anatomię na jej wzór. Przemieszczenie kości wymaga jednej bolesnej rundy. Twoja zwierzęca forma prawdopodobnie nie jest w stanie używać broni ani pancerza",
   rolledAbility: [
     "Morderczy szczur: malutki - testy na zręczność, w tym obrona, mają DR8, twoje ugryzienie (k4) niesie chorobę - test DR 14 na skupienie, w przypadku porażki cel atakuje swojego sprzymeirzeńca do momentu śmierci któregoś z nich",
     "Obdarty ze skóry i kapiący wilk: zaciekły - ataki mają DR10, twoje kły (k6) - zadają obrażenia krytyczne również przy naturalnym 19 i prowokują test na morale, śliski od krwi - redukcja obrażeń -k2",
