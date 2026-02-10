@@ -3190,6 +3190,7 @@ createAndAddClass({
     "Znak Bogactwa - długi i niedługi szlachty nie zostają łatwo zapomnane. Pokaż tę starożytną pieczęć swego rodu kupcowi, a masz 50% szans, że obniży ceny o połowę dla ciebie oraz twojej drużyny. W przeciwnym wypadku ceny są podwojone",
     "Rodowy Klejnot - niegdyś chluba rodowej kolekcji, to szafirowe cudeńko jest kuszącym celem. Kiedy wzniesiesz go w górę, wrogie istoty łase na bogactwa atakować będą ciebie, przed kimkolwiek innym",
   ],
+  numberOfRolledAbilities: 2,
   agility: 0,
   presence: 0,
   strength: 0,
@@ -3956,19 +3957,20 @@ function createCharacter(chosenCharacterClass) {
   let numberOfRolledAbilities = characterClass.numberOfRolledAbilities
     ? characterClass.numberOfRolledAbilities
     : 1;
-  let rolledAbilities = characterClass.rolledAbility
-    ? randomizeFromArray(characterClass.rolledAbility)
-    : false;
+    
+    let rolledAbilities = characterClass.rolledAbility
+      ? randomizeFromArray(characterClass.rolledAbility)
+      : false;
 
-  if (numberOfRolledAbilities > 1) {
-    for (let i = 1; i < numberOfRolledAbilities; i++) {
-      let newRolledAbility = randomizeFromArray(characterClass.rolledAbility);
-      while (newRolledAbility === rolledAbilities) {
-        newRolledAbility = randomizeFromArray(characterClass.rolledAbility);
+    if (numberOfRolledAbilities > 1) {
+      for (let i = 1; i < numberOfRolledAbilities; i++) {
+        let newRolledAbility = randomizeFromArray(characterClass.rolledAbility);
+        while (newRolledAbility === rolledAbilities) {
+          newRolledAbility = randomizeFromArray(characterClass.rolledAbility);
+        }
+        rolledAbilities += `. \n\n • ${newRolledAbility}`;
       }
-      rolledAbilities += `. ${newRolledAbility}`;
     }
-  }
 
   let silverMultiplier = characterClass.silverMultiplier
     ? characterClass.silverMultiplier
