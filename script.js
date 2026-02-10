@@ -408,10 +408,10 @@ const MBRandomEncountersCivilized = function () {
       "Zbliża się osiodłany koń bez jeźdźca. W torbach ma 4k10 racji zakonserwowanego ludzkiego mięsa. Jeśli drużyna zabierze mięso, koń opuści głowę i pogalopuje w dal.",
       "Zbliża się stary mężczyzna pchający wózek, na którym znajduje się ogromna książka i pyta bohaterów o ich imiona. Jeśli mu je podadzą, zapisuje je w księdze. Zimny dreszcz przebiega po ich kręgosłupach.",
       "Spotykacie dwójkę upiornych dzieci grających w kości doliny śmierci. Robią zakłady z omenów i chętnie zaproszą nowych graczy do rozgrywki.",
-      "Staje przed wami fraktalna forma Y'cthonlla, tego, który zamieszkuje Pomiędzy. Członkowie drużyny muszą przejść test DR16 na Prezencję, aby nie uciec z wrzaskiem od jego przeraźliwego widoku. Ci, którzy pozostali otrzymują mały mosiężny kluczyk.",
+      "Staje przed wami fraktalna forma Y'cthonlla, tego, który zamieszkuje Pomiędzy. Członkowie drużyny muszą przejść test PT16 na Skupienie, aby nie uciec z wrzaskiem od jego przeraźliwego widoku. Ci, którzy pozostali otrzymują mały mosiężny kluczyk.",
       "Waszą drogę przecina wir pyłowy, z jego wnętrza słychać odgłosy orkiestry dętej. Jeśli wrzucisz do środka trochę srebra, nie zbliży się do ciebie. Wrzuć więcej, a może przystanie na twoją prośbę.",
       "Na uboczu drogi siedzi stary mężczyzna ze złotym instrumentem strunowym. Obiecuje, że pozwoli wam przejść, jeśli pokonacie go w grze. A jeśli przegracie… ?",
-      "Kobieta w bieli stoi przy drodze trzymając płaczące niemowlę, prosi rozpaczliwie by ktoś je potrzymał. Jeśli się zgodzisz, dziecko staje się cięższe z każdą sekundą. Test DR16 na siłę, porażka to upuszczenie dziecka, kobieta wysysa 1 omen, sukces - kobieta odbiera uspokojone dziecko i otrzymujesz 1 omen. Jeśli odmówią potrzymania, kobieta zmienia się w zjawę i atakuje.",
+      "Kobieta w bieli stoi przy drodze trzymając płaczące niemowlę, prosi rozpaczliwie by ktoś je potrzymał. Jeśli się zgodzisz, dziecko staje się cięższe z każdą sekundą. Test PT16 na siłę, porażka to upuszczenie dziecka, kobieta wysysa 1 omen, sukces - kobieta odbiera uspokojone dziecko i otrzymujesz 1 omen. Jeśli odmówią potrzymania, kobieta zmienia się w zjawę i atakuje.",
       'Małe dziecko podbiega do was i krzyczy "jesteście wybrańcami!".',
       "Dwoje zwłok leży w rowie. Drwal, zmiażdżony i z połamanymi kośćmi i kupiec z głęboką raną od siekiery z tyłu głowy. Obok nich leży (przeklęty) mieszek z k10*6 srebra. Po wzięciu srebra kupiec powstaje: HP 12, nieumarły (powstaje ponownie po k3 rundach), k10 obrażeń (miażdżąca kości siła).",
       'Ni stąd, ni zowąd pojawia się berserker. Nie atakuje jednak drużyny, chce im tylko opowiedzieć swoją hipotezę o Wymiarze Krwi jako części metafizycznego i dosłownego "ciała" obejmującego rzeczywistość. Pyta: Jaką część tego "ciała" zamieszkujecie?',
@@ -643,7 +643,7 @@ const MBRandomEncountersWilderness = function () {
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(8, true)}`,
       `Przeciwnik! ${MBMonsterObjects.list.find((monster) => { return monster.keyName === "zombie";}).description} - liczba: ${k(20, true)}`,
       "Zbliża się osiodłany koń bez jeźdźca. W torbach ma 4k10 racji zakonserwowanego ludzkiego mięsa. Jeśli drużyna zabierze mięso, koń opuści głowę i pogalopuje w dal.",
-      "Kobieta w bieli stoi przy drodze trzymając płaczące niemowlę, prosi rozpaczliwie by ktoś je potrzymał. Jeśli się zgodzisz, dziecko staje się cięższe z każdą sekundą. Test DR16 na siłę, porażka to upuszczenie dziecka, kobieta wysysa 1 omen, sukces - kobieta odbiera uspokojone dziecko i otrzymujesz 1 omen. Jeśli odmówią potrzymania, kobieta zmienia się w zjawę i atakuje.",
+      "Kobieta w bieli stoi przy drodze trzymając płaczące niemowlę, prosi rozpaczliwie by ktoś je potrzymał. Jeśli się zgodzisz, dziecko staje się cięższe z każdą sekundą. Test PT16 na siłę, porażka to upuszczenie dziecka, kobieta wysysa 1 omen, sukces - kobieta odbiera uspokojone dziecko i otrzymujesz 1 omen. Jeśli odmówią potrzymania, kobieta zmienia się w zjawę i atakuje.",
       'Małe dziecko podbiega do was i krzyczy "jesteście wybrańcami!".',
       `Dwoje zwłok leży w rowie. Drwal, zmiażdżony i z połamanymi kośćmi i kupiec z głęboką raną od siekiery z tyłu głowy. Obok nich leży (przeklęty) mieszek z ${k(10)*6} srebra. Po wzięciu srebra kupiec powstaje: HP 12, nieumarły (powstaje ponownie po k3 rundach), k10 obrażeń (miażdżąca kości siła).`,
       'Ni stąd, ni zowąd pojawia się berserker. Nie atakuje jednak drużyny, chce im tylko opowiedzieć swoją hipotezę o Wymiarze Krwi jako części metafizycznego i dosłownego "ciała" obejmującego rzeczywistość. Pyta: Jaką część tego "ciała" zamieszkujecie?',
@@ -939,38 +939,38 @@ const MBUnheroicFeats = {
   //atuty
   type: "picker",
   list: [
-    "Cios Zabójcy - Mocny chwyt. Ostry nóż. Tylko tyle trzeba, żeby ktoś nigdy już nie opuścił galgenbeckiego zaułka. Z biegiem lat coraz lepiej ci to wychodzi. Zdaj test DR12 na siłę aby pochwycić niczego nie podejrzewającą ofiarę i automatycznie zadać krytyczne trafienie jednoręczną bronią sieczną.",
+    "Cios Zabójcy - Mocny chwyt. Ostry nóż. Tylko tyle trzeba, żeby ktoś nigdy już nie opuścił galgenbeckiego zaułka. Z biegiem lat coraz lepiej ci to wychodzi. Zdaj test PT12 na siłę aby pochwycić niczego nie podejrzewającą ofiarę i automatycznie zadać krytyczne trafienie jednoręczną bronią sieczną.",
     "Zaprawiony w Bojach Mówca Śmierci - Twoja siła w bitwie nie bierze się z twojej biegłości z mieczem i tarczą, ani prędkości i muskulaturze, ale z twoich słów, które sprowadzają śmierć na wrogów. Moesz używać Mocy nosząć średnią zbroję. Jeśli wybierasz ten atut po raz drugi, możesz używać mocy odziany w ciężką zbroję.",
     "Bestialski Uczony - Badasz bestie tej krainy, patrosząc je i wydobywając z ich flaków sekrety świata. Możesz zobaczyć przeszłość w zwierzęcych wnętrznościach. Zyskujes omen za każde 10HP bestii, ale nie więcej, niż twoja maksymalna liczba omenów. Można użyć raz na każdym typie zwierzęcia. Wnętrzności mogą ci też ujawnić interesujące informacje.",
     "Krwawe Knykcie - Lata bitki przekształciły twoje pięści w zabójcze obuchy. Są twarde od blizn pozostawionych przez winnych i niewinnych. Twoje ataki pięściami zadają k6 obrażeń i ignorują lekki pancerz. Jeśli wybierzesz ten atut po raz drugi, obrażenia rosną do k8 i ignorują średni pancerz. Trzeci raz - k10 i ignorują wszelki pancerz. Skucha na ataku pięściami oznacza złamanie dłoni - obrażenia zadajesz sobie sam. Musisz odnaleźć specjalistę, który nastawi ci kości.",
     "Krawy Pakt - Świat jest zbyt okrutny, żeby być w nim całkiem sam. Znalazłeś jednak sposób, aby uniknąć tego losu. Zawrzyj krwawy pakt z chętną osobą. Komunikujecie się myślami, niezależnie od dystansu, permanentnie. Cokolwiek doświadczy jeden, doświadcza też drugi - w tym rany i śmierć.",
     "Krawy Szał - Bitwena adrenalina uzależnia. Stale pragniesz tej podniety. Zabić albo zginąć, nie ma czasu na pytania. Kiedy twój atak zabije istotę, musisz w następnym ruchu ruszyć i zaatakować kolejną (może to być sprzymierzeniec), dodając k6 obrażeń za każdą zabitą istotę. Twój szał kończy się, kiedy nie możesz już nikogo zabić - padasz wtedy na ziemię wyczerpany i tracisz następną rundę.",
     "Kościomistrz - Nie lubisz, kiedy coś się marnuje, w tym ciała poległych. Możesz wytworzyć ekwipunek i zadziwiająco wysokiej jakości używając do tego ciał humanoidów. Broń zadająca k6 obrażeń - kości z 1 ciała. Tarcza - kości z 5 ciał. Lekki pancerz - kości z 10 ciał.",
-    "Rzeźnik - Nawykłeś do cięcia zwierząt gospodarskich. Wiesz, z czego się składają i jak funkcjonują. Ludzie wcale się tak bardzo od nich nie różnią. Zdaj test DR12 na zręczność, by przeprowadzić szybką operację, aby umierający towarzysz został zamiast padać od razu zredukowany do 0 HP. Jeśli towarzysz i tak zginie, możesz uzyskać k4 racje z ciała.",
+    "Rzeźnik - Nawykłeś do cięcia zwierząt gospodarskich. Wiesz, z czego się składają i jak funkcjonują. Ludzie wcale się tak bardzo od nich nie różnią. Zdaj test PT12 na zręczność, by przeprowadzić szybką operację, aby umierający towarzysz został zamiast padać od razu zredukowany do 0 HP. Jeśli towarzysz i tak zginie, możesz uzyskać k4 racje z ciała.",
     "Spokojny Zabójca - Dokładnie wymierzony nóż czy strzała jest najbardziej zabójcza. Masz oko do wrażliwych punktów i przerw w pancerzach. Raz na turę przeprowadzając atak w zwarciu lub dystansowy może przerzucić rzut na obrażenia i wybrać wyższy wynik.",
     "Kocie Oczy - W oczach ptaków szukałeś znaków. Rozsypane kości, rozrzucone wnętrzności. Pewnego dnia, zobaczyłeś przeznaczenie w oczach kota kryjącego się w cieni. Widzisz perfekcyjnie w ciemności, ale światło razi cię w oczy +2 do skupienia w ciemności, -2 do skupienia w świetle dnia. Jeśli spojrzysz w oczy dzikiej bestii, możesz poczuć to, co ona czuje.",
     "Walka Oburącz - Żaden z ciebie wyszkolony żołnierz, ale wydaje ci się, że dwie bronie powinny zabijać dwa razy szybciej. Jak na razie się sprawdza. Nie masz żadnych kar do ataku dwojgiem broni, rzucasz obrażenia dla każdej z nich i sumujesz wynik.",
     "Brzemienne Wizje - Przeznaczenie kieruje cię po umierającym świecie. Masz tylko nadzieję, że kieruje cię do ocalenia, a nie do zagłady. Zużyj omen i spędź chwilę na cichej medytacji. Zadaj Mistrzowi Gry pytanie na temat aktualnej sytuacji. Zostanie ci zesłana dziwaczna wizja będąca odpowiedzią na twoje pytanie. MG w sekrecie rzuca k4, jeśli wylosuje 1 - wizja jest myląca.",
-    "Żelazny Żołądek - Kiedy plony giną, a zwierzęta rodzą potworności, człowiek przestaje być wybredny jeśli chodzi o jedzenie. Możesz jeść gnijące, zepsute mięso jeśli zdarz test DR 6 na Wytrzymałość. Świadkowie są obrzydzeni. Wyrzutkowie (przyboczni) rzucaja na morale.",
+    "Żelazny Żołądek - Kiedy plony giną, a zwierzęta rodzą potworności, człowiek przestaje być wybredny jeśli chodzi o jedzenie. Możesz jeść gnijące, zepsute mięso jeśli zdarz test PT 6 na Wytrzymałość. Świadkowie są obrzydzeni. Wyrzutkowie (przyboczni) rzucaja na morale.",
     "Pierwszy Atak - Wierzysz, że Jaśniejące Pola są dla tych, którzy odważnie rzucają się w wir walki, to oni pierwsi zgarną chwałę. Niezależnie czy twoja strona wygra rzut na inicjatywę, zawsze możesz działać pierwszy, o ile swoim działaniem wyrządzisz komuś krzywdę.",
     "Atak Berserka - Widziałeś kiedyś jak człowiek uciął głowę koniowi ogromnym mieczem. To był bardziej wielka sztaba żelaza, niż miecz. Nie możesz zapomnieć o nieobecnym spojrzeniu zwierzęcia, przypomina ci się to za każdym razem, gdy machasz mieczem. Gdy dzierżysz dwuręczną broń, możesz zwiększyć trudność ataku o 2 i jeśli trafisz, dodajesz k6 do obrażeń. Jeśli atak się nie uda, twój przeciwnik uzyskuje atak okazyjny, przed którym obrona jest trudniejsza o 2.",
     "Zwiastun Niedoli - Mroczne błogosławieństwo krąży w twoich żyłach. Składasz swój los w ręce czarnego dysku, który zasłoni słońce. Uzyskujesz 4 maksymalne omeny zamiast 2. Póki żyjesz, Mistrz Gry rzuca na Niedolę dwiema kośćmi na dzień.",
-    "Zielarz Znachor - Spędziłeś niemal wieczność jako uczeń mistrza zielarstwa. Z dymu jego chaty wyniosłeś nowe spojrzenie na świat, ale też nowe umiejętności. Raz dziennie jesteś w stanie uzbierać składniki na eliksir leczący infekcję oraz przywracający k4 HP. Wymagany jest test DR12 na Skupienie, porażka oznacza stworzenie toksyny zadającej k4 obrażeń.",
+    "Zielarz Znachor - Spędziłeś niemal wieczność jako uczeń mistrza zielarstwa. Z dymu jego chaty wyniosłeś nowe spojrzenie na świat, ale też nowe umiejętności. Raz dziennie jesteś w stanie uzbierać składniki na eliksir leczący infekcję oraz przywracający k4 HP. Wymagany jest test PT12 na Skupienie, porażka oznacza stworzenie toksyny zadającej k4 obrażeń.",
     "Straszliwa Narośl - Może to coś, co zjadłeś, albo jakaś złowroga Moc. Cokolwiek było przyczyną, teraz nie możesz się jej pozbyć. Gwałtownie wyrasta ci dodatkowa ręka. Działa jak normalna ręka i możesz nią łapać. Ludzie postrzegają ją jako oznakę zła.",
     "Hiperświadomość - Jesteś paranoikiem. Widzisz zagrożenie w każdym cieniu. Wszystko chce cię zabić. Jesteś roztrzęsiony i poruszasz się gwałtownymi zrywami jak ptak. Nie możesz być ofiarą ataku z zaskoczenia. Dodatkowo twoja strona ma inicjatywę od wyniku 3 włącznie.",
     "Nieśmiertelna Pamięć - Nawiedzają cię wspomnienia poległych. Choć ich duchy odeszły a ich ciała obróciły się w popiół, ich wspomnienia pozostały na zawsze. Kiedy natrafiasz na miejsce wielkiego cirpienia, możesz przeżyć tragedię, która tam zaszła przeżywając na nowo wspomnienia tych, którym się wydarzyła. Jest szansa 1/20, że myśli staną się zbyt realne, istoty mogą stać się rzeczywistością, Moce mogą zacząć działać.",
-    "Natchniony Gawędziarz - Twoje opowieści sprowadzają radość dla wszystkich wokół, nawet w najczarniejszych chwilach. To wszystko kłamstwa, oczywiście, ale kogo to obchodzi? Kiedy odpoczywasz, zdając test DR9 na Skupienie możesz zacząć snuć pasjonującą opowieść. Poziom trudności rośnie o 1 za każdego słuchacza. Sukces oznacza, że każdy zyskuje omen. Nie można zyskać więcej, niż maksymalna liczba omenów.",
+    "Natchniony Gawędziarz - Twoje opowieści sprowadzają radość dla wszystkich wokół, nawet w najczarniejszych chwilach. To wszystko kłamstwa, oczywiście, ale kogo to obchodzi? Kiedy odpoczywasz, zdając test PT9 na Skupienie możesz zacząć snuć pasjonującą opowieść. Poziom trudności rośnie o 1 za każdego słuchacza. Sukces oznacza, że każdy zyskuje omen. Nie można zyskać więcej, niż maksymalna liczba omenów.",
     "Pijawka - Nabyty smak, może choroba, może klątwa. Wieczne pragnienie. Krew leczy cię i odżywia. Pół litra krwi leczy k4 HP. Możesz jeść normalne jedzenie, ale po jednym dniu zaczynasz odczuwać efekty głodu.",
     "Sympatyczny - Twój uśmiech ma coś w sobie. Twoje zachowanie, twój sposób mówienia. Można cię opisać jako przystępnego, to dziwne. Za każdym razem, kiedy robiony jest rzut na reakcję, rzuć 3k6 i wybierz dwa wyższe wyniki.",
     "Żywy Pancerz - Przetrwałeś wojnę. Przetrwałeś ją, bo zimna stal pokryła się bliznami, abyś ty mógł żyć. Stała się częścią ciebie, a ty nauczyłeś się nosić to brzemię. Tracisz karę do Zręczności dla aktualnie noszonej zbroi, kary do rzutów na obronę nadal obowiązują. Usunięcie zbroi oznacza bolesną śmierć, tak samo jej zniszczenie - jej naprawa jest możliwa, ale bardzo bolesna.",
     "Szczęściarz - Przeznaczenie? Brzmi złowrogo. Wolisz farta. Dobre rzeczy stale ci się przytrafiają. Dało ci to poczucie bezpieczeństwa, ale jak długo to potrwa? Nie masz omenów, żadne omeny nie mogą zostać wykorzystane do wpłynięcia na twoje rzuty. Za to zawsze zamiast k20 rzucasz 2k20 i wybierasz lepszy wynik. Jednak 1 na dowolnej z nich zawsze oznacz skuchę. Twoje szczęście w końcu musi się wyczerpać.",
     "Śmiercionośnie Dobycie - Twoje ostrze jest głodne i tylko krew potrafi je nasycić. Raz dobyte, domaga się krwi i jeśli go nie nakarmisz, zemści się na tobie. Twój pierwszy atak w walce zawsze zadaje maksymalne obrażenia, o ile trafi. Jeśli spudłuje, twój przeciwnik zyskuje atak okazyjny, przed którym bronisz się z karą 2 punktów.",
-    "Negocjator - Nie znosisz konfliktów. Jako pacyfista z natury potrafisz najlepiej doprowadzić do deeskalacji. Niektórzy mają cię za tchórza. Jeśli zdasz test na Skupienie (DR6 + morale przeciwnika z najwyższym morale) udaje ci się przerwać walkę. Na razie.",
-    "Mistrz Przetrwania - Czas spędzony w srogiej dziczy nauczył cię jak żyć. Małe wygody można uzyskać nawet w umierającym świecie. Test DR9 na Skupienie by zbudować wygodne obozowisko. DR+1 za każdą dodatkową osobę. Odpoczywając w tym obozowisku, wszyscy odzyskują 2k6 HP zamiast 1k6.",
-    "Drużynowy Kuchcik - Jesteś mistrzem w gotowaniu brei. Potrafisz nawet najgorsze jedzenie uczynić znośnym. Test DR9 na Skupienie by ugotować posiłek. DR+1 za każdą dodatkową porcję. Sukces oznacza, że jedną racją możesz nakarmić całą drużynę. Porażka oznacza, że racja ulega zepsuciu.",
+    "Negocjator - Nie znosisz konfliktów. Jako pacyfista z natury potrafisz najlepiej doprowadzić do deeskalacji. Niektórzy mają cię za tchórza. Jeśli zdasz test na Skupienie (PT6 + morale przeciwnika z najwyższym morale) udaje ci się przerwać walkę. Na razie.",
+    "Mistrz Przetrwania - Czas spędzony w srogiej dziczy nauczył cię jak żyć. Małe wygody można uzyskać nawet w umierającym świecie. Test PT9 na Skupienie by zbudować wygodne obozowisko. PT+1 za każdą dodatkową osobę. Odpoczywając w tym obozowisku, wszyscy odzyskują 2k6 HP zamiast 1k6.",
+    "Drużynowy Kuchcik - Jesteś mistrzem w gotowaniu brei. Potrafisz nawet najgorsze jedzenie uczynić znośnym. Test PT9 na Skupienie by ugotować posiłek. PT+1 za każdą dodatkową porcję. Sukces oznacza, że jedną racją możesz nakarmić całą drużynę. Porażka oznacza, że racja ulega zepsuciu.",
     "Szczurousty - Potrafisz rozmawić ze szczurami. Gwizdnięciem przywołujesz ich k4. Mogą nie mieć wiarygodnych informacji, ale zawsze chętnie z tobą pogadają.",
     "Słowo Mocy - Moce szepczą mroczne sekrety do twojego uszka gdziekolwiek jesteś. Ich nieustanne trajkotanie nigdy nie daje ci spokoju. Masz wewnętrzną wiedzę losowej Mocy. Po przeczytaniu zwoju możesz też wyryć jego ezoteryczne glify we własnym ciele, dzięki czemu nie będziesz już poterzebował zwoju. Co noc jest szansa 1/20, że przypadkowo użyjesz mocy we śnie. Ta moc ma też szansę 1/6 na skuchę.",
-    "Zmysł Drapieżcy - Gdzieś w twoim drzewie genealogicznym wprowadzona została niegodziwość. Jej wpływ w twojej krwi jest niewielka, ale stale odczuwalna. Masz doskonały węch, jeśli chodzi o ludzi. Potrafisz wywąchać osoby z sąsiedniego pokoju, zidentyfikowć kogoś, a nawet tropić jeśli zdasz test DR12 na Skupienie.",
+    "Zmysł Drapieżcy - Gdzieś w twoim drzewie genealogicznym wprowadzona została niegodziwość. Jej wpływ w twojej krwi jest niewielka, ale stale odczuwalna. Masz doskonały węch, jeśli chodzi o ludzi. Potrafisz wywąchać osoby z sąsiedniego pokoju, zidentyfikowć kogoś, a nawet tropić jeśli zdasz test PT12 na Skupienie.",
     "Brawurowy Agresor - Jesteś entuzjastyczny i nierozważny. Przeżyłeś jednak tak długo, więc to chyba dobrze. Możesz zaatakować ten sam cel dwa razy na rundę. Jeśli twój drugi atak spudłuje, twój przeciwnik ma atak okazyjny, przed którym obrona jest trudniejsza o 2 punkty.",
     "Tarczołamacz - Wiesz, że przeciwnik jest najbardziej narażony zaraz po tym, jak zaatakował. Jeśli rozbijesz swoją tarczę, by zablokować wszystkie obrażenia z ataku, możesz wyprowadzić kontratak, zadający +3 obrażenia.",
     "Skórowiec - Twoja skóra jest pokryta strupami, stale drażni cię i swędzi. Noszenie cudzej skóry przynosi chwilową ulgę. Możesz założyć na siebie skórę świeżo zabitej istoty, aby ją udawać. Wyglądasz, brzmisz i nawet pachniesz jak ona. Skóra gnije po k4 godzinach, a ty wracasz do swojej normalnej, podłej formy.",
@@ -1731,9 +1731,9 @@ const MBCorpseLoot = function () {
       `${k(20, true)} szt. srebra`,
       "Garnuszek z niesamowicie skuteczną maścią wywołującą swędzenie",
       "Naszyjnik z ludzkich zębów",
-      "Worek wściekłych, jadowitych ciem, DR6 na Twardość albo śmierć",
+      "Worek wściekłych, jadowitych ciem, PT6 na Twardość albo śmierć",
       `Kieszeń pełna popękanego szkła, ${k(2)} obrażeń`,
-      "Szalony manifest, jeśli go przeczytasz, rzuć DR12 na Prezencję, w przypadku porażki jesteś tak zmieszany, że tracisz na stałe 1 pkt prezencji",
+      "Szalony manifest, jeśli go przeczytasz, rzuć PT12 na Skupienie, w przypadku porażki jesteś tak zmieszany, że tracisz na stałe 1 pkt Skupienia",
       "Klucz do pobliskich drzwi, kradziony",
       "Mapa domu zamożnej, choć słabej rodziny",
       "Zadziwiająca ilość pająków (martwych)",
@@ -1748,12 +1748,12 @@ const MBCorpseLoot = function () {
       "Mapa do miejsca, które nie ma prawa istnieć",
       "Nieoznakowana butelka z cieczą, która mieni się raz czerwono, raz na zielono",
       "Papier dłużny, lokalny potentat jest winny posiadaczowi znaczną sumę pieniędzy",
-      '"Woda życia", leczy k8, test twardości DR10 albo ślepniesz. Wysoce alkoholowa.',
+      '"Woda życia", leczy k8, test Wytrzymałości PT10 albo ślepniesz. Wysoce alkoholowa.',
       "Maska pośmiertna jednego z BG",
       `Z tym coś było ewidentnie nie tak. Ręce ma pokryte czymś ciepławym, brązowym i mocno kwasowym. ${k(2) + 1
       } obrażeń i okropnie śmierdzisz przez ${k(4)} dni.`,
       "Czarny sztylet z Kergüs, 2k4 obrażeń",
-      "Podpisana buteleczka z trucizną, test DR12 na twardość, albo losowy atrybut spada o k4",
+      "Podpisana buteleczka z trucizną, test PT12 na Wytrzymałość, albo losowy atrybut spada o k4",
       "Skalp z długimi czarnymi włosami",
       "Złota kula z niewidzialnym łączeniem, otwierana wykręcaniem",
       "Zakrwawiony kastet",
@@ -1761,7 +1761,7 @@ const MBCorpseLoot = function () {
       "Puchar z czaszki jakiegoś nieszczęśnika",
       "Wisiorek z ususzonej krowiej głowy wiszącej do góry nogami na rzemyku",
       "Zestaw kart tarota, dwóch brakuje",
-      `Woreczek z bladozielonymi ziołami (herbata, daje sen bez marzeń, ale redukuje prezencję o 1 następnego dnia ${k(6) + k(6)
+      `Woreczek z bladozielonymi ziołami (herbata, daje sen bez marzeń, ale redukuje Skupienie o 1 następnego dnia ${k(6) + k(6)
       } porcji)`,
       "Żelazna obroża",
       "Zakorkowana flaszka z bardzo silnym alkoholem",
@@ -2114,9 +2114,9 @@ const MBCorpseLoot = function () {
       "ostra igła",
       `skrzynka z lekami - użycia: ${k(4)} (powstrzymuje krwawienie/infekcję i leczy k6 HP)`,
       "metalowy pilnik i wytrychy",
-      "pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)",
+      "pułapka na niedźwiedzie (Skupienie PT14 aby wykryć, k8 obrażeń)",
       "bomba (zapieczętowana butelka, k10 obrażeń)",
-      `buteleczka czerwonej trucizny - dawki: ${k(4)} (Odporność DR12 aby uniknąć k10 obrażeń)`,
+      `buteleczka czerwonej trucizny - dawki: ${k(4)} (Wytrzymałość PT12 aby uniknąć k10 obrażeń)`,
       "srebrny krucyfiks",
       `eliksir życia - dawki: ${k(4)} (leczy k6 HP i usuwa infekcję),`,
       "wykwintny perfum wart 25s",
@@ -2178,7 +2178,7 @@ const MBArcaneCatastrophes = function () {
     list: [
       "Twoje zęby wypadają jeden po drugim. W ich miejsce wyrastają długie, łamliwe paznokcie. (Twój uśmiech jest przerażający, jedzenie jest problematyczne.)",
       "Czujesz się dobrze. Jest dobrze. (Twój narząd pokrywają krosty magicznej choroby wenerycznej. Ci, z którymi dokonasz zbliżenia giną w ciągy k4 dni, by powstać jako p-łaczące zombie, które dopadają cię w snach, zanim odnajdą cię w rzeczywistości.)",
-      "Twój szkielet opanowuje nieziemska siła, która zrobi wszystko, by zabić cię i uciec. Preferuje utopienie lub ataki kłute, aby kości nie uległy uszkodzeniu. Test DR10 na siłę w sytuacjach stresujących, by uniknąć k4 obrażeń. (Gdy umrzesz, powstajesz jako zombie.)",
+      "Twój szkielet opanowuje nieziemska siła, która zrobi wszystko, by zabić cię i uciec. Preferuje utopienie lub ataki kłute, aby kości nie uległy uszkodzeniu. Test PT10 na Siłę w sytuacjach stresujących, by uniknąć k4 obrażeń. (Gdy umrzesz, powstajesz jako zombie.)",
       "Iluzja firmamentu zostaje zdjęta, od teraz widzisz, co jest poza nią. Patrzenie w czyste, nocne niebo doprowadza cię do paraliżującego strachu",
       "Dookoła ciebie spadają płatki czarnej sadzy, którą widzisz tylko ty i szaleńcy. (Woda obrzydza cię od tej chwili. Tylko popiół, sadza lub spalone zwłoki zaspokajają twoje pragnienie).",
       "Ziemia wokół twoich nóg gnije jak mokre mięso. Zapadasz się na metr głębokości i nie jesteś w stanie wyjść bez pomocy. Do twojego ciała przywiera k4 wrzeszczących i gryzących przezroczystych dzieci o ciałach raków oraz twojej twarzy. HP 3, Morale -, Ugryzienie/szczypanie k4.",
@@ -2191,13 +2191,13 @@ const MBArcaneCatastrophes = function () {
       "Ty i losowa istota w twoim otoczeniu tracicie przytomność. (Wasze dusze zostały zamienione miejscami, witaj w swoim nowym ciele).",
       "Pięć powykręcanych, kościanych ramion wyrasta z twoich pleców. Ręce są psotne, brutalne i niesamowicie okrutne.",
       "Twoja skóra blednie i zaczyna emitować chorobliwe zielonkawe światło. (Żywe istoty, które pozostają blisko ciebie powoli marnieją. Słabną, ich kości stają się łamliwe, ich zęby i włosy wypadają.)",
-      "Zwój rozsypuje się w macki zbudowane z drobnego czarnego pyłu, sięgające do twoich ust i nozdrzy. Test DR14 na Odporność by uniknąć k10 obrażeń.",
+      "Zwój rozsypuje się w macki zbudowane z drobnego czarnego pyłu, sięgające do twoich ust i nozdrzy. Test PT14 na Odporność by uniknąć k10 obrażeń.",
       "Moc działa, ale przeznaczenie lub demoniczna siła sprawiają, że jej efekty zostają wypaczone na twoją niekorzyść.",
       "Moc przebija cię jak nóż, pożywiając się twoją duszą. Stajesz się wychudły i stale głodny. (Gdy odpoczywasz, regenerujesz tylko połowę wyrzuconych HP.",
-      "Wpadasz przez Refvę do ezoterycznego wymiaru Sześciennego Fioletu, miejsca mitycznego mroku. Ściany są gładkie, opalizujące i zimne. Nad tobą szaleje nieskończone morze ognia. Aby odejść (k4): 1. Pokonaj zagadkowego Kulvana (silny goblin), który dzierży trzy bezbarwne perły. 2. Zatruj bliskiego przyjaciela kruszonym sykt-grzybem (Odporność DR16 lub -k6 HP i halucynacje). Grzyby te rosną tylko w sześcianie. 3. Sięgnij w ogień nad tobą, aby zdobyć złoty klucz. k4 z twoich palców zostaje spopielone. 4. Sześcian jest perfekcyjny i pusty. Możesz tylko czekać w doprowadzającej do szaleństwa bezkresnej ciszy, aż pojawi się następny głupiec.",
+      "Wpadasz przez Refvę do ezoterycznego wymiaru Sześciennego Fioletu, miejsca mitycznego mroku. Ściany są gładkie, opalizujące i zimne. Nad tobą szaleje nieskończone morze ognia. Aby odejść (k4): 1. Pokonaj zagadkowego Kulvana (silny goblin), który dzierży trzy bezbarwne perły. 2. Zatruj bliskiego przyjaciela kruszonym sykt-grzybem (Odporność PT16 lub -k6 HP i halucynacje). Grzyby te rosną tylko w sześcianie. 3. Sięgnij w ogień nad tobą, aby zdobyć złoty klucz. k4 z twoich palców zostaje spopielone. 4. Sześcian jest perfekcyjny i pusty. Możesz tylko czekać w doprowadzającej do szaleństwa bezkresnej ciszy, aż pojawi się następny głupiec.",
       "Być może tak właśnie będzie najlepiej. ON wynurza się z cieni. Twoje cierpienie przynajmniej będzie krótkie, gdy pożarty zostaniesz przez dwugłowego bazyliszka.",
       "Twoje stopy stają się dłońmi. Twoja czaszka znika, sprawiając, że twoja głowa jest malutka, miękka, i poruszająca się bezwładnie przy każdym ruchu. Jedzenie sprawia ci problem. Wyglądasz tak dziwnie, że wszystkie interakcje społeczne mają +6 do trudności.",
-      "Uzależniasz się od zapachu magicznego pyłu, który unosi się w powietrzu po każdym użyciu zaklęcia.Czujesz przymus rzucania zaklęć (dowolnych) na początku każdej walki oraz k10 godzin po ostatnim razie. Możesz powstrzymać się zdając test DR14 na Odporność, ale ten głód nigdy cię nie opuści.",
+      "Uzależniasz się od zapachu magicznego pyłu, który unosi się w powietrzu po każdym użyciu zaklęcia.Czujesz przymus rzucania zaklęć (dowolnych) na początku każdej walki oraz k10 godzin po ostatnim razie. Możesz powstrzymać się zdając test PT14 na Odporność, ale ten głód nigdy cię nie opuści.",
       "Twoja skóra pęka, łuszczy się i zostaje pochłonięta przez szalejące płomienie. Twoja zbroja spala się na żużel i spada u twoich stóp. Twoja skóra nigdy się nie zregeneruje i stale pachniesz jak pieczona kiełbasa.",
       "Twoja szyja znika jakby nigdy nie istniała. Żyjesz, ale musisz nosić głowę ze sobą. Nadal musisz jeść i pić.",
       "Twoje dłonie stale wydzielają śliski, śmierdzący, półstały tłuszcz z porów. Zostawia on tłuste ślady na wszystkim, czego dotykasz i bardzo trudno go zmyć. Za każdym razem, kiedy musisz ostrożnie posłużyć się jakimś przedmiotem, masz 1/6 szansy, że go upuścisz.",
@@ -2206,13 +2206,13 @@ const MBArcaneCatastrophes = function () {
       "Słowa zwoju wnikają w twoją duszę, dając ci dostęp do jego mocy dodatkowe k4 razy dziennie, jednak czyniąc to, moc cię oślepia. Nigdy więcej nie przeczytasz żadnego zwoju, a twoja Zręczność (o ile wynosi więcej niż 0), zostaje zredukowana na stałe do 0.",
       "W miejsce twojej własnej głowy pojawia się owrzodzona głowa demona. Twoja mowa składa się od teraz wyłącznie z niezrozumiałych ryków.",
       "Zamiast docelowego zaklęcia, zwój przywołuje chmarę latających mięsożernych ryb (1hp ilość 2k6). Oblepiają one cel zaklęcia zadając 2kX obrażeń (X to liczba ryb, zaokrąglona w górę do liczby parzystej), zbroja tej istoty zostaje kompletnie zniszczona, po pożarciu jej, ryby zwracają się przeciwko tobie.",
-      "Słyszysz dziwne dudnienie ze swoich trzewi, które po chwili przemija. Gdy następny raz się wypróżniasz (nocowanie w drodze, odwiedzanie karczmy), rzuć DR20 na porażka to 20 - twój wynik * k4 obrażeń",
+      "Słyszysz dziwne dudnienie ze swoich trzewi, które po chwili przemija. Gdy następny raz się wypróżniasz (nocowanie w drodze, odwiedzanie karczmy), rzuć PT20 na Wytrzymałość porażka to 20 - twój wynik * k4 obrażeń",
       "Zamiast zamierzonego zaklęcia rzucasz Śmierć.",
       "Jesteś dręczony i śledzony przez szkodniki. Każde łóżko roi się od pcheł i pluskiew, szczury podążają za każdym twoim krokiem, gryzące muchy przesłaniają ci oczy.",
       "Twoja skóra powoli przekształca się w korę i wyrastają z niej małe, chorowite pędy. Twoja nowa drzewiasta fizjologia sprawia, że masz dodatkowe k2 pancerza (oprócz już noszonego), jednak wszelka niemagiczna regeneracja HP zostaje zmniejszona o połowę. Jesteś też wrażliwy na ogień.",
       "Zwój rozsypuje się w proch, tak jak k6 twoich palców.",
       "Cel twojego zaklęcia zostaje obleczony w ciemność i przekształca się w głodnego śmierci licza z innego wymiaru. Jeśli rzucałeś zaklęcie na siebie lub sprzymierzeńca - przenosisz się do krainy śmierci i bezkresnego cierpienia; otaczają cię kolosalne ociekające krwią czerwie oraz wilgotne mięsiste szkielety, twoim towarzyszom pozostaje zająć się liczem. Nie próbuj dyskutować z mieszkańcami obcego świata, ich zastępy są nieskończone i jedyne co ich obchodzi, to zaspokojenie nieustannego głodu.",
-      "Twoje zęby zostają zastąpione przez łapczywe kościste ręce. Stale szczypią one i dźgają twój język o policzki. Głośno pstrykają, gdy są zadowolone z jedzenia, które spożywasz. Bardzo trudno ci się wysławiać, testy na prezencję związane z mówieniem są trudniejsze o 4.",
+      "Twoje zęby zostają zastąpione przez łapczywe kościste ręce. Stale szczypią one i dźgają twój język o policzki. Głośno pstrykają, gdy są zadowolone z jedzenia, które spożywasz. Bardzo trudno ci się wysławiać, testy na Skupienie związane z mówieniem są trudniejsze o 4.",
       `Cel zaklęcia zyskuje mutację: ${pickFromList(mutations)}`,
       `Rzucający zaklęcie zyskuje mutację: ${pickFromList(mutations)}`,
       `Losowa istota w promieniu 10 metrów zyskuje mutację: ${pickFromList(
@@ -2650,7 +2650,7 @@ createAndAddMonster({
   HP: "2",
   morale: "-",
   pancerz: "brak",
-  broń: "Prowizoryczny nóż k4, test DR12 na odporność albo infekcja",
+  broń: "Prowizoryczny nóż k4, test PT12 na Wytrzymałość albo infekcja",
   specjalneCechy: "",
 });
 createAndAddMonster({
@@ -2668,7 +2668,7 @@ createAndAddMonster({
   HP: "8",
   morale: "9",
   pancerz: "brak",
-  broń: "Ugryzienie k4+1, test DR12 na odporność albo infekcja",
+  broń: "Ugryzienie k4+1, test PT12 na Wytrzymałość albo infekcja",
   specjalneCechy: "",
 });
 createAndAddMonster({
@@ -2677,7 +2677,7 @@ createAndAddMonster({
   HP: "12",
   morale: "-",
   pancerz: "Gruby karapaks -k2",
-  broń: "Ugryzienie k4, test DR12 na odporność albo zesztywnienie (testy mają +2 DR przez godzinę)",
+  broń: "Ugryzienie k4, test PT12 na Wytrzymałość albo zesztywnienie (testy mają +2 PT przez godzinę)",
   specjalneCechy: "",
 });
 createAndAddMonster({
@@ -2695,7 +2695,7 @@ createAndAddMonster({
   HP: "12",
   morale: "-",
   pancerz: "chityna -k4",
-  broń: "Szpony k6 (obrona DR14)",
+  broń: "Szpony k6 (obrona PT14)",
   specjalneCechy: "",
 });
 createAndAddMonster({
@@ -2742,7 +2742,7 @@ createAndAddMonster({
   pancerz: "Twarda skóra -k2",
   broń: "Nóż/krótki łuk k4",
   specjalneCechy:
-    "Szybki, atak i obrona DR14, jeśli nie zostanie zabity, ten kogo atakował po k6 dniach sam zmieni się w goblina. Warość: głowa 7s, złapany 150s, martwy 20s",
+    "Szybki, atak i obrona mają Poziom Trudności 14, jeśli nie zostanie zabity, ten kogo atakował po k6 dniach sam zmieni się w goblina. Warość: głowa 7s, złapany 150s, martwy 20s",
 });
 createAndAddMonster({
   keyName: "scum",
@@ -2750,9 +2750,9 @@ createAndAddMonster({
   HP: "7",
   morale: "8",
   pancerz: "brak",
-  broń: "Zatruty nóż k4 + infekcja (DR10 Odporność)",
+  broń: "Zatruty nóż k4 + infekcja PT10 Odporność)",
   specjalneCechy:
-    "BG z najwyższą prezencją robi test DR14 na początku walki, porażka oznacza, że losowy członek drużyny został trafiony podstępnym ciosem w plecy +3 do obrażeń. Wartość: złapany (winny poważnej) zbrodni 50-120s, martwy (winny poważnej zbrodni) 20-70s.",
+    "BG z najwyższym Skupieniem robi test o Poziomie Trudności 14 na początku walki, porażka oznacza, że losowy członek drużyny został trafiony podstępnym ciosem w plecy +3 do obrażeń. Wartość: złapany (winny poważnej) zbrodni 50-120s, martwy (winny poważnej zbrodni) 20-70s.",
 });
 createAndAddMonster({
   keyName: "berserker",
@@ -2762,7 +2762,7 @@ createAndAddMonster({
   pancerz: "Stwardniała skóra -k2",
   broń: "k4: 1. Długi korbacz k8, ciężka buława k6, miecz na łańcuchu k6, ogromny młot bojowy k10",
   specjalneCechy:
-    "Atakuje dwukrotnie na rundę, ale nie trudzi się obroną (DR10 na trafienie). Wartość: złapany 55s, martwy 20s, krew (1l) 3s.",
+    "Atakuje dwukrotnie na rundę, ale nie trudzi się obroną (PT10 na trafienie). Wartość: złapany 55s, martwy 20s, krew (1l) 3s.",
 });
 createAndAddMonster({
   keyName: "shadowCreature",
@@ -2781,7 +2781,7 @@ createAndAddMonster({
   pancerz: "brak",
   broń: "Dotyk k4 + wysysanie sił",
   specjalneCechy:
-    "Szybkie, ulotne i trudne do trafienia (DR14). Te bezcielesne zjawy zawsze wygrywają inicjatywę. Ich dotyk wysysa Siłę, Prezencję i Inicjatywę, zmniejszając je o 1 do końca walki. Wartość: złapany 120s, czaszka 70s, ektoplazma 25s.",
+    "Szybkie, ulotne i trudne do trafienia (PT14). Te bezcielesne zjawy zawsze wygrywają inicjatywę. Ich dotyk wysysa Siłę, Prezencję i Inicjatywę, zmniejszając je o 1 do końca walki. Wartość: złapany 120s, czaszka 70s, ektoplazma 25s.",
 });
 createAndAddMonster({
   keyName: "bloodDrenchedSkeleton",
@@ -2791,7 +2791,7 @@ createAndAddMonster({
   pancerz: "brak",
   broń: "Krótki miecz lub nóż k4, kościste palce k2",
   specjalneCechy:
-    "Porusza się bezgłośnie, potrafi naśladować głosy, ale tylko słowa, które słyszał. Ataki bronią kłutą mają DR14. Atak zadający 5 lub więcej obrażeń niszczy szkielet kompletnie. Wartość: złapany 35s, zniszczony 7s.",
+    "Porusza się bezgłośnie, potrafi naśladować głosy, ale tylko słowa, które słyszał. Ataki bronią kłutą mają PT14. Atak zadający 5 lub więcej obrażeń niszczy szkielet kompletnie. Wartość: złapany 35s, zniszczony 7s.",
 });
 createAndAddMonster({
   keyName: "undeadNecromancer",
@@ -2801,7 +2801,7 @@ createAndAddMonster({
   pancerz: "Nekrobariera -k4",
   broń: "Cios k6",
   specjalneCechy:
-    "Paraliżujący dotyk DR14 na Prezencję, żeby się ocknąć. Co runę może wykraść zawartość pobliskiego zwoju i użyć jego zawartość przeciwko właścicielowi. Wartość: złapany 200s, zwłoki 130s, czaszka 100s.",
+    "Paraliżujący dotyk - test PT14 na Skupienie, żeby się ocknąć. Co rundę może wykraść zawartość pobliskiego zwoju i użyć jego zawartość przeciwko właścicielowi. Wartość: złapany 200s, zwłoki 130s, czaszka 100s.",
 });
 createAndAddMonster({
   keyName: "troll",
@@ -2821,7 +2821,7 @@ createAndAddMonster({
   pancerz: "Skórzane pozostałości -k2",
   broń: "Drapnięcie/Ugryzienie k2",
   specjalneCechy:
-    "Każdy kto zostanie ugryziony robi test DR8 na Odporność, porażka oznacza, że po dwóch dniach ginie i powstaje jako zombie. Wartość: złapany 30s, krew/l 5s",
+    "Każdy kto zostanie ugryziony robi test PT8 na Wytrzymałość, porażka oznacza, że po dwóch dniach ginie i powstaje jako zombie. Wartość: złapany 30s, krew/l 5s",
 });
 createAndAddMonster({
   keyName: "undeadDoll",
@@ -2831,7 +2831,7 @@ createAndAddMonster({
   pancerz: "Porcelana -k2",
   broń: "Szpony/przeszywające ugryzienie k4",
   specjalneCechy:
-    "Przerażające spojrzenie: test na Prezencję DR12 na początku walki, porażka oznacza paraliżujący strach przez k4 rundy. Wartość: złapana 80s, głowa 20s.",
+    "Przerażające spojrzenie: test na Skupienie PT12 na początku walki, porażka oznacza paraliżujący strach przez k4 rundy. Wartość: złapana 80s, głowa 20s.",
 });
 createAndAddMonster({
   keyName: "grotesque",
@@ -2841,7 +2841,7 @@ createAndAddMonster({
   pancerz: "Glina/kamień -k6",
   broń: "Szpony k6, promień z oczu k8",
   specjalneCechy:
-    "Wtapiają się w otoczenie i ciężko je dostrzec. Poruszają się powoli i łatwo je trafić (DR10). Ich przerażający wzrok atakuje 1-2/6, zawsze trafia. Wartość: złapany 190s, martwy (cały) 100s, martwy (w kawałkach) 10s.",
+    "Wtapiają się w otoczenie i ciężko je dostrzec. Poruszają się powoli i łatwo je trafić (PT10). Ich przerażający wzrok atakuje 1-2/6, zawsze trafia. Wartość: złapany 190s, martwy (cały) 100s, martwy (w kawałkach) 10s.",
 });
 createAndAddMonster({
   keyName: "wickheadKnifeWielder",
@@ -2861,7 +2861,7 @@ createAndAddMonster({
   pancerz: "Gruba skóra -k4",
   broń: "Ugryzienie/użądlenie k6",
   specjalneCechy:
-    "60% szansy, że ugryzie. Jadowite żądło może sparaliżować ofiarę - test DR14 aby uniknąć bolesnej godziny paraliżu. Wartość: złapana 200s, zwłoki 100s, gruczoł jadowy 60s, kolec ogonowy 60s",
+    "60% szansy, że ugryzie. Jadowite żądło może sparaliżować ofiarę - test PT14 aby uniknąć bolesnej godziny paraliżu. Wartość: złapana 200s, zwłoki 100s, gruczoł jadowy 60s, kolec ogonowy 60s",
 });
 createAndAddMonster({
   keyName: "earthbound",
@@ -2910,9 +2910,9 @@ let MBUncleanScroll = {
     "Lucy-ferna Lewitacja (przeklęty zwój) - unosisz się przez Skupienie +k10 rund",
     "Demon Żył (przeklęty zwój) - jedna istota dusi się przez k6 rund, tracąc k4 HP na rundę",
     "Dziewięć Purpurowych Znaków Rozplątuje Burzę (przeklęty zwój) - tworzysz k2 pioruny po k6 obrażeń każdy",
-    "Metzhuotl Oślepia Twoje Oko (przeklęty zwój) - istota staje się niewidzialna przez k6 rund lub dopóki otrzyma obrażenia, atakuje i broni się z DR6",
+    "Metzhuotl Oślepia Twoje Oko (przeklęty zwój) - istota staje się niewidzialna przez k6 rund lub dopóki otrzyma obrażenia, atakuje i broni się z PT6",
     "Odrażający Psychopomp (przeklęty zwój) - przywołujesz (k6): 1-3 k4 szkielety, 4-6 k4 zombie",
-    "Powieka Oślepia Wiatr (przeklęty zwój) - k4 istoty zasypiają na godzinę, chyba że przejdą test DR14",
+    "Powieka Oślepia Wiatr (przeklęty zwój) - k4 istoty zasypiają na godzinę, chyba że przejdą test PT14",
     "Śmierć (przeklęty zwój) - wszystkie istory w obrębie 10 metrów tracą w sumie 4k10 HP",
   ],
 };
@@ -2945,7 +2945,7 @@ const MBTabletOfOchreObscurity = {
     "Zamknięta w Czasie Pneumotoksyna (Tablica Ochrowej Ciemności) - ta popękana tablica może zostać skruszona w grudkowaty pył. Wysypana na istotę zadaje k6 obrażeń - na 6 istota krztusi się i umiera. Tablica pojawia się następnego ranka w ekwipunku posiadacza. Test na Skupienie tej tablicy jest niegroźny dla użytkownika, wskazuje tylko, czy pył trafia w swój cel",
     "Indukowana Nieważność (Tablica Ochrowej Ciemności) - zapisany na tej tablicy kod dosłownie usuwa zasadnicze znaczenie istoty na k4 rundy. W tym czasie przeciwnicy nie będą jej atakować, nawet jeśli ona ich zaatakuje",
     "Strukturalna Krio-kondensacja (Zamarznięty Księżyc) (Tablica Ochrowej Ciemności) - wilgoć w powietrzu zamarza tworząc 5-metrowy most lub cała woda w zasięgu 50 metrów zamarza (z wyjątkiem znajdującej się w ciałach istot żywych)",
-    "Meta-Alchemia (Tablica Ochrowej Ciemności) - użytkownik może zmienić naczynie z cieczą w jeden z następujących sposobów: zmienić ją w dwie dawki czerwonej lub czarnej trucizny, stworzyć Pogardę Vularka (pijący rzuca DR16 na Odporność, porażka sprawia, że skacze z wielkiej wysokości), zmienić truciznę w wodę lub wino",
+    "Meta-Alchemia (Tablica Ochrowej Ciemności) - użytkownik może zmienić naczynie z cieczą w jeden z następujących sposobów: zmienić ją w dwie dawki czerwonej lub czarnej trucizny, stworzyć Pogardę Vularka (pijący rzuca PT16 na Odporność, porażka sprawia, że skacze z wielkiej wysokości), zmienić truciznę w wodę lub wino",
     "Memetyczna Kognitywna Palpitacja (Tablica Ochrowej Ciemności) - niemalże niedostrzegalne ruchy ciała przekazują prostą zarazę umysłową, która sprawia, że jedna istota tańczy szaleńczo przez k4 rundy. Nie może ona atakować ani bronić się podczas tej choreomanii",
   ],
 };
@@ -3071,14 +3071,14 @@ createAndAddClass({
     "ssanie piersi wilczycy w dziczy Bergen Chrypty.",
   ],
   specialAbility:
-    "Niezdarny - testy zręczności są trudniejsze o 2 punkty (z wyjątkiem obrony). Analfabeta - jesteś niezdolny do odczytywania zwojów. Ugryzienie - atak DR10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny",
+    "Niezdarny - testy zręczności są trudniejsze o 2 punkty (z wyjątkiem obrony). Analfabeta - jesteś niezdolny do odczytywania zwojów. Ugryzienie - atak PT10, k6 obrażeń. Musisz być blisko celu. 1-2 na k6, że przeciwnik uzyska atak okazyjny",
   rolledAbility: [
     "Wykrzywiona Maska Potwora - wywołuje prymitywny strach u pomniejszych istot, takich jak gobliny, gnoumy i dzieci. Gdy ją nosisz, testują one morale co rundę",
-    "Brązowy Bułat z Galgenbeck - śmierdzący miecz wygrzebany z wojskowego wychodka (k6 obrażeń). Gdy go dzierżysz, atak i obrona mają DR10. 1/6 szansy, że trafiony przeciwnik ulegnie gwałtownej sepsie i zginie w ciągu 10 minut",
+    "Brązowy Bułat z Galgenbeck - śmierdzący miecz wygrzebany z wojskowego wychodka (k6 obrażeń). Gdy go dzierżysz, atak i obrona mają PT10. 1/6 szansy, że trafiony przeciwnik ulegnie gwałtownej sepsie i zginie w ciągu 10 minut",
     "Zęby Czarodzieja - cztery dziwne zęby grzechoczą w czarnym woreczku. Przed walką rzuć k6 na każdy z zębów. Każda 6 oznacza, że jeden z twoich ataków zada maksymalne obrażenia",
     "Proca Starego Sigűrda - Sigűrd był najsilniejszym człowiekiem, którego gardło przegryzłeś. Ta proca, upleciona z jego długich siwych włosów, nigdy cię nie zawiodła. 2k4 obrażeń, wymaga kamieni wielkości pięści, które na szczęście (lub nieszczęście) znaleźć można wszędzie",
-    "Wiekowy Posokowiec - astmatyczny, niepoczytalny i ledwo żywy, ten zasuszony pies ma doskonały węch, który potrafi wywęszyć skarby nawet w najobrzydliwszych śmieciach. Atakuje z DR10 (ugryzienie k6), broni się z DR12. Ma 12 HP. Wpada w szał w pobliżu goblinów i berserków",
-    "Podkowa Rumaka Kostuchy - wygląda zwyczajnie, ale od momentu znalezienia jej w jakiejś mrocznej krypcie jesteś przekonany, że pochodzi od konia samej Śmierci. W twoich rękach atakuje z DR10, k4 obrażeń. 1/6 szansy, że zmiażdży czaszkę, natychmiastowo uśmiercając małą lub średnią istotę. Podkowa wraca do twojej dłoni jak bumerang.",
+    "Wiekowy Posokowiec - astmatyczny, niepoczytalny i ledwo żywy, ten zasuszony pies ma doskonały węch, który potrafi wywęszyć skarby nawet w najobrzydliwszych śmieciach. Atakuje z PT10 (ugryzienie k6), broni się z PT12. Ma 12 HP. Wpada w szał w pobliżu goblinów i berserków",
+    "Podkowa Rumaka Kostuchy - wygląda zwyczajnie, ale od momentu znalezienia jej w jakiejś mrocznej krypcie jesteś przekonany, że pochodzi od konia samej Śmierci. W twoich rękach atakuje z PT10, k4 obrażeń. 1/6 szansy, że zmiażdży czaszkę, natychmiastowo uśmiercając małą lub średnią istotę. Podkowa wraca do twojej dłoni jak bumerang.",
   ],
   agility: -1,
   presence: 0,
@@ -3109,11 +3109,11 @@ createAndAddClass({
   specialAbility:
     "Skryty - testy zręczności i skupienia mają standardowo trudność 10 zamiast 12. Gdy po raz pierwszy zdobywasz poziom, rzuć jeszcze raz na Specjalność. Na kolejnych poziomach szumowina może przerzucić jedną lub obie Specjalności.",
   rolledAbility: [
-    "Tchórzliwe Pchnięcie - kiedy atakujesz lekką bronią jednoręczną z zaskoczenia, rzuć DR10 na zręczność. Sukces oznacza jedno automatyczne trafienie, zadające normalne obrażenia +3",
-    "Brudne Paluszki - twoje zręczne dłonie dostają się do kieszeni i otwierają zamki z testem DR8 na zręczność. Zaczynasz z zestawem wytrychoów",
-    "Odrażający Smarkomiot - twoja flegma jest lepka, grudkowata i celna na niewielkie dystanse. Możesz pluć k2 razy na starcie. Rzuć test DR8 na skupienie, żeby trafić. Cel zostaje oślepiony, harczy i wymiotuje przez k4 rundy. Każdy, kto to widzi - przyjaciel czy wróg - musi zdać test na odporność by również nie zwymiotować. BG testują DR10, wrogowie DR12",
+    "Tchórzliwe Pchnięcie - kiedy atakujesz lekką bronią jednoręczną z zaskoczenia, rzuć PT10 na Zręczność. Sukces oznacza jedno automatyczne trafienie, zadające normalne obrażenia +3",
+    "Brudne Paluszki - twoje zręczne dłonie dostają się do kieszeni i otwierają zamki z testem PT8 na Zręczność. Zaczynasz z zestawem wytrychoów",
+    "Odrażający Smarkomiot - twoja flegma jest lepka, grudkowata i celna na niewielkie dystanse. Możesz pluć k2 razy na starcie. Rzuć test PT8 na Skupienie, żeby trafić. Cel zostaje oślepiony, harczy i wymiotuje przez k4 rundy. Każdy, kto to widzi - przyjaciel czy wróg - musi zdać test na Wytrzymałość by również nie zwymiotować. Postacie Graczy testują PT10, wrogowie PT12",
     "Oszukać Przeznaczenie - za każdym razem, kiedy zużywasz omen, jest 50% szansy, że go jednak nie zużywasz",
-    "Ekskrementalnie Skryty - masz niesamowitą zdolnośc ukrywania się w brudzie i odpadach. Dostrzeżenie cię w takich warunkach wymaga testu DR16 na skupienie",
+    "Ekskrementalnie Skryty - masz niesamowitą zdolnośc ukrywania się w brudzie i odpadach. Dostrzeżenie cię w takich warunkach wymaga testu PT16 na skupienie",
     "Unikanie Śmierci -  jesteś tak nieprzyjemny, nieważny i odrażający, że nawet Śmierć woli cię unikać. W przypadku śmierci, jeśli jest choć najmniejsze prawdopodobieństwo, że mógłbyś przetrwać, jest 50% szans, że tak się stało. Wracasz wtedy po 10 rundach z k4 HP oraz mało prawdopodobnym wyjaśnieniem swojego powrotu",
   ],
   agility: 0,
@@ -3144,12 +3144,12 @@ createAndAddClass({
   ],
   specialAbility: "",
   rolledAbility: [
-    "Mistrz Przeznaczenia - po ci mapy, skoro masz dostęp do kwintesencji przyczynowości? Znasz właściwą drogę po zdaniu testu DR8 na skupienie",
-    "Księga Wrzącej Krwi - możesz odczytać księgę raz dziennie. Twój przeciwnik musi zdać test DR12 aby cię powstrzymać. Jeśli mu się nie uda, pojawi się k2 berserków-pogromców z zapomnianego wymiaru krwi. Rzuć k6: 1-4 walczą u twojego boku. 5-6 obracają się przeciwko tobie i próbują zniszczyć księgę. Po starciu powracają do swojego więzienia",
-    "Mówca Prawd - dwa razy dizennie twoja mądrość, wiedza i wewnętrzny spokój mogą udzielić jasności wybranej istocie. DR jej następnego testu jest obniżone o 4",
+    "Mistrz Przeznaczenia - po ci mapy, skoro masz dostęp do kwintesencji przyczynowości? Znasz właściwą drogę po zdaniu testu PT8 na Skupienie",
+    "Księga Wrzącej Krwi - możesz odczytać księgę raz dziennie. Twój przeciwnik musi zdać test PT12 aby cię powstrzymać. Jeśli mu się nie uda, pojawi się k2 berserków-pogromców z zapomnianego wymiaru krwi. Rzuć k6: 1-4 walczą u twojego boku. 5-6 obracają się przeciwko tobie i próbują zniszczyć księgę. Po starciu powracają do swojego więzienia",
+    "Mówca Prawd - dwa razy dizennie twoja mądrość, wiedza i wewnętrzny spokój mogą udzielić jasności wybranej istocie. PT jej następnego testu jest obniżone o 4",
     "Uczeń Niewidzialnego Kolegium - raz dziennie możesz przywołać k2 zwojów, które mogą zostać użyte jeden raz. Rzuć k4: 1-2 zwoje są święte, 3-4 zwoje są przeklęte. Jeśli zwoje nie zostaną wykorzystane do zmroku, obracają się w popiół",
     "Bard Nieumierających - poznałeś melodie zaświatów. Muzyka twojej harfy daje +k4 do rzutów na reakcję",
-    "Jastrząb Bojowy - twój podstępny, prawie inteligentny, jastrząb jest lojalny tylko wobec ciebie. Nawet bez wspólnego języka, rozumiesz jego okrzyki, gdy czuwa, prowadzi zwiad i atakuje nieprzyjaciół. Atak/obrona DR10 (szpony/dziobanie k4), 8 HP",
+    "Jastrząb Bojowy - twój podstępny, prawie inteligentny, jastrząb jest lojalny tylko wobec ciebie. Nawet bez wspólnego języka, rozumiesz jego okrzyki, gdy czuwa, prowadzi zwiad i atakuje nieprzyjaciół. Atak/obrona PT10 (szpony/dziobanie k4), 8 HP",
   ],
   agility: 0,
   presence: 2,
@@ -3180,12 +3180,12 @@ createAndAddClass({
   specialAbility: "",
   rolledAbility: [
     //should have two of those, actually
-    'Miecz Twoich Przodków - ten wspaniały i ewidentnie magiczny gadający miecz jest egzaltowany, niegodny zaufania i darzy cię cichą pogardą. Kpi z twoich porażek i jeśli zostanie wielokrotnie rozczarowany, ma 1/6 szansę, by podczas ataku "przypadkowo" razić ciebie lub twoich towarzyszy. Zadaje k6+1 obrażeń. Atak i obrona DR 10',
+    'Miecz Twoich Przodków - ten wspaniały i ewidentnie magiczny gadający miecz jest egzaltowany, niegodny zaufania i darzy cię cichą pogardą. Kpi z twoich porażek i jeśli zostanie wielokrotnie rozczarowany, ma 1/6 szansę, by podczas ataku "przypadkowo" razić ciebie lub twoich towarzyszy. Zadaje k6+1 obrażeń. Atak i obrona PT 10',
     '"Poltroon" (Nędzny Tchórz), Nadworny Błazen - ten praktycznie bezużyteczny, osobiście irytujący i stanowiący ciężar emocjonalny trefniś rozprasza twoich wrogów w trakcie walki. W czasie dwóch pierwszych rund ty i twoi sprzymierzeńcy macie +2 do ataku i obrony',
     "Barbarister, Niesamowity Koń - Barbarister jest magiczny, inteligentny, arogancki i próżny. Potrafi też mówić. Jeśli przekonasz go, Barbarister okazjonalnie może dodać ci +2 do testów na skupienie mających do czynienia z logiką i intelektem. Koń prawdopodobnie jest od ciebie mądrzejszy i dobrze o tym wie",
     "Giermek Hamfund - jedyną funkcją tego niesamowicie tchórzliwego sługi jest sprawowanie pieczy nad przeklętym mieczem Eurekią. Raz na starcie, jeśli Hamfunda uda się odnaleźć, Eurekia może zostać dobyta. Miecz zadaje 2k6 obrażeń, przy każdym uderzeniu rzuć k6. Jeśli wypadnie 1, giermek zostaje zabity, a Eurekia znika na zawsze",
     "Dar Wężowej Skóry - kosztowne pudełeczko z drzewa sandałowego pokryte wężową skórą. Wewnątrz znajduje się z pozoru zwykły sztylet, zawinięty w jedwab. Sztylet zadaje k4 obrażeń, ale przy wyrzucieniu 1 cel ginie natychmiastowo od śmiertelnej trucizny, którą nasączone jest ostrze",
-    "Róg Schleswidzkich Lordów! - raz dziennie możesz zadąć w tę powgniataną starą trąbkę i wykonać test DR12 na skupienie. Jedna istota może wykonać następny test niezwiązany z walką jako automatyczny sukces",
+    "Róg Schleswidzkich Lordów! - raz dziennie możesz zadąć w tę powgniataną starą trąbkę i wykonać test PT12 na Skupienie. Jedna istota może wykonać następny test niezwiązany z walką jako automatyczny sukces",
     "Błękitnokrwisty - pokolenia znoszące spiski, trucizny i ostrza nędzarzy sprawiają, że twoja krew jest wyjątkowo odporna na infekcje. Nie dotyczy cię codzienna utrata HP w przypadku infekcji",
     "Znak Bogactwa - długi i niedługi szlachty nie zostają łatwo zapomnane. Pokaż tę starożytną pieczęć swego rodu kupcowi, a masz 50% szans, że obniży ceny o połowę dla ciebie oraz twojej drużyny. W przeciwnym wypadku ceny są podwojone",
     "Rodowy Klejnot - niegdyś chluba rodowej kolekcji, to szafirowe cudeńko jest kuszącym celem. Kiedy wzniesiesz go w górę, wrogie istoty łase na bogactwa atakować będą ciebie, przed kimkolwiek innym",
@@ -3220,10 +3220,10 @@ createAndAddClass({
   specialAbility: "Może używać Mocy odziany w średnią zbroję",
   rolledAbility: [
     "Święty pastorał - zakończony hakiem z ludzkiej kości pokrytym zachodzącymi na siebie antymodlitwami. Ten żezł zahacza o inne światy. Zadaje 2k4 obrażeń każdemu, oprócz ludzi pozbawionych wiary",
-    "Kradziona mitra - doczesne ciało noszącego tę świętą czapkę zanika, stając się trudne do trafienia w walce (obrona DR10). Naciągnięta na uszy poza walką sprawia, że kapłan staje się prawie niewidzialny, testujac na ukrywanie z DR8",
-    "Lista grzechów - długi i precyzyjny dokument, weryfikowany z rzeczywistością by odkryć niewidocznych złoczyńców. Zdany test DR10 na prezencje sprawia, że dziwne światło otacza złe istoty. Właściciel listy broni się przed takim wykryciem z modyfikatorem +2",
+    "Kradziona mitra - doczesne ciało noszącego tę świętą czapkę zanika, stając się trudne do trafienia w walce (Poziom trudności rzutu na obronę 10 zamiast 12). Naciągnięta na uszy poza walką sprawia, że kapłan staje się prawie niewidzialny, testujac na ukrywanie z Poziomem Trudności 8",
+    "Lista grzechów - długi i precyzyjny dokument, weryfikowany z rzeczywistością by odkryć niewidocznych złoczyńców. Zdany test o Poziomie Trudności 10 na Skupienie sprawia, że dziwne światło otacza złe istoty. Właściciel listy broni się przed takim wykryciem z modyfikatorem +2",
     "Bluźniercza Biblia Nechrubela - tak niesamowicie bluźniercza, że nawet sam kapłan może ją czytać tylko raz dziennie. Rzuć kością: wynik parzysty - przez resztę dnia bohaterowie graczy leczą k4 HP już po pięciu minutach odpoczynku, wynik nieparzysty - kapłana nawiedzają demoniczne halucynacje. MG może wymyślić k3 rzeczy, które tylko kapłan widzi i opisać je graczowi jak prawdziwe. Efekt przemija wraz ze świtem.",
-    "Kamienie ze świątyni Thel-Emasa - rzuć kamienie na ziemię. Ich ułożenie pokazuje, czy niebezpieczeństwo czyha w pobliskim pomieszczeniu. Kamienie mogą kłamać. Kapłan robi test DR10 aby sprawdzić czy mówią prawdę, ale po porażce nie może testować ponownie do zachodu słońca",
+    "Kamienie ze świątyni Thel-Emasa - rzuć kamienie na ziemię. Ich ułożenie pokazuje, czy niebezpieczeństwo czyha w pobliskim pomieszczeniu. Kamienie mogą kłamać. Kapłan robi test o Poziomie Trudności 10 aby sprawdzić czy mówią prawdę, ale po porażce nie może testować ponownie do zachodu słońca",
     "Krucyfiks (Nie Ten Jezus) - tego krucyfiksu można użyc w starciach z nieumarłymi, jak również pomniejszymi trollami czy goblinami. Rzuć na morale (stosując modyfikator do skupienie kapłana), aby sprawdzić, czy istoty wycofają się z pokornym ukłonem",
   ],
   agility: 0,
@@ -3286,12 +3286,12 @@ createAndAddClass({
   specialAbility:
     "Możesz świadomie ulec staraniom swojej drugiej strony i zmienić swoją anatomię na jej wzór. Przemieszczenie kości wymaga jednej bolesnej rundy. Twoja zwierzęca forma prawdopodobnie nie jest w stanie używać broni ani pancerza",
   rolledAbility: [
-    "Morderczy szczur: malutki - testy na zręczność, w tym obrona, mają DR8, twoje ugryzienie (k4) niesie chorobę - test DR 14 na skupienie, w przypadku porażki cel atakuje swojego sprzymeirzeńca do momentu śmierci któregoś z nich",
-    "Obdarty ze skóry i kapiący wilk: zaciekły - ataki mają DR10, twoje kły (k6) - zadają obrażenia krytyczne również przy naturalnym 19 i prowokują test na morale, śliski od krwi - redukcja obrażeń -k2",
-    "Czaszkogłowy kruk: szybki i latający - obrona ma DR10, wykonuje dwa ataki szponami (k4) na rundę, twoja koścista głowa działa jak broń i tarcza - redukcja obrażeń o -1, możesz zignorować całe obrażenia z jednego ataku. Czaszka zrasta się po k6 dniach",
-    "Niedźwiedź z Bergen Chrypty: ciężki i masywny - testy na siłę, odporność i ataki mają DR10, obrona ma DR14, gruba skóra - redukcja obrażeń k4, szpony i ugryzienie zadają k8 obrażeń",
+    "Morderczy szczur: malutki - testy na zręczność, w tym obrona, mają Poziom Trudności 8, twoje ugryzienie (k4) niesie chorobę - test PT 14 na Skupienie, w przypadku porażki cel atakuje swojego sprzymierzeńca do momentu śmierci któregoś z nich",
+    "Obdarty ze skóry i kapiący wilk: zaciekły - ataki mają Poziom Trudności 10, twoje kły (k6) - zadają obrażenia krytyczne również przy naturalnym 19 i prowokują test na morale, śliski od krwi - redukcja obrażeń -k2",
+    "Czaszkogłowy kruk: szybki i latający - obrona ma Poziom Trudności 10, wykonuje dwa ataki szponami (k4) na rundę, twoja koścista głowa działa jak broń i tarcza - redukcja obrażeń o -1, możesz zignorować całe obrażenia z jednego ataku. Czaszka zrasta się po k6 dniach",
+    "Niedźwiedź z Bergen Chrypty: ciężki i masywny - testy na Siłę, Wytrzymałość i ataki mają Poziom Trudności 10, obrona ma PT14, gruba skóra - redukcja obrażeń k4, szpony i ugryzienie zadają k8 obrażeń",
     "Jaszczurka życia i śmierci: regeneruje k4 HP na rundę, gryzie (k6) i pluje kwasem (k4, 1/4 szansa że obniży pancerz o 1 poziom), łuskowata skóra - redukcja obrażeń -k2",
-    "Prorokująca zagładę małpa: zręczna - testy na zręczność, w tym obrona, mają DR10, może używać lekkiej broni oraz zbroi, twoje trzecie oko pozwala ci czytać przeklęte zwoje z DR10",
+    "Prorokująca zagładę małpa: zręczna - testy na zręczność, w tym obrona, mają Poziom Trudności 10, może używać lekkiej broni oraz zbroi, twoje trzecie oko pozwala ci czytać przeklęte zwoje z PT10",
   ],
   agility: 0,
   presence: -2,
@@ -3326,7 +3326,7 @@ createAndAddClass({
     "Błoniaste skrzydła - potrafisz latać krótkie dystanse, ale nie możesz nosić zbroi. Ptaki cię nie lubią",
     "Niepospolita glina - potrafisz czerpać odżywienie z gleby, ale normalne jedzenie cię obrzydza. Pachniesz grzybami",
     "Manna skądś - możesz wydać swój zapas mocy aby stworzyć dziwnie smakowity, choć niepokojący, pokarm dla k6 osób",
-    "Giętkie kończyny - potrafisz wydostać się z wszelkich więzów i przecisnąć się przez malutkie przestrzenie. -4 DR do testów na gibkość",
+    "Giętkie kończyny - potrafisz wydostać się z wszelkich więzów i przecisnąć się przez malutkie przestrzenie. -4 do Poziomu Trudności do testów na gibkość",
     "Zbyt wiele oczu - po prostu za dużo. Nie możesz zostać zaatakowany z zaskoczenia. Możesz wyrzec się na dany dzień mocy, aby zostawić za sobą jedno z oczu i patrzeć przez nie na odległość (jeśli oko zostanie zniszczone, otrzymujesz k2 pkt. obrażeń)",
   ],
   agility: 1,
@@ -3349,16 +3349,16 @@ createAndAddClass({
   originLabel: "Twój bóg to:",
   origin: [`${pickFromList(MBDeadGod)}`],
   specialAbility:
-    "Jesteś piśmienny i możesz używać zwojów, ale musisz zdać test DR12 na skupienie by powstrzymać się przed próbą zniszczenia słów fałszywych bogów. Jeśli zaczynasz ze zwojem, załóż, że automatycznie zdałeś test",
+    "Jesteś piśmienny i możesz używać zwojów, ale musisz zdać test o Poziomie Trudności 12 na skupienie by powstrzymać się przed próbą zniszczenia słów fałszywych bogów. Jeśli zaczynasz ze zwojem, załóż, że automatycznie zdałeś test",
   rolledAbility: [
     "Krwawe Znaki - jesteś biczownikiem, regularnie umartwiasz się, aby obudzić swojego boga. Jeśli zadasz sobie k3 obrażenia przed walką, zyskujesz +2 do liczby rzutów równej liczbie utraconych HP",
     "Władca Niczego - nosisz dziwaczną aranżację strojów i strzępów, która wygląda na parodię króla lub królowej. Zyskujesz +2 do rzutów w celu zaimponowania naiwnym",
     "Zapach Rozkładu - nie dość, że twój bóg jest martwy, odór jego gnicia przenika cię. Ten wywracający bebechy smród daje ci bonus +2 do rzutów na obronę",
-    "Nieskładny Sofistyczny Bełkot - skup się, aby wygłosić pogmatwaną litanię, której słuchacze muszą zdać test DR10 na Skupienie aby nie stracić następnej akcji",
-    "Posoka Zgnilizny - odrażające płyny twojego gnijącego boga wyciekają z twoich dłoni - czarne stygmaty. Możesz wytrzeć ręce w gołą skórę napastnika (jak atak z DR12), który musi wtedy zdać test DR12 na odporność, aby uniknąć spazmów i toczenia piany trwających dwie rundy",
+    "Nieskładny Sofistyczny Bełkot - skup się, aby wygłosić pogmatwaną litanię, której słuchacze muszą zdać test o Poziomie Trudności 10 na Skupienie aby nie stracić następnej akcji",
+    "Posoka Zgnilizny - odrażające płyny twojego gnijącego boga wyciekają z twoich dłoni - czarne stygmaty. Możesz wytrzeć ręce w gołą skórę napastnika (jak atak z Poziomem Trudności 12), który musi wtedy zdać test PT12 na Wytrzymałość, aby uniknąć spazmów i toczenia piany trwających dwie rundy",
     "Moje Ciało Naczyniem - twój bóg może i jest martwy, ale czymże jest śmierć dla boga? Raz dziennie możesz pozwolić duchowi swojego bóstwa na wypełnienie twojego ciała i wyznania prawdy w formie pytania z odpowiedzią tak lub nie, której MG musi udzielić zgodnie z prawdą. Bóg odchodzi, pozostawiając twoje ciało osłabionym",
-    "W Śmierci Żyję - kiedy zginiesz, rzuć DR14 na Skupienie. Jeśli rzut się udał, twój bóg odmawia ci przejścia do zaświatów i wracasz z 1 HP. W przypadku porażki, twoje ciało zostaje pochłonięte przez święty płomień",
-    "Oczy Świętego Ognia - twoje źrenice płoną duszą twojego pana. Raz na starcie możesz zaatakować (DR10), miotając ogniem ze swoich oczu (k6 obrażeń); oślepia cię to do końca trwania walki",
+    "W Śmierci Żyję - kiedy zginiesz, rzuć PT 14 na Skupienie. Jeśli rzut się udał, twój bóg odmawia ci przejścia do zaświatów i wracasz z 1 HP. W przypadku porażki, twoje ciało zostaje pochłonięte przez święty płomień",
+    "Oczy Świętego Ognia - twoje źrenice płoną duszą twojego pana. Raz na starcie możesz zaatakować (Poziom Trudności 10), miotając ogniem ze swoich oczu (k6 obrażeń); oślepia cię to do końca trwania walki",
   ],
   numberOfRolledAbilities: 2,
   agility: 0,
@@ -3391,11 +3391,11 @@ createAndAddClass({
     "byłeś najbardziej rozchwytywanym filozofem Südglans (które zatonęło w morzu), teraz wszyscy bezlitośnie z ciebie kpią.",
   ],
   specialAbility:
-    "Bezlitosna Inkwizycja - zrób test DR14 aby przejrzeć przez podstępy i złudzenia innych. Dość już tych KŁAMSTW!\n Posiadasz Tablicę Ochrowej Ciemności - relikwię zapomnianego umysłowego kultu, tak rzadką, że można ją sprzedać za 100 sztuk srebra. Tablica liczy się jako przedmiot standardowego rozmiaru. Jeśli bohater odniesie krytyczną porażkę w czasie ataku/obrony - jedna tablica pęka. Poza tym działają tak jak zwoje. Pokrywające je znaki są trudne do zrozumienia, bohater musi mieć +3 Skupienia lub być Zapomnianym Filozofem aby ich używać",
+    "Bezlitosna Inkwizycja - zrób test o Poziomie Trudności 14 aby przejrzeć przez podstępy i złudzenia innych. Dość już tych KŁAMSTW!\n Posiadasz Tablicę Ochrowej Ciemności - relikwię zapomnianego umysłowego kultu, tak rzadką, że można ją sprzedać za 100 sztuk srebra. Tablica liczy się jako przedmiot standardowego rozmiaru. Jeśli bohater odniesie krytyczną porażkę w czasie ataku/obrony - jedna tablica pęka. Poza tym działają tak jak zwoje. Pokrywające je znaki są trudne do zrozumienia, bohater musi mieć +3 Skupienia lub być Zapomnianym Filozofem aby ich używać",
   rolledAbility: [
-    "Cierń Zrozumienia - gdy jest on noszony, ciernie wbijają się w twoje ciało (k2 obrażeń) i Potrzegasz Wszystko (-4DR do następnego testu i ignorujesz dwa następne ataki). Aby znowu uzyskać ten efekt, ukoronuj się ponownie. Obrażenia są za każdym razem większe (k2, k4, k6 itd.), resetuje je przespana noc",
-    "Hegeliańska Sowa - ta filozoficzna bestia jest zgorzkniałym, opornym i nadwrażliwym asystentem - przekonać ją możesz testem DR12 na Skupienie. Po dwóch pomocnych akcjach obserwuje cię z cichą pogardą. Potrafi przynosić drobne przedmioty, atakować wrogów oraz znajdować pułapki. Nocą sowa zsyła ci w snach wiedzę o tym, co powinieneś był zrobić danego dnia. Hegeliańska sowa - zbyt szybka, by ją trafić. Szpony/dziobanie k4. Ataki mają DR8",
-    "Pryzmat Niepewności - do jego aktywowania potrzebujesz zewnętrznego źródła światła oraz testu DR10 na Skupienie. Jego światło możesz skierować na maksymalnie dwie istoty, lecząc k6 HP. Przez następną godzinę wszystkie testy dla jednej z nich mają DR obniżone o 2. Jeśli test się nie powiedzie, otrzymują k4 obrażeń i ich broń lub zbroja zostaje zniszczona. Możesz użyć pryzmatu dwa razy na dzień",
+    "Cierń Zrozumienia - gdy jest on noszony, ciernie wbijają się w twoje ciało (k2 obrażeń) i Potrzegasz Wszystko (-4 Poziomu Trudności do następnego testu i ignorujesz dwa następne ataki). Aby znowu uzyskać ten efekt, ukoronuj się ponownie. Obrażenia są za każdym razem większe (k2, k4, k6 itd.), resetuje je przespana noc",
+    "Hegeliańska Sowa - ta filozoficzna bestia jest zgorzkniałym, opornym i nadwrażliwym asystentem - przekonać ją możesz testem o Poziomie Trudności 12 na Skupienie. Po dwóch pomocnych akcjach obserwuje cię z cichą pogardą. Potrafi przynosić drobne przedmioty, atakować wrogów oraz znajdować pułapki. Nocą sowa zsyła ci w snach wiedzę o tym, co powinieneś był zrobić danego dnia. Hegeliańska sowa - zbyt szybka, by ją trafić. Szpony/dziobanie k4. Ataki mają PT8",
+    "Pryzmat Niepewności - do jego aktywowania potrzebujesz zewnętrznego źródła światła oraz testu o Poziomie Trudności 10 na Skupienie. Jego światło możesz skierować na maksymalnie dwie istoty, lecząc k6 HP. Przez następną godzinę wszystkie testy dla jednej z nich mają PT obniżone o 2. Jeśli test się nie powiedzie, otrzymują k4 obrażeń i ich broń lub zbroja zostaje zniszczona. Możesz użyć pryzmatu dwa razy na dzień",
     'Flet Tosku - raz na walkę, kiedy istota ginie, możesz zagrać na tym kościanym flecie Rozbrzmiewającą Fugę. Zadaje ona "echo" śmiertelnych obrażeń losowemu z pobliskich wrogów',
     "Szarfa Słupnika - UMYSŁ kontroluje ciało! Nic nie jest dobre ani złe, ale myślenie o tym to sprawia, tyczy się to również kalorii i protein. Noszenie tego pasa sprawia, że nie odczuwasz głodu i wystarczy, być pił wodę, aby odzyskać HP w czasie wypoczynku. Noszenie go dłużej, niż k4 dni powoduje omdlenie. Aby odzyskał moc, należy odczekać jedną dobę",
     "Naznaczony Ciemnością - stale zmieniająca się Tablica Ochrowej Ciemności jest wytatuowana na twoim ciele. Co rano wylosuj, jaka Tablica to jest. Może być użyta raz dziennie, ale jej użycie to zawsze automatyczny sukces",
@@ -3440,12 +3440,12 @@ createAndAddClass({
   rolledAbility: [
     "Wykuty w Ogniu - +6 do wszystkich testów mających do czynienia z ogniem lub gorącem",
     "Niech Żyje Młot - zwykłe narzędzia, takie jak młotki, zadają w twoich rękach k6 obrażeń",
-    "Szybka Naprawa - jeśli masz pod ręką jakiś złom, zrób test DR12 na Skupienie aby naprawić zbroję, porażka redukuje zbroję o kolejny poziom",
+    "Szybka Naprawa - jeśli masz pod ręką jakiś złom, zrób test o Poziomie Trudności 12 na Skupienie aby naprawić zbroję, porażka redukuje zbroję o kolejny poziom",
     "Cęgi - jeśli uda ci się obronić przed atakiem, 1/4 szansy na złapanie przeciwnika cęgami i zyskanie ataku okazyjnego",
     "Szczęśliwa Podkowa - działa jak bumerang, zadaje k6 obrażeń",
     "Niezłomny - może naprawiać nawet zbroję zredukowaną do 0.",
-    "Kolekcjoner Kości - zdaj test na Skupienie DR14 aby wykonać z kości tarczę jednorazowego użytku -k2",
-    '"Znam Ten Mechanizm" - zdaj test na Skupienie DR12 aby otworzyć zamek. Porażka oznacza, że konieczny jest klucz',
+    "Kolekcjoner Kości - zdaj test na Skupienie - Poziom Trudności 14 aby wykonać z kości tarczę jednorazowego użytku -k2",
+    '"Znam Ten Mechanizm" - zdaj test na Skupienie - Poziom Trudności 12 aby otworzyć zamek. Porażka oznacza, że konieczny jest klucz',
   ],
   numberOfRolledAbilities: false,
   agility: -2,
@@ -3483,9 +3483,9 @@ createAndAddClass({
     "Twój nawiedzany koszmarami sen jest tak lekki, że liczysz się jako obudzony jeśli coś wydarzy się podczas twojego snu",
     "Masz szósty zmysł jeśli chodzi o niebezpieczeństwo. Rzucaj na inicjatywę dwukrotnie, wybierz wyższy wynik",
     "Nosisz przeklętą zbroję, redukcja obrażeń -k6. Nie ogranicza ona twoich ruchów, ale nie możesz jej zdjąć, nie można więc opatrzeć twoich ran",
-    "Używasz ogromnej broni, wystarczająco wielkiej, by powalić bogów. Cokolwiek to jest, zadaje k12 obrażeń, ale ataki mają DR14",
+    "Używasz ogromnej broni, wystarczająco wielkiej, by powalić bogów. Cokolwiek to jest, zadaje k12 obrażeń, ale ataki mają Poziom Trudności 14",
     "Zdobyłeś dziwnych sojuszników. Czymkolwiek są, mogą wyleczyć ci k6 HP w zamian za 1 omen",
-    "Zastąpiłeś jedną ze swoich kończyn ukrytą bronią. Atak z DR10, by zaskoczyć wroga, zadając k10 obrażeń. Przeładowanie jest problematyczne",
+    "Zastąpiłeś jedną ze swoich kończyn ukrytą bronią. Atak z Poziomem Trudności 10, by zaskoczyć wroga, zadając k10 obrażeń. Przeładowanie jest problematyczne",
   ],
   numberOfRolledAbilities: false,
   agility: 0,
@@ -3557,7 +3557,7 @@ createAndAddClass({
     "Wygnaniec - musiałeś opuścić swój dom, teraz bierzesz, co musisz, by zrobić, co możesz.",
   ],
   specialAbility:
-    "Uzdolniony - DR testów na Zręczność przy skradaniu wynosi dla ciebie 8. Klasa klasyczna - gdy po raz pierwszy zdobędziesz poziom, możesz wybrać jeden nieheroiczny atut. Możesz mieć tylko jeden atut. Zaczynasz z zestawem wytrychów.",
+    "Uzdolniony - Poziom Trudności testów na Zręczność przy skradaniu wynosi dla ciebie 8. Klasa klasyczna - gdy po raz pierwszy zdobędziesz poziom, możesz wybrać jeden nieheroiczny atut. Możesz mieć tylko jeden atut. Zaczynasz z zestawem wytrychów.",
   rolledAbility: [""],
   numberOfRolledAbilities: false,
   agility: 2, //for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
@@ -3623,7 +3623,7 @@ createAndAddClass({
     "Pakt - zawarłeś umowę. Może i straciłeś duszę, ale było warto. Chyba.",
   ],
   specialAbility:
-    "Magik - używanie zwojów przeklętych ma dla ciebie DR 8. Klasa klasyczna - gdy po raz pierwszy zdobędziesz poziom, możesz wybrać jeden nieheroiczny atut. Możesz mieć tylko jeden atut",
+    "Magik - używanie zwojów przeklętych ma dla ciebie Poziom Trudności 8. Klasa klasyczna - gdy po raz pierwszy zdobędziesz poziom, możesz wybrać jeden nieheroiczny atut. Możesz mieć tylko jeden atut",
   rolledAbility: [""],
   numberOfRolledAbilities: false,
   agility: 0, //for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
@@ -3659,9 +3659,9 @@ createAndAddClass({
     "Otacza cię aura nienaturalnego uroku, pozwalająca niepokoić wrogów i uspokajać przyjaciół. Zamiast używania Mocy w danym dniu, możesz dodać lub odjąć k6 od dowolnego testu na morale.",
   rolledAbility: [
     "Kobza Przeznaczenia - połączenie pozszywanych włochatych pęcherzy z wystającymi kościanymi rurkami, w które się dmicha. Kiedy to robisz, wybrani słuchacze przepełnieni są nieziemskim głodem, tak jakby nie jedli od tygodnia",
-    "Lira Korbowo-Bólowa - kręcenie tym ostrunowanym kawałkiem drewna i kości wydaje dźwięk, który rani uszy istot, które nie przejdą testu DR12 na prezencję. W pierwszej rundzie zadaje k2 obrażeń, w następnej k4 i tak dalej",
-    "Grzbietowa Łupina - gdy bijesz w ten bęben zrobiony ze skorupy diabła, rzuć 2k6: 6+ - wszyscy oprócz ciebie rzucają DR14 na Zręcznośc, albo padają na ziemię. 11 - wybierz k4 istoty, które słyszą twoje bębnienie. Ich kręgosłupy łamią się jak zapałki. Nie możesz już więcej użyć bębna tego dnia. 12 - w twoich uszach nie przestaje dzwonić. Jesteś głuchy przez następne 25 godziny. Może też służyć jako tarcza",
-    "Diabelska Koncha - róg belzebubonicznej istoty z najgłębszych głębin Bezkresnego Morza. Gdy w nie zadmiesz, płuca twoich wrogów wypełniają się morską wodą, jeśli nie przejdą testu DR14 na Odporność, muszą wtedy poświęcić rundę na pozbycie się wody, zanim będą mogli zrobić cokolwiek innego",
+    "Lira Korbowo-Bólowa - kręcenie tym ostrunowanym kawałkiem drewna i kości wydaje dźwięk, który rani uszy istot, które nie przejdą testu o Poziomie Trudności 12 na Skupienie. W pierwszej rundzie zadaje k2 obrażeń, w następnej k4 i tak dalej",
+    "Grzbietowa Łupina - gdy bijesz w ten bęben zrobiony ze skorupy diabła, rzuć 2k6: 6+ - wszyscy oprócz ciebie rzucają na Zręczność (Poziom Trudności 14), albo padają na ziemię. 11 - wybierz k4 istoty, które słyszą twoje bębnienie. Ich kręgosłupy łamią się jak zapałki. Nie możesz już więcej użyć bębna tego dnia. 12 - w twoich uszach nie przestaje dzwonić. Jesteś głuchy przez następne 25 godziny. Może też służyć jako tarcza",
+    "Diabelska Koncha - róg belzebubonicznej istoty z najgłębszych głębin Bezkresnego Morza. Gdy w nie zadmiesz, płuca twoich wrogów wypełniają się morską wodą, jeśli nie przejdą testu o Poziomie Trudności 14 na Odporność, muszą wtedy poświęcić rundę na pozbycie się wody, zanim będą mogli zrobić cokolwiek innego",
     "Organki Doustne - zagraj na tych kościstych organkach, by natychmiastowo przywrócić Złamanemu (0HP) słuchaczowi k4 HP. Nie może on mówić, dopóki nie zregeneruje całkowicie HP",
     "Lutnia Porządnego Łupnia - gdy na niej grasz, dźwięki tego instrumentu w kształcie topora (k8 obrażeń), sprawiają, że Siła i Prezencja każdego, kto je słyszy, zamieniają się na k6 dni. Kolejne odsłuchania w tym czasie nie dają efektów",
   ],
@@ -3855,11 +3855,11 @@ function createCharacter(chosenCharacterClass) {
     `skrzynka z lekami - użycia: ${parseInt(PRE) + 4
     } (powstrzymuje krwawienie/infekcję i leczy k6 HP)`,
     "metalowy pilnik i wytrychy",
-    "pułapka na niedźwiedzie (Skupienie DR14 aby wykryć, k8 obrażeń)",
+    "pułapka na niedźwiedzie (Skupienie PT14 aby wykryć, k8 obrażeń)",
     "bomba (zapieczętowana butelka, k10 obrażeń)",
     `buteleczka czerwonej trucizny - dawki: ${k(
       4
-    )} (Odporność DR12 aby uniknąć k10 obrażeń)`,
+    )} (Odporność PT12 aby uniknąć k10 obrażeń)`,
     "srebrny krucyfiks",
   ];
   const d12EquipmentTwo = [
@@ -3888,8 +3888,8 @@ function createCharacter(chosenCharacterClass) {
 
   let armorTiers = [
     "zbroja lekka, -k2 obrażeń",
-    "zbroja średnia, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony",
-    "zbroja ciężka, -k6 obrażeń, DR+4 do testów zręczności, DR+2 do obrony",
+    "zbroja średnia, -k4 obrażeń, Poziom Trudności +2 do testów zręczności, w tym obrony (Obrona PT 14)",
+    "zbroja ciężka, -k6 obrażeń, Poziom Trudności +4 do testów zręczności, PT +2 do obrony (Obrona PT 14)",
   ];
 
   let d6EquipmentRoll = randomizeFromArray(d6Equipment);
@@ -4464,11 +4464,11 @@ function createCurrentEnemy() {
     //"",
     "futrzana zbroja, -k2 obrażeń",
     // "skórzana zbroja, -k2 obrażeń",
-    // "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony",
+    // "kolczuga, -k4 obrażeń, PT+2 do testów zręczności, w tym obrony",
     // "skórzana zbroja, -k2 obrażeń, tarcza -1 obrażenie",
-    // "kolczuga, -k4 obrażeń, DR+2 do testów zręczności, w tym obrony, tarcza -1 obrażenie",
-    // "zbroja płytowa, -k6 obrażeń, DR+4 do testów zręczności, DR+2 obrony, tarcza -1 obrażenie",
-    // "zbroja płytowa, -k6 obrażeń, DR+4 do testów zręczności, DR+2 obrony",
+    // "kolczuga, -k4 obrażeń, PT+2 do testów zręczności, w tym obrony, tarcza -1 obrażenie",
+    // "zbroja płytowa, -k6 obrażeń, PT+4 do testów zręczności, PT+2 obrony, tarcza -1 obrażenie",
+    // "zbroja płytowa, -k6 obrażeń, PT+4 do testów zręczności, PT+2 obrony",
   ];
 
   let itemsRoll = k(2)
