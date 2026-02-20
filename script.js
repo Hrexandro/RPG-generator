@@ -2913,7 +2913,7 @@ let MBUncleanScroll = {
     "Metzhuotl Oślepia Twoje Oko (przeklęty zwój) - istota staje się niewidzialna przez k6 rund lub dopóki otrzyma obrażenia, atakuje i broni się z PT6",
     "Odrażający Psychopomp (przeklęty zwój) - przywołujesz (k6): 1-3 k4 szkielety, 4-6 k4 zombie",
     "Powieka Oślepia Wiatr (przeklęty zwój) - k4 istoty zasypiają na godzinę, chyba że przejdą test PT14",
-    "Śmierć (przeklęty zwój) - wszystkie istory w obrębie 10 metrów tracą w sumie 4k10 HP",
+    "Śmierć (przeklęty zwój) - wszystkie istoty w obrębie 10 metrów tracą w sumie 4k10 HP",
   ],
 };
 
@@ -3146,7 +3146,7 @@ createAndAddClass({
   rolledAbility: [
     "Mistrz Przeznaczenia - po ci mapy, skoro masz dostęp do kwintesencji przyczynowości? Znasz właściwą drogę po zdaniu testu PT8 na Skupienie",
     "Księga Wrzącej Krwi - możesz odczytać księgę raz dziennie. Twój przeciwnik musi zdać test PT12 aby cię powstrzymać. Jeśli mu się nie uda, pojawi się k2 berserków-pogromców z zapomnianego wymiaru krwi. Rzuć k6: 1-4 walczą u twojego boku. 5-6 obracają się przeciwko tobie i próbują zniszczyć księgę. Po starciu powracają do swojego więzienia",
-    "Mówca Prawd - dwa razy dizennie twoja mądrość, wiedza i wewnętrzny spokój mogą udzielić jasności wybranej istocie. PT jej następnego testu jest obniżone o 4",
+    "Mówca Prawd - dwa razy dziennie twoja mądrość, wiedza i wewnętrzny spokój mogą udzielić jasności wybranej istocie. PT jej następnego testu jest obniżone o 4",
     "Uczeń Niewidzialnego Kolegium - raz dziennie możesz przywołać k2 zwojów, które mogą zostać użyte jeden raz. Rzuć k4: 1-2 zwoje są święte, 3-4 zwoje są przeklęte. Jeśli zwoje nie zostaną wykorzystane do zmroku, obracają się w popiół",
     "Bard Nieumierających - poznałeś melodie zaświatów. Muzyka twojej harfy daje +k4 do rzutów na reakcję",
     "Jastrząb Bojowy - twój podstępny, prawie inteligentny, jastrząb jest lojalny tylko wobec ciebie. Nawet bez wspólnego języka, rozumiesz jego okrzyki, gdy czuwa, prowadzi zwiad i atakuje nieprzyjaciół. Atak/obrona PT10 (szpony/dziobanie k4), 8 HP",
