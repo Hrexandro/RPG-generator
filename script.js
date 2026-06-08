@@ -295,10 +295,11 @@ const MBRandomEncountersCivilized = function () {
     type: "pickerRoller",
     list: [
       // Overland Travel
-      `${createCharacter("Losowa klasa")}`,
-      `${createCharacter("Losowa klasa")}`,
-      `${createCharacter("Losowa klasa")}`,
-      `${createCharacter("Losowa klasa")}`,
+      `Wędrowiec: \n${createCharacter("Losowa klasa").createdCharacterDescription}`,
+      `Wędrowiec: \n${createCharacter("Losowa klasa").createdCharacterDescription}`,
+      `Wędrowiec: \n${createCharacter("Losowa klasa").createdCharacterDescription}`,
+      `Wędrowiec: \n${createCharacter("Losowa klasa").createdCharacterDescription}`,
+
       "Nie dzieje się nic konkretnego, świat jest szary.",
       "Wicher Czarnej Soli (okładka Feretory)",
       "Pogorszenie pogody.",
@@ -514,7 +515,7 @@ const MBRandomEncountersWilderness = function () {
     type: "pickerRoller",
     list: [
       // Overland Travel
-      `${createCharacter("Losowa klasa")}`,
+      `Wędrowiec: \n${createCharacter("Losowa klasa").createdCharacterDescription}`,
       // new
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(20)}`,
       `Przeciwnik! ${pickFromList(MBMonsters)} - liczba: ${k(10)}`,
