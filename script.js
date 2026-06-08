@@ -4107,7 +4107,7 @@ function displayArray(ar, parent) {
       saveButton.classList.add('input');
       saveButton.classList.add('btn');
       saveButton.classList.add('btn-dark');
-      saveButton.innerHTML= "Eksportuj kartę postaci";
+      saveButton.innerHTML= "Karta postaci";
 
       const liftingCapacity = ar[j].createdCharacterStrengthValue + 8;
 
