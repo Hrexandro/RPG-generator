@@ -2495,16 +2495,16 @@ let hugeTreasure = [
   let minorTreasureWorth = k(20)+k(20)+k(20)
   let majorTreasureWorth = 30+k(20)+k(20)
   let hugeTreasureWorth = (k(20)+k(20))*10
-  list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
-  list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
-  list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
-  list.push(randomizeFromArray(minorTreasure)+", o wartości "+minorTreasureWorth + " szt. sr.")
-  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
-  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
-  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
-  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
-  list.push(randomizeFromArray(majorTreasure)+", o wartości "+majorTreasureWorth+" szt. sr.")
-  list.push(randomizeFromArray(hugeTreasure)+", o wartości "+hugeTreasureWorth+" szt. sr.")
+  list.push(randomizeFromArray(minorTreasure)+" o wartości "+minorTreasureWorth + " szt. srebra.")
+  list.push(randomizeFromArray(minorTreasure)+" o wartości "+minorTreasureWorth + " szt. srebra.")
+  list.push(randomizeFromArray(minorTreasure)+" o wartości "+minorTreasureWorth + " szt. srebra.")
+  list.push(randomizeFromArray(minorTreasure)+" o wartości "+minorTreasureWorth + " szt. srebra.")
+  list.push(randomizeFromArray(majorTreasure)+" o wartości "+majorTreasureWorth+" szt. srebra.")
+  list.push(randomizeFromArray(majorTreasure)+" o wartości "+majorTreasureWorth+" szt. srebra.")
+  list.push(randomizeFromArray(majorTreasure)+" o wartości "+majorTreasureWorth+" szt. srebra.")
+  list.push(randomizeFromArray(majorTreasure)+" o wartości "+majorTreasureWorth+" szt. srebra.")
+  list.push(randomizeFromArray(majorTreasure)+" o wartości "+majorTreasureWorth+" szt. srebra.")
+  list.push(randomizeFromArray(hugeTreasure)+" o wartości "+hugeTreasureWorth+" szt. srebra.")
   return {
     type: "pickerRoller",
     list
@@ -4033,7 +4033,7 @@ function createCharacter(chosenCharacterClass) {
 
     let newPersonality = `${terribleTraitOne}. ${terribleTraitTwo}. ${pickFromList(
       MBBrokenBodies
-    )}. ${pickFromList(MBBadHabits)}.`;
+    )}. ${pickFromList(MBBadHabits)}`;
     
     let newArmor = `${pickedArmor ? `${pickedArmor} (${armorTiers[armorRoll - 1]}), ` : ""}`
     let newD6EquipmentRoll = `${d6EquipmentRoll ? `${d6EquipmentRoll}` : ""}`
