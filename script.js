@@ -41,10 +41,11 @@ import {
 //////////////////////////////////////////////////////Tylko do Plugawej Wyroczni
 const plugawaSubtitles = [
   // "Tajemnice, osobistości i rozmaite potworności.",
-  "Nechrubel approved",
-  "Każde kliknięcie pogarsza sytuację.",
-  "Rzeczy przydatne, podejrzane i potencjalnie przeklęte.",
-  "Nie wszystko, co wylosowane, powinno zostać użyte.",
+  // "Nechrubel approved",
+  // "Każde kliknięcie pogarsza sytuację.",
+  // "Rzeczy przydatne, podejrzane i potencjalnie przeklęte.",
+  // "Nie wszystko, co wylosowane, powinno zostać użyte.",
+  'Czy wiesz, że "galge" to po szwedzku "szubienica"? Witamy w Galgenbeck :)'
 ];
 
 function setRandomSubtitle() {
