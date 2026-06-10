@@ -154,7 +154,7 @@ const plugawaSubtitles = [
   "Ku pamięci Valeger, zmarłej na szlaku",
   "Ku pamięci Urvarg",
   "Ku pamięci Sigismunda",
-  "Ku pamięci Cromwellki, która wolał umrzeć, niż spłacic długi",
+  "Ku pamięci Cromwellki, która wolała umrzeć, niż spłacic długi",
   "Ku pamięci Larv, która zginęła spadając z drzewa",
 
   "Ku pamięci Rajtuzara, zabitego przez szkielet w Opuszczonej Wieży",
@@ -190,7 +190,7 @@ const plugawaSubtitles = [
   "Ku pamięci Centki, przebitej oszczepem",
   "Ku pamięci Is’Kamy, tłustego barda",
   "Ku pamięci Złodzieja i Czarodzieja, którzy zginęli w Grobowcu Wężowych Królów",
-  "Ku pamięci Tarvodla, który eksplodował",
+  "Ku pamięci Tarvolda, który eksplodował",
   "Ku pamięci Pumoraka, przebitego oszczepami",
   "Ku pamięci Barbatila, zabitego przez wężowych kultystów w Grobowcu Bagiennej Wiedźmy",
   "Ku pamięci Marka Cukerberga, zasztyletowanego na bagnach",
