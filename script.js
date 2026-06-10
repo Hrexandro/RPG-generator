@@ -40,6 +40,8 @@ import {
 } from "./vorpal.js";
 //////////////////////////////////////////////////////Tylko do Plugawej Wyroczni
 const plugawaSubtitles = [
+  "Losowe tabele, imiona, spotkania, skarby i plugawe inspiracje do ponurych sesji fantasy",
+  "Losowe tabele i plugawe inspiracje do sesji RPG",
   "Tajemnice, osobistości i rozmaite potworności.",
   "Nechrubel approved.",
   "Anthelia approved.",
