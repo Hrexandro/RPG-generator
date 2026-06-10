@@ -13,6 +13,8 @@
 
 //divide MB weapons into damage classes and roll accordingly (to enable to add more weapon types)
 
+//add mięsożerny rzeźnik class
+
 import {
   MBNames,
   MBTowns,
@@ -91,7 +93,11 @@ const plugawaSubtitles = [
   "Nieszczęśliwa gwiazda uśmiechnęła się nad twoimi narodzinami",
   "Błogosławieni niech będą ci, którzy wykuwają żelazo, gwoździe i drut kolczasty",
   "Strona dedykowana Rajtuzarowi, pierwszej postaci, która zginęła na moich sesjach",
-  "Oldchülowe danżonkröle.",
+  "Oldschülowe danżonkröle.",
+  "Nadeślij swoje propozycje wpisów już dziś!",
+  "Koniec jest bliski!",
+  "Ratuj się kto może!",
+  "Nie ma litości",
 
   "Akünh, Akünh, Akünh",
   "Ku pamięci Muraka, zabitego przez kultystów",
@@ -120,7 +126,7 @@ const plugawaSubtitles = [
   "Ku pamięci Jessiki, zabitej przez truciznę przeklętego pierściena w ciemnym zaułku",
   "Ku pamięci Piera, wychłostanego na śmierć za rabowanie zwłok w Torsfeld",
   "Ku pamięci Szermierza, który wykrwawił się po obcięciu dłoni",
-  "Ku pamięci Shnee, zabitej przez rzeźnika w Przeklętej Norze",
+  "Ku pamięci Shnee, zabitej przez Rzeźnika w Przeklętej Norze",
   "Ku pamięci Alberty Von Dup, rażonej piorunem przez Rzeźnika w Przeklętej Norze",
   "Ku pamięci Adalberty Von Dup, rozszarpanej przez rogatą bestię",
   "Ku pamięci Therasa, zadźganego przez kapłana paszczowego w Zigguracie Śmierci",
@@ -141,7 +147,7 @@ const plugawaSubtitles = [
   "Ku pamięci Jessiki, zabitej przez truciznę przeklętego pierściena w ciemnym zaułku",
   "Ku pamięci Piera, wychłostanemu na śmierć za rabowanie zwłok w Torsfeld",
   "Ku pamięci Szermierza, który wykrwawił się po obcięciu dłoni",
-  "Ku pamięci Shnee, zabitej przez rzeźnika w Przeklętej Norze",
+  "Ku pamięci Shnee, zabitej przez Rzeźnika w Przeklętej Norze",
   "Ku pamięci Alberty Von Dup, rażonej piorunem przez Rzeźnika w Przeklętej Norze",
   "Ku pamięci Adalberty Von Dup, rozszarpanej przez rogatą bestię",
   "Ku pamięci Therasa, zadźganego przez kapłana paszczowego w Zigguracie Śmierci",
@@ -168,7 +174,7 @@ const plugawaSubtitles = [
   "Ku pamięci Pumoraka, przebitego oszczepami",
   "Ku pamięci Barbatila, zabitego przez wężowych kultystów w Grobowcu Bagiennej Wiedźmy",
   "Ku pamięci Marka Cukerberga, zasztyletowanego na bagnach",
-  "Ku pamięci Spela Castora, Williama Smitha, Łazana i Vittny, którzy zginęli w eksplozji w Piekielnym Pałacu",
+  "Ku pamięci Spela Castora, Williama Smitha, Łazarza i Vittny, którzy zginęli w eksplozji w Piekielnym Pałacu",
   "Ku pamięci Wilka, rozpłatanego na pół przez minotaura",
   "Ku pamięci poborcy podatkowego, złożonego w ofierze",
   "Ku pamięci sieroty, którą dosięgła karma",
@@ -180,7 +186,7 @@ const plugawaSubtitles = [
   "Ku pamięci Drufuma, zagryzionego przez kamienną bestię",
   "Ku pamięci Josilfunda, porąbanego przez kamiennych strażników",
   "Ku pamięci Pana Chichotka",
-  "Nadeślij swoje propozycje wpisów już dziś!"
+
 ];
 
 function setRandomSubtitle() {
@@ -1588,7 +1594,6 @@ const MBBrokenBodies = {
     "Wysoki jak drzewo, ale chudy jak szczapa", // ok
     "Włosy szorstkie jak szczecina dzika",
     "Złamany nos, już na zawsze skrzywiony",
-    "Wielki pępek",
   ],
 };
 
