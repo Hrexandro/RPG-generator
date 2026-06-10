@@ -38,7 +38,27 @@ import {
   bozkiImiona,
   bozkiDomeny
 } from "./vorpal.js";
+//////////////////////////////////////////////////////Tylko do Plugawej Wyroczni
+const plugawaSubtitles = [
+  // "Tajemnice, osobistości i rozmaite potworności.",
+  "Nechrubel approved",
+  "Każde kliknięcie pogarsza sytuację.",
+  "Rzeczy przydatne, podejrzane i potencjalnie przeklęte.",
+  "Nie wszystko, co wylosowane, powinno zostać użyte.",
+];
 
+function setRandomSubtitle() {
+  const subtitleElement = document.getElementById("random-subtitle");
+
+  if (!subtitleElement) {
+    return;
+  }
+
+  subtitleElement.textContent = randomizeFromArray(plugawaSubtitles);
+}
+
+setRandomSubtitle();
+//////////////////////////////////////////////////////
 const generateButton = document.getElementById("generate-button");
 const nameDisplay = document.getElementById("name-display");
 const categoryPicker = document.getElementById("kategoria");
