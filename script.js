@@ -73,7 +73,7 @@ const plugawaSubtitles = [
   "A doom metal album of a page.",
   "Odwiedź też korbaczrpg.blogspot.com",
   "Odwiedź też facebook.com/korbaczbobolaka",
-  "Już wkrótce: jednostrzałowe przygody na korbaczbobolaka.itch.io/",
+  "Już wkrótce: jednostrzałowe przygody na korbaczbobolaka.itch.io",
   "Zobacz też linktr.ee/hrexandro",
   "Przeglądarkowy generator do OSR i dark fantasy RPG.",
   "Nechrubel patrzy.",
