@@ -40,12 +40,25 @@ import {
 } from "./vorpal.js";
 //////////////////////////////////////////////////////Tylko do Plugawej Wyroczni
 const plugawaSubtitles = [
-  // "Tajemnice, osobistości i rozmaite potworności.",
-  // "Nechrubel approved",
-  // "Każde kliknięcie pogarsza sytuację.",
-  // "Rzeczy przydatne, podejrzane i potencjalnie przeklęte.",
-  // "Nie wszystko, co wylosowane, powinno zostać użyte.",
-  'Czy wiesz, że "galge" to po szwedzku "szubienica"? Witamy w Galgenbeck :)'
+  "Tajemnice, osobistości i rozmaite potworności.",
+  "Nechrubel approved",
+  "Anthelia approved",
+  "Verhu approved",
+  "Anuk Schleger approved",
+  "Każde kliknięcie pogarsza sytuację.",
+  "Rzeczy przydatne, podejrzane i potencjalnie przeklęte.",
+  "Nie wszystko, co wylosowane, powinno zostać użyte.",
+  'Czy wiesz, że "galge" to po szwedzku "szubienica"? Witamy w Galgenbeck :)',
+  "Compatible with Mörk Borg",
+  "Kompatybilne z Mörk Borg",
+  "Kompatybilne z morkiem borkiem",
+  "Mörk Bor-GEN",
+  "Polskojęzyczny generator losowy do Mörk Borg",
+  "Korbacz Bobołaka prezentuje",
+  "Anuk Schleger prezentuje",
+  "Dobra nowina Nechrubela",
+  "Czy Josilfa Migol jest cretunką?"
+
 ];
 
 function setRandomSubtitle() {
