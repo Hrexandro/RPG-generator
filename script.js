@@ -118,7 +118,7 @@ const plugawaSubtitles = [
   "Ku pamięci Rojbrara, zabitego w Świątyni przez bobołaka",
   "Ku pamięci Kapłana, zabitego przez demoniczną rękę w Wężowym Grobowcu",
   "Ku pamięci Jessiki, zabitej przez truciznę przeklętego pierściena w ciemnym zaułku",
-  "Ku pamięci Piera, wychłostanemu na śmierć za rabowanie zwłok w Torsfeld",
+  "Ku pamięci Piera, wychłostanego na śmierć za rabowanie zwłok w Torsfeld",
   "Ku pamięci Szermierza, który wykrwawił się po obcięciu dłoni",
   "Ku pamięci Shnee, zabitej przez rzeźnika w Przeklętej Norze",
   "Ku pamięci Alberty Von Dup, rażonej piorunem przez Rzeźnika w Przeklętej Norze",
@@ -178,7 +178,9 @@ const plugawaSubtitles = [
   "Ku pamięci Sunda",
   "Ku pamięci Lucy, zatłuczonej przez chłopów",
   "Ku pamięci Drufuma, zagryzionego przez kamienną bestię",
-  "Ku pamięci Josilfunda, porąbanego przez kamiennych strażników"
+  "Ku pamięci Josilfunda, porąbanego przez kamiennych strażników",
+  "Ku pamięci Pana Chichotka",
+  "Nadeślij swoje propozycje wpisów już dziś!"
 ];
 
 function setRandomSubtitle() {
