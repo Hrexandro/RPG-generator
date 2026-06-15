@@ -75,8 +75,8 @@ const plugawaSubtitles = [
 "Spiked flail to the mace!",
 "Spiked flail to the face!",
 "A doom metal album of a page",
-"Odwiedź też korbaczrpg.blogspot.com.",
-"Odwiedź też facebook.com/korbaczbobolaka.",
+"Odwiedź też korbaczrpg.blogspot.com",
+"Odwiedź też facebook.com/korbaczbobolaka",
 "Już wkrótce: jednostrzałowe przygody na korbaczbobolaka.itch.io",
 "Zobacz też linktr.ee/hrexandro.",
 "Przeglądarkowy generator do OSR i dark fantasy RPG",
@@ -237,6 +237,7 @@ function updateSecondarySelectStatus() {
     addOption("Heretycki kapłan");
     addOption("Kleryk");
     addOption("Mag");
+    addOption("Mięsożerny rzeźnik");
     addOption("Okultystyczny zielarz");
     addOption("Prorok martwego boga");
     addOption("Przeklęta ofiara");
@@ -3834,6 +3835,47 @@ createAndAddClass({
   silverMultiplier: false,
   weaponRoll: 6, //if more complex use [die, modifier]
   armorRoll: 3,
+  secondaryOriginLabel: false,
+  secondaryOrigin: false,
+  
+});
+
+
+createAndAddClass({
+  characterClassName: "Mięsożerny rzeźnik",
+  description:
+    "Czujesz nieustanny głód. Głód, który zaspokoić może tylko mięso, może być ludzkie",
+  originLabel: "Przyczyna twojego szaleństwa: ",
+  origin: [
+    "byłeś felczerem w wojskowym lazarecie. Gdy wrogowie wyrżnęli rannych i medyków, przeżyłeś udając trupa. Od tamtej pory w każdym widzisz tylko chodzące zwłoki.",
+    "byłeś drobnym kupcem z domem, wozem i ukochaną żoną. Gdy przyłapałeś ją z kochankiem, zabiłeś oboje. Zwłok nie dało się wynieść niepostrzeżenie, więc zjadłeś dowody zbrodni.",
+    "byłeś górnikiem uwięzionym po zawale wraz z towarzyszami. Gdy skończyło się jedzenie, a ratunek nie nadchodził, zacząłeś jeść martwych kompanów. Gdy po kilku tygodniach odkopałeś sobie drogę na powierzchnię, byłeś już innym człowiekiem.",
+    "byłeś grabarzem, jak twój ojciec, dziad i pradziad. Od dziecka patrzyłeś na śmierć, aż różnica między żywym a martwym przestała mieć znaczenie. Ludzie to dla ciebie tylko mięso i kości.",
+    "byłeś rzeźnikiem w miasteczku, gdzie zaczęło brakować mięsa. Zwierzęta szły na ofiary dla Bazyliszków, więc znalazłeś inne źródło towaru. Klienci przychodzący o późnej porze czasem nie wracali do domów.",
+    "twój umysł jest tak skrzywiony, że już nawet nie pamiętasz, co jest przyczyną twojego obłędu. Twoje wspomnienia mieszają prawdę z majakami.",
+  ],
+  specialAbility:
+    "Jedynie mięso jest w stanie nasycić twój nieustanny głód. Nieważne, czy mięso jest nadgniłe, zatrute, zainfekowane przez magiczne pasożyty z innego wymiaru czy przeklęte przez mrocznego boga. Nigdy ci nie zaszkodzi i jest w pełni sycące. W końcu mięso to mięso",
+  rolledAbility: [
+    "Do perfekcji opanowałeś zdolność siekania mięsa. Jeżeli posługujesz się bronią zdolną zadawać obrażenia sieczne, zadajesz dodatkowe 2 punkty obrażeń istotom, które mają mięso",
+    "Raz dziennie jesteś w stanie wywróżyć coś z wnętrzności żywej istoty. Zadajesz jedno pytanie i uzyskujesz na nie odpowiedź zgodną z wiedzą istoty. Jeżeli istota się myli, również uzyskasz mylną informację",
+    "Twoją rękę oplata łańcuch zakończony rzeźnickim hakiem (k6 obrażeń). Możesz wykonać nim atak dystansowy na odległość do 20 stóp. Atak oplata cel i unieruchamia go (test Siły o poziomie trudności 12, aby się uwolnić)",
+    "Zapach krwi doprowadza cię do morderczego szału. Przez k6 rund otrzymujesz +2 do trafienia i obrażeń, ale w każdej rundzie musisz kogoś atakować lub dobiec celem zaatakowania",
+    "Raz dziennie możesz uleczyć k6 HP jedząc 1 kilogram surowego mięsa"
+  ],
+  numberOfRolledAbilities: false,
+  agility: 0, //for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
+  presence: -2,
+  strength: 0,
+  toughness: +2,
+  omens: 2,
+  scrollRule: false, //'illiterate' rerolls scrolls,'Tablet of Ochre Obscurity' - has tablet like philosopher, ['scroll', 'random'/'holy'/'unholy']
+  HPdie: 10,
+  silverDie: 6,
+  silverNumberOfRolls: 3,
+  silverMultiplier: 10,
+  weaponRoll: false, //if more complex use [die, modifier]
+  armorRoll: false,
   secondaryOriginLabel: false,
   secondaryOrigin: false,
 });
