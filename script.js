@@ -118,6 +118,10 @@ const plugawaSubtitles = [
 "Lesdi... Lusi... Lesdi... wybrana! Przewspaniała!",
 "Oleista, czarna i cuchnie siarką.",
 "Ośmielisz się zawędrować tam?",
+"Świat nigdy nie był miłym miejscem.",
+"Wszystko, co znacie, dobiega końca.",
+"Wszystko się rozpada.",
+"Wygląda na to, że nie ma nadziei, to tylko kwestia czasu.",
 
 "Akünh, Akünh, Akünh",
 "Ku pamięci Muraka, zabitego przez kultystów",
