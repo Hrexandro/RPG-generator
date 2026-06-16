@@ -2938,7 +2938,7 @@ createAndAddMonster({
   pancerz: "brak",
   broń: "Dotyk k4 + wysysanie sił",
   specjalneCechy:
-    "Szybkie, ulotne i trudne do trafienia (PT14). Te bezcielesne zjawy zawsze wygrywają inicjatywę. Ich dotyk wysysa Siłę, Prezencję i Inicjatywę, zmniejszając je o 1 do końca walki. Wartość: złapany 120s, czaszka 70s, ektoplazma 25s.",
+    "Szybkie, ulotne i trudne do trafienia (PT14). Te bezcielesne zjawy zawsze wygrywają inicjatywę. Ich dotyk wysysa Siłę, Skupienie i Inicjatywę, zmniejszając je o 1 do końca walki. Wartość: złapany 120s, czaszka 70s, ektoplazma 25s.",
 });
 createAndAddMonster({
   keyName: "bloodDrenchedSkeleton",
@@ -3820,7 +3820,7 @@ createAndAddClass({
     "Grzbietowa Łupina - gdy bijesz w ten bęben zrobiony ze skorupy diabła, rzuć 2k6: 6+ - wszyscy oprócz ciebie rzucają na Zręczność (Poziom Trudności 14), albo padają na ziemię. 11 - wybierz k4 istoty, które słyszą twoje bębnienie. Ich kręgosłupy łamią się jak zapałki. Nie możesz już więcej użyć bębna tego dnia. 12 - w twoich uszach nie przestaje dzwonić. Jesteś głuchy przez następne 25 godziny. Może też służyć jako tarcza",
     "Diabelska Koncha - róg belzebubonicznej istoty z najgłębszych głębin Bezkresnego Morza. Gdy w nie zadmiesz, płuca twoich wrogów wypełniają się morską wodą, jeśli nie przejdą testu o Poziomie Trudności 14 na Odporność, muszą wtedy poświęcić rundę na pozbycie się wody, zanim będą mogli zrobić cokolwiek innego",
     "Organki Doustne - zagraj na tych kościstych organkach, by natychmiastowo przywrócić Złamanemu (0HP) słuchaczowi k4 HP. Nie może on mówić, dopóki nie zregeneruje całkowicie HP",
-    "Lutnia Porządnego Łupnia - gdy na niej grasz, dźwięki tego instrumentu w kształcie topora (k8 obrażeń), sprawiają, że Siła i Prezencja każdego, kto je słyszy, zamieniają się na k6 dni. Kolejne odsłuchania w tym czasie nie dają efektów",
+    "Lutnia Porządnego Łupnia - gdy na niej grasz, dźwięki tego instrumentu w kształcie topora (k8 obrażeń), sprawiają, że Siła i Skupienie każdego, kto je słyszy, zamieniają się na k6 dni. Kolejne odsłuchania w tym czasie nie dają efektów",
   ],
   numberOfRolledAbilities: false,
   agility: 0, //for abilities use simple modifier (positive or negative value) for more complex cases, use [die, number of dice, modifier]
