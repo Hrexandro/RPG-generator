@@ -4344,12 +4344,44 @@ function displayArray(ar, parent) {
 
       saveButton.addEventListener('click', ()=>{
 
-        console.log()
+        const characterPdfText = [
+          ar[j].createdCharacterName,
+          ar[j].createdCharacterClass,
+          ar[j].createdCharacterClassDescription,
+          ar[j].createdCharacterPersonality,
+          ar[j].createdCharacterClassBenefitsHeader,
+          ar[j].createdCharacterClassBenefits,
+          ar[j].createdCharacterHP,
+          ar[j].createdCharacterStrength,
+          ar[j].createdCharacterAgility,
+          ar[j].createdCharacterPresence,
+          ar[j].createdCharacterToughness,
+          ar[j].createdCharacterWeapon,
+          ar[j].createdCharacterArmor,
+          ar[j].createdCharacterSilver,
+          ar[j].createdCharacterOmens,
+          ...equipmentParagraphs.map(item => item.text || ""),
+          ...equipmentOutsideSlotsParagraphs.map(item => item.text || "")
+        ].join(" ");
+
+        let pdfFontSize = 12;
+        let pdfLineHeight = 1.05;
+
+        if (characterPdfText.length > 1600) {
+          pdfFontSize = 10;
+          pdfLineHeight = 1.02;
+        }
+
+        if (characterPdfText.length > 2400) {
+          pdfFontSize = 9;
+          pdfLineHeight = 1.0;
+        }
+
         let docDefinition = {
             pageMargins: [35, 15, 35, 20],
             defaultStyle: {
-            // fontSize: 9,
-            lineHeight: 1.05
+              fontSize: pdfFontSize,
+              lineHeight: pdfLineHeight
         },
          content: [
              {
