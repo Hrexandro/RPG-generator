@@ -241,8 +241,8 @@ function updateSecondarySelectStatus() {
     ///
     MBCharacterClassPicker.classList.add("form-select");
     ///
-    addOption("Postać bezklasowa");
     addOption("Losowa klasa");
+    addOption("Postać bezklasowa");
     addOption("Bladawiec");
     addOption("Ezoteryczny pustelnik");
     addOption("Hardy kowal");
@@ -4394,6 +4394,16 @@ function displayArray(ar, parent) {
             defaultStyle: {
               fontSize: pdfFontSize,
               lineHeight: pdfLineHeight
+        },
+        footer: function () {
+        return {
+          text: "korbaczbobolaka.itch.io/plugawa-wyrocznia",
+          link: "https://korbaczbobolaka.itch.io/plugawa-wyrocznia",
+          alignment: "left",
+          margin: [25, 0, 0, 8],
+          fontSize: 8,
+          color: "#444444"
+          };
         },
          content: [
              {
