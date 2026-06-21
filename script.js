@@ -4403,12 +4403,12 @@ function displayArray(ar, parent) {
         let pdfFontSize = 12;
         let pdfLineHeight = 1.05;
 
-        if (characterPdfText.length > 1600) {
+        if (characterPdfText.length > 1300 || liftingCapacity > 9) {
           pdfFontSize = 10;
           pdfLineHeight = 1.02;
         }
 
-        if (characterPdfText.length > 2400) {
+        if (characterPdfText.length > 2000) {
           pdfFontSize = 9;
           pdfLineHeight = 1.0;
         }
