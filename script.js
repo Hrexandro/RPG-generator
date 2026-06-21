@@ -41,6 +41,30 @@ import {
   bozkiDomeny
 } from "./vorpal.js";
 //////////////////////////////////////////////////////Tylko do Plugawej Wyroczni
+const jslBlackletterUrl = new URL(
+  "./assets/fonts/jsl-blackletter.ttf",
+  document.baseURI
+).href;
+
+pdfMake.fonts = {
+  ...(pdfMake.fonts || {}),
+
+  Roboto: {
+    normal: "Roboto-Regular.ttf",
+    bold: "Roboto-Medium.ttf",
+    italics: "Roboto-Italic.ttf",
+    bolditalics: "Roboto-MediumItalic.ttf"
+  },
+
+  JSLBlackletter: {
+    normal: jslBlackletterUrl,
+    bold: jslBlackletterUrl,
+    italics: jslBlackletterUrl,
+    bolditalics: jslBlackletterUrl
+  }
+};
+
+
 const plugawaSubtitles = [
 "Losowe tabele, imiona, spotkania, skarby i plugawe inspiracje do ponurych sesji fantasy",
 "Losowe tabele i plugawe inspiracje do sesji RPG",
@@ -4390,19 +4414,29 @@ function displayArray(ar, parent) {
         }
 
         let docDefinition = {
-            pageMargins: [35, 15, 35, 20],
+            pageMargins: [35, 15, 35, 50],
             defaultStyle: {
               fontSize: pdfFontSize,
               lineHeight: pdfLineHeight
         },
         footer: function () {
-        return {
-          text: "korbaczbobolaka.itch.io/plugawa-wyrocznia",
-          link: "https://korbaczbobolaka.itch.io/plugawa-wyrocznia",
-          alignment: "left",
-          margin: [25, 0, 0, 8],
-          fontSize: 8,
-          color: "#444444"
+          return {
+            margin: [35, 0, 35, 30],
+            stack: [
+              {
+                text: "Plugawa Wyrocznia",
+                font: "JSLBlackletter",
+                fontSize: 20,
+                color: "#000000",
+                margin: [0, 0, 0, 1]
+              },
+              {
+                text: "korbaczbobolaka.itch.io/plugawa-wyrocznia",
+                link: "https://korbaczbobolaka.itch.io/plugawa-wyrocznia",
+                fontSize: 8,
+                color: "#444444"
+              }
+            ]
           };
         },
          content: [
